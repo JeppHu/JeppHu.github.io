@@ -37,7 +37,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Jepp&#39;s Blog">
   
-  <meta property="og:url" content="http://blog/">
+  <meta property="og:url" content="/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -46,8 +46,8 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="http://blog/">
-<link rel="alternate" type="application/rss+xml" href="http://blog/index.xml" title="My Blog">
+<link rel="canonical" href="/">
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="My Blog">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -72,19 +72,19 @@
 <meta name='msapplication-navbutton-color' content="#02b875">
 <meta name="msapplication-TileColor" content="#02b875">
 <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
-<link rel="icon" href="http://blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://blog/icons/icon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://blog/icons/icon-32x32.png">
-<link rel="icon" sizes="192x192" href="http://blog/icons/icon-192x192.png">
-<link rel="apple-touch-icon" href="http://blog/icons/icon-152x152.png">
-<link rel="manifest" href="http://blog/manifest.json">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+<link rel="manifest" href="/manifest.json">
 
 
-<link rel="preload" href="http://blog/styles/main.min.css" as="style">
+<link rel="preload" href="/styles/main.min.css" as="style">
 
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
-<link rel="preload" href="http://blog/images/avatar.png" as="image">
-<link rel="preload" href="http://blog/images/grey-prism.svg" as="image">
+<link rel="preload" href="/images/avatar.png" as="image">
+<link rel="preload" href="/images/grey-prism.svg" as="image">
 
 
 <style>
@@ -92,7 +92,7 @@
     background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
   }
 </style>
-<link rel="stylesheet" href="http://blog/styles/main.min.css">
+<link rel="stylesheet" href="/styles/main.min.css">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 
@@ -125,7 +125,7 @@
     </div>
     
      <header class="site-header">
-  <img class="avatar" src="http://blog/images/avatar.png" alt="Avatar">
+  <img class="avatar" src="/images/avatar.png" alt="Avatar">
   
   <h1 class="title">My Blog</h1>
   
@@ -145,14 +145,14 @@
            is-active
           
           ">
-          <a href="http://blog/">Home</a>
+          <a href="/">Home</a>
         </li>
       
         <li class="menu-item
           
           
           ">
-          <a href="http://blog/tags/">Tags</a>
+          <a href="/tags/">Tags</a>
         </li>
       
     </ul>
@@ -179,17 +179,63 @@
   
    <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="http://blog/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/" class="post-link">Git配置多账户</a></h3>
+    <h3 class="post-title"><a href="/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/" class="post-link">git 配置多账户</a></h3>
     <p class="post-meta">@Jepp Hu · Feb 21, 2019 · 1 min read</p>
   </header>
   
-  <p class="post-summary"> 1. 为不同的账号添加对应的key 生成一个github的key
-ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; 执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问key的密码，可以
-生成一个bitbucket的key
-ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; 执行命令后的第一次输入，输入一个用于区分的名字，如：my_bitbucket
-2. 修改配置文件 #进入.ssh目录，如果目录下没有config文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my github</p>
+  <p class="post-summary">1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
+cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成一个 github 的 key
+ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 生成一个 bitbucket 的 key
+ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #同上自定义名字，如：my_bitbucket_rsa 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host defaultHost HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host secondHost HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.ssh/my_bitbucket_rsa 3. 向 github 和 bitbucket 添加密钥 此时在 .</p>
   <footer class="post-footer">
-    <a class="read-more" href="http://blog/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/">Read More →</a>
+    <a class="read-more" href="/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/" class="post-link">WKWebView 页面显示不全</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+解决方法
+NSWindowStyleMask == NSWindowStyleMaskBorderless</p>
+  <footer class="post-footer">
+    <a class="read-more" href="/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="/post/wkwebview%E6%B8%85%E9%99%A4cookies/" class="post-link">WKWebView 清除 cookies</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];</p>
+  <footer class="post-footer">
+    <a class="read-more" href="/post/wkwebview%E6%B8%85%E9%99%A4cookies/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="/post/youtube-dl/" class="post-link">youtube-dl</a></h3>
+    <p class="post-meta">@Jepp Hu · Sep 21, 2017 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
+brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &#34;https://127.0.0.1:1080&#34; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL</p>
+  <footer class="post-footer">
+    <a class="read-more" href="/post/youtube-dl/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" class="post-link">WKWebView 与 WebView 调试器</a></h3>
+    <p class="post-meta">@Jepp Hu · Jan 1, 0001 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&#34;developerExtrasEnabled&#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</p>
+  <footer class="post-footer">
+    <a class="read-more" href="/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/">Read More →</a>
   </footer>
 </article>
  
@@ -212,7 +258,7 @@ ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; 执行命令后的第一次�
 
 
 
-<script src="http://blog/scripts/index.min.js"></script>
+<script src="/scripts/index.min.js"></script>
 
 <script>
   if ('serviceWorker' in navigator) {

@@ -5,9 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Tags | Jepp&#39;s Blog
-</title>
+  <title>WKWebView 清除 cookies</title>
 
   
   
@@ -26,20 +24,22 @@
 
   
   <meta name="author" content="Jepp Hu">
+  <meta name="description" content="NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="WKWebView 清除 cookies">
+    <meta name="twitter:description" content="NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];">
+    <meta name="twitter:image" content="/images/avatar.png">
   
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@gohugoio">
-  <meta name="twitter:title" content="Jepp&#39;s Blog">
-  
-  <meta name="twitter:image" content="/images/avatar.png">
-
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Jepp&#39;s Blog">
-  
-  <meta property="og:url" content="/categories/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WKWebView 清除 cookies">
+  <meta property="og:description" content="NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];">
+  <meta property="og:url" content="/post/wkwebview%E6%B8%85%E9%99%A4cookies/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -48,8 +48,7 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="/categories/">
-<link rel="alternate" type="application/rss+xml" href="/categories/index.xml" title="My Blog">
+<link rel="canonical" href="/post/wkwebview%E6%B8%85%E9%99%A4cookies/">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -100,8 +99,12 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
 
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
 
 
 
@@ -123,6 +126,8 @@
     
     <div class="suspension">
       <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
       
     </div>
     
@@ -147,7 +152,7 @@
         <li class="menu-item
           
           
-          ">
+           is-active">
           <a href="/">Home</a>
         </li>
       
@@ -174,14 +179,31 @@
   </nav>
 </header>
 
-  <section class="main post-detail terms-list">
+  <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Categories</h1>
+      <h1 class="post-title">WKWebView 清除 cookies</h1>
+      <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
     </header>
-    <div class="tags-cloud">
+    <article class="post-content"><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSSet <span style="color:#f92672">*</span>websiteDataTypes <span style="color:#f92672">=</span> [WKWebsiteDataStore allWebsiteDataTypes];
+
+NSDate <span style="color:#f92672">*</span>dateFrom <span style="color:#f92672">=</span> [NSDate dateWithTimeIntervalSince1970:<span style="color:#ae81ff">0</span>];
+
+[[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:<span style="color:#f92672">^</span>{}];</code></pre></div></article>
+    <footer class="post-footer">
       
+      <ul class="post-tags">
+        
+          <li><a href="/tags/wkwebview"><span class="tag">WKWebView</span></a></li>
+        
+      </ul>
       
-    </div>
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.This post was published <strong>325</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+      </p>
+    </footer>
+    
+      
+    
   </section>
   
 <footer class="site-footer">
@@ -195,8 +217,33 @@
 
 
 
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
 
 
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
 
 
 

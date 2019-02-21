@@ -6,7 +6,9 @@
 
   
   <title>
-  Tags | Jepp&#39;s Blog
+  Tag → wkwebview
+  
+   | Jepp&#39;s Blog
 </title>
 
   
@@ -39,7 +41,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Jepp&#39;s Blog">
   
-  <meta property="og:url" content="/categories/">
+  <meta property="og:url" content="/tags/wkwebview/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -48,8 +50,8 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="/categories/">
-<link rel="alternate" type="application/rss+xml" href="/categories/index.xml" title="My Blog">
+<link rel="canonical" href="/tags/wkwebview/">
+<link rel="alternate" type="application/rss+xml" href="/tags/wkwebview/index.xml" title="My Blog">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -153,7 +155,7 @@
       
         <li class="menu-item
           
-          
+           is-active
           ">
           <a href="/tags/">Tags</a>
         </li>
@@ -174,14 +176,56 @@
   </nav>
 </header>
 
-  <section class="main post-detail terms-list">
-    <header class="post-header">
-      <h1 class="post-title">Categories</h1>
+  <section class="main post-list">
+    <header class="list-header offscreen">
+      <h2 class="list-label">Posts List</h2>
     </header>
-    <div class="tags-cloud">
+    
+    
       
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/" class="post-link">WKWebView 页面显示不全</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+解决方法
+NSWindowStyleMask == NSWindowStyleMaskBorderless</p>
+  <footer class="post-footer">
+    <a class="read-more" href="/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">Read More →</a>
+  </footer>
+</article>
+
       
-    </div>
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="/post/wkwebview%E6%B8%85%E9%99%A4cookies/" class="post-link">WKWebView 清除 cookies</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];</p>
+  <footer class="post-footer">
+    <a class="read-more" href="/post/wkwebview%E6%B8%85%E9%99%A4cookies/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" class="post-link">WKWebView 与 WebView 调试器</a></h3>
+    <p class="post-meta">@Jepp Hu · Jan 1, 0001 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&#34;developerExtrasEnabled&#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</p>
+  <footer class="post-footer">
+    <a class="read-more" href="/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/">Read More →</a>
+  </footer>
+</article>
+
+      
+    
+    
   </section>
   
 <footer class="site-footer">

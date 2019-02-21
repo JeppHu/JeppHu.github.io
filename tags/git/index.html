@@ -41,7 +41,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Jepp&#39;s Blog">
   
-  <meta property="og:url" content="http://blog/tags/git/">
+  <meta property="og:url" content="/tags/git/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -50,8 +50,8 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="http://blog/tags/git/">
-<link rel="alternate" type="application/rss+xml" href="http://blog/tags/git/index.xml" title="My Blog">
+<link rel="canonical" href="/tags/git/">
+<link rel="alternate" type="application/rss+xml" href="/tags/git/index.xml" title="My Blog">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -76,19 +76,19 @@
 <meta name='msapplication-navbutton-color' content="#02b875">
 <meta name="msapplication-TileColor" content="#02b875">
 <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
-<link rel="icon" href="http://blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://blog/icons/icon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://blog/icons/icon-32x32.png">
-<link rel="icon" sizes="192x192" href="http://blog/icons/icon-192x192.png">
-<link rel="apple-touch-icon" href="http://blog/icons/icon-152x152.png">
-<link rel="manifest" href="http://blog/manifest.json">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+<link rel="manifest" href="/manifest.json">
 
 
-<link rel="preload" href="http://blog/styles/main.min.css" as="style">
+<link rel="preload" href="/styles/main.min.css" as="style">
 
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
-<link rel="preload" href="http://blog/images/avatar.png" as="image">
-<link rel="preload" href="http://blog/images/grey-prism.svg" as="image">
+<link rel="preload" href="/images/avatar.png" as="image">
+<link rel="preload" href="/images/grey-prism.svg" as="image">
 
 
 <style>
@@ -96,7 +96,7 @@
     background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
   }
 </style>
-<link rel="stylesheet" href="http://blog/styles/main.min.css">
+<link rel="stylesheet" href="/styles/main.min.css">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 
@@ -130,7 +130,7 @@
     
     
   <header class="site-header">
-  <img class="avatar" src="http://blog/images/avatar.png" alt="Avatar">
+  <img class="avatar" src="/images/avatar.png" alt="Avatar">
   
   <h2 class="title">My Blog</h2>
   
@@ -150,14 +150,14 @@
           
           
           ">
-          <a href="http://blog/">Home</a>
+          <a href="/">Home</a>
         </li>
       
         <li class="menu-item
           
            is-active
           ">
-          <a href="http://blog/tags/">Tags</a>
+          <a href="/tags/">Tags</a>
         </li>
       
     </ul>
@@ -185,17 +185,16 @@
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="http://blog/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/" class="post-link">Git配置多账户</a></h3>
+    <h3 class="post-title"><a href="/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/" class="post-link">git 配置多账户</a></h3>
     <p class="post-meta">@Jepp Hu · Feb 21, 2019 · 1 min read</p>
   </header>
   
-  <p class="post-summary"> 1. 为不同的账号添加对应的key 生成一个github的key
-ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; 执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问key的密码，可以
-生成一个bitbucket的key
-ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; 执行命令后的第一次输入，输入一个用于区分的名字，如：my_bitbucket
-2. 修改配置文件 #进入.ssh目录，如果目录下没有config文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my github</p>
+  <p class="post-summary">1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
+cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成一个 github 的 key
+ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 生成一个 bitbucket 的 key
+ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #同上自定义名字，如：my_bitbucket_rsa 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host defaultHost HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host secondHost HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.ssh/my_bitbucket_rsa 3. 向 github 和 bitbucket 添加密钥 此时在 .</p>
   <footer class="post-footer">
-    <a class="read-more" href="http://blog/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/">Read More →</a>
+    <a class="read-more" href="/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/">Read More →</a>
   </footer>
 </article>
 
@@ -220,7 +219,7 @@ ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; 执行命令后的第一次�
 
 
 
-<script src="http://blog/scripts/index.min.js"></script>
+<script src="/scripts/index.min.js"></script>
 
 <script>
   if ('serviceWorker' in navigator) {

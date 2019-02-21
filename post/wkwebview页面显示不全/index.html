@@ -5,9 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Tags | Jepp&#39;s Blog
-</title>
+  <title>WKWebView 页面显示不全</title>
 
   
   
@@ -26,20 +24,28 @@
 
   
   <meta name="author" content="Jepp Hu">
+  <meta name="description" content=" WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+解决方法
+NSWindowStyleMask == NSWindowStyleMaskBorderless">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="WKWebView 页面显示不全">
+    <meta name="twitter:description" content=" WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+解决方法
+NSWindowStyleMask == NSWindowStyleMaskBorderless">
+    <meta name="twitter:image" content="/images/avatar.png">
   
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@gohugoio">
-  <meta name="twitter:title" content="Jepp&#39;s Blog">
-  
-  <meta name="twitter:image" content="/images/avatar.png">
-
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Jepp&#39;s Blog">
-  
-  <meta property="og:url" content="/categories/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WKWebView 页面显示不全">
+  <meta property="og:description" content=" WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+解决方法
+NSWindowStyleMask == NSWindowStyleMaskBorderless">
+  <meta property="og:url" content="/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -48,8 +54,7 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="/categories/">
-<link rel="alternate" type="application/rss+xml" href="/categories/index.xml" title="My Blog">
+<link rel="canonical" href="/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -100,8 +105,12 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
 
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
 
 
 
@@ -123,6 +132,8 @@
     
     <div class="suspension">
       <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
       
     </div>
     
@@ -147,7 +158,7 @@
         <li class="menu-item
           
           
-          ">
+           is-active">
           <a href="/">Home</a>
         </li>
       
@@ -174,14 +185,36 @@
   </nav>
 </header>
 
-  <section class="main post-detail terms-list">
+  <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Categories</h1>
+      <h1 class="post-title">WKWebView 页面显示不全</h1>
+      <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
     </header>
-    <div class="tags-cloud">
+    <article class="post-content">
+
+<h3 id="wkwebview-因为-nswindow-属性造成的-bug">WKWebView 因为 NSWindow 属性造成的 bug</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSWindowStyleMask  <span style="color:#f92672">==</span>  NSWindowStyleMaskFullSizeContentView</code></pre></div>
+<p>此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况</p>
+
+<p><strong>解决方法</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSWindowStyleMask  <span style="color:#f92672">==</span>  NSWindowStyleMaskBorderless</code></pre></div></article>
+    <footer class="post-footer">
       
+      <ul class="post-tags">
+        
+          <li><a href="/tags/wkwebview"><span class="tag">WKWebView</span></a></li>
+        
+          <li><a href="/tags/nswindow"><span class="tag">NSWindow</span></a></li>
+        
+      </ul>
       
-    </div>
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.This post was published <strong>325</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+      </p>
+    </footer>
+    
+      
+    
   </section>
   
 <footer class="site-footer">
@@ -195,8 +228,33 @@
 
 
 
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
 
 
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
 
 
 
