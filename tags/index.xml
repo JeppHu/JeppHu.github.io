@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on My Blog</title>
-    <link>/tags/</link>
+    <link>https://JeppHu.github.io/tags/</link>
     <description>Recent content in Tags on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://JeppHu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git</title>
-      <link>/tags/git/</link>
+      <link>https://JeppHu.github.io/tags/git/</link>
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/git/</guid>
+      <guid>https://JeppHu.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nswindow</title>
-      <link>/tags/nswindow/</link>
+      <link>https://JeppHu.github.io/tags/nswindow/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nswindow/</guid>
+      <guid>https://JeppHu.github.io/tags/nswindow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webview</title>
-      <link>/tags/webview/</link>
+      <link>https://JeppHu.github.io/tags/webview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/webview/</guid>
+      <guid>https://JeppHu.github.io/tags/webview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wkwebview</title>
-      <link>/tags/wkwebview/</link>
+      <link>https://JeppHu.github.io/tags/wkwebview/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/wkwebview/</guid>
+      <guid>https://JeppHu.github.io/tags/wkwebview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Youtube Dl</title>
-      <link>/tags/youtube-dl/</link>
+      <link>https://JeppHu.github.io/tags/youtube-dl/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/youtube-dl/</guid>
+      <guid>https://JeppHu.github.io/tags/youtube-dl/</guid>
       <description></description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nswindow on My Blog</title>
-    <link>/tags/nswindow/</link>
+    <link>https://JeppHu.github.io/tags/nswindow/</link>
     <description>Recent content in Nswindow on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/nswindow/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://JeppHu.github.io/tags/nswindow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WKWebView 页面显示不全</title>
-      <link>/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</link>
+      <link>https://JeppHu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</guid>
+      <guid>https://JeppHu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</guid>
       <description> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
 解决方法
 NSWindowStyleMask == NSWindowStyleMaskBorderless</description>
