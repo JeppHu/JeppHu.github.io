@@ -2,22 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Youtube Dl on My Blog</title>
-    <link>https://JeppHu.github.io/tags/youtube-dl/</link>
+    <link>https://jepphu.github.io/tags/youtube-dl/</link>
     <description>Recent content in Youtube Dl on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Thu, 21 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://JeppHu.github.io/tags/youtube-dl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jepphu.github.io/tags/youtube-dl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>youtube-dl</title>
-      <link>https://JeppHu.github.io/post/youtube-dl/</link>
+      <link>https://jepphu.github.io/post/test/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://JeppHu.github.io/post/youtube-dl/</guid>
+      <guid>https://jepphu.github.io/post/test/</guid>
+      <description> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
+brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &amp;#34;https://127.0.0.1:1080&amp;#34; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL</description>
+    </item>
+    
+    <item>
+      <title>youtube-dl</title>
+      <link>https://jepphu.github.io/post/youtube-dl/</link>
+      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/youtube-dl/</guid>
       <description> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
 brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &amp;#34;https://127.0.0.1:1080&amp;#34; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL</description>
     </item>
