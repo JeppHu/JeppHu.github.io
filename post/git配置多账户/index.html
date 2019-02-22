@@ -25,9 +25,9 @@
   
   <meta name="author" content="Jepp Hu">
   <meta name="description" content="1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
-cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成一个 github 的 key
-ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 生成一个 bitbucket 的 key
-ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名字，如：my_bitbucket_rsa 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host defaultHost HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host secondHost HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.ssh/my_bitbucket_rsa 3. 向 github 和 bitbucket 添加密钥 此时在 .">
+cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成 github 和 bitbucket 的 key
+cd ~/.ssh ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名字，如：my_bitbucket_rsa 此时在 .ssh 目录下至少会有以下5个文件
+config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host bitbucket.org HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.">
 
   
   
@@ -35,9 +35,9 @@ ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名�
     <meta name="twitter:site" content="@gohugoio">
     <meta name="twitter:title" content="git 配置多账户">
     <meta name="twitter:description" content="1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
-cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成一个 github 的 key
-ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 生成一个 bitbucket 的 key
-ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名字，如：my_bitbucket_rsa 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host defaultHost HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host secondHost HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.ssh/my_bitbucket_rsa 3. 向 github 和 bitbucket 添加密钥 此时在 .">
+cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成 github 和 bitbucket 的 key
+cd ~/.ssh ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名字，如：my_bitbucket_rsa 此时在 .ssh 目录下至少会有以下5个文件
+config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host bitbucket.org HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.">
     <meta name="twitter:image" content="/images/avatar.png">
   
 
@@ -45,9 +45,9 @@ ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名�
   <meta property="og:type" content="article">
   <meta property="og:title" content="git 配置多账户">
   <meta property="og:description" content="1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
-cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成一个 github 的 key
-ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 生成一个 bitbucket 的 key
-ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名字，如：my_bitbucket_rsa 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host defaultHost HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host secondHost HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.ssh/my_bitbucket_rsa 3. 向 github 和 bitbucket 添加密钥 此时在 .">
+cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成 github 和 bitbucket 的 key
+cd ~/.ssh ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名字，如：my_bitbucket_rsa 此时在 .ssh 目录下至少会有以下5个文件
+config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host bitbucket.org HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.">
   <meta property="og:url" content="https://jepphu.github.io/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/">
   <meta property="og:image" content="/images/avatar.png">
 
@@ -201,34 +201,42 @@ ssh-keygen -t rsa -C &amp;#34;youremail@domain.com&amp;#34; #同上自定义名�
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">cd ~/.ssh
 #如果目录不存在，执行
 ssh-keygen</code></pre></div>
-<p>生成一个 github 的 key</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">ssh-keygen -t rsa -C &#34;youremail@domain.com&#34;
+<p>生成 github 和 bitbucket 的 key</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">cd ~/.ssh
+ssh-keygen -t rsa -C &#34;youremail@domain.com&#34;
 #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车
-第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过</code></pre></div>
-<p>生成一个 bitbucket 的 key</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">ssh-keygen -t rsa -C &#34;youremail@domain.com&#34;
+第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过
+
+ssh-keygen -t rsa -C &#34;youremail@domain.com&#34;
 #同上自定义名字，如：my_bitbucket_rsa</code></pre></div>
+<p>此时在 .ssh 目录下至少会有以下5个文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">config           
+my_bitbucket_rsa        my_github_rsa
+my_bitbucket_rsa.pub    my_github_rsa.pub</code></pre></div>
 <h3 id="2-修改配置文件">2. 修改配置文件</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">#进入 .ssh 目录，如果目录下没有 config 文件，那么创建
 cd ~/.ssh
 touch config
 
 #添加以下内容
-Host defaultHost
+Host github.com
     HostName github.com
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/my_github_rsa
-Host secondHost
+Host bitbucket.org
     HostName bitbucket.org
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/my_bitbucket_rsa</code></pre></div>
+<p>Host 字段只是别名，可以任意取，HostName 字段是真实的主机名
+如果 Host 字段任意取名，那么在进行 clone 等操作时要将 URL Host 替换
+原本 git@github.com:xxx/xxx.git</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">#原本 
+git clone git@github.com:xxx/xxx.git
+#替换
+git clone YourHost:xxx/xxx.git</code></pre></div>
 <h3 id="3-向-github-和-bitbucket-添加密钥">3. 向 github 和 bitbucket 添加密钥</h3>
 
-<p>此时在 .ssh 目录下至少会有以下5个文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">config           
-my_bitbucket_rsa    my_github_rsa
-my_bitbucket_rsa.pub    my_github_rsa.pub</code></pre></div>
-<p>.pub 后缀的为公钥，添加在 github 或者 bitbucket 中，
+<p>.pub 后缀的为公钥，添加在 github 或者 bitbucket 后台中，
 以 github 为例：</p>
 
 <ol>
