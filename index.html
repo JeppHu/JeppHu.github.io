@@ -185,10 +185,39 @@
   
   <p class="post-summary">1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
 cd ~/.ssh #如果目录不存在，执行 ssh-keygen 生成 github 和 bitbucket 的 key
-cd ~/.ssh ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa， 回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #同上自定义名字，如：my_bitbucket_rsa 此时在 .ssh 目录下至少会有以下5个文件
+cd ~/.ssh ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa，回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &#34;youremail@domain.com&#34; #同上自定义名字，如：my_bitbucket_rsa 此时在 .ssh 目录下至少会有以下5个文件，.pub 后缀的为公钥，另一个为秘钥
 config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub 2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host bitbucket.org HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.</p>
   <footer class="post-footer">
     <a class="read-more" href="https://jepphu.github.io/post/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/git%E5%AD%90%E6%A8%A1%E5%9D%97/" class="post-link">git 子模块</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> 添加子模块 添加子模块，完成后会新增一个默认隐藏的配置文件 .gitmodules ，和一个外部项目的子目录 添加完成后需要将子模块切换到合适的分支
+git submodule add 子项目地址（文件夹名称，可不填） 克隆一个带子模块的项目 克隆项目结束后之后，主目录下会包含子模块的空目录，进入主目录
+git submodule init git submodule update git 删除子模块  删除子模块目录及目录下的所有内容 .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目 git/config 删除配置项中子模块相关条目 .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可  执行完成后，再执行添加子模块时报错，执行如下：
+git rm --cached 子模块名称</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/git%E5%AD%90%E6%A8%A1%E5%9D%97/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="post-link">git 基本使用</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
+git config --global user.name &#34;your name&#34; git config --global user.email &#34;your eamil@domain.com&#34; 查看用户名和邮箱
+git config user.name git config user.email 解除全局用户名和邮箱
+git config --global --unset user.name git config --global --unset user.email 查看 git 所有配置
+git config --list 上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &#34;init&#34; git push origin master 克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Read More →</a>
   </footer>
 </article>
   <article class="post-entry">
