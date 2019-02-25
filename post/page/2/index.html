@@ -184,6 +184,19 @@
       
         <article class="post-entry">
   <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/" class="post-link">隐藏 Dock 应用图标和 Menu</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">Info.plist 设置字段：Application is agent (UIElement) 为 YES</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
     <h3 class="post-title"><a href="https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/" class="post-link">重置 Dock 和 Launchpad</a></h3>
     <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
   </header>
@@ -192,6 +205,20 @@
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</p>
   <footer class="post-footer">
     <a class="read-more" href="https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/" class="post-link">通过点击 Dock 图标重新显示窗口</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">在 AppDelegate.m 文件中实现  中的方法：
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/">Read More →</a>
   </footer>
 </article>
 
@@ -259,14 +286,42 @@ NSWindowStyleMask == NSWindowStyleMaskBorderless</p>
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/youtube-dl/" class="post-link">youtube-dl</a></h3>
-    <p class="post-meta">@Jepp Hu · Sep 21, 2017 · 1 min read</p>
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" class="post-link">WKWebView 与 WebView 调试器</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
   </header>
   
-  <p class="post-summary"> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
-brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &#34;https://127.0.0.1:1080&#34; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL</p>
+  <p class="post-summary"> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&#34;developerExtrasEnabled&#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</p>
   <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/youtube-dl/">Read More →</a>
+    <a class="read-more" href="https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/" class="post-link">UIView 事件穿透</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">实现最顶层的 UIView 的 hitTest 方法，返回下层的某个 view 实例，即相当于把那个按钮的事件透出来了
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { UIView *hitView = [super hitTest:point withEvent:event]; if(hitView == self){ return nil; } return hitView; }</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/" class="post-link">UINavigationBar 底部的线</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> 隐藏和显示 UINavigationBar 底部的线 方法1：
+- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;&amp; navigationBar.bounds.size.height &lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.subviews) { UIImageView *imageView= [self navigationBarLineUnder:subview]; if (imageView) { return imageView; } } return nil; } //隐藏 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES; //显示 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO; 方法2：
+//隐藏 [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; //显示 [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:nil];</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/">Read More →</a>
   </footer>
 </article>
 
@@ -279,6 +334,8 @@ brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL �
           
             <a class="pagination-previous" href="https://jepphu.github.io/post/">← Newer Posts</a>
           
+          
+            <a class="pagination-next" href="https://jepphu.github.io/post/page/3/">Older Posts →</a>
           
         </nav>
       </footer>

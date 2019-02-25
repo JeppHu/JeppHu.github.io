@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Info.plist on My Blog</title>
+    <link>https://jepphu.github.io/tags/info.plist/</link>
+    <description>Recent content in Info.plist on My Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/info.plist/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>隐藏 Dock 应用图标和 Menu</title>
+      <link>https://jepphu.github.io/post/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</guid>
+      <description>Info.plist 设置字段：Application is agent (UIElement) 为 YES</description>
+    </item>
+    
+  </channel>
+</rss>

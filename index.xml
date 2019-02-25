@@ -74,12 +74,53 @@ brew home  查看信息</description>
     </item>
     
     <item>
+      <title>NSColorPanel</title>
+      <link>https://jepphu.github.io/post/nscolorpanel/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/nscolorpanel/</guid>
+      <description>设置 NSColorPanel 的显示模式和初始默认色盘，要在实例化之前设置
+不自定义设置时会默认为以下设置
+[NSColorPanel setPickerMask:NSColorPanelAllModesMask]; [NSColorPanel setPickerMode:NSColorPanelModeNone]; 实例对象是一个单例
+NSColorPanel *panel = [NSColorPanel sharedColorPanel]; 显示与隐藏
+if ([panel isVisible]) { [panel orderOut:self]; } else { [panel orderFront:self]; } 设置选取颜色后的响应事件
+[panel setTarget:self]; [panel setAction:@selector(colorSelectedAction:)]; 从 View 中拖拽颜色到颜色面板
+- (void)mouseDragged:(NSEvent *)event { [NSColorPanel dragColor:[NSColor orangeColor] withEvent:event fromView:self]; }</description>
+    </item>
+    
+    <item>
       <title>NSView 监听鼠标悬停</title>
       <link>https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</guid>
       <description>@interface HoverImageButton () @property (strong,nonatomic) NSTrackingArea *trackingArea; @property (strong,nonatomic) NSImage *tempImage; @property (strong,nonatomic) NSImage *alternateImage; @end@implementation HoverImageButton - (instancetype)initWithCoder:(NSCoder *)coder { self = [super initWithCoder:coder]; if (self) { self.tempImage = self.image; } return self; } - (void)updateTrackingAreas { if (self.trackingArea) { [self removeTrackingArea:self.trackingArea]; } int opts = (NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited); self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:opts owner:self userInfo:nil]; [self addTrackingArea:self.trackingArea]; } - (void)mouseEntered:(NSEvent *)event { [super mouseEntered:event]; self.image = self.alternateImage; } - (void)mouseExited:(NSEvent *)event { [super mouseExited:event]; self.</description>
+    </item>
+    
+    <item>
+      <title>NSWindow 常用属性</title>
+      <link>https://jepphu.github.io/post/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</guid>
+      <description>隐藏标题栏
+[self setTitleVisibility:NSWindowTitleHidden]; window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景
+[self setTitlebarAppearsTransparent:YES]; 通过拖动背景来移动整个 window
+[self setMovableByWindowBackground:YES]; 完全透明的 window
+[self setBackgroundColor:[NSColor clearColor]]; [self setOpaque:NO];</description>
+    </item>
+    
+    <item>
+      <title>NSWindow 改变 WindowButton 位置</title>
+      <link>https://jepphu.github.io/post/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/</guid>
+      <description>NSWindow 上的三个按钮
+NSButton *closeBtn = [self standardWindowButton:NSWindowCloseButton]; NSButton *miniaturizeBtn = [self standardWindowButton:NSWindowMiniaturizeButton]; NSButton *zoomBtn = [self standardWindowButton:NSWindowZoomButton]; 系统创建的默认 frame 分别为
+(7.000000,3.000000),(14.000000,16.000000) (27.000000,3.000000),(14.000000,16.000000) (47.000000,3.000000),(14.000000,16.000000) button 创建时是自动布局，直接修改 frame 无效
+关闭自动布局，添加约束布局就能修改 window button 的位置
+closeBtn.translatesAutoresizingMaskIntoConstraints = NO; miniaturizeBtn.translatesAutoresizingMaskIntoConstraints = NO; zoomBtn.translatesAutoresizingMaskIntoConstraints = NO; NSLayoutConstraint *leftContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:4.0]; NSLayoutConstraint *topContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:3.0]; leftContraint1.active = YES; topContraint1.active = YES; NSLayoutConstraint *leftContraint2 = [NSLayoutConstraint constraintWithItem:miniaturizeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:miniaturizeBtn.</description>
     </item>
     
     <item>
@@ -170,6 +211,16 @@ git rm --cached 子模块名称</description>
     </item>
     
     <item>
+      <title>通过点击 Dock 图标重新显示窗口</title>
+      <link>https://jepphu.github.io/post/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</guid>
+      <description>在 AppDelegate.m 文件中实现  中的方法：
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }</description>
+    </item>
+    
+    <item>
       <title>重置 Dock 和 Launchpad</title>
       <link>https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
@@ -177,6 +228,15 @@ git rm --cached 子模块名称</description>
       <guid>https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</guid>
       <description>用来解决 APP 图标异常的问题，APP 图标会恢复成默认排序
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</description>
+    </item>
+    
+    <item>
+      <title>隐藏 Dock 应用图标和 Menu</title>
+      <link>https://jepphu.github.io/post/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</guid>
+      <description>Info.plist 设置字段：Application is agent (UIElement) 为 YES</description>
     </item>
     
     <item>

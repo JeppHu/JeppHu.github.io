@@ -5,9 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Tags | Jepp&#39;s Blog
-</title>
+  <title>通过点击 Dock 图标重新显示窗口</title>
 
   
   
@@ -26,20 +24,25 @@
 
   
   <meta name="author" content="Jepp Hu">
+  <meta name="description" content="在 AppDelegate.m 文件中实现  中的方法：
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="通过点击 Dock 图标重新显示窗口">
+    <meta name="twitter:description" content="在 AppDelegate.m 文件中实现  中的方法：
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }">
+    <meta name="twitter:image" content="/images/avatar.png">
   
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@gohugoio">
-  <meta name="twitter:title" content="Jepp&#39;s Blog">
-  
-  <meta name="twitter:image" content="/images/avatar.png">
-
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Jepp&#39;s Blog">
-  
-  <meta property="og:url" content="https://jepphu.github.io/tags/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="通过点击 Dock 图标重新显示窗口">
+  <meta property="og:description" content="在 AppDelegate.m 文件中实现  中的方法：
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }">
+  <meta property="og:url" content="https://jepphu.github.io/post/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -48,8 +51,7 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="https://jepphu.github.io/tags/">
-<link rel="alternate" type="application/rss+xml" href="https://jepphu.github.io/tags/index.xml" title="My Blog">
+<link rel="canonical" href="https://jepphu.github.io/post/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -100,8 +102,12 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
 
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
 
 
 
@@ -123,6 +129,8 @@
     
     <div class="suspension">
       <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
       
     </div>
     
@@ -147,12 +155,12 @@
         <li class="menu-item
           
           
-          ">
+           is-active">
           <a href="https://jepphu.github.io/">Home</a>
         </li>
       
         <li class="menu-item
-           is-active
+          
           
           ">
           <a href="https://jepphu.github.io/tags/">Tags</a>
@@ -174,56 +182,34 @@
   </nav>
 </header>
 
-  <section class="main post-detail terms-list">
+  <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Tags</h1>
+      <h1 class="post-title">通过点击 Dock 图标重新显示窗口</h1>
+      <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
     </header>
-    <div class="tags-cloud">
+    <article class="post-content"><p>在 AppDelegate.m 文件中实现 <NSApplicationDelegate> 中的方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">- (<span style="color:#66d9ef">BOOL</span>)<span style="color:#a6e22e">applicationShouldHandleReopen:</span>(NSApplication <span style="color:#f92672">*</span>)sender <span style="color:#a6e22e">hasVisibleWindows:</span>(<span style="color:#66d9ef">BOOL</span>)flag {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>flag){
+        [NSApp activateIgnoringOtherApps:NO];
+        [self.window makeKeyAndOrderFront:self];
+    }
+    <span style="color:#66d9ef">return</span> YES;
+}</code></pre></div></article>
+    <footer class="post-footer">
       
-      
+      <ul class="post-tags">
         
-        <a href="https://jepphu.github.io/tags/mac-os-x/" class="tag-l">mac-os-x</a>
-      
+          <li><a href="https://jepphu.github.io/tags/nsapplication"><span class="tag">NSApplication</span></a></li>
         
-        <a href="https://jepphu.github.io/tags/git/" class="tag-xxl">git</a>
+      </ul>
       
-        
-        <a href="https://jepphu.github.io/tags/nswindow/" class="tag-xxl">nswindow</a>
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.This post was published <strong>329</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+      </p>
+    </footer>
+    
       
-        
-        <a href="https://jepphu.github.io/tags/wkwebview/" class="tag-xxl">wkwebview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/nsapplication/" class="tag-m">nsapplication</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/brew/" class="tag-s">brew</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/info.plist/" class="tag-s">info.plist</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/nscolorpanel/" class="tag-s">nscolorpanel</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/nsview/" class="tag-s">nsview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/rvm/" class="tag-s">rvm</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/uinavigation/" class="tag-s">uinavigation</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/uiview/" class="tag-s">uiview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/webview/" class="tag-s">webview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/youtube-dl/" class="tag-s">youtube-dl</a>
-      
-    </div>
+    
   </section>
   
 <footer class="site-footer">
@@ -237,8 +223,33 @@
 
 
 
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
 
 
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
 
 
 

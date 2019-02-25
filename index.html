@@ -193,42 +193,6 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub 2. 
 </article>
   <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" class="post-link">WKWebView 与 WebView 调试器</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary"> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&#34;developerExtrasEnabled&#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/">Read More →</a>
-  </footer>
-</article>
-  <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/" class="post-link">UIView 事件穿透</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">实现最顶层的 UIView 的 hitTest 方法，返回下层的某个 view 实例，即相当于把那个按钮的事件透出来了
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { UIView *hitView = [super hitTest:point withEvent:event]; if(hitView == self){ return nil; } return hitView; }</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/">Read More →</a>
-  </footer>
-</article>
-  <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/" class="post-link">UINavigationBar 底部的线</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary"> 隐藏和显示 UINavigationBar 底部的线 方法1：
-- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;&amp; navigationBar.bounds.size.height &lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.subviews) { UIImageView *imageView= [self navigationBarLineUnder:subview]; if (imageView) { return imageView; } } return nil; } //隐藏 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES; //显示 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO; 方法2：
-//隐藏 [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; //显示 [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:nil];</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/">Read More →</a>
-  </footer>
-</article>
-  <article class="post-entry">
-  <header class="post-header">
     <h3 class="post-title"><a href="https://jepphu.github.io/post/rvm/" class="post-link">RVM</a></h3>
     <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
   </header>
@@ -243,6 +207,36 @@ RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切�
 </article>
   <article class="post-entry">
   <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/" class="post-link">NSWindow 改变 WindowButton 位置</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">NSWindow 上的三个按钮
+NSButton *closeBtn = [self standardWindowButton:NSWindowCloseButton]; NSButton *miniaturizeBtn = [self standardWindowButton:NSWindowMiniaturizeButton]; NSButton *zoomBtn = [self standardWindowButton:NSWindowZoomButton]; 系统创建的默认 frame 分别为
+(7.000000,3.000000),(14.000000,16.000000) (27.000000,3.000000),(14.000000,16.000000) (47.000000,3.000000),(14.000000,16.000000) button 创建时是自动布局，直接修改 frame 无效
+关闭自动布局，添加约束布局就能修改 window button 的位置
+closeBtn.translatesAutoresizingMaskIntoConstraints = NO; miniaturizeBtn.translatesAutoresizingMaskIntoConstraints = NO; zoomBtn.translatesAutoresizingMaskIntoConstraints = NO; NSLayoutConstraint *leftContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:4.0]; NSLayoutConstraint *topContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:3.0]; leftContraint1.active = YES; topContraint1.active = YES; NSLayoutConstraint *leftContraint2 = [NSLayoutConstraint constraintWithItem:miniaturizeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:miniaturizeBtn.</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/" class="post-link">NSWindow 常用属性</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">隐藏标题栏
+[self setTitleVisibility:NSWindowTitleHidden]; window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景
+[self setTitlebarAppearsTransparent:YES]; 通过拖动背景来移动整个 window
+[self setMovableByWindowBackground:YES]; 完全透明的 window
+[self setBackgroundColor:[NSColor clearColor]]; [self setOpaque:NO];</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
     <h3 class="post-title"><a href="https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/" class="post-link">NSView 监听鼠标悬停</a></h3>
     <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
   </header>
@@ -250,6 +244,23 @@ RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切�
   <p class="post-summary">@interface HoverImageButton () @property (strong,nonatomic) NSTrackingArea *trackingArea; @property (strong,nonatomic) NSImage *tempImage; @property (strong,nonatomic) NSImage *alternateImage; @end@implementation HoverImageButton - (instancetype)initWithCoder:(NSCoder *)coder { self = [super initWithCoder:coder]; if (self) { self.tempImage = self.image; } return self; } - (void)updateTrackingAreas { if (self.trackingArea) { [self removeTrackingArea:self.trackingArea]; } int opts = (NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited); self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:opts owner:self userInfo:nil]; [self addTrackingArea:self.trackingArea]; } - (void)mouseEntered:(NSEvent *)event { [super mouseEntered:event]; self.image = self.alternateImage; } - (void)mouseExited:(NSEvent *)event { [super mouseExited:event]; self.</p>
   <footer class="post-footer">
     <a class="read-more" href="https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/nscolorpanel/" class="post-link">NSColorPanel</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">设置 NSColorPanel 的显示模式和初始默认色盘，要在实例化之前设置
+不自定义设置时会默认为以下设置
+[NSColorPanel setPickerMask:NSColorPanelAllModesMask]; [NSColorPanel setPickerMode:NSColorPanelModeNone]; 实例对象是一个单例
+NSColorPanel *panel = [NSColorPanel sharedColorPanel]; 显示与隐藏
+if ([panel isVisible]) { [panel orderOut:self]; } else { [panel orderFront:self]; } 设置选取颜色后的响应事件
+[panel setTarget:self]; [panel setAction:@selector(colorSelectedAction:)]; 从 View 中拖拽颜色到颜色面板
+- (void)mouseDragged:(NSEvent *)event { [NSColorPanel dragColor:[NSColor orangeColor] withEvent:event fromView:self]; }</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/nscolorpanel/">Read More →</a>
   </footer>
 </article>
   <article class="post-entry">

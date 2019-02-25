@@ -5,9 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Tags | Jepp&#39;s Blog
-</title>
+  <title>NSWindow 常用属性</title>
 
   
   
@@ -26,20 +24,34 @@
 
   
   <meta name="author" content="Jepp Hu">
+  <meta name="description" content="隐藏标题栏
+[self setTitleVisibility:NSWindowTitleHidden]; window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景
+[self setTitlebarAppearsTransparent:YES]; 通过拖动背景来移动整个 window
+[self setMovableByWindowBackground:YES]; 完全透明的 window
+[self setBackgroundColor:[NSColor clearColor]]; [self setOpaque:NO];">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="NSWindow 常用属性">
+    <meta name="twitter:description" content="隐藏标题栏
+[self setTitleVisibility:NSWindowTitleHidden]; window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景
+[self setTitlebarAppearsTransparent:YES]; 通过拖动背景来移动整个 window
+[self setMovableByWindowBackground:YES]; 完全透明的 window
+[self setBackgroundColor:[NSColor clearColor]]; [self setOpaque:NO];">
+    <meta name="twitter:image" content="/images/avatar.png">
   
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@gohugoio">
-  <meta name="twitter:title" content="Jepp&#39;s Blog">
-  
-  <meta name="twitter:image" content="/images/avatar.png">
-
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Jepp&#39;s Blog">
-  
-  <meta property="og:url" content="https://jepphu.github.io/tags/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="NSWindow 常用属性">
+  <meta property="og:description" content="隐藏标题栏
+[self setTitleVisibility:NSWindowTitleHidden]; window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景
+[self setTitlebarAppearsTransparent:YES]; 通过拖动背景来移动整个 window
+[self setMovableByWindowBackground:YES]; 完全透明的 window
+[self setBackgroundColor:[NSColor clearColor]]; [self setOpaque:NO];">
+  <meta property="og:url" content="https://jepphu.github.io/post/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -48,8 +60,7 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="https://jepphu.github.io/tags/">
-<link rel="alternate" type="application/rss+xml" href="https://jepphu.github.io/tags/index.xml" title="My Blog">
+<link rel="canonical" href="https://jepphu.github.io/post/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -100,8 +111,12 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
 
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
 
 
 
@@ -123,6 +138,8 @@
     
     <div class="suspension">
       <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
       
     </div>
     
@@ -147,12 +164,12 @@
         <li class="menu-item
           
           
-          ">
+           is-active">
           <a href="https://jepphu.github.io/">Home</a>
         </li>
       
         <li class="menu-item
-           is-active
+          
           
           ">
           <a href="https://jepphu.github.io/tags/">Tags</a>
@@ -174,56 +191,35 @@
   </nav>
 </header>
 
-  <section class="main post-detail terms-list">
+  <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Tags</h1>
+      <h1 class="post-title">NSWindow 常用属性</h1>
+      <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
     </header>
-    <div class="tags-cloud">
+    <article class="post-content"><p>隐藏标题栏</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[self setTitleVisibility:NSWindowTitleHidden];</code></pre></div>
+<p>window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[self setTitlebarAppearsTransparent:YES];</code></pre></div>
+<p>通过拖动背景来移动整个 window</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[self setMovableByWindowBackground:YES];</code></pre></div>
+<p>完全透明的 window</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">[self setBackgroundColor:[NSColor clearColor]];
+[self setOpaque:NO];</code></pre></div></article>
+    <footer class="post-footer">
       
-      
+      <ul class="post-tags">
         
-        <a href="https://jepphu.github.io/tags/mac-os-x/" class="tag-l">mac-os-x</a>
-      
+          <li><a href="https://jepphu.github.io/tags/nswindow"><span class="tag">NSWindow</span></a></li>
         
-        <a href="https://jepphu.github.io/tags/git/" class="tag-xxl">git</a>
+      </ul>
       
-        
-        <a href="https://jepphu.github.io/tags/nswindow/" class="tag-xxl">nswindow</a>
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.This post was published <strong>329</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+      </p>
+    </footer>
+    
       
-        
-        <a href="https://jepphu.github.io/tags/wkwebview/" class="tag-xxl">wkwebview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/nsapplication/" class="tag-m">nsapplication</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/brew/" class="tag-s">brew</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/info.plist/" class="tag-s">info.plist</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/nscolorpanel/" class="tag-s">nscolorpanel</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/nsview/" class="tag-s">nsview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/rvm/" class="tag-s">rvm</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/uinavigation/" class="tag-s">uinavigation</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/uiview/" class="tag-s">uiview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/webview/" class="tag-s">webview</a>
-      
-        
-        <a href="https://jepphu.github.io/tags/youtube-dl/" class="tag-s">youtube-dl</a>
-      
-    </div>
+    
   </section>
   
 <footer class="site-footer">
@@ -237,8 +233,33 @@
 
 
 
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
 
 
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
 
 
 

@@ -28,7 +28,22 @@
   </url>
   
   <url>
+    <loc>https://jepphu.github.io/post/nscolorpanel/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jepphu.github.io/post/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jepphu.github.io/post/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/</loc>
     <lastmod>2018-04-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -73,7 +88,17 @@
   </url>
   
   <url>
+    <loc>https://jepphu.github.io/post/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jepphu.github.io/post/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</loc>
     <lastmod>2018-04-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -100,6 +125,12 @@
   </url>
   
   <url>
+    <loc>https://jepphu.github.io/tags/info.plist/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jepphu.github.io/tags/mac-os-x/</loc>
     <lastmod>2018-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -108,6 +139,18 @@
   <url>
     <loc>https://jepphu.github.io/</loc>
     <lastmod>2019-02-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jepphu.github.io/tags/nsapplication/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jepphu.github.io/tags/nscolorpanel/</loc>
+    <lastmod>2018-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

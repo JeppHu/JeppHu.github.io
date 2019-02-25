@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nscolorpanel on My Blog</title>
+    <link>https://jepphu.github.io/tags/nscolorpanel/</link>
+    <description>Recent content in Nscolorpanel on My Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/nscolorpanel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NSColorPanel</title>
+      <link>https://jepphu.github.io/post/nscolorpanel/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/nscolorpanel/</guid>
+      <description>设置 NSColorPanel 的显示模式和初始默认色盘，要在实例化之前设置
+不自定义设置时会默认为以下设置
+[NSColorPanel setPickerMask:NSColorPanelAllModesMask]; [NSColorPanel setPickerMode:NSColorPanelModeNone]; 实例对象是一个单例
+NSColorPanel *panel = [NSColorPanel sharedColorPanel]; 显示与隐藏
+if ([panel isVisible]) { [panel orderOut:self]; } else { [panel orderFront:self]; } 设置选取颜色后的响应事件
+[panel setTarget:self]; [panel setAction:@selector(colorSelectedAction:)]; 从 View 中拖拽颜色到颜色面板
+- (void)mouseDragged:(NSEvent *)event { [NSColorPanel dragColor:[NSColor orangeColor] withEvent:event fromView:self]; }</description>
+    </item>
+    
+  </channel>
+</rss>
