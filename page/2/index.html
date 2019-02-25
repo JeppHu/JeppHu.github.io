@@ -5,11 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Tag → wkwebview
-  
-   | Jepp&#39;s Blog
-</title>
+  <title>Jepp&#39;s Blog</title>
 
   
   
@@ -41,7 +37,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Jepp&#39;s Blog">
   
-  <meta property="og:url" content="https://jepphu.github.io/tags/wkwebview/">
+  <meta property="og:url" content="https://jepphu.github.io/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -50,8 +46,8 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="https://jepphu.github.io/tags/wkwebview/">
-<link rel="alternate" type="application/rss+xml" href="https://jepphu.github.io/tags/wkwebview/index.xml" title="My Blog">
+<link rel="canonical" href="https://jepphu.github.io/">
+<link rel="alternate" type="application/rss+xml" href="https://jepphu.github.io/index.xml" title="My Blog">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -128,11 +124,10 @@
       
     </div>
     
-    
-  <header class="site-header">
+     <header class="site-header">
   <img class="avatar" src="https://jepphu.github.io/images/avatar.png" alt="Avatar">
   
-  <h2 class="title">My Blog</h2>
+  <h1 class="title">My Blog</h1>
   
   <p class="subtitle">~ &amp; ~</p>
   <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
@@ -147,7 +142,7 @@
       
       
         <li class="menu-item
-          
+           is-active
           
           ">
           <a href="https://jepphu.github.io/">Home</a>
@@ -155,7 +150,7 @@
       
         <li class="menu-item
           
-           is-active
+          
           ">
           <a href="https://jepphu.github.io/tags/">Tags</a>
         </li>
@@ -176,14 +171,54 @@
   </nav>
 </header>
 
-  <section class="main post-list">
-    <header class="list-header offscreen">
-      <h2 class="list-label">Posts List</h2>
-    </header>
-    
-    
-      
-        <article class="post-entry">
+<section class="main post-list">
+  <header class="list-header offscreen">
+    <h2 class="list-label">All Posts</h2>
+  </header>
+  
+  
+   <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/" class="post-link">重置 Dock 和 Launchpad</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">用来解决 APP 图标异常的问题，APP 图标会恢复成默认排序
+defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/git%E5%AD%90%E6%A8%A1%E5%9D%97/" class="post-link">git 子模块</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> 添加子模块 添加子模块，完成后会新增一个默认隐藏的配置文件 .gitmodules ，和一个外部项目的子目录 添加完成后需要将子模块切换到合适的分支
+git submodule add 子项目地址（文件夹名称，可不填） 克隆一个带子模块的项目 克隆项目结束后之后，主目录下会包含子模块的空目录，进入主目录
+git submodule init git submodule update git 删除子模块  删除子模块目录及目录下的所有内容 .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目 git/config 删除配置项中子模块相关条目 .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可  执行完成后，再执行添加子模块时报错，执行如下：
+git rm --cached 子模块名称</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/git%E5%AD%90%E6%A8%A1%E5%9D%97/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="post-link">git 基本使用</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
+git config --global user.name &#34;your name&#34; git config --global user.email &#34;your eamil@domain.com&#34; 查看用户名和邮箱
+git config user.name git config user.email 解除全局用户名和邮箱
+git config --global --unset user.name git config --global --unset user.email 查看 git 所有配置
+git config --list 上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &#34;init&#34; git push origin master 克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Read More →</a>
+  </footer>
+</article>
+  <article class="post-entry">
   <header class="post-header">
     <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/" class="post-link">WKWebView 页面显示不全</a></h3>
     <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
@@ -196,9 +231,7 @@ NSWindowStyleMask == NSWindowStyleMaskBorderless</p>
     <a class="read-more" href="https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">Read More →</a>
   </footer>
 </article>
-
-      
-        <article class="post-entry">
+  <article class="post-entry">
   <header class="post-header">
     <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/" class="post-link">WKWebView 清除 cookies</a></h3>
     <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
@@ -209,25 +242,33 @@ NSWindowStyleMask == NSWindowStyleMaskBorderless</p>
     <a class="read-more" href="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/">Read More →</a>
   </footer>
 </article>
-
-      
-        <article class="post-entry">
+  <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" class="post-link">WKWebView 与 WebView 调试器</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/youtube-dl/" class="post-link">youtube-dl</a></h3>
+    <p class="post-meta">@Jepp Hu · Sep 21, 2017 · 1 min read</p>
   </header>
   
-  <p class="post-summary"> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&#34;developerExtrasEnabled&#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</p>
+  <p class="post-summary"> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
+brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &#34;https://127.0.0.1:1080&#34; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL</p>
   <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/">Read More →</a>
+    <a class="read-more" href="https://jepphu.github.io/post/youtube-dl/">Read More →</a>
   </footer>
 </article>
-
+ 
+   
+  <footer class="list-footer">
+    <nav class="pagination">
+      <h3 class="offscreen">Pagination</h3>
       
-    
-    
-  </section>
+      <a class="pagination-previous" href="https://jepphu.github.io/"
+        >← Newer Posts</a
+      >
+       
+    </nav>
+  </footer>
   
+</section>
+
 <footer class="site-footer">
   <p>© 2017-2019 My Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
@@ -259,7 +300,6 @@ NSWindowStyleMask == NSWindowStyleMaskBorderless</p>
 
 
 
-
-
+ 
   </body>
 </html>

@@ -5,7 +5,11 @@
   <meta charset="utf-8" />
 
   
-  <title>WKWebView 清除 cookies</title>
+  <title>
+  Tag → brew
+  
+   | Jepp&#39;s Blog
+</title>
 
   
   
@@ -24,22 +28,20 @@
 
   
   <meta name="author" content="Jepp Hu">
-  <meta name="description" content="NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];">
-
-  
-  
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@gohugoio">
-    <meta name="twitter:title" content="WKWebView 清除 cookies">
-    <meta name="twitter:description" content="NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];">
-    <meta name="twitter:image" content="/images/avatar.png">
   
 
   
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="WKWebView 清除 cookies">
-  <meta property="og:description" content="NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];">
-  <meta property="og:url" content="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@gohugoio">
+  <meta name="twitter:title" content="Jepp&#39;s Blog">
+  
+  <meta name="twitter:image" content="/images/avatar.png">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jepp&#39;s Blog">
+  
+  <meta property="og:url" content="https://jepphu.github.io/tags/brew/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -48,7 +50,8 @@
 <meta name="generator" content="Hugo 0.54.0">
 
 
-<link rel="canonical" href="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/">
+<link rel="canonical" href="https://jepphu.github.io/tags/brew/">
+<link rel="alternate" type="application/rss+xml" href="https://jepphu.github.io/tags/brew/index.xml" title="My Blog">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -99,12 +102,8 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
 
 
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
 
 
 
@@ -126,8 +125,6 @@
     
     <div class="suspension">
       <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
-      
-        
       
     </div>
     
@@ -152,13 +149,13 @@
         <li class="menu-item
           
           
-           is-active">
+          ">
           <a href="https://jepphu.github.io/">Home</a>
         </li>
       
         <li class="menu-item
           
-          
+           is-active
           ">
           <a href="https://jepphu.github.io/tags/">Tags</a>
         </li>
@@ -179,30 +176,32 @@
   </nav>
 </header>
 
-  <section class="main post-detail">
-    <header class="post-header">
-      <h1 class="post-title">WKWebView 清除 cookies</h1>
-      <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  <section class="main post-list">
+    <header class="list-header offscreen">
+      <h2 class="list-label">Posts List</h2>
     </header>
-    <article class="post-content"><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSSet <span style="color:#f92672">*</span>websiteDataTypes <span style="color:#f92672">=</span> [WKWebsiteDataStore allWebsiteDataTypes];
-
-NSDate <span style="color:#f92672">*</span>dateFrom <span style="color:#f92672">=</span> [NSDate dateWithTimeIntervalSince1970:<span style="color:#ae81ff">0</span>];
-
-[[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:<span style="color:#f92672">^</span>{}];</code></pre></div></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="https://jepphu.github.io/tags/wkwebview"><span class="tag">WKWebView</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.This post was published <strong>329</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
-      </p>
-    </footer>
+    
     
       
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/homebrew/" class="post-link">Homebrew</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
+安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference–Downloads–Components–Command Line Tools）
+安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
+Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 用浏览器打开 brew 的官方网站
+brew home  查看信息</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/homebrew/">Read More →</a>
+  </footer>
+</article>
+
+      
+    
     
   </section>
   
@@ -217,33 +216,8 @@ NSDate <span style="color:#f92672">*</span>dateFrom <span style="color:#f92672">
 
 
 
-<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
 
 
-
-
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-      extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    },
-  });
-</script>
-<script type="text/x-mathjax-config">
-  // Fix <code> tags after MathJax finishes running. This is a
-  // hack to overcome a shortcoming of Markdown. Discussion at
-  // https://github.com/mojombo/jekyll/issues/199
-  MathJax.Hub.Queue(() => {
-    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
-  });
-</script>
 
 
 

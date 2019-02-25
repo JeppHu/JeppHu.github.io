@@ -25,6 +25,106 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub 2. 
     </item>
     
     <item>
+      <title>/usr/bin 和 /usr/local/bin</title>
+      <link>https://jepphu.github.io/post/usrbin-%E5%92%8C-usrlocalbin/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/usrbin-%E5%92%8C-usrlocalbin/</guid>
+      <description>usr 指 Unix System Resource，而不是 User
+/usr/bin 下面的都是系统预装的可执行程序，会随着系统升级而改变
+/usr/local/bin 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件
+两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响</description>
+    </item>
+    
+    <item>
+      <title>Apache 服务启动和停止</title>
+      <link>https://jepphu.github.io/post/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
+      <description>启动：sudo apachectl start
+停止：sudo apachectl stop
+重启：sudo apachectl restart
+查看 Apache 版本 httpd -v
+打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
+    </item>
+    
+    <item>
+      <title>Finder 显示隐藏文件</title>
+      <link>https://jepphu.github.io/post/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</guid>
+      <description>显示: defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+隐藏: defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</description>
+    </item>
+    
+    <item>
+      <title>Homebrew</title>
+      <link>https://jepphu.github.io/post/homebrew/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/homebrew/</guid>
+      <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
+安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
+安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
+Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 用浏览器打开 brew 的官方网站
+brew home  查看信息</description>
+    </item>
+    
+    <item>
+      <title>NSView 监听鼠标悬停</title>
+      <link>https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</guid>
+      <description>@interface HoverImageButton () @property (strong,nonatomic) NSTrackingArea *trackingArea; @property (strong,nonatomic) NSImage *tempImage; @property (strong,nonatomic) NSImage *alternateImage; @end@implementation HoverImageButton - (instancetype)initWithCoder:(NSCoder *)coder { self = [super initWithCoder:coder]; if (self) { self.tempImage = self.image; } return self; } - (void)updateTrackingAreas { if (self.trackingArea) { [self removeTrackingArea:self.trackingArea]; } int opts = (NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited); self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:opts owner:self userInfo:nil]; [self addTrackingArea:self.trackingArea]; } - (void)mouseEntered:(NSEvent *)event { [super mouseEntered:event]; self.image = self.alternateImage; } - (void)mouseExited:(NSEvent *)event { [super mouseExited:event]; self.</description>
+    </item>
+    
+    <item>
+      <title>RVM</title>
+      <link>https://jepphu.github.io/post/rvm/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/rvm/</guid>
+      <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
+Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
+RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
+常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info</description>
+    </item>
+    
+    <item>
+      <title>UINavigationBar 底部的线</title>
+      <link>https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
+      <description> 隐藏和显示 UINavigationBar 底部的线 方法1：
+- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.subviews) { UIImageView *imageView= [self navigationBarLineUnder:subview]; if (imageView) { return imageView; } } return nil; } //隐藏 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES; //显示 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO; 方法2：
+//隐藏 [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; //显示 [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:nil];</description>
+    </item>
+    
+    <item>
+      <title>UIView 事件穿透</title>
+      <link>https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/</guid>
+      <description>实现最顶层的 UIView 的 hitTest 方法，返回下层的某个 view 实例，即相当于把那个按钮的事件透出来了
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { UIView *hitView = [super hitTest:point withEvent:event]; if(hitView == self){ return nil; } return hitView; }</description>
+    </item>
+    
+    <item>
+      <title>WKWebView 与 WebView 调试器</title>
+      <link>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&amp;#34;developerExtrasEnabled&amp;#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</description>
+    </item>
+    
+    <item>
       <title>WKWebView 清除 cookies</title>
       <link>https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
@@ -70,6 +170,16 @@ git rm --cached 子模块名称</description>
     </item>
     
     <item>
+      <title>重置 Dock 和 Launchpad</title>
+      <link>https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/post/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</guid>
+      <description>用来解决 APP 图标异常的问题，APP 图标会恢复成默认排序
+defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</description>
+    </item>
+    
+    <item>
       <title>youtube-dl</title>
       <link>https://jepphu.github.io/post/youtube-dl/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
@@ -77,15 +187,6 @@ git rm --cached 子模块名称</description>
       <guid>https://jepphu.github.io/post/youtube-dl/</guid>
       <description> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
 brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &amp;#34;https://127.0.0.1:1080&amp;#34; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL</description>
-    </item>
-    
-    <item>
-      <title>WKWebView 与 WebView 调试器</title>
-      <link>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
-      <description> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&amp;#34;developerExtrasEnabled&amp;#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</description>
     </item>
     
   </channel>

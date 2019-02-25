@@ -200,83 +200,8 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub 2. 
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/git%E5%AD%90%E6%A8%A1%E5%9D%97/" class="post-link">git 子模块</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary"> 添加子模块 添加子模块，完成后会新增一个默认隐藏的配置文件 .gitmodules ，和一个外部项目的子目录 添加完成后需要将子模块切换到合适的分支
-git submodule add 子项目地址（文件夹名称，可不填） 克隆一个带子模块的项目 克隆项目结束后之后，主目录下会包含子模块的空目录，进入主目录
-git submodule init git submodule update git 删除子模块  删除子模块目录及目录下的所有内容 .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目 git/config 删除配置项中子模块相关条目 .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可  执行完成后，再执行添加子模块时报错，执行如下：
-git rm --cached 子模块名称</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/git%E5%AD%90%E6%A8%A1%E5%9D%97/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="post-link">git 基本使用</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
-git config --global user.name &#34;your name&#34; git config --global user.email &#34;your eamil@domain.com&#34; 查看用户名和邮箱
-git config user.name git config user.email 解除全局用户名和邮箱
-git config --global --unset user.name git config --global --unset user.email 查看 git 所有配置
-git config --list 上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &#34;init&#34; git push origin master 克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/" class="post-link">WKWebView 页面显示不全</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary"> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
-解决方法
-NSWindowStyleMask == NSWindowStyleMaskBorderless</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/" class="post-link">WKWebView 清除 cookies</a></h3>
-    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://jepphu.github.io/post/youtube-dl/" class="post-link">youtube-dl</a></h3>
-    <p class="post-meta">@Jepp Hu · Sep 21, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary"> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
-brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &#34;https://127.0.0.1:1080&#34; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://jepphu.github.io/post/youtube-dl/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
     <h3 class="post-title"><a href="https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" class="post-link">WKWebView 与 WebView 调试器</a></h3>
-    <p class="post-meta">@Jepp Hu · Jan 1, 0001 · 1 min read</p>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
   </header>
   
   <p class="post-summary"> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&#34;developerExtrasEnabled&#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</p>
@@ -286,7 +211,140 @@ brew install youtube-dl 常用命令 youtube-dl [OPTIONS] URL [URL...] （URL �
 </article>
 
       
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/" class="post-link">UIView 事件穿透</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">实现最顶层的 UIView 的 hitTest 方法，返回下层的某个 view 实例，即相当于把那个按钮的事件透出来了
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { UIView *hitView = [super hitTest:point withEvent:event]; if(hitView == self){ return nil; } return hitView; }</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/" class="post-link">UINavigationBar 底部的线</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> 隐藏和显示 UINavigationBar 底部的线 方法1：
+- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;&amp; navigationBar.bounds.size.height &lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.subviews) { UIImageView *imageView= [self navigationBarLineUnder:subview]; if (imageView) { return imageView; } } return nil; } //隐藏 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES; //显示 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO; 方法2：
+//隐藏 [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; //显示 [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:nil];</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/rvm/" class="post-link">RVM</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary"> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
+Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
+RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
+常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/rvm/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/" class="post-link">NSView 监听鼠标悬停</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">@interface HoverImageButton () @property (strong,nonatomic) NSTrackingArea *trackingArea; @property (strong,nonatomic) NSImage *tempImage; @property (strong,nonatomic) NSImage *alternateImage; @end@implementation HoverImageButton - (instancetype)initWithCoder:(NSCoder *)coder { self = [super initWithCoder:coder]; if (self) { self.tempImage = self.image; } return self; } - (void)updateTrackingAreas { if (self.trackingArea) { [self removeTrackingArea:self.trackingArea]; } int opts = (NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited); self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:opts owner:self userInfo:nil]; [self addTrackingArea:self.trackingArea]; } - (void)mouseEntered:(NSEvent *)event { [super mouseEntered:event]; self.image = self.alternateImage; } - (void)mouseExited:(NSEvent *)event { [super mouseExited:event]; self.</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/homebrew/" class="post-link">Homebrew</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
+安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference–Downloads–Components–Command Line Tools）
+安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
+Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 用浏览器打开 brew 的官方网站
+brew home  查看信息</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/homebrew/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/" class="post-link">Finder 显示隐藏文件</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">显示: defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+隐藏: defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/" class="post-link">Apache 服务启动和停止</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">启动：sudo apachectl start
+停止：sudo apachectl stop
+重启：sudo apachectl restart
+查看 Apache 版本 httpd -v
+打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://jepphu.github.io/post/usrbin-%E5%92%8C-usrlocalbin/" class="post-link">/usr/bin 和 /usr/local/bin</a></h3>
+    <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">usr 指 Unix System Resource，而不是 User
+/usr/bin 下面的都是系统预装的可执行程序，会随着系统升级而改变
+/usr/local/bin 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件
+两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://jepphu.github.io/post/usrbin-%E5%92%8C-usrlocalbin/">Read More →</a>
+  </footer>
+</article>
+
+      
     
+    
+      <footer class="list-footer">
+        <nav class="pagination">
+          <h3 class="offscreen">Pagination</h3>
+          
+          
+            <a class="pagination-next" href="https://jepphu.github.io/post/page/2/">Older Posts →</a>
+          
+        </nav>
+      </footer>
     
   </section>
   
