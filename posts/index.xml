@@ -68,7 +68,7 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
 安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
 安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
 Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
-常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup  用浏览器打开 brew 的官方网站</description>
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站</description>
     </item>
     
     <item>
@@ -184,7 +184,7 @@ NSWindowStyleMask == NSWindowStyleMaskBorderless  </description>
     </item>
     
     <item>
-      <title>git 基本使用</title>
+      <title>git 基础</title>
       <link>https://jepphu.github.io/2018/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       

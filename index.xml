@@ -204,6 +204,9 @@ brew cleanup git
 
 删除所有软件的旧版本
 brew cleanup
+
+清理和删除无效 Link
+brew prune
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;用浏览器打开 brew 的官方网站&lt;/p&gt;

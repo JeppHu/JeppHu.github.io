@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Jepp Hu</title>
+    <link>https://jepphu.github.io/categories/tools/</link>
+    <description>Recent content in Tools on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>git 配置多账户</title>
+      <link>https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/</guid>
+      <description>1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
+cd ~/.ssh #如果目录不存在，执行 ssh-keygen  生成 github 和 bitbucket 的 key
+cd ~/.ssh ssh-keygen -t rsa -C &amp;quot;youremail@domain.com&amp;quot; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa，回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &amp;quot;youremail@domain.com&amp;quot; #同上自定义名字，如：my_bitbucket_rsa  此时在 .ssh 目录下至少会有以下5个文件，.pub 后缀的为公钥，另一个为秘钥
+config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host bitbucket.org HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.</description>
+    </item>
+    
+    <item>
+      <title>Apache 服务启动和停止</title>
+      <link>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
+      <description>启动：sudo apachectl start
+停止：sudo apachectl stop
+重启：sudo apachectl restart
+查看 Apache 版本 httpd -v
+打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
+    </item>
+    
+    <item>
+      <title>Homebrew</title>
+      <link>https://jepphu.github.io/2018/homebrew/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/homebrew/</guid>
+      <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
+安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
+安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
+Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站</description>
+    </item>
+    
+    <item>
+      <title>RVM</title>
+      <link>https://jepphu.github.io/2018/rvm/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/rvm/</guid>
+      <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
+Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
+RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
+常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info  </description>
+    </item>
+    
+    <item>
+      <title>git 基础</title>
+      <link>https://jepphu.github.io/2018/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
+git config --global user.name &amp;quot;your name&amp;quot; git config --global user.email &amp;quot;your eamil@domain.com&amp;quot;  查看用户名和邮箱
+git config user.name git config user.email  解除全局用户名和邮箱
+git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
+git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
+    </item>
+    
+    <item>
+      <title>git 子模块</title>
+      <link>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</guid>
+      <description> 添加子模块 添加子模块，完成后会新增一个默认隐藏的配置文件 .gitmodules ，和一个外部项目的子目录 添加完成后需要将子模块切换到合适的分支
+git submodule add 子项目地址（文件夹名称，可不填）  克隆一个带子模块的项目 克隆项目结束后之后，主目录下会包含子模块的空目录，进入主目录
+git submodule init git submodule update  git 删除子模块  删除子模块目录及目录下的所有内容 .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目 git/config 删除配置项中子模块相关条目 .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可  执行完成后，再执行添加子模块时报错，执行如下：
+git rm --cached 子模块名称  </description>
+    </item>
+    
+    <item>
+      <title>youtube-dl</title>
+      <link>https://jepphu.github.io/2017/youtube-dl/</link>
+      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/youtube-dl/</guid>
+      <description> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
+brew install youtube-dl  常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &amp;quot;https://127.0.0.1:1080&amp;quot; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -23,5 +23,25 @@
 两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响</description>
     </item>
     
+    <item>
+      <title>Finder 显示隐藏文件</title>
+      <link>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</guid>
+      <description>显示: defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+隐藏: defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</description>
+    </item>
+    
+    <item>
+      <title>重置 Dock 和 Launchpad</title>
+      <link>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</guid>
+      <description>用来解决 APP 图标异常的问题，APP 图标会恢复成默认排序
+defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</description>
+    </item>
+    
   </channel>
 </rss>

@@ -235,6 +235,18 @@
     </url>
   
     <url>
+      <loc>https://jepphu.github.io/tags/git/</loc>
+      
+      <lastmod>2019-02-21T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://jepphu.github.io/</loc>
       
       <lastmod>2019-02-21T00:00:00+00:00</lastmod>
@@ -260,18 +272,6 @@
   
     <url>
       <loc>https://jepphu.github.io/categories/mac/</loc>
-      
-      <lastmod>2018-04-02T00:00:00+00:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://jepphu.github.io/tags/mac-os-x/</loc>
       
       <lastmod>2018-04-02T00:00:00+00:00</lastmod>
       
@@ -345,6 +345,30 @@
     <url>
       <loc>https://jepphu.github.io/tags/</loc>
       
+      <lastmod>2019-02-21T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://jepphu.github.io/categories/tools/</loc>
+      
+      <lastmod>2019-02-21T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://jepphu.github.io/categories/uikit/</loc>
+      
       <lastmod>2018-04-02T00:00:00+00:00</lastmod>
       
       
@@ -406,18 +430,6 @@
       <loc>https://jepphu.github.io/tags/brew/</loc>
       
       <lastmod>2018-04-02T00:00:00+00:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://jepphu.github.io/tags/git/</loc>
-      
-      <lastmod>2019-02-21T00:00:00+00:00</lastmod>
       
       
       

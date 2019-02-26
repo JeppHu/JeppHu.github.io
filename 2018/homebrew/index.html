@@ -50,7 +50,7 @@
 安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&ndash;Downloads&ndash;Components&ndash;Command Line Tools）
 安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
 Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
-常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup  用浏览器打开 brew 的官方网站",
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -61,7 +61,7 @@ Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /us
     "datePublished": "2018-04-02 00:00:00 &#43;0000 UTC",
     "dateModified" : "2018-04-02 00:00:00 &#43;0000 UTC",
     "url" : "https://jepphu.github.io/2018/homebrew/",
-    "wordCount" : "77",
+    "wordCount" : "81",
     "keywords" : [ "brew", "Jepp Hu"]
 }
 </script>
@@ -127,7 +127,11 @@ Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /us
                 on <time datetime=2018-04-02 itemprop="datePublished">April 2, 2018</time>
                 </span>
                 in
-                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://jepphu.github.io/categories/tools/"> Tools </a>
+                        
+                </span>
         </div>
     </header>
     <div class="post-content">
@@ -196,6 +200,9 @@ brew cleanup git
 
 删除所有软件的旧版本
 brew cleanup
+
+清理和删除无效 Link
+brew prune
 </code></pre>
 
 <p>用浏览器打开 brew 的官方网站</p>
