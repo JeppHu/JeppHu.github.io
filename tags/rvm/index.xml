@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rvm on My Blog</title>
+    <title>rvm on Jepp Hu</title>
     <link>https://jepphu.github.io/tags/rvm/</link>
-    <description>Recent content in Rvm on My Blog</description>
+    <description>Recent content in rvm on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/rvm/index.xml" rel="self" type="application/rss+xml" />
@@ -14,14 +13,14 @@
     
     <item>
       <title>RVM</title>
-      <link>https://jepphu.github.io/post/rvm/</link>
+      <link>https://jepphu.github.io/2018/rvm/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/post/rvm/</guid>
+      <guid>https://jepphu.github.io/2018/rvm/</guid>
       <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
 Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
 RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
-常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info</description>
+常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info  </description>
     </item>
     
   </channel>

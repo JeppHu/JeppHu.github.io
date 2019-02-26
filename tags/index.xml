@@ -1,46 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My Blog</title>
+    <title>Tags on Jepp Hu</title>
     <link>https://jepphu.github.io/tags/</link>
-    <description>Recent content in Tags on My Blog</description>
+    <description>Recent content in Tags on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Brew</title>
-      <link>https://jepphu.github.io/tags/brew/</link>
+      <title>Mac</title>
+      <link>https://jepphu.github.io/tags/mac/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/brew/</guid>
+      <guid>https://jepphu.github.io/tags/mac/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Git</title>
-      <link>https://jepphu.github.io/tags/git/</link>
-      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Info.plist</title>
-      <link>https://jepphu.github.io/tags/info.plist/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/info.plist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac Os X</title>
+      <title>Mac OS X</title>
       <link>https://jepphu.github.io/tags/mac-os-x/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -49,7 +30,7 @@
     </item>
     
     <item>
-      <title>Nsapplication</title>
+      <title>NSApplication</title>
       <link>https://jepphu.github.io/tags/nsapplication/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -58,7 +39,7 @@
     </item>
     
     <item>
-      <title>Nscolorpanel</title>
+      <title>NSColorPanel</title>
       <link>https://jepphu.github.io/tags/nscolorpanel/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -67,7 +48,7 @@
     </item>
     
     <item>
-      <title>Nsview</title>
+      <title>NSView</title>
       <link>https://jepphu.github.io/tags/nsview/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -76,7 +57,7 @@
     </item>
     
     <item>
-      <title>Nswindow</title>
+      <title>NSWindow</title>
       <link>https://jepphu.github.io/tags/nswindow/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -85,16 +66,7 @@
     </item>
     
     <item>
-      <title>Rvm</title>
-      <link>https://jepphu.github.io/tags/rvm/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/rvm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Uinavigation</title>
+      <title>UINavigation</title>
       <link>https://jepphu.github.io/tags/uinavigation/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -103,7 +75,7 @@
     </item>
     
     <item>
-      <title>Uiview</title>
+      <title>UIView</title>
       <link>https://jepphu.github.io/tags/uiview/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -112,16 +84,7 @@
     </item>
     
     <item>
-      <title>Webview</title>
-      <link>https://jepphu.github.io/tags/webview/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/webview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wkwebview</title>
+      <title>WKWebView</title>
       <link>https://jepphu.github.io/tags/wkwebview/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -130,7 +93,52 @@
     </item>
     
     <item>
-      <title>Youtube Dl</title>
+      <title>WebView</title>
+      <link>https://jepphu.github.io/tags/webview/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/webview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>brew</title>
+      <link>https://jepphu.github.io/tags/brew/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/brew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://jepphu.github.io/tags/git/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>info.plist</title>
+      <link>https://jepphu.github.io/tags/info.plist/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/info.plist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rvm</title>
+      <link>https://jepphu.github.io/tags/rvm/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/rvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube-dl</title>
       <link>https://jepphu.github.io/tags/youtube-dl/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
       

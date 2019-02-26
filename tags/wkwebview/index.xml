@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wkwebview on My Blog</title>
+    <title>WKWebView on Jepp Hu</title>
     <link>https://jepphu.github.io/tags/wkwebview/</link>
-    <description>Recent content in Wkwebview on My Blog</description>
+    <description>Recent content in WKWebView on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/wkwebview/index.xml" rel="self" type="application/rss+xml" />
@@ -14,31 +13,31 @@
     
     <item>
       <title>WKWebView 与 WebView 调试器</title>
-      <link>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <link>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
-      <description> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&amp;#34;developerExtrasEnabled&amp;#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</description>
+      <guid>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description> WKWebView #ifdef DEBUG [self.webView.configuration.preferences setValue:@YES forKey:@&amp;quot;developerExtrasEnabled&amp;quot;]; #endif  WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE  </description>
     </item>
     
     <item>
       <title>WKWebView 清除 cookies</title>
-      <link>https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
+      <link>https://jepphu.github.io/2018/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/</guid>
-      <description>NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];</description>
+      <guid>https://jepphu.github.io/2018/wkwebview%E6%B8%85%E9%99%A4cookies/</guid>
+      <description>NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];  </description>
     </item>
     
     <item>
       <title>WKWebView 页面显示不全</title>
-      <link>https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</link>
+      <link>https://jepphu.github.io/2018/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</guid>
-      <description> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+      <guid>https://jepphu.github.io/2018/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</guid>
+      <description> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView  此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
 解决方法
-NSWindowStyleMask == NSWindowStyleMaskBorderless</description>
+NSWindowStyleMask == NSWindowStyleMaskBorderless  </description>
     </item>
     
   </channel>

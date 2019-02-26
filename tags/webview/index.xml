@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webview on My Blog</title>
+    <title>WebView on Jepp Hu</title>
     <link>https://jepphu.github.io/tags/webview/</link>
-    <description>Recent content in Webview on My Blog</description>
+    <description>Recent content in WebView on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/webview/index.xml" rel="self" type="application/rss+xml" />
@@ -14,11 +13,11 @@
     
     <item>
       <title>WKWebView 与 WebView 调试器</title>
-      <link>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <link>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/post/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
-      <description> WKWebView #ifdef DEBUG  [self.webView.configuration.preferences setValue:@YES forKey:@&amp;#34;developerExtrasEnabled&amp;#34;]; #endif WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE</description>
+      <guid>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description> WKWebView #ifdef DEBUG [self.webView.configuration.preferences setValue:@YES forKey:@&amp;quot;developerExtrasEnabled&amp;quot;]; #endif  WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE  </description>
     </item>
     
   </channel>

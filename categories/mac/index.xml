@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Jepp Hu</title>
+    <link>https://jepphu.github.io/categories/mac/</link>
+    <description>Recent content in Mac on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>/usr/bin 和 /usr/local/bin</title>
+      <link>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</guid>
+      <description>usr 指 Unix System Resource，而不是 User
+/usr/bin 下面的都是系统预装的可执行程序，会随着系统升级而改变
+/usr/local/bin 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件
+两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响</description>
+    </item>
+    
+  </channel>
+</rss>

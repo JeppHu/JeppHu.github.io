@@ -1,272 +1,236 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-
-  <meta charset="utf-8" />
-
-  
-  <title>WKWebView 页面显示不全</title>
-
-  
-  
-  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
-  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
-  <link href="//at.alicdn.com" rel="dns-prefetch">
-  <link href="//fonts.googleapis.com" rel="dns-prefetch">
-  <link href="//fonts.gstatic.com" rel="dns-prefetch">
-  
-  
-  
-  
-  
-
-  
-
-  
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
   <meta name="author" content="Jepp Hu">
-  <meta name="description" content=" WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+  
+  
+  
+  <link rel="prev" href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" />
+  <link rel="next" href="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/" />
+  <link rel="canonical" href="https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
+  <link rel="manifest" href="https://jepphu.github.io/site.webmanifest">
+  <link rel="mask-icon" href="https://jepphu.github.io/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           WKWebView 页面显示不全 | My Blog
+       
+  </title>
+  <meta name="title" content="WKWebView 页面显示不全 | My Blog">
+    
+  
+  <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
+  <link rel="stylesheet" href="https://jepphu.github.io/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://jepphu.github.io/"
+    },
+    "articleSection" : "post",
+    "name" : "WKWebView 页面显示不全",
+    "headline" : "WKWebView 页面显示不全",
+    "description" : " WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
 解决方法
-NSWindowStyleMask == NSWindowStyleMaskBorderless">
-
-  
-  
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@gohugoio">
-    <meta name="twitter:title" content="WKWebView 页面显示不全">
-    <meta name="twitter:description" content=" WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
-解决方法
-NSWindowStyleMask == NSWindowStyleMaskBorderless">
-    <meta name="twitter:image" content="/images/avatar.png">
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="WKWebView 页面显示不全">
-  <meta property="og:description" content=" WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView 此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
-解决方法
-NSWindowStyleMask == NSWindowStyleMaskBorderless">
-  <meta property="og:url" content="https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">
-  <meta property="og:image" content="/images/avatar.png">
-
-
-
-
-<meta name="generator" content="Hugo 0.54.0">
-
-
-<link rel="canonical" href="https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/">
-
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="format-detection" content="telephone=no,email=no,adress=no">
-<meta http-equiv="Cache-Control" content="no-transform">
-
-
-<meta name="robots" content="index,follow">
-<meta name="referrer" content="origin-when-cross-origin">
-
-
-
-
-
-
-
-<meta name="theme-color" content="#02b875">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="My Blog">
-<meta name="msapplication-tooltip" content="My Blog">
-<meta name='msapplication-navbutton-color' content="#02b875">
-<meta name="msapplication-TileColor" content="#02b875">
-<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
-<link rel="icon" href="https://jepphu.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/icons/icon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/icons/icon-32x32.png">
-<link rel="icon" sizes="192x192" href="https://jepphu.github.io/icons/icon-192x192.png">
-<link rel="apple-touch-icon" href="https://jepphu.github.io/icons/icon-152x152.png">
-<link rel="manifest" href="https://jepphu.github.io/manifest.json">
-
-
-<link rel="preload" href="https://jepphu.github.io/styles/main.min.css" as="style">
-
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
-<link rel="preload" href="https://jepphu.github.io/images/avatar.png" as="image">
-<link rel="preload" href="https://jepphu.github.io/images/grey-prism.svg" as="image">
-
-
-<style>
-  body {
-    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
-  }
-</style>
-<link rel="stylesheet" href="https://jepphu.github.io/styles/main.min.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
-
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
-
-
-
-  
-  
-<!--[if lte IE 8]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
-<![endif]-->
-
-<!--[if lte IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
-<![endif]-->
-
+NSWindowStyleMask == NSWindowStyleMaskBorderless",
+    "inLanguage" : "en-us",
+    "author" : "Jepp Hu",
+    "creator" : "Jepp Hu",
+    "publisher": "Jepp Hu",
+    "accountablePerson" : "Jepp Hu",
+    "copyrightHolder" : "Jepp Hu",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-04-02 00:00:00 &#43;0000 UTC",
+    "dateModified" : "2018-04-02 00:00:00 &#43;0000 UTC",
+    "url" : "https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/",
+    "wordCount" : "19",
+    "keywords" : [ "WKWebView","NSWindow", "My Blog"]
+}
+</script>
 
 </head>
-  <body>
-    
-    <div class="suspension">
-      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
-      
-        
-      
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://jepphu.github.io/">My Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="https://jepphu.github.io/posts/" title="">Home</a>
+                
+                <a class="menu-item" href="https://jepphu.github.io/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="https://jepphu.github.io/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="https://jepphu.github.io/about/" title="">About</a>
+                
+        </div>
     </div>
-    
-    
-  <header class="site-header">
-  <img class="avatar" src="https://jepphu.github.io/images/avatar.png" alt="Avatar">
-  
-  <h2 class="title">My Blog</h2>
-  
-  <p class="subtitle">~ &amp; ~</p>
-  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
-    <span class="icon icon-menu" aria-hidden="true"></span>
-  </button>
-
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-        <li class="menu-item
-          
-          
-           is-active">
-          <a href="https://jepphu.github.io/">Home</a>
-        </li>
-      
-        <li class="menu-item
-          
-          
-          ">
-          <a href="https://jepphu.github.io/tags/">Tags</a>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-    <ul class="social-list"><li class="social-item">
-          <a href="mailto:jepp.hu@mail.com" title="Email" aria-label="Email">
-            <span class="icon icon-email" aria-hidden="true"></span>
-          </a>
-        </li><li class="social-item">
-          <a href="//github.com/github_JeppHu" title="GitHub" aria-label="GitHub">
-            <span class="icon icon-github" aria-hidden="true"></span>
-          </a>
-        </li></ul>
-  </nav>
-</header>
-
-  <section class="main post-detail">
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://jepphu.github.io/">My Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="https://jepphu.github.io/posts/" title="">Home</a>
+                
+                <a class="menu-item" href="https://jepphu.github.io/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="https://jepphu.github.io/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="https://jepphu.github.io/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-      <h1 class="post-title">WKWebView 页面显示不全</h1>
-      <p class="post-meta">@Jepp Hu · Apr 2, 2018 · 1 min read</p>
+        <h1 class="post-title" itemprop="name headline">WKWebView 页面显示不全</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-04-02 itemprop="datePublished">April 2, 2018</time>
+                </span>
+                in
+                
+        </div>
     </header>
-    <article class="post-content">
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
 
 <h3 id="wkwebview-因为-nswindow-属性造成的-bug">WKWebView 因为 NSWindow 属性造成的 bug</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSWindowStyleMask  <span style="color:#f92672">==</span>  NSWindowStyleMaskFullSizeContentView</code></pre></div>
 <p>此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况</p>
 
 <p><strong>解决方法</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSWindowStyleMask  <span style="color:#f92672">==</span>  NSWindowStyleMaskBorderless</code></pre></div></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="https://jepphu.github.io/tags/wkwebview"><span class="tag">WKWebView</span></a></li>
-        
-          <li><a href="https://jepphu.github.io/tags/nswindow"><span class="tag">NSWindow</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.This post was published <strong>329</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
-      </p>
-    </footer>
-    
-      
-    
-  </section>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSWindowStyleMask  <span style="color:#f92672">==</span>  NSWindowStyleMaskBorderless</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Jepp Hu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/>https://jepphu.github.io/post/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
   
-<footer class="site-footer">
-  <p>© 2017-2019 My Blog</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
-  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://jepphu.github.io/tags/wkwebview/">
+                    #WKWebView</a></span>
+            
+            <span class="tag"><a href="https://jepphu.github.io/tags/nswindow/">
+                    #NSWindow</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://jepphu.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://jepphu.github.io/post/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="prev" rel="prev" title="git 基本使用"><i class="iconfont icon-left"></i>&nbsp;git 基本使用</a>
+         
+        
+        <a href="https://jepphu.github.io/post/wkwebview%E6%B8%85%E9%99%A4cookies/" class="next" rel="next" title="WKWebView 清除 cookies">WKWebView 清除 cookies&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://jepphu.github.io/">Jepp Hu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
 </footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
-
-
-
-<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
-
-
-
-
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-      extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    },
-  });
-</script>
-<script type="text/x-mathjax-config">
-  // Fix <code> tags after MathJax finishes running. This is a
-  // hack to overcome a shortcoming of Markdown. Discussion at
-  // https://github.com/mojombo/jekyll/issues/199
-  MathJax.Hub.Queue(() => {
-    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
-  });
-</script>
-
-
-
-<script src="https://jepphu.github.io/scripts/index.min.js"></script>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('\/service-worker.js').then(function() {
-      console.log('[ServiceWorker] Registered');
-    });
-  }
-</script>
 
 
 
@@ -275,5 +239,16 @@ NSWindowStyleMask == NSWindowStyleMaskBorderless">
 
 
 
+
+
+    
+    
+    <script src="https://jepphu.github.io/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
   </body>
 </html>
