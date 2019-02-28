@@ -45,6 +45,26 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     </item>
     
     <item>
+      <title>iOS 约束布局与动画</title>
+      <link>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
+      <description>在控件被添加了约束的情况下，修改 frame 是无法实现的动画的
+ 修改约束的值 调用 layoutIfNeeded，要注意调用时机  self.viewHeight.constant = 0; [UIView animateWithDuration:0.25 animations:^{ [self.view layoutIfNeeded]; }];  </description>
+    </item>
+    
+    <item>
+      <title>SFSafariViewController</title>
+      <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
+      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/sfsafariviewcontroller/</guid>
+      <description>不用跳出 app，直接在 app 内打开隐私协议等网址
+#import &amp;lt;SafariServices/SafariServices.h&amp;gt;  &amp;lt;SFSafariViewControllerDelegate&amp;gt;  - (IBAction)action:(id)sender { NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;]; SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url]; safariVC.delegate = self; // self.navigationController.navigationBarHidden = YES; // [self.navigationController pushViewController:safariVC animated:YES]; [self presentViewController:safariVC animated:YES completion:nil]; } // 加载完成 - (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully { } // 按钮 Done - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller { }  </description>
+    </item>
+    
+    <item>
       <title>UIView 子视图坐标转换</title>
       <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
@@ -55,6 +75,22 @@ ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图
 ViewC 此时的 frame 是相对于 ViewB 的
 如果需求为获取 ViewC 此时相对于 ViewA 的 frame
 - (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view; - (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view; CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA]; //或 CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];  </description>
+    </item>
+    
+    <item>
+      <title>UINavigationBar</title>
+      <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
+      <description>UINavgationBar 设置颜色 UINavigationController *nav = self.navigationController; nav.navigationBar.tintColor = [UIColor whiteColor]; nav.navigationBar.barTintColor = [UIColor colorWithRed:28/255.0 green:152/255.0 blue:225/255.0 alpha:1.0]; nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor]};  此时会觉得 navigationbar 颜色很浅，因为这是半透明状态
+默认 navigationbar.translucent = YES
+改为 navigationbar.translucent = NO
+颜色问题解决，但是子控制器视图整体下移，加上下面这句
+self.extendedLayoutIncludesOpaqueBars = YES;
+或者在 storyboard 中 viewController 属性勾选 Under Opaque Bars
+如果有特殊需求，尝试使用下面的方法
+透明化和显示 UINavigationBar 以及 UINavigationBar 底部的线  方法1：  - (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.</description>
     </item>
     
     <item>
@@ -80,6 +116,15 @@ ViewC 此时的 frame 是相对于 ViewB 的
 重启：sudo apachectl restart
 查看 Apache 版本 httpd -v
 打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
+    </item>
+    
+    <item>
+      <title>App 发送邮件</title>
+      <link>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
+      <description>iOS App 发送邮件 #import &amp;lt;MessageUI/MessageUI.h&amp;gt;  &amp;lt;MFMailComposeViewControllerDelegate&amp;gt;  [self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];  - (void)sendEmail:(NSString *)email { if ([MFMailComposeViewController canSendMail]) { // [self.navigationController presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; [self presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; } else { UIAlertController *sendMailErrorAlert = [UIAlertController alertControllerWithTitle:@&amp;quot;Can not send&amp;quot; message:@&amp;quot;Please set your email&amp;quot; preferredStyle:UIAlertControllerStyleAlert]; [sendMailErrorAlert addAction:[UIAlertAction actionWithTitle:@&amp;quot;OK&amp;quot; style:UIAlertActionStyleDefault handler:nil]]; // [self.navigationController presentViewController:sendMailErrorAlert animated:YES completion:nil]; [self presentViewController:sendMailErrorAlert animated:YES completion:nil]; } } - (MFMailComposeViewController *)configuredMailComposeViewControllerWithEmail:(NSString *)email { MFMailComposeViewController *mfVC = [[MFMailComposeViewController alloc] init]; mfVC.</description>
     </item>
     
     <item>
@@ -168,24 +213,14 @@ RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切�
     </item>
     
     <item>
-      <title>UINavigationBar 底部的线</title>
-      <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
+      <title>UIView 事件拦截</title>
+      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
-      <description> 隐藏和显示 UINavigationBar 底部的线 方法1：
-- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.subviews) { UIImageView *imageView= [self navigationBarLineUnder:subview]; if (imageView) { return imageView; } } return nil; } //隐藏 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES; //显示 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO;  方法2：
-//隐藏 [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; //显示 [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:nil];  </description>
-    </item>
-    
-    <item>
-      <title>UIView 事件穿透</title>
-      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/</guid>
-      <description>实现最顶层的 UIView 的 hitTest 方法，返回下层的某个 view 实例，即相当于把那个按钮的事件透出来了
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { UIView *hitView = [super hitTest:point withEvent:event]; if(hitView == self){ return nil; } return hitView; }  </description>
+      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
+      <description>hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者
+subViews 的 touch 相关方法不会响应
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{ // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件 if (CGRectContainsPoint(self.bounds, point)) { return self; } return nil; }  允许部分 subViews 响应事件 重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者</description>
     </item>
     
     <item>
@@ -215,19 +250,6 @@ RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切�
       <description> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView  此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
 解决方法
 NSWindowStyleMask == NSWindowStyleMaskBorderless  </description>
-    </item>
-    
-    <item>
-      <title>git 基础</title>
-      <link>https://jepphu.github.io/2018/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
-      <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
-git config --global user.name &amp;quot;your name&amp;quot; git config --global user.email &amp;quot;your eamil@domain.com&amp;quot;  查看用户名和邮箱
-git config user.name git config user.email  解除全局用户名和邮箱
-git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
-git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
     </item>
     
     <item>
@@ -279,6 +301,32 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</descripti
       <guid>https://jepphu.github.io/2017/youtube-dl/</guid>
       <description> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
 brew install youtube-dl  常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &amp;quot;https://127.0.0.1:1080&amp;quot; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL  </description>
+    </item>
+    
+    <item>
+      <title>git 基础</title>
+      <link>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</guid>
+      <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
+git config --global user.name &amp;quot;your name&amp;quot; git config --global user.email &amp;quot;your eamil@domain.com&amp;quot;  查看用户名和邮箱
+git config user.name git config user.email  解除全局用户名和邮箱
+git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
+git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
+    </item>
+    
+    <item>
+      <title>viewController 生命周期</title>
+      <link>https://jepphu.github.io/2016/viewcontroller%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2016/viewcontroller%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>viewController 生命周期  viewController 的创建 （xib，storyBoard）
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
+ view 的创建
+- (void)loadView;
+ view 是懒加载的 只有系统认为需要生成一个 view 的时候，才会调用这个方法来创建一个 view，这个时候通常是 presentViewController: 或 pushViewController: 的时候 当只有 viewController 的初始化的时候，不会创建一个 view， 也不会走 - (void)viewDidLoad 想要不 presentViewController: 或 pushViewController: 的情况下创建 view，访问一下 view 即可，[ViewController view] 一但重写了 loadView，需要自己创建 view，这个时候可以生成一个 UIImageView , WKWebView 等其它 view    - (void)loadView { UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@&amp;quot;Default&amp;quot;]]; imageView.frame = [UIScreen mainScreen].bounds; imageView.userInteractionEnabled = YES; self.</description>
     </item>
     
   </channel>

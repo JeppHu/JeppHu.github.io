@@ -166,6 +166,64 @@ BaiduPCS-Go logout
     </item>
     
     <item>
+      <title>iOS 约束布局与动画</title>
+      <link>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
+      <description>&lt;p&gt;在控件被添加了约束的情况下，修改 frame 是无法实现的动画的&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;修改约束的值&lt;/li&gt;
+&lt;li&gt;调用 &lt;code&gt;layoutIfNeeded&lt;/code&gt;，要注意调用时机&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;self.viewHeight.constant = 0;
+
+[UIView animateWithDuration:0.25 animations:^{
+    [self.view layoutIfNeeded];
+}];
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SFSafariViewController</title>
+      <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
+      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/sfsafariviewcontroller/</guid>
+      <description>&lt;p&gt;不用跳出 app，直接在 app 内打开隐私协议等网址&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;#import &amp;lt;SafariServices/SafariServices.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;&amp;lt;SFSafariViewControllerDelegate&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (IBAction)action:(id)sender {
+    NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;];
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+    safariVC.delegate = self;
+//    self.navigationController.navigationBarHidden = YES;
+//    [self.navigationController pushViewController:safariVC animated:YES];
+    [self presentViewController:safariVC animated:YES completion:nil];
+}
+
+// 加载完成
+- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully {
+
+}
+
+// 按钮 Done
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>UIView 子视图坐标转换</title>
       <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
@@ -185,6 +243,77 @@ BaiduPCS-Go logout
 CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA];
 //或
 CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UINavigationBar</title>
+      <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
+      <description>
+
+&lt;h3 id=&#34;uinavgationbar-设置颜色&#34;&gt;UINavgationBar 设置颜色&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UINavigationController *nav = self.navigationController;
+nav.navigationBar.tintColor = [UIColor whiteColor];
+nav.navigationBar.barTintColor = [UIColor colorWithRed:28/255.0 green:152/255.0 blue:225/255.0 alpha:1.0];
+nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor]};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此时会觉得 navigationbar 颜色很浅，因为这是半透明状态&lt;/p&gt;
+
+&lt;p&gt;默认 &lt;code&gt;navigationbar.translucent = YES&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;改为 &lt;code&gt;navigationbar.translucent = NO&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;颜色问题解决，但是子控制器视图整体下移，加上下面这句&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;self.extendedLayoutIncludesOpaqueBars = YES;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;或者在 storyboard 中 viewController 属性勾选 Under Opaque Bars&lt;/p&gt;
+
+&lt;p&gt;如果有特殊需求，尝试使用下面的方法&lt;/p&gt;
+
+&lt;h3 id=&#34;透明化和显示-uinavigationbar-以及-uinavigationbar-底部的线&#34;&gt;透明化和显示 UINavigationBar 以及 UINavigationBar 底部的线&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;方法1：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar {
+    if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) {
+        return (UIImageView *)navigationBar;
+    }
+    for (UIView *subview in navigationBar.subviews) {
+        UIImageView *imageView= [self navigationBarLineUnder:subview];
+        if (imageView) {
+            return imageView;
+            }
+    }
+    return nil;
+}
+
+//隐藏
+[self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES;
+
+//显示
+[self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;方法2：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;//隐藏
+[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+[self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+
+//显示
+[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+[self.navigationController.navigationBar setShadowImage:nil];
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -220,6 +349,81 @@ CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];
 &lt;p&gt;查看 Apache 版本 &lt;code&gt;httpd -v&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;打开 &lt;a href=&#34;http://127.0.0.1&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://127.0.0.1&lt;/a&gt; 可以看到 It works! 的页面，启动成功&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>App 发送邮件</title>
+      <link>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
+      <description>
+
+&lt;h3 id=&#34;ios-app-发送邮件&#34;&gt;iOS App 发送邮件&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;#import &amp;lt;MessageUI/MessageUI.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;&amp;lt;MFMailComposeViewControllerDelegate&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)sendEmail:(NSString *)email {
+    if ([MFMailComposeViewController canSendMail]) {
+//        [self.navigationController presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil];
+        [self presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil];
+    } else {
+        UIAlertController *sendMailErrorAlert = [UIAlertController alertControllerWithTitle:@&amp;quot;Can not send&amp;quot; message:@&amp;quot;Please set your email&amp;quot; preferredStyle:UIAlertControllerStyleAlert];
+        [sendMailErrorAlert addAction:[UIAlertAction actionWithTitle:@&amp;quot;OK&amp;quot; style:UIAlertActionStyleDefault handler:nil]];
+//        [self.navigationController presentViewController:sendMailErrorAlert animated:YES completion:nil];
+        [self presentViewController:sendMailErrorAlert animated:YES completion:nil];
+    }
+}
+
+- (MFMailComposeViewController *)configuredMailComposeViewControllerWithEmail:(NSString *)email {
+    MFMailComposeViewController *mfVC = [[MFMailComposeViewController alloc] init];
+    mfVC.mailComposeDelegate = self;
+    // 地址
+    [mfVC setToRecipients:@[email]];
+    // 主题
+    [mfVC setSubject:@&amp;quot;&amp;quot;];
+    // 内容
+    [mfVC setMessageBody:@&amp;quot;&amp;quot; isHTML:NO];
+    return mfVC;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// MFMailComposeViewControllerDelegate
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    if (result == MFMailComposeResultFailed) {
+        
+    } else if (result == MFMailComposeResultSent) {
+        
+    }
+    
+    //关闭邮件发送窗口
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;osx-app-发送邮件&#34;&gt;OSX App 发送邮件&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)sendEmail:(NSString *)email {
+    NSString *recipients = [NSString stringWithFormat:@&amp;quot;mailto:%@?subject=%@&amp;quot;,eamil,@&amp;quot;subject&amp;quot;];
+    NSString *body = [NSString stringWithFormat:@&amp;quot;&amp;amp;body=%@ I have something to say about %@ %@:\n&amp;quot;, @&amp;quot;body&amp;quot;, @&amp;quot;appName&amp;quot;, @&amp;quot;version&amp;quot;];
+    NSString *email = [NSString stringWithFormat:@&amp;quot;%@%@&amp;quot;, recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:email]];
+}
+
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -430,164 +634,6 @@ brew prune
 
 &lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self setBackgroundColor:[NSColor clearColor]];
 [self setOpaque:NO];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>NSWindow 改变 WindowButton 位置</title>
-      <link>https://jepphu.github.io/2018/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/</guid>
-      <description>&lt;p&gt;NSWindow 上的三个按钮&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSButton *closeBtn = [self standardWindowButton:NSWindowCloseButton];
-NSButton *miniaturizeBtn = [self standardWindowButton:NSWindowMiniaturizeButton];
-NSButton *zoomBtn = [self standardWindowButton:NSWindowZoomButton];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;系统创建的默认 frame 分别为&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;(7.000000,3.000000),(14.000000,16.000000)
-(27.000000,3.000000),(14.000000,16.000000)
-(47.000000,3.000000),(14.000000,16.000000)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;button 创建时是自动布局，直接修改 frame 无效&lt;/p&gt;
-
-&lt;p&gt;关闭自动布局，添加约束布局就能修改 window button 的位置&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;closeBtn.translatesAutoresizingMaskIntoConstraints = NO;
-miniaturizeBtn.translatesAutoresizingMaskIntoConstraints = NO;
-zoomBtn.translatesAutoresizingMaskIntoConstraints = NO;
-
-NSLayoutConstraint *leftContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:4.0];
-NSLayoutConstraint *topContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:3.0];
-leftContraint1.active = YES;
-topContraint1.active = YES;
-
-NSLayoutConstraint *leftContraint2 = [NSLayoutConstraint constraintWithItem:miniaturizeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:miniaturizeBtn.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:23.0];
-NSLayoutConstraint *topContraint2 = [NSLayoutConstraint constraintWithItem:miniaturizeBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:miniaturizeBtn.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:3.0];
-leftContraint2.active = YES;
-topContraint2.active = YES;
-
-NSLayoutConstraint *leftContraint3 = [NSLayoutConstraint constraintWithItem:zoomBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:zoomBtn.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:43.0];
-NSLayoutConstraint *topContraint3 = [NSLayoutConstraint constraintWithItem:zoomBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:zoomBtn.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:3.0];
-leftContraint3.active = YES;
-topContraint3.active = YES;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>RVM</title>
-      <link>https://jepphu.github.io/2018/rvm/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/rvm/</guid>
-      <description>
-
-&lt;h3 id=&#34;rvm-http-www-rvm-io-ruby-version-manager&#34;&gt;&lt;a href=&#34;http://www.rvm.io/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;RVM&lt;/a&gt; : Ruby Version Manager&lt;/h3&gt;
-
-&lt;p&gt;Ruby 是一种开源的面向对象程序设计的服务器端脚本语言&lt;/p&gt;
-
-&lt;p&gt;Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求&lt;/p&gt;
-
-&lt;p&gt;RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能&lt;/p&gt;
-
-&lt;h3 id=&#34;常用命令&#34;&gt;常用命令&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;版本查询
-rvm --version
-
-RVM 更新
-rvm get stable
-
-显示已安装的 Ruby 版本
-rvm list
-
-列出可获得的 Ruby 版本
-rvm list known
-
-选择安装一个 Ruby 版本
-rvm install 2.2.0
-
-切换一个 Ruby 版本
-rvm use 2.2.0
-
-卸载一个已安装版本
-rvm remove 1.8.7
-
-设置一个 Ruby 版本为默认版本
-rvm use 2.2.0 --default
-
-查询详细信息
-rvm info
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UINavigationBar 底部的线</title>
-      <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
-      <description>
-
-&lt;h3 id=&#34;隐藏和显示-uinavigationbar-底部的线&#34;&gt;隐藏和显示 UINavigationBar 底部的线&lt;/h3&gt;
-
-&lt;p&gt;方法1：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar {
-    if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) {
-        return (UIImageView *)navigationBar;
-    }
-    for (UIView *subview in navigationBar.subviews) {
-        UIImageView *imageView= [self navigationBarLineUnder:subview];
-        if (imageView) {
-            return imageView;
-            }
-    }
-    return nil;
-}
-
-//隐藏
-[self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES;
-
-//显示
-[self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;方法2：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;//隐藏
-[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-[self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-
-//显示
-[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-[self.navigationController.navigationBar setShadowImage:nil];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UIView 事件穿透</title>
-      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F/</guid>
-      <description>&lt;p&gt;实现最顶层的 UIView 的 hitTest 方法，返回下层的某个 view 实例，即相当于把那个按钮的事件透出来了&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    UIView *hitView = [super hitTest:point withEvent:event];
-    if(hitView == self){
-        return nil;
-    }
-    return hitView;
-}
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

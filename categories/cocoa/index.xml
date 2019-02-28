@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>App 发送邮件</title>
+      <link>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
+      <description>iOS App 发送邮件 #import &amp;lt;MessageUI/MessageUI.h&amp;gt;  &amp;lt;MFMailComposeViewControllerDelegate&amp;gt;  [self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];  - (void)sendEmail:(NSString *)email { if ([MFMailComposeViewController canSendMail]) { // [self.navigationController presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; [self presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; } else { UIAlertController *sendMailErrorAlert = [UIAlertController alertControllerWithTitle:@&amp;quot;Can not send&amp;quot; message:@&amp;quot;Please set your email&amp;quot; preferredStyle:UIAlertControllerStyleAlert]; [sendMailErrorAlert addAction:[UIAlertAction actionWithTitle:@&amp;quot;OK&amp;quot; style:UIAlertActionStyleDefault handler:nil]]; // [self.navigationController presentViewController:sendMailErrorAlert animated:YES completion:nil]; [self presentViewController:sendMailErrorAlert animated:YES completion:nil]; } } - (MFMailComposeViewController *)configuredMailComposeViewControllerWithEmail:(NSString *)email { MFMailComposeViewController *mfVC = [[MFMailComposeViewController alloc] init]; mfVC.</description>
+    </item>
+    
+    <item>
       <title>NSColorPanel</title>
       <link>https://jepphu.github.io/2018/nscolorpanel/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>

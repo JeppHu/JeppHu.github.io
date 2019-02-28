@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSLayoutConstraint on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/nslayoutconstraint/</link>
+    <description>Recent content in NSLayoutConstraint on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/nslayoutconstraint/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS 约束布局与动画</title>
+      <link>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
+      <description>在控件被添加了约束的情况下，修改 frame 是无法实现的动画的
+ 修改约束的值 调用 layoutIfNeeded，要注意调用时机  self.viewHeight.constant = 0; [UIView animateWithDuration:0.25 animations:^{ [self.view layoutIfNeeded]; }];  </description>
+    </item>
+    
+  </channel>
+</rss>

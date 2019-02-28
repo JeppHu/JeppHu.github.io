@@ -6,20 +6,25 @@
     <description>Recent content in UINavigation on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/uinavigation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>UINavigationBar 底部的线</title>
+      <title>UINavigationBar</title>
       <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
-      <description> 隐藏和显示 UINavigationBar 底部的线 方法1：
-- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.subviews) { UIImageView *imageView= [self navigationBarLineUnder:subview]; if (imageView) { return imageView; } } return nil; } //隐藏 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES; //显示 [self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO;  方法2：
-//隐藏 [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; //显示 [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault]; [self.navigationController.navigationBar setShadowImage:nil];  </description>
+      <description>UINavgationBar 设置颜色 UINavigationController *nav = self.navigationController; nav.navigationBar.tintColor = [UIColor whiteColor]; nav.navigationBar.barTintColor = [UIColor colorWithRed:28/255.0 green:152/255.0 blue:225/255.0 alpha:1.0]; nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor]};  此时会觉得 navigationbar 颜色很浅，因为这是半透明状态
+默认 navigationbar.translucent = YES
+改为 navigationbar.translucent = NO
+颜色问题解决，但是子控制器视图整体下移，加上下面这句
+self.extendedLayoutIncludesOpaqueBars = YES;
+或者在 storyboard 中 viewController 属性勾选 Under Opaque Bars
+如果有特殊需求，尝试使用下面的方法
+透明化和显示 UINavigationBar 以及 UINavigationBar 底部的线  方法1：  - (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.</description>
     </item>
     
   </channel>

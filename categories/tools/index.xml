@@ -72,19 +72,6 @@ RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切�
     </item>
     
     <item>
-      <title>git 基础</title>
-      <link>https://jepphu.github.io/2018/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
-      <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
-git config --global user.name &amp;quot;your name&amp;quot; git config --global user.email &amp;quot;your eamil@domain.com&amp;quot;  查看用户名和邮箱
-git config user.name git config user.email  解除全局用户名和邮箱
-git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
-git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
-    </item>
-    
-    <item>
       <title>git 子模块</title>
       <link>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
@@ -104,6 +91,19 @@ git rm --cached 子模块名称  </description>
       <guid>https://jepphu.github.io/2017/youtube-dl/</guid>
       <description> youtube-dl 用于从 YouTube.com 等网站下载视频 安装
 brew install youtube-dl  常用命令 youtube-dl [OPTIONS] URL [URL...] （URL 正在播放的视频网站链接） #输出版本号 youtube-dl --version #直接下载默认参数的视频 youtube-dl URL #获取所有可用视频格式 youtube-dl -F URL #使用代理端口下载视频 youtube-dl &amp;quot;https://127.0.0.1:1080&amp;quot; URL #帮助文本 youtube-dl --help #更新（如果提示需要权限，则在命令前面加上sudo） youtube-dl --update #下载过程中遇见错误，跳过错误，继续下载，例如跳过不可用的视频播放列表 youtube-dl --ignore-errors URL //或 youtube-dl -i URL #下载过程中发生错误，终止下载下一个视频 youtube-dl --abort-on-error URL #显示当前浏览器用于识别的ID youtube-dl --dump-user-agent URL #显示 youtube-dl 支持的网站的视频提取器 youtube-dl --list-extractors URL #显示 youtube-dl 支持的网站的视频提取器及对相关描述 youtube-dl --extractor-descriptions URL #强制使用通用网站视频提取器 youtube-dl --force-generic-extractor URL #不提取视频的播放列表，只提取视频 youtube-dl --flat-playlist URL  </description>
+    </item>
+    
+    <item>
+      <title>git 基础</title>
+      <link>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</guid>
+      <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
+git config --global user.name &amp;quot;your name&amp;quot; git config --global user.email &amp;quot;your eamil@domain.com&amp;quot;  查看用户名和邮箱
+git config user.name git config user.email  解除全局用户名和邮箱
+git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
+git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
     </item>
     
   </channel>
