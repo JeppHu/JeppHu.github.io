@@ -319,6 +319,34 @@ nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UICol
     </item>
     
     <item>
+      <title>present 一个 navigation</title>
+      <link>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</guid>
+      <description>&lt;p&gt;在 present 页面之后的页面需要使用 navigation&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logInVC];
+nav.navigationBar.tintColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
+nav.navigationBar.barTintColor = [UIColor whiteColor];
+nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]};
+[self presentViewController:nav animated:NO completion:nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;为 present 出来的 navigation 添加返回按钮&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;if (self.navigationController.navigationItem.hidesBackButton) {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@&amp;quot;Back&amp;quot; style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC)];
+}
+
+- (void)dismissVC {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>/usr/bin 和 /usr/local/bin</title>
       <link>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
@@ -605,35 +633,6 @@ brew prune
 }
 
 @end
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>NSWindow 常用属性</title>
-      <link>https://jepphu.github.io/2018/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</guid>
-      <description>&lt;p&gt;隐藏标题栏&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self setTitleVisibility:NSWindowTitleHidden];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self setTitlebarAppearsTransparent:YES];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;通过拖动背景来移动整个 window&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self setMovableByWindowBackground:YES];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;完全透明的 window&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self setBackgroundColor:[NSColor clearColor]];
-[self setOpaque:NO];
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

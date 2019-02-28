@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/" />
-  <link rel="next" href="https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/" />
-  <link rel="canonical" href="https://jepphu.github.io/2018/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/" />
+  <link rel="prev" href="https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/" />
+  <link rel="next" href="https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/" />
+  <link rel="canonical" href="https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           通过点击 Dock 图标重新显示窗口 | Jepp Hu
+           present 一个 navigation | Jepp Hu
        
   </title>
-  <meta name="title" content="通过点击 Dock 图标重新显示窗口 | Jepp Hu">
+  <meta name="title" content="present 一个 navigation | Jepp Hu">
     
   
   <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
@@ -44,10 +44,11 @@
          "@id": "https://jepphu.github.io/"
     },
     "articleSection" : "posts",
-    "name" : "通过点击 Dock 图标重新显示窗口",
-    "headline" : "通过点击 Dock 图标重新显示窗口",
-    "description" : "在 AppDelegate.m 文件中实现  中的方法：
-- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }  ",
+    "name" : "present 一个 navigation",
+    "headline" : "present 一个 navigation",
+    "description" : "在 present 页面之后的页面需要使用 navigation
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logInVC]; nav.navigationBar.tintColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]; nav.navigationBar.barTintColor = [UIColor whiteColor]; nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]}; [self presentViewController:nav animated:NO completion:nil];  为 present 出来的 navigation 添加返回按钮
+if (self.navigationController.navigationItem.hidesBackButton) { self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@&quot;Back&quot; style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC)]; } - (void)dismissVC { [self dismissViewControllerAnimated:YES completion:nil]; }  ",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -55,11 +56,11 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-04-02 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-04-02 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/",
-    "wordCount" : "19",
-    "keywords" : [ "NSApplication", "Jepp Hu"]
+    "datePublished": "2018-04-09 00:00:00 &#43;0000 UTC",
+    "dateModified" : "2018-04-09 00:00:00 &#43;0000 UTC",
+    "url" : "https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/",
+    "wordCount" : "57",
+    "keywords" : [ "UINavigation", "Jepp Hu"]
 }
 </script>
 
@@ -117,16 +118,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">通过点击 Dock 图标重新显示窗口</h1>
+        <h1 class="post-title" itemprop="name headline">present 一个 navigation</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2018-04-02 itemprop="datePublished">April 2, 2018</time>
+                on <time datetime=2018-04-09 itemprop="datePublished">April 9, 2018</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://jepphu.github.io/categories/cocoa/"> Cocoa </a>
+                        <a href="https://jepphu.github.io/categories/uikit/"> UIKit </a>
                         
                 </span>
         </div>
@@ -147,14 +148,23 @@
           
           
 
-          <p>在 AppDelegate.m 文件中实现 <NSApplicationDelegate> 中的方法：</p>
+          <p>在 present 页面之后的页面需要使用 navigation</p>
 
-<pre><code class="language-objc">- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
-    if (!flag){
-        [NSApp activateIgnoringOtherApps:NO];
-        [self.window makeKeyAndOrderFront:self];
-    }
-    return YES;
+<pre><code class="language-objc">UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logInVC];
+nav.navigationBar.tintColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
+nav.navigationBar.barTintColor = [UIColor whiteColor];
+nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]};
+[self presentViewController:nav animated:NO completion:nil];
+</code></pre>
+
+<p>为 present 出来的 navigation 添加返回按钮</p>
+
+<pre><code class="language-objc">if (self.navigationController.navigationItem.hidesBackButton) {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@&quot;Back&quot; style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC)];
+}
+
+- (void)dismissVC {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 </code></pre>
 
@@ -171,7 +181,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://jepphu.github.io/2018/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/>https://jepphu.github.io/2018/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</span>
+                    <a href=https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</span>
             </p>
             
              
@@ -187,8 +197,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://jepphu.github.io/tags/nsapplication/">
-                    #NSApplication</a></span>
+            <span class="tag"><a href="https://jepphu.github.io/tags/uinavigation/">
+                    #UINavigation</a></span>
             
             </section>
         
@@ -200,10 +210,10 @@
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/" class="prev" rel="prev" title="重置 Dock 和 Launchpad"><i class="iconfont icon-left"></i>&nbsp;重置 Dock 和 Launchpad</a>
+        <a href="https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/" class="prev" rel="prev" title="/usr/bin 和 /usr/local/bin"><i class="iconfont icon-left"></i>&nbsp;/usr/bin 和 /usr/local/bin</a>
          
         
-        <a href="https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/" class="next" rel="next" title="绘制 image">绘制 image&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/" class="next" rel="next" title="UINavigationBar">UINavigationBar&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

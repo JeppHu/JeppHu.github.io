@@ -27,5 +27,16 @@ self.extendedLayoutIncludesOpaqueBars = YES;
 透明化和显示 UINavigationBar 以及 UINavigationBar 底部的线  方法1：  - (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar { if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) { return (UIImageView *)navigationBar; } for (UIView *subview in navigationBar.</description>
     </item>
     
+    <item>
+      <title>present 一个 navigation</title>
+      <link>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</guid>
+      <description>在 present 页面之后的页面需要使用 navigation
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logInVC]; nav.navigationBar.tintColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]; nav.navigationBar.barTintColor = [UIColor whiteColor]; nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]}; [self presentViewController:nav animated:NO completion:nil];  为 present 出来的 navigation 添加返回按钮
+if (self.navigationController.navigationItem.hidesBackButton) { self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@&amp;quot;Back&amp;quot; style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC)]; } - (void)dismissVC { [self dismissViewControllerAnimated:YES completion:nil]; }  </description>
+    </item>
+    
   </channel>
 </rss>
