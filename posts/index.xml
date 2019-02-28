@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iOS 原生分享</title>
+      <link>https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/</guid>
+      <description>优点：使用简单，不用注册分享平台账号，不用导入的 SDK 包
+缺点：只能使用系统提供的固定样式，分享的类型受限，只能分享 text、url、image
+NSArray *arr = @[result]; UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:arr applicationActivities:nil]; activityVC.completionWithItemsHandler = ^(UIActivityType _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) { if (completed) { NSLog(@&amp;quot;share completed&amp;quot;); } else { NSLog(@&amp;quot;share failed&amp;quot;); } }; [self presentViewController:activityVC animated:YES completion:nil];  arr 支持 UIActivity 类型，可以创建自定义的 Activity，同时分享 NSString，UIImage，NSURL</description>
+    </item>
     
     <item>
       <title>git 配置多账户</title>
@@ -21,6 +32,29 @@
 cd ~/.ssh #如果目录不存在，执行 ssh-keygen  生成 github 和 bitbucket 的 key
 cd ~/.ssh ssh-keygen -t rsa -C &amp;quot;youremail@domain.com&amp;quot; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa，回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &amp;quot;youremail@domain.com&amp;quot; #同上自定义名字，如：my_bitbucket_rsa  此时在 .ssh 目录下至少会有以下5个文件，.pub 后缀的为公钥，另一个为秘钥
 config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host bitbucket.org HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.</description>
+    </item>
+    
+    <item>
+      <title>BaiduPCS Go</title>
+      <link>https://jepphu.github.io/2019/baidupcs-go/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/baidupcs-go/</guid>
+      <description> BaiduPCS Go 用于从百度云盘下载文件，不会被限速
+#登录百度帐号 BaiduPCS-Go login #列出&amp;lt;文件或目录&amp;gt; BaiduPCS-Go ls #下载文件/目录 BaiduPCS-Go download &amp;lt;文件或目录&amp;gt;  #列出所有已登录的百度帐号 BaiduPCS-Go loglist #获取当前帐号 BaiduPCS-Go who #切换已登录的百度帐号 BaiduPCS-Go su &amp;lt;uid&amp;gt; #退出当前登录的百度帐号 BaiduPCS-Go logout  </description>
+    </item>
+    
+    <item>
+      <title>UIView 子视图坐标转换</title>
+      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
+      <description>ViewA, ViewB, ViewC
+ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图
+ViewC 此时的 frame 是相对于 ViewB 的
+如果需求为获取 ViewC 此时相对于 ViewA 的 frame
+- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view; - (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view; CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA]; //或 CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];  </description>
     </item>
     
     <item>

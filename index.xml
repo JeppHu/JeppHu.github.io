@@ -6,8 +6,34 @@
     <description>Recent content in Jepp Hu on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iOS 原生分享</title>
+      <link>https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/</guid>
+      <description>&lt;p&gt;优点：使用简单，不用注册分享平台账号，不用导入的 SDK 包&lt;/p&gt;
+
+&lt;p&gt;缺点：只能使用系统提供的固定样式，分享的类型受限，只能分享 text、url、image&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSArray *arr = @[result];
+UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:arr applicationActivities:nil];
+activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
+    if (completed) {
+        NSLog(@&amp;quot;share completed&amp;quot;);
+    } else {
+        NSLog(@&amp;quot;share failed&amp;quot;);
+    }
+};
+[self presentViewController:activityVC animated:YES completion:nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;arr 支持 UIActivity 类型，可以创建自定义的 Activity，同时分享 NSString，UIImage，NSURL&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>git 配置多账户</title>
@@ -98,6 +124,67 @@ RSA key fingerprint is SHA256:...
 &lt;p&gt;如果 Host 字段任意取名为 YourHost，测试&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-git&#34;&gt;ssh -T git@YourHost 
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>BaiduPCS Go</title>
+      <link>https://jepphu.github.io/2019/baidupcs-go/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/baidupcs-go/</guid>
+      <description>
+
+&lt;h3 id=&#34;baidupcs-go-https-github-com-gangzhuo-baidupcs&#34;&gt;&lt;a href=&#34;https://github.com/GangZhuo/BaiduPCS&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;BaiduPCS Go&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;用于从百度云盘下载文件，不会被限速&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#登录百度帐号
+BaiduPCS-Go login
+
+#列出&amp;lt;文件或目录&amp;gt;
+BaiduPCS-Go ls
+
+#下载文件/目录
+BaiduPCS-Go download &amp;lt;文件或目录&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#列出所有已登录的百度帐号
+BaiduPCS-Go loglist
+
+#获取当前帐号
+BaiduPCS-Go who
+
+#切换已登录的百度帐号
+BaiduPCS-Go su &amp;lt;uid&amp;gt;
+
+#退出当前登录的百度帐号
+BaiduPCS-Go logout
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UIView 子视图坐标转换</title>
+      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
+      <description>&lt;p&gt;ViewA, ViewB, ViewC&lt;/p&gt;
+
+&lt;p&gt;ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图&lt;/p&gt;
+
+&lt;p&gt;ViewC 此时的 frame 是相对于 ViewB 的&lt;/p&gt;
+
+&lt;p&gt;如果需求为获取 ViewC 此时相对于 ViewA 的 frame&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view;
+- (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view;
+
+CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA];
+//或
+CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -501,66 +588,6 @@ rvm info
     }
     return hitView;
 }
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>WKWebView 与 WebView 调试器</title>
-      <link>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
-      <description>
-
-&lt;h3 id=&#34;wkwebview&#34;&gt;WKWebView&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;#ifdef DEBUG
-    [self.webView.configuration.preferences setValue:@YES forKey:@&amp;quot;developerExtrasEnabled&amp;quot;];
-#endif
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;webview&#34;&gt;WebView&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-git&#34;&gt;#terminal 
-defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>WKWebView 清除 cookies</title>
-      <link>https://jepphu.github.io/2018/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/wkwebview%E6%B8%85%E9%99%A4cookies/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
-
-NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
-
-[[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>WKWebView 页面显示不全</title>
-      <link>https://jepphu.github.io/2018/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</guid>
-      <description>
-
-&lt;h3 id=&#34;wkwebview-因为-nswindow-属性造成的-bug&#34;&gt;WKWebView 因为 NSWindow 属性造成的 bug&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSWindowStyleMask  ==  NSWindowStyleMaskFullSizeContentView
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSWindowStyleMask  ==  NSWindowStyleMaskBorderless
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

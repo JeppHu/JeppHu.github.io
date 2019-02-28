@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2019/baidupcs-go/" />
-  <link rel="next" href="https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/" />
-  <link rel="canonical" href="https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/" />
+  <link rel="prev" href="https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/" />
+  
+  <link rel="canonical" href="https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           git 配置多账户 | Jepp Hu
+           iOS 原生分享 | Jepp Hu
        
   </title>
-  <meta name="title" content="git 配置多账户 | Jepp Hu">
+  <meta name="title" content="iOS 原生分享 | Jepp Hu">
     
   
   <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
@@ -44,12 +44,11 @@
          "@id": "https://jepphu.github.io/"
     },
     "articleSection" : "posts",
-    "name" : "git 配置多账户",
-    "headline" : "git 配置多账户",
-    "description" : "1. 为不同的账号生成对应的 key 检查是否有 .ssh 目录
-cd ~/.ssh #如果目录不存在，执行 ssh-keygen  生成 github 和 bitbucket 的 key
-cd ~/.ssh ssh-keygen -t rsa -C &quot;youremail@domain.com&quot; #执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa，回车 第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过 ssh-keygen -t rsa -C &quot;youremail@domain.com&quot; #同上自定义名字，如：my_bitbucket_rsa  此时在 .ssh 目录下至少会有以下5个文件，.pub 后缀的为公钥，另一个为秘钥
-config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2. 修改配置文件 #进入 .ssh 目录，如果目录下没有 config 文件，那么创建 cd ~/.ssh touch config #添加以下内容 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/my_github_rsa Host bitbucket.org HostName bitbucket.org PreferredAuthentications publickey IdentityFile ~/.",
+    "name" : "iOS 原生分享",
+    "headline" : "iOS 原生分享",
+    "description" : "优点：使用简单，不用注册分享平台账号，不用导入的 SDK 包
+缺点：只能使用系统提供的固定样式，分享的类型受限，只能分享 text、url、image
+NSArray *arr = @[result]; UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:arr applicationActivities:nil]; activityVC.completionWithItemsHandler = ^(UIActivityType _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) { if (completed) { NSLog(@&quot;share completed&quot;); } else { NSLog(@&quot;share failed&quot;); } }; [self presentViewController:activityVC animated:YES completion:nil];  arr 支持 UIActivity 类型，可以创建自定义的 Activity，同时分享 NSString，UIImage，NSURL",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -57,11 +56,11 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2019",
-    "datePublished": "2019-02-21 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2019-02-21 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/",
-    "wordCount" : "178",
-    "keywords" : [ "Git", "Jepp Hu"]
+    "datePublished": "2019-02-27 00:00:00 &#43;0000 UTC",
+    "dateModified" : "2019-02-27 00:00:00 &#43;0000 UTC",
+    "url" : "https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/",
+    "wordCount" : "54",
+    "keywords" : [ "UIActivityViewController", "Jepp Hu"]
 }
 </script>
 
@@ -119,16 +118,16 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">git 配置多账户</h1>
+        <h1 class="post-title" itemprop="name headline">iOS 原生分享</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-02-21 itemprop="datePublished">February 21, 2019</time>
+                on <time datetime=2019-02-27 itemprop="datePublished">February 27, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://jepphu.github.io/categories/tools/"> Tools </a>
+                        <a href="https://jepphu.github.io/categories/uikit/"> UIKit </a>
                         
                 </span>
         </div>
@@ -149,90 +148,23 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
           
           
 
-          
+          <p>优点：使用简单，不用注册分享平台账号，不用导入的 SDK 包</p>
 
-<h3 id="1-为不同的账号生成对应的-key">1. 为不同的账号生成对应的 key</h3>
+<p>缺点：只能使用系统提供的固定样式，分享的类型受限，只能分享 text、url、image</p>
 
-<p>检查是否有 .ssh 目录</p>
-
-<pre><code class="language-git">cd ~/.ssh
-#如果目录不存在，执行
-ssh-keygen
+<pre><code class="language-objc">NSArray *arr = @[result];
+UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:arr applicationActivities:nil];
+activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
+    if (completed) {
+        NSLog(@&quot;share completed&quot;);
+    } else {
+        NSLog(@&quot;share failed&quot;);
+    }
+};
+[self presentViewController:activityVC animated:YES completion:nil];
 </code></pre>
 
-<p>生成 github 和 bitbucket 的 key</p>
-
-<pre><code class="language-git">cd ~/.ssh
-ssh-keygen -t rsa -C &quot;youremail@domain.com&quot;
-#执行命令后的第一次输入，输入一个用于区分的自定义名字,不要有空格，如：my_github_rsa，回车
-第二次与第三次的输入是为了设定访问 key 的密码，可以直接回车跳过
-
-ssh-keygen -t rsa -C &quot;youremail@domain.com&quot;
-#同上自定义名字，如：my_bitbucket_rsa
-</code></pre>
-
-<p>此时在 .ssh 目录下至少会有以下5个文件，.pub 后缀的为公钥，另一个为秘钥</p>
-
-<pre><code class="language-git">config           
-my_bitbucket_rsa        my_github_rsa
-my_bitbucket_rsa.pub    my_github_rsa.pub
-</code></pre>
-
-<h3 id="2-修改配置文件">2. 修改配置文件</h3>
-
-<pre><code class="language-git">#进入 .ssh 目录，如果目录下没有 config 文件，那么创建
-cd ~/.ssh
-touch config
-
-#添加以下内容
-Host github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/my_github_rsa
-Host bitbucket.org
-    HostName bitbucket.org
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/my_bitbucket_rsa
-</code></pre>
-
-<p>Host 字段只是别名，可以任意取，HostName 字段是真实的主机名</p>
-
-<p>如果 Host 字段任意取名，那么在进行 clone 等操作时要将 URL Host 替换</p>
-
-<pre><code class="language-git">#原本 
-git clone git@github.com:xxx/xxx.git
-#替换
-git clone git@YourHost:xxx/xxx.git
-</code></pre>
-
-<h3 id="3-向-github-和-bitbucket-添加秘钥">3. 向 github 和 bitbucket 添加秘钥</h3>
-
-<p>将公钥添加在 github 或者 bitbucket 后台中，
-以 github 为例：</p>
-
-<ol>
-<li>github 首页右上角头像下拉框 &ndash;&gt; settings &ndash;&gt; SSH and GPG keys</li>
-<li>title 部分，用于区分设备的名称</li>
-<li>key 部分，复制 my_github_rsa.pub 中的内容</li>
-</ol>
-
-<h3 id="4-测试">4. 测试</h3>
-
-<pre><code class="language-git">ssh -T git@github.com
-#输出 Hi XXX! You've successfully authenticated, but GitHub does not provide shell access.
-
-ssh -T git@bitbucket.org
-#输出 You can use git or hg to connect to Bitbucket. Shell access is disabled
-
-#测试过程中出现 The authenticity of host 'github.com (192.xxx.xxx.xxx)' can't be established.
-RSA key fingerprint is SHA256:...   
-输入 yes，回车
-</code></pre>
-
-<p>如果 Host 字段任意取名为 YourHost，测试</p>
-
-<pre><code class="language-git">ssh -T git@YourHost 
-</code></pre>
+<p>arr 支持 UIActivity 类型，可以创建自定义的 Activity，同时分享 NSString，UIImage，NSURL</p>
 
     </div>
 
@@ -247,7 +179,7 @@ RSA key fingerprint is SHA256:...
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/>https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/</span>
+                    <a href=https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/>https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/</span>
             </p>
             
              
@@ -263,8 +195,8 @@ RSA key fingerprint is SHA256:...
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://jepphu.github.io/tags/git/">
-                    #Git</a></span>
+            <span class="tag"><a href="https://jepphu.github.io/tags/uiactivityviewcontroller/">
+                    #UIActivityViewController</a></span>
             
             </section>
         
@@ -276,10 +208,8 @@ RSA key fingerprint is SHA256:...
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2019/baidupcs-go/" class="prev" rel="prev" title="BaiduPCS Go"><i class="iconfont icon-left"></i>&nbsp;BaiduPCS Go</a>
+        <a href="https://jepphu.github.io/2019/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7/" class="prev" rel="prev" title="git 配置多账户"><i class="iconfont icon-left"></i>&nbsp;git 配置多账户</a>
          
-        
-        <a href="https://jepphu.github.io/2019/ios%E5%8E%9F%E7%94%9F%E5%88%86%E4%BA%AB/" class="next" rel="next" title="iOS 原生分享">iOS 原生分享&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

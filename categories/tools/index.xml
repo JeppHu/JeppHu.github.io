@@ -24,6 +24,16 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     </item>
     
     <item>
+      <title>BaiduPCS Go</title>
+      <link>https://jepphu.github.io/2019/baidupcs-go/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/baidupcs-go/</guid>
+      <description> BaiduPCS Go 用于从百度云盘下载文件，不会被限速
+#登录百度帐号 BaiduPCS-Go login #列出&amp;lt;文件或目录&amp;gt; BaiduPCS-Go ls #下载文件/目录 BaiduPCS-Go download &amp;lt;文件或目录&amp;gt;  #列出所有已登录的百度帐号 BaiduPCS-Go loglist #获取当前帐号 BaiduPCS-Go who #切换已登录的百度帐号 BaiduPCS-Go su &amp;lt;uid&amp;gt; #退出当前登录的百度帐号 BaiduPCS-Go logout  </description>
+    </item>
+    
+    <item>
       <title>Apache 服务启动和停止</title>
       <link>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
