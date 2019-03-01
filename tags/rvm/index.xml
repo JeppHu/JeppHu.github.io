@@ -6,17 +6,17 @@
     <description>Recent content in rvm on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/rvm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RVM</title>
-      <link>https://jepphu.github.io/2018/rvm/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://jepphu.github.io/2017/rvm/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/rvm/</guid>
+      <guid>https://jepphu.github.io/2017/rvm/</guid>
       <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
 Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
 RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能

@@ -166,28 +166,6 @@ BaiduPCS-Go logout
     </item>
     
     <item>
-      <title>iOS 约束布局与动画</title>
-      <link>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
-      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
-      <description>&lt;p&gt;在控件被添加了约束的情况下，修改 frame 是无法实现的动画的&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;修改约束的值&lt;/li&gt;
-&lt;li&gt;调用 &lt;code&gt;layoutIfNeeded&lt;/code&gt;，要注意调用时机&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;self.viewHeight.constant = 0;
-
-[UIView animateWithDuration:0.25 animations:^{
-    [self.view layoutIfNeeded];
-}];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>SFSafariViewController</title>
       <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
       <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
@@ -224,33 +202,9 @@ BaiduPCS-Go logout
     </item>
     
     <item>
-      <title>UIView 子视图坐标转换</title>
-      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
-      <description>&lt;p&gt;ViewA, ViewB, ViewC&lt;/p&gt;
-
-&lt;p&gt;ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图&lt;/p&gt;
-
-&lt;p&gt;ViewC 此时的 frame 是相对于 ViewB 的&lt;/p&gt;
-
-&lt;p&gt;如果需求为获取 ViewC 此时相对于 ViewA 的 frame&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view;
-- (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view;
-
-CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA];
-//或
-CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>UINavigationBar</title>
       <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
       <description>
@@ -321,7 +275,7 @@ nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UICol
     <item>
       <title>present 一个 navigation</title>
       <link>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</guid>
       <description>&lt;p&gt;在 present 页面之后的页面需要使用 navigation&lt;/p&gt;
@@ -347,43 +301,31 @@ nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UICol
     </item>
     
     <item>
-      <title>/usr/bin 和 /usr/local/bin</title>
-      <link>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>绘制 image</title>
+      <link>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</guid>
-      <description>&lt;p&gt;&lt;code&gt;usr&lt;/code&gt; 指 &lt;code&gt;Unix System Resource&lt;/code&gt;，而不是 User&lt;/p&gt;
+      <guid>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</guid>
+      <description>
 
-&lt;p&gt;&lt;code&gt;/usr/bin&lt;/code&gt; 下面的都是系统预装的可执行程序，会随着系统升级而改变&lt;/p&gt;
+&lt;h3 id=&#34;绘制空白的-image&#34;&gt;绘制空白的 image&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;/usr/local/bin&lt;/code&gt; 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件&lt;/p&gt;
-
-&lt;p&gt;两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Apache 服务启动和停止</title>
-      <link>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
-      <description>&lt;p&gt;启动：&lt;code&gt;sudo apachectl start&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;停止：&lt;code&gt;sudo apachectl stop&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;重启：&lt;code&gt;sudo apachectl restart&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;查看 Apache 版本 &lt;code&gt;httpd -v&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;打开 &lt;a href=&#34;http://127.0.0.1&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://127.0.0.1&lt;/a&gt; 可以看到 It works! 的页面，启动成功&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIColor *color = [UIColor whiteColor];
+CGRect rect = CGRectMake(0, 0, 200, 200);
+UIGraphicsBeginImageContext(rect.size);
+CGContextRef context = UIGraphicsGetCurrentContext();
+CGContextSetFillColorWithColor(context, color.CGColor);
+CGContextFillRect(context, rect);
+UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
       <title>App 发送邮件</title>
       <link>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
       <description>
@@ -456,183 +398,219 @@ nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UICol
     </item>
     
     <item>
-      <title>Finder 显示隐藏文件</title>
-      <link>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>iOS 约束布局与动画</title>
+      <link>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</guid>
-      <description>&lt;p&gt;显示: &lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder&lt;/code&gt;&lt;/p&gt;
+      <guid>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
+      <description>&lt;p&gt;在控件被添加了约束的情况下，修改 frame 是无法实现的动画的&lt;/p&gt;
 
-&lt;p&gt;隐藏: &lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;修改约束的值&lt;/li&gt;
+&lt;li&gt;调用 &lt;code&gt;layoutIfNeeded&lt;/code&gt;，要注意调用时机&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;self.viewHeight.constant = 0;
+
+[UIView animateWithDuration:0.25 animations:^{
+    [self.view layoutIfNeeded];
+}];
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
-      <title>Homebrew</title>
-      <link>https://jepphu.github.io/2018/homebrew/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>UIButton 设置背景图片</title>
+      <link>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/homebrew/</guid>
+      <guid>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</guid>
+      <description>&lt;p&gt;背景图自适应尺寸拉伸&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[button setBackgroundImage:image forState:UIControlStateNormal];&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;背景图不拉伸&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[button setImage:image forState:UIControlStateNormal];&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;关闭按钮点击时高亮的效果, 但是高亮的状态还在,只是效果没了&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;button.adjustsImageWhenDisabled = NO;&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UIImage 渲染</title>
+      <link>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</guid>
       <description>
 
-&lt;h3 id=&#34;homebrew-https-brew-sh&#34;&gt;&lt;a href=&#34;https://brew.sh/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;UIImage 有个 UIImageRenderingMode 属性，默认为 UIImageRenderingModeAutomatic&lt;/p&gt;
 
-&lt;p&gt;Homebrew 基于 Ruby 的，用官方给出的指令安装&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode;
 
-&lt;p&gt;安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）&lt;/p&gt;
-
-&lt;p&gt;安装完成后，可以用 &lt;code&gt;brew doctor&lt;/code&gt; 命令检测下是否有什么冲突的地方&lt;/p&gt;
-
-&lt;p&gt;Homebrew 会将下载的工具安装到 &lt;code&gt;/usr/local/Cellar&lt;/code&gt; 目录中，并在 &lt;code&gt;/usr/local/bin&lt;/code&gt; 中创建链接&lt;/p&gt;
-
-&lt;h3 id=&#34;常用命令&#34;&gt;常用命令&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;查询版本号
-brew --version
-
-更新
-brew update
-
-显示已经安装软件列表
-brew list
-
-搜索软件
-brew search git
-
-安装软件
-brew install git
-
-卸载软件
-brew uninstall git
+typedef NS_ENUM(NSInteger, UIImageRenderingMode) {
+    UIImageRenderingModeAutomatic,          // 根据图片所处的绘图上下文自动调整渲染模式
+    UIImageRenderingModeAlwaysOriginal,     // 始终绘制图片原始状态，不使用 Tint Color 渲染
+    UIImageRenderingModeAlwaysTemplate,     // 始终根据环境的 Tint Color 渲染图片，忽略图片的本身的颜色信息
+}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;查看哪些已安装的程序需要更新
-brew outdated
+&lt;h3 id=&#34;这个属性会导致一个常见的问题-uitabbaritem-上的-image-颜色与设置的原图不同&#34;&gt;这个属性会导致一个常见的问题：UITabBarItem 上的 image 颜色与设置的原图不同&lt;/h3&gt;
 
-更新某个具体软件
-brew upgrade git
+&lt;p&gt;让 image 保持原图不被渲染有两种方法&lt;/p&gt;
 
-更新全部软件，会标明已经安装并有更新版本的软件
-brew upgrade
+&lt;ol&gt;
+&lt;li&gt;代码设置，这个只是局部的修改&lt;/li&gt;
+&lt;/ol&gt;
 
-查看软件信息
-brew info git
-
-删除单个软件的旧版本
-brew cleanup git 
-
-删除所有软件的旧版本
-brew cleanup
-
-清理和删除无效 Link
-brew prune
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *leftImage = [[UIImage imageNamed:@&amp;quot;icon_s&amp;quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+self.navigationItem.leftBarButtonItem.image = leftImage;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;用浏览器打开 brew 的官方网站&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 Assets.xcassets，找到图片资源，在属性栏中有 Render As 属性，选中 Original Image&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew home       
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在整个工程中，使用到这个 image 都不会被环境的 Tint Color 渲染&lt;/p&gt;
 
-&lt;p&gt;查看信息&lt;/p&gt;
+&lt;h3 id=&#34;可以利用这个属性来将-image-渲染成想要的颜色&#34;&gt;可以利用这个属性来将 image 渲染成想要的颜色&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew info
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置环境的 Tint Color，&lt;/p&gt;
 
-&lt;p&gt;帮助文档&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew --help
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *img = [[UIImage imageNamed:@&amp;quot;icon_shut_down&amp;quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+btn.tintColor = [UIColor whiteColor];
+[btn setImage:img forState:UIControlStateNormal];
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
-      <title>NSColorPanel</title>
-      <link>https://jepphu.github.io/2018/nscolorpanel/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>UIView 事件拦截</title>
+      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/nscolorpanel/</guid>
-      <description>&lt;p&gt;设置 NSColorPanel 的显示模式和初始默认色盘，要在实例化之前设置&lt;/p&gt;
+      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
+      <description>
 
-&lt;p&gt;不自定义设置时会默认为以下设置&lt;/p&gt;
+&lt;h3 id=&#34;hittest-方法会递归来寻找第一响应者&#34;&gt;hitTest: 方法会递归来寻找第一响应者&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[NSColorPanel setPickerMask:NSColorPanelAllModesMask];
-[NSColorPanel setPickerMode:NSColorPanelModeNone];
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步&lt;/li&gt;
+&lt;li&gt;检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:）&lt;/li&gt;
+&lt;li&gt;如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;实例对象是一个单例&lt;/p&gt;
+&lt;h3 id=&#34;subviews-上的事件全部由父-view-来实现&#34;&gt;subViews 上的事件全部由父 View 来实现&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSColorPanel *panel = [NSColorPanel sharedColorPanel];
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者&lt;/p&gt;
 
-&lt;p&gt;显示与隐藏&lt;/p&gt;
+&lt;p&gt;subViews 的 touch 相关方法不会响应&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;if ([panel isVisible]) {
-    [panel orderOut:self];
-} else {
-    [panel orderFront:self];
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件
+    if (CGRectContainsPoint(self.bounds, point)) {
+        return self;
+    }
+    return nil;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;设置选取颜色后的响应事件&lt;/p&gt;
+&lt;h3 id=&#34;允许部分-subviews-响应事件&#34;&gt;允许部分 subViews 响应事件&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[panel setTarget:self];
-[panel setAction:@selector(colorSelectedAction:)];
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者&lt;/p&gt;
 
-&lt;p&gt;从 View 中拖拽颜色到颜色面板&lt;/p&gt;
+&lt;p&gt;其余未返回的子 View 的事件将被拦截&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)mouseDragged:(NSEvent *)event {
-    [NSColorPanel dragColor:[NSColor orangeColor] withEvent:event fromView:self];
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (CGRectContainsPoint(self.slider.frame, point)) {
+        return self.slider;
+    } else if (CGRectContainsPoint(self.btn.frame, point)) {
+        return self.resetBtn;
+    }
+    return self.scrollView;
 }
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
-      <title>NSView 监听鼠标悬停</title>
-      <link>https://jepphu.github.io/2018/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>UIView 子视图坐标转换</title>
+      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;@interface HoverImageButton ()
+      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
+      <description>&lt;p&gt;ViewA, ViewB, ViewC&lt;/p&gt;
 
-@property (strong,nonatomic) NSTrackingArea *trackingArea;
-@property (strong,nonatomic) NSImage *tempImage;
-@property (strong,nonatomic) NSImage *alternateImage;
+&lt;p&gt;ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图&lt;/p&gt;
 
-@end
+&lt;p&gt;ViewC 此时的 frame 是相对于 ViewB 的&lt;/p&gt;
+
+&lt;p&gt;如果需求为获取 ViewC 此时相对于 ViewA 的 frame&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view;
+- (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view;
+
+CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA];
+//或
+CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>收回键盘</title>
+      <link>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</guid>
+      <description>&lt;p&gt;收回键盘主要调用方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self.view endEditing:YES] 
+//或 
+[self.emailTextField resignFirstResponder]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;@implementation HoverImageButton
+&lt;ul&gt;
+&lt;li&gt;ViewController :&lt;/li&gt;
+&lt;/ul&gt;
 
-- (instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.tempImage = self.image;
-    }
-    return self;
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)touchesBegan:(NSSet&amp;lt;UITouch *&amp;gt; *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
+&lt;/code&gt;&lt;/pre&gt;
 
-- (void)updateTrackingAreas {
-    if (self.trackingArea) {
-        [self removeTrackingArea:self.trackingArea];
-    }
-    int opts = (NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited);
-    self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:opts owner:self userInfo:nil];
-    [self addTrackingArea:self.trackingArea];
+&lt;ul&gt;
+&lt;li&gt;TableViewController :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.view endEditing:YES];
 }
+&lt;/code&gt;&lt;/pre&gt;
 
-- (void)mouseEntered:(NSEvent *)event {
-    [super mouseEntered:event];
-    self.image = self.alternateImage;
-}
+&lt;p&gt;// 弹出键盘&lt;/p&gt;
 
-- (void)mouseExited:(NSEvent *)event {
-    [super mouseExited:event];
-    self.image = self.tempImage;
-}
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self.textField becomeFirstResponder]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UITableViewCell 改变选时中颜色</title>
+      <link>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</guid>
+      <description>&lt;p&gt;TableViewCell 有一个 selectedBackgroundView 属性&lt;/p&gt;
 
-@end
+&lt;p&gt;创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIView *view = [[UIView alloc] initWithFrame:self.bounds];
+view.backgroundColor = [UIColor whiteColor];
+self.selectedBackgroundView = view;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

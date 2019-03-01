@@ -6,17 +6,27 @@
     <description>Recent content in Mac on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>/usr/bin 和 /usr/local/bin</title>
-      <link>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>重置 Dock 和 Launchpad</title>
+      <link>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</guid>
+      <guid>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</guid>
+      <description>用来解决 APP 图标异常的问题，APP 图标会恢复成默认排序
+defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</description>
+    </item>
+    
+    <item>
+      <title>/usr/bin 和 /usr/local/bin</title>
+      <link>https://jepphu.github.io/2017/usrbin-%E5%92%8C-usrlocalbin/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/usrbin-%E5%92%8C-usrlocalbin/</guid>
       <description>usr 指 Unix System Resource，而不是 User
 /usr/bin 下面的都是系统预装的可执行程序，会随着系统升级而改变
 /usr/local/bin 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件
@@ -24,36 +34,49 @@
     </item>
     
     <item>
-      <title>Apache 服务启动和停止</title>
-      <link>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
-      <description>启动：sudo apachectl start
-停止：sudo apachectl stop
-重启：sudo apachectl restart
-查看 Apache 版本 httpd -v
-打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
-    </item>
-    
-    <item>
       <title>Finder 显示隐藏文件</title>
-      <link>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://jepphu.github.io/2017/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://jepphu.github.io/2017/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</guid>
       <description>显示: defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
 隐藏: defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</description>
     </item>
     
     <item>
-      <title>重置 Dock 和 Launchpad</title>
-      <link>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>命令行操作目录与文件</title>
+      <link>https://jepphu.github.io/2017/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 16 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</guid>
-      <description>用来解决 APP 图标异常的问题，APP 图标会恢复成默认排序
-defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</description>
+      <guid>https://jepphu.github.io/2017/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/</guid>
+      <description>目录 创建目录 mkdir folderName
+进入目录 cd folderName
+返回上级目录 cd ..
+删除空目录 rmdir folderName
+强制删除目录及目录下的内容 rmdir -rf folderName
+打开成可视化的文件夹 open folderName
+打开当前目录 open .
+文件 查看当前目录下的非隐藏文件 ls
+查看当前目录下的所有文件 ls -a
+创建文件 touch fileName.txt
+删除文件 rm fileName.txt
+复制文件 cp fileName.txt newName.txt
+移动文件 mv fileName /zone/files/
+重命名文件 mv fileName1 fileName2
+查找当前目录下的所有 .txt 文件 find *.txt</description>
+    </item>
+    
+    <item>
+      <title>Apache 服务启动和停止</title>
+      <link>https://jepphu.github.io/2016/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
+      <pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2016/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
+      <description>启动：sudo apachectl start
+停止：sudo apachectl stop
+重启：sudo apachectl restart
+查看 Apache 版本 httpd -v
+打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
     </item>
     
   </channel>

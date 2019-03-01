@@ -23,16 +23,6 @@ NSArray *arr = @[result]; UIActivityViewController *activityVC = [[UIActivityVie
     </item>
     
     <item>
-      <title>iOS 约束布局与动画</title>
-      <link>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
-      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
-      <description>在控件被添加了约束的情况下，修改 frame 是无法实现的动画的
- 修改约束的值 调用 layoutIfNeeded，要注意调用时机  self.viewHeight.constant = 0; [UIView animateWithDuration:0.25 animations:^{ [self.view layoutIfNeeded]; }];  </description>
-    </item>
-    
-    <item>
       <title>SFSafariViewController</title>
       <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
       <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
@@ -43,22 +33,9 @@ NSArray *arr = @[result]; UIActivityViewController *activityVC = [[UIActivityVie
     </item>
     
     <item>
-      <title>UIView 子视图坐标转换</title>
-      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
-      <description>ViewA, ViewB, ViewC
-ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图
-ViewC 此时的 frame 是相对于 ViewB 的
-如果需求为获取 ViewC 此时相对于 ViewA 的 frame
-- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view; - (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view; CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA]; //或 CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];  </description>
-    </item>
-    
-    <item>
       <title>UINavigationBar</title>
       <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
       <description>UINavgationBar 设置颜色 UINavigationController *nav = self.navigationController; nav.navigationBar.tintColor = [UIColor whiteColor]; nav.navigationBar.barTintColor = [UIColor colorWithRed:28/255.0 green:152/255.0 blue:225/255.0 alpha:1.0]; nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor]};  此时会觉得 navigationbar 颜色很浅，因为这是半透明状态
@@ -74,7 +51,7 @@ self.extendedLayoutIncludesOpaqueBars = YES;
     <item>
       <title>present 一个 navigation</title>
       <link>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</guid>
       <description>在 present 页面之后的页面需要使用 navigation
@@ -83,18 +60,63 @@ if (self.navigationController.navigationItem.hidesBackButton) { self.navigationI
     </item>
     
     <item>
+      <title>绘制 image</title>
+      <link>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</guid>
+      <description> 绘制空白的 image UIColor *color = [UIColor whiteColor]; CGRect rect = CGRectMake(0, 0, 200, 200); UIGraphicsBeginImageContext(rect.size); CGContextRef context = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(context, color.CGColor); CGContextFillRect(context, rect); UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext();  </description>
+    </item>
+    
+    <item>
       <title>App 发送邮件</title>
       <link>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
       <description>iOS App 发送邮件 #import &amp;lt;MessageUI/MessageUI.h&amp;gt;  &amp;lt;MFMailComposeViewControllerDelegate&amp;gt;  [self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];  - (void)sendEmail:(NSString *)email { if ([MFMailComposeViewController canSendMail]) { // [self.navigationController presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; [self presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; } else { UIAlertController *sendMailErrorAlert = [UIAlertController alertControllerWithTitle:@&amp;quot;Can not send&amp;quot; message:@&amp;quot;Please set your email&amp;quot; preferredStyle:UIAlertControllerStyleAlert]; [sendMailErrorAlert addAction:[UIAlertAction actionWithTitle:@&amp;quot;OK&amp;quot; style:UIAlertActionStyleDefault handler:nil]]; // [self.navigationController presentViewController:sendMailErrorAlert animated:YES completion:nil]; [self presentViewController:sendMailErrorAlert animated:YES completion:nil]; } } - (MFMailComposeViewController *)configuredMailComposeViewControllerWithEmail:(NSString *)email { MFMailComposeViewController *mfVC = [[MFMailComposeViewController alloc] init]; mfVC.</description>
     </item>
     
     <item>
+      <title>iOS 约束布局与动画</title>
+      <link>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
+      <description>在控件被添加了约束的情况下，修改 frame 是无法实现的动画的
+ 修改约束的值 调用 layoutIfNeeded，要注意调用时机  self.viewHeight.constant = 0; [UIView animateWithDuration:0.25 animations:^{ [self.view layoutIfNeeded]; }];  </description>
+    </item>
+    
+    <item>
+      <title>UIButton 设置背景图片</title>
+      <link>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</guid>
+      <description>背景图自适应尺寸拉伸
+[button setBackgroundImage:image forState:UIControlStateNormal];
+背景图不拉伸
+[button setImage:image forState:UIControlStateNormal];
+关闭按钮点击时高亮的效果, 但是高亮的状态还在,只是效果没了
+button.adjustsImageWhenDisabled = NO;</description>
+    </item>
+    
+    <item>
+      <title>UIImage 渲染</title>
+      <link>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</guid>
+      <description>UIImage 有个 UIImageRenderingMode 属性，默认为 UIImageRenderingModeAutomatic
+- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode; typedef NS_ENUM(NSInteger, UIImageRenderingMode) { UIImageRenderingModeAutomatic, // 根据图片所处的绘图上下文自动调整渲染模式 UIImageRenderingModeAlwaysOriginal, // 始终绘制图片原始状态，不使用 Tint Color 渲染 UIImageRenderingModeAlwaysTemplate, // 始终根据环境的 Tint Color 渲染图片，忽略图片的本身的颜色信息 }  这个属性会导致一个常见的问题：UITabBarItem 上的 image 颜色与设置的原图不同 让 image 保持原图不被渲染有两种方法
+ 代码设置，这个只是局部的修改  UIImage *leftImage = [[UIImage imageNamed:@&amp;quot;icon_s&amp;quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; self.navigationItem.leftBarButtonItem.image = leftImage;   进入 Assets.xcassets，找到图片资源，在属性栏中有 Render As 属性，选中 Original Image  在整个工程中，使用到这个 image 都不会被环境的 Tint Color 渲染
+可以利用这个属性来将 image 渲染成想要的颜色 设置环境的 Tint Color，</description>
+    </item>
+    
+    <item>
       <title>UIView 事件拦截</title>
       <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
       <description>hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者
@@ -103,12 +125,56 @@ subViews 的 touch 相关方法不会响应
     </item>
     
     <item>
-      <title>绘制 image</title>
-      <link>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>UIView 子视图坐标转换</title>
+      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</guid>
-      <description> 绘制空白的 image UIColor *color = [UIColor whiteColor]; CGRect rect = CGRectMake(0, 0, 200, 200); UIGraphicsBeginImageContext(rect.size); CGContextRef context = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(context, color.CGColor); CGContextFillRect(context, rect); UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext();  </description>
+      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
+      <description>ViewA, ViewB, ViewC
+ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图
+ViewC 此时的 frame 是相对于 ViewB 的
+如果需求为获取 ViewC 此时相对于 ViewA 的 frame
+- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view; - (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view; CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA]; //或 CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];  </description>
+    </item>
+    
+    <item>
+      <title>收回键盘</title>
+      <link>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</guid>
+      <description>收回键盘主要调用方法：
+[self.view endEditing:YES] //或 [self.emailTextField resignFirstResponder]   ViewController :  - (void)touchesBegan:(NSSet&amp;lt;UITouch *&amp;gt; *)touches withEvent:(UIEvent *)event { [self.view endEditing:YES]; }   TableViewController :  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{ [self.view endEditing:YES]; }  // 弹出键盘
+[self.textField becomeFirstResponder]  </description>
+    </item>
+    
+    <item>
+      <title>UITableViewCell 改变选时中颜色</title>
+      <link>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</guid>
+      <description>TableViewCell 有一个 selectedBackgroundView 属性
+创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell
+UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor = [UIColor whiteColor]; self.selectedBackgroundView = view;  </description>
+    </item>
+    
+    <item>
+      <title>WKWebView 清除 cookies</title>
+      <link>https://jepphu.github.io/2017/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/wkwebview%E6%B8%85%E9%99%A4cookies/</guid>
+      <description>NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];  </description>
+    </item>
+    
+    <item>
+      <title>用浏览器打开超链接</title>
+      <link>https://jepphu.github.io/2017/%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E8%B6%85%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E8%B6%85%E9%93%BE%E6%8E%A5/</guid>
+      <description>&amp;lt;WKNavigationDelegate&amp;gt;  self.webView.navigationDelegate = self;  - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler { NSURL *url = navigationAction.request.URL; if (navigationAction.navigationType == WKNavigationTypeLinkActivated) { [[UIApplication sharedApplication] openURL:url]; // [[NSWorkspace sharedWorkspace] openURL:url]; decisionHandler(WKNavigationActionPolicyCancel); } else { decisionHandler(WKNavigationActionPolicyAllow); } }  </description>
     </item>
     
     <item>

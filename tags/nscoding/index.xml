@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSCoding on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/nscoding/</link>
+    <description>Recent content in NSCoding on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/nscoding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>归档存储对象</title>
+      <link>https://jepphu.github.io/2017/%E5%BD%92%E6%A1%A3%E5%AD%98%E5%82%A8%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/%E5%BD%92%E6%A1%A3%E5%AD%98%E5%82%A8%E5%AF%B9%E8%B1%A1/</guid>
+      <description>NSCoder 编码解码 让对象需要存储的类遵守  协议，然后在它的 .m 文件中实现协议方法，将属性编码解码  实现编码协议方法，将属性编码
+ 不是对象的属性通过 NSNumber 类转换为对象
+ 每一个对象分别提供一个唯一的字符串即键，一一进行编码
+  - (void)encodeWithCoder:(NSCoder *)aCoder { [aCoder encodeObject:self.subject forKey:KEY_SUBJECT]; [aCoder encodeObject:self.fro forKey:KEY_FROM]; [aCoder encodeObject:[NSNumber numberWithBool:self.isFavorite] forKey:KEY_FAVORITE]; }   实现解码协议方法，将属性解码
+ 根据自己添加的键返回对象
+ 把这些对象和提取出来的数据一一赋给对应的属性
+  - (instancetype)initWithCoder:(NSCoder *)aDecoder { self = [self init]; if (self) { self.subject = [aDecoder decodeObjectForKey:KEY_SUBJECT]; self.fro = [aDecoder decodeObjectForKey:KEY_FROM]; self.isFavorite = [[aDecoder decodeObjectForKey:KEY_FAVORITE] boolValue]; } return self; }  对象写入/读取 把对象写进指定的文件，写入成功则返回 YES，否则返回 NO</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,17 +6,17 @@
     <description>Recent content in brew on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/brew/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Homebrew</title>
-      <link>https://jepphu.github.io/2018/homebrew/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://jepphu.github.io/2017/homebrew/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/homebrew/</guid>
+      <guid>https://jepphu.github.io/2017/homebrew/</guid>
       <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
 安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
 安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方

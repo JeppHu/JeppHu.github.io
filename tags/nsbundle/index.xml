@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSBundle on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/nsbundle/</link>
+    <description>Recent content in NSBundle on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/nsbundle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NSBundle</title>
+      <link>https://jepphu.github.io/2017/nsbundle/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/nsbundle/</guid>
+      <description> 获取资源文件 NSString *bundlePath = [[NSBundle mainBundle] resourcePath]; NSString *imagePath = [[NSBundle mainBundle] pathForResource:@&amp;quot;imageName&amp;quot; ofType:@&amp;quot;png&amp;quot;];  从文件中读取数据 NSString *path = [[NSBundle mainBundle] pathForResource:@&amp;quot;MKStoreKitConfigs&amp;quot; ofType:@&amp;quot;plist&amp;quot;]; NSDictionary *dic = [[[NSDictionary alloc] initWithContentsOfFile:path]];  </description>
+    </item>
+    
+  </channel>
+</rss>

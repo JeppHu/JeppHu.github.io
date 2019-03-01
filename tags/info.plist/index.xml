@@ -6,17 +6,17 @@
     <description>Recent content in info.plist on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/info.plist/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>隐藏 Dock 应用图标和 Menu</title>
-      <link>https://jepphu.github.io/2018/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://jepphu.github.io/2017/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</link>
+      <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</guid>
+      <guid>https://jepphu.github.io/2017/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</guid>
       <description>Info.plist 设置字段：Application is agent (UIElement) 为 YES</description>
     </item>
     

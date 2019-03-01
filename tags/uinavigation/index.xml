@@ -6,7 +6,7 @@
     <description>Recent content in UINavigation on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/uinavigation/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>UINavigationBar</title>
       <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
       <description>UINavgationBar 设置颜色 UINavigationController *nav = self.navigationController; nav.navigationBar.tintColor = [UIColor whiteColor]; nav.navigationBar.barTintColor = [UIColor colorWithRed:28/255.0 green:152/255.0 blue:225/255.0 alpha:1.0]; nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor]};  此时会觉得 navigationbar 颜色很浅，因为这是半透明状态
@@ -30,7 +30,7 @@ self.extendedLayoutIncludesOpaqueBars = YES;
     <item>
       <title>present 一个 navigation</title>
       <link>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</guid>
       <description>在 present 页面之后的页面需要使用 navigation

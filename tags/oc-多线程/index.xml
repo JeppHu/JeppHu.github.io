@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OC 多线程 on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+    <description>Recent content in OC 多线程 on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GCD</title>
+      <link>https://jepphu.github.io/2018/gcd/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/gcd/</guid>
+      <description> GCD : Grand Central Dispatch  任务: block，确认执行什么任务
+ 队列: queue，用来存放任务
+  基础使用：创建队列, 创建任务, 将任务添加到队列
+// 创建队列 (全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 创建任务 dispatch_block_t task = ^{ NSLog(@&amp;quot;%@&amp;quot;, [NSThread currentThread]); }; // 将任务添加到队列 // test 异步, 开启了新的线程 dispatch_async(queue, task); // test 同步, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  </description>
+    </item>
+    
+    <item>
+      <title>NSThread</title>
+      <link>https://jepphu.github.io/2018/nsthread/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/nsthread/</guid>
+      <description> 多线程 多线程是切换执行的, 切换的速度非常快, 接近于 &amp;ldquo;同时&amp;rdquo; 执行, 实际上每个线程执行一段时间片就切换
+程序执行过程中系统会生成一些辅助线程, 且会自动销毁
+NSThread 生命周期需要程序员管理
+NSThread 的使用方式 方式 1
+// NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(demo:) object:@&amp;quot;obj&amp;quot;]; // 线程名字 thread1.name = @&amp;quot;t1&amp;quot;; // 线程的优先级,默认 0.5, 取值范围 (0 ~ 1), 可以使被分配时间片的几率更大, 但是不能保证一定先执行完 thread1.threadPriority = 1; // 线程进入可执行状态, 等待被调度, 执行 [thread1 start];  方式 2
+[NSThread detachNewThreadSelector:@selector(demo) toTarget:self withObject:nil];  方式 3
+[self performSelectorInBackground:@selector(demo) withObject:nil];  调用方法
+- (void)demo:(NSString *)sender { NSLog(@&amp;quot;name : %@&amp;quot;, name); for (int i = 0; i &amp;lt; 20; i ++) { NSLog(@&amp;quot;%@&amp;quot;, [NSThread currentThread]); // 阻塞线程 [NSThread sleepForTimeInterval:1]; } [NSThread exit]; }  </description>
+    </item>
+    
+    <item>
+      <title>多线程与锁</title>
+      <link>https://jepphu.github.io/2018/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/</guid>
+      <description>atomic 原子属性 多个线程同时读写这个属性时, 上了一把自旋锁,
+ 自旋锁: 单写多读, 单个线程写入, 但是允许多个线程读取
+所以这样多线程读仍然会导致数据错误
+如果线程正在锁定代码, 其他线程的写入操作会用死循环的方式一直等待锁定的代码执行完毕, 自旋锁更适合执行不耗时的代码
+ 互斥锁
+想读写完全绑定, 只能用互斥锁
+如果线程正在锁定代码, 其他线程的会进入就绪状态(休眠,等待执行), 等到锁打开后, 线程被唤醒
+  nonatomic 非原子属性 没有锁, 但是性能高
+@property (assign, nonatomic) int ticketsCount;  上互斥锁
+// 模拟多窗口卖票的操作 self.ticketsCount = 10; //多线程执行卖票操作, 这样会造成数据错误, 需要将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性), [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil]; [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil];  - (void)sellTickets { while (YES) { // 模拟耗时操作 [NSThread sleepForTimeInterval:1.0]; //上互斥锁, 将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性) //实现线程同步, 让线程在这里按顺序执行(会影响程序性能) //锁是 NSObject 的一个对象, 默认打开, 进入代码块将上锁 @synchronized(self) { if (self.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -34,47 +34,9 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     </item>
     
     <item>
-      <title>Apache 服务启动和停止</title>
-      <link>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
-      <description>启动：sudo apachectl start
-停止：sudo apachectl stop
-重启：sudo apachectl restart
-查看 Apache 版本 httpd -v
-打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
-    </item>
-    
-    <item>
-      <title>Homebrew</title>
-      <link>https://jepphu.github.io/2018/homebrew/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/homebrew/</guid>
-      <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
-安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
-安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
-Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
-常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站</description>
-    </item>
-    
-    <item>
-      <title>RVM</title>
-      <link>https://jepphu.github.io/2018/rvm/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/rvm/</guid>
-      <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
-Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
-RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
-常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info  </description>
-    </item>
-    
-    <item>
       <title>git 子模块</title>
       <link>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</guid>
       <description> 添加子模块 添加子模块，完成后会新增一个默认隐藏的配置文件 .gitmodules ，和一个外部项目的子目录 添加完成后需要将子模块切换到合适的分支
@@ -94,9 +56,34 @@ brew install youtube-dl  常用命令 youtube-dl [OPTIONS] URL [URL...] （URL �
     </item>
     
     <item>
+      <title>Homebrew</title>
+      <link>https://jepphu.github.io/2017/homebrew/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/homebrew/</guid>
+      <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
+安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
+安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
+Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站</description>
+    </item>
+    
+    <item>
+      <title>RVM</title>
+      <link>https://jepphu.github.io/2017/rvm/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/rvm/</guid>
+      <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
+Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
+RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
+常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info  </description>
+    </item>
+    
+    <item>
       <title>git 基础</title>
       <link>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</guid>
       <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
@@ -104,6 +91,19 @@ git config --global user.name &amp;quot;your name&amp;quot; git config --global 
 git config user.name git config user.email  解除全局用户名和邮箱
 git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
 git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
+    </item>
+    
+    <item>
+      <title>Apache 服务启动和停止</title>
+      <link>https://jepphu.github.io/2016/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
+      <pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2016/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
+      <description>启动：sudo apachectl start
+停止：sudo apachectl stop
+重启：sudo apachectl restart
+查看 Apache 版本 httpd -v
+打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
     </item>
     
   </channel>

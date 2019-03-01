@@ -26,7 +26,7 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     <item>
       <title>git 子模块</title>
       <link>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</guid>
       <description> 添加子模块 添加子模块，完成后会新增一个默认隐藏的配置文件 .gitmodules ，和一个外部项目的子目录 添加完成后需要将子模块切换到合适的分支
@@ -38,7 +38,7 @@ git rm --cached 子模块名称  </description>
     <item>
       <title>git 基础</title>
       <link>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</guid>
       <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户

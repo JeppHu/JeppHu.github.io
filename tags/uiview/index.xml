@@ -6,15 +6,26 @@
     <description>Recent content in UIView on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/uiview/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>UIView 事件拦截</title>
+      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
+      <description>hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者
+subViews 的 touch 相关方法不会响应
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{ // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件 if (CGRectContainsPoint(self.bounds, point)) { return self; } return nil; }  允许部分 subViews 响应事件 重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者</description>
+    </item>
+    
+    <item>
       <title>UIView 子视图坐标转换</title>
       <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
       <description>ViewA, ViewB, ViewC
@@ -25,14 +36,14 @@ ViewC 此时的 frame 是相对于 ViewB 的
     </item>
     
     <item>
-      <title>UIView 事件拦截</title>
-      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>收回键盘</title>
+      <link>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
-      <description>hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者
-subViews 的 touch 相关方法不会响应
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{ // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件 if (CGRectContainsPoint(self.bounds, point)) { return self; } return nil; }  允许部分 subViews 响应事件 重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者</description>
+      <guid>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</guid>
+      <description>收回键盘主要调用方法：
+[self.view endEditing:YES] //或 [self.emailTextField resignFirstResponder]   ViewController :  - (void)touchesBegan:(NSSet&amp;lt;UITouch *&amp;gt; *)touches withEvent:(UIEvent *)event { [self.view endEditing:YES]; }   TableViewController :  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{ [self.view endEditing:YES]; }  // 弹出键盘
+[self.textField becomeFirstResponder]  </description>
     </item>
     
   </channel>

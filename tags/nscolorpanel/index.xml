@@ -6,7 +6,7 @@
     <description>Recent content in NSColorPanel on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/nscolorpanel/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>NSColorPanel</title>
       <link>https://jepphu.github.io/2018/nscolorpanel/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/nscolorpanel/</guid>
       <description>设置 NSColorPanel 的显示模式和初始默认色盘，要在实例化之前设置

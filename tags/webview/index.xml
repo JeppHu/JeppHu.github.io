@@ -6,17 +6,17 @@
     <description>Recent content in WebView on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Apr 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/webview/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WKWebView 与 WebView 调试器</title>
-      <link>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <guid>https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
       <description> WKWebView #ifdef DEBUG [self.webView.configuration.preferences setValue:@YES forKey:@&amp;quot;developerExtrasEnabled&amp;quot;]; #endif  WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE  </description>
     </item>
     

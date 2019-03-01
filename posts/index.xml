@@ -45,16 +45,6 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     </item>
     
     <item>
-      <title>iOS 约束布局与动画</title>
-      <link>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
-      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2019/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
-      <description>在控件被添加了约束的情况下，修改 frame 是无法实现的动画的
- 修改约束的值 调用 layoutIfNeeded，要注意调用时机  self.viewHeight.constant = 0; [UIView animateWithDuration:0.25 animations:^{ [self.view layoutIfNeeded]; }];  </description>
-    </item>
-    
-    <item>
       <title>SFSafariViewController</title>
       <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
       <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
@@ -65,22 +55,9 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     </item>
     
     <item>
-      <title>UIView 子视图坐标转换</title>
-      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
-      <description>ViewA, ViewB, ViewC
-ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图
-ViewC 此时的 frame 是相对于 ViewB 的
-如果需求为获取 ViewC 此时相对于 ViewA 的 frame
-- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view; - (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view; CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA]; //或 CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];  </description>
-    </item>
-    
-    <item>
       <title>UINavigationBar</title>
       <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
       <description>UINavgationBar 设置颜色 UINavigationController *nav = self.navigationController; nav.navigationBar.tintColor = [UIColor whiteColor]; nav.navigationBar.barTintColor = [UIColor colorWithRed:28/255.0 green:152/255.0 blue:225/255.0 alpha:1.0]; nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor]};  此时会觉得 navigationbar 颜色很浅，因为这是半透明状态
@@ -96,7 +73,7 @@ self.extendedLayoutIncludesOpaqueBars = YES;
     <item>
       <title>present 一个 navigation</title>
       <link>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</link>
-      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</guid>
       <description>在 present 页面之后的页面需要使用 navigation
@@ -105,66 +82,164 @@ if (self.navigationController.navigationItem.hidesBackButton) { self.navigationI
     </item>
     
     <item>
-      <title>/usr/bin 和 /usr/local/bin</title>
-      <link>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>绘制 image</title>
+      <link>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/usrbin-%E5%92%8C-usrlocalbin/</guid>
-      <description>usr 指 Unix System Resource，而不是 User
-/usr/bin 下面的都是系统预装的可执行程序，会随着系统升级而改变
-/usr/local/bin 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件
-两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响</description>
-    </item>
-    
-    <item>
-      <title>Apache 服务启动和停止</title>
-      <link>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
-      <description>启动：sudo apachectl start
-停止：sudo apachectl stop
-重启：sudo apachectl restart
-查看 Apache 版本 httpd -v
-打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
+      <guid>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</guid>
+      <description> 绘制空白的 image UIColor *color = [UIColor whiteColor]; CGRect rect = CGRectMake(0, 0, 200, 200); UIGraphicsBeginImageContext(rect.size); CGContextRef context = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(context, color.CGColor); CGContextFillRect(context, rect); UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext();  </description>
     </item>
     
     <item>
       <title>App 发送邮件</title>
       <link>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
       <description>iOS App 发送邮件 #import &amp;lt;MessageUI/MessageUI.h&amp;gt;  &amp;lt;MFMailComposeViewControllerDelegate&amp;gt;  [self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];  - (void)sendEmail:(NSString *)email { if ([MFMailComposeViewController canSendMail]) { // [self.navigationController presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; [self presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil]; } else { UIAlertController *sendMailErrorAlert = [UIAlertController alertControllerWithTitle:@&amp;quot;Can not send&amp;quot; message:@&amp;quot;Please set your email&amp;quot; preferredStyle:UIAlertControllerStyleAlert]; [sendMailErrorAlert addAction:[UIAlertAction actionWithTitle:@&amp;quot;OK&amp;quot; style:UIAlertActionStyleDefault handler:nil]]; // [self.navigationController presentViewController:sendMailErrorAlert animated:YES completion:nil]; [self presentViewController:sendMailErrorAlert animated:YES completion:nil]; } } - (MFMailComposeViewController *)configuredMailComposeViewControllerWithEmail:(NSString *)email { MFMailComposeViewController *mfVC = [[MFMailComposeViewController alloc] init]; mfVC.</description>
     </item>
     
     <item>
-      <title>Finder 显示隐藏文件</title>
-      <link>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <title>iOS 约束布局与动画</title>
+      <link>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</guid>
-      <description>显示: defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
-隐藏: defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</description>
+      <guid>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
+      <description>在控件被添加了约束的情况下，修改 frame 是无法实现的动画的
+ 修改约束的值 调用 layoutIfNeeded，要注意调用时机  self.viewHeight.constant = 0; [UIView animateWithDuration:0.25 animations:^{ [self.view layoutIfNeeded]; }];  </description>
     </item>
     
     <item>
-      <title>Homebrew</title>
-      <link>https://jepphu.github.io/2018/homebrew/</link>
+      <title>UIButton 设置背景图片</title>
+      <link>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</guid>
+      <description>背景图自适应尺寸拉伸
+[button setBackgroundImage:image forState:UIControlStateNormal];
+背景图不拉伸
+[button setImage:image forState:UIControlStateNormal];
+关闭按钮点击时高亮的效果, 但是高亮的状态还在,只是效果没了
+button.adjustsImageWhenDisabled = NO;</description>
+    </item>
+    
+    <item>
+      <title>UIImage 渲染</title>
+      <link>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</guid>
+      <description>UIImage 有个 UIImageRenderingMode 属性，默认为 UIImageRenderingModeAutomatic
+- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode; typedef NS_ENUM(NSInteger, UIImageRenderingMode) { UIImageRenderingModeAutomatic, // 根据图片所处的绘图上下文自动调整渲染模式 UIImageRenderingModeAlwaysOriginal, // 始终绘制图片原始状态，不使用 Tint Color 渲染 UIImageRenderingModeAlwaysTemplate, // 始终根据环境的 Tint Color 渲染图片，忽略图片的本身的颜色信息 }  这个属性会导致一个常见的问题：UITabBarItem 上的 image 颜色与设置的原图不同 让 image 保持原图不被渲染有两种方法
+ 代码设置，这个只是局部的修改  UIImage *leftImage = [[UIImage imageNamed:@&amp;quot;icon_s&amp;quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; self.navigationItem.leftBarButtonItem.image = leftImage;   进入 Assets.xcassets，找到图片资源，在属性栏中有 Render As 属性，选中 Original Image  在整个工程中，使用到这个 image 都不会被环境的 Tint Color 渲染
+可以利用这个属性来将 image 渲染成想要的颜色 设置环境的 Tint Color，</description>
+    </item>
+    
+    <item>
+      <title>UIView 事件拦截</title>
+      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
+      <description>hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者
+subViews 的 touch 相关方法不会响应
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{ // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件 if (CGRectContainsPoint(self.bounds, point)) { return self; } return nil; }  允许部分 subViews 响应事件 重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者</description>
+    </item>
+    
+    <item>
+      <title>UIView 子视图坐标转换</title>
+      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
+      <description>ViewA, ViewB, ViewC
+ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图
+ViewC 此时的 frame 是相对于 ViewB 的
+如果需求为获取 ViewC 此时相对于 ViewA 的 frame
+- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view; - (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view; CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA]; //或 CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];  </description>
+    </item>
+    
+    <item>
+      <title>收回键盘</title>
+      <link>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</guid>
+      <description>收回键盘主要调用方法：
+[self.view endEditing:YES] //或 [self.emailTextField resignFirstResponder]   ViewController :  - (void)touchesBegan:(NSSet&amp;lt;UITouch *&amp;gt; *)touches withEvent:(UIEvent *)event { [self.view endEditing:YES]; }   TableViewController :  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{ [self.view endEditing:YES]; }  // 弹出键盘
+[self.textField becomeFirstResponder]  </description>
+    </item>
+    
+    <item>
+      <title>UITableViewCell 改变选时中颜色</title>
+      <link>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</guid>
+      <description>TableViewCell 有一个 selectedBackgroundView 属性
+创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell
+UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor = [UIColor whiteColor]; self.selectedBackgroundView = view;  </description>
+    </item>
+    
+    <item>
+      <title>NSTableView</title>
+      <link>https://jepphu.github.io/2018/nstableview/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/homebrew/</guid>
-      <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
-安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
-安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
-Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
-常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站</description>
+      <guid>https://jepphu.github.io/2018/nstableview/</guid>
+      <description>NSTableView &amp;lt;NSTableViewDelegate,NSTableViewDataSource&amp;gt;  self.tableView.delegate = self; self.tableView.dataSource = self;  - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row{ return 30; } - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{ return self.tableContents.count; } // 创建一个 NSTableRowView，它会是 NSTableCellView 的父级 // 可以用来控制 row 被选中后的呈现的颜色 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row{ NSTableRowView *rowView = [tableView makeViewWithIdentifier:@&amp;quot;rowView_id_storyBoard&amp;quot; owner:nil]; return rowView; } - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row { NSTableCellView *cellView = [tableView makeViewWithIdentifier:@&amp;quot;cellView_id_storyBoard&amp;quot; owner:nil]; return cellView } // 选择一行时执行，此处可以获取上一个被选中的 row - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row { NSInteger lastSelectedRow = self.</description>
+    </item>
+    
+    <item>
+      <title>GCD</title>
+      <link>https://jepphu.github.io/2018/gcd/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/gcd/</guid>
+      <description> GCD : Grand Central Dispatch  任务: block，确认执行什么任务
+ 队列: queue，用来存放任务
+  基础使用：创建队列, 创建任务, 将任务添加到队列
+// 创建队列 (全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 创建任务 dispatch_block_t task = ^{ NSLog(@&amp;quot;%@&amp;quot;, [NSThread currentThread]); }; // 将任务添加到队列 // test 异步, 开启了新的线程 dispatch_async(queue, task); // test 同步, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  </description>
+    </item>
+    
+    <item>
+      <title>NSThread</title>
+      <link>https://jepphu.github.io/2018/nsthread/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/nsthread/</guid>
+      <description> 多线程 多线程是切换执行的, 切换的速度非常快, 接近于 &amp;ldquo;同时&amp;rdquo; 执行, 实际上每个线程执行一段时间片就切换
+程序执行过程中系统会生成一些辅助线程, 且会自动销毁
+NSThread 生命周期需要程序员管理
+NSThread 的使用方式 方式 1
+// NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(demo:) object:@&amp;quot;obj&amp;quot;]; // 线程名字 thread1.name = @&amp;quot;t1&amp;quot;; // 线程的优先级,默认 0.5, 取值范围 (0 ~ 1), 可以使被分配时间片的几率更大, 但是不能保证一定先执行完 thread1.threadPriority = 1; // 线程进入可执行状态, 等待被调度, 执行 [thread1 start];  方式 2
+[NSThread detachNewThreadSelector:@selector(demo) toTarget:self withObject:nil];  方式 3
+[self performSelectorInBackground:@selector(demo) withObject:nil];  调用方法
+- (void)demo:(NSString *)sender { NSLog(@&amp;quot;name : %@&amp;quot;, name); for (int i = 0; i &amp;lt; 20; i ++) { NSLog(@&amp;quot;%@&amp;quot;, [NSThread currentThread]); // 阻塞线程 [NSThread sleepForTimeInterval:1]; } [NSThread exit]; }  </description>
+    </item>
+    
+    <item>
+      <title>多线程与锁</title>
+      <link>https://jepphu.github.io/2018/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/</guid>
+      <description>atomic 原子属性 多个线程同时读写这个属性时, 上了一把自旋锁,
+ 自旋锁: 单写多读, 单个线程写入, 但是允许多个线程读取
+所以这样多线程读仍然会导致数据错误
+如果线程正在锁定代码, 其他线程的写入操作会用死循环的方式一直等待锁定的代码执行完毕, 自旋锁更适合执行不耗时的代码
+ 互斥锁
+想读写完全绑定, 只能用互斥锁
+如果线程正在锁定代码, 其他线程的会进入就绪状态(休眠,等待执行), 等到锁打开后, 线程被唤醒
+  nonatomic 非原子属性 没有锁, 但是性能高
+@property (assign, nonatomic) int ticketsCount;  上互斥锁
+// 模拟多窗口卖票的操作 self.ticketsCount = 10; //多线程执行卖票操作, 这样会造成数据错误, 需要将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性), [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil]; [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil];  - (void)sellTickets { while (YES) { // 模拟耗时操作 [NSThread sleepForTimeInterval:1.0]; //上互斥锁, 将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性) //实现线程同步, 让线程在这里按顺序执行(会影响程序性能) //锁是 NSObject 的一个对象, 默认打开, 进入代码块将上锁 @synchronized(self) { if (self.</description>
     </item>
     
     <item>
       <title>NSColorPanel</title>
       <link>https://jepphu.github.io/2018/nscolorpanel/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/nscolorpanel/</guid>
       <description>设置 NSColorPanel 的显示模式和初始默认色盘，要在实例化之前设置
@@ -179,29 +254,16 @@ if ([panel isVisible]) { [panel orderOut:self]; } else { [panel orderFront:self]
     <item>
       <title>NSView 监听鼠标悬停</title>
       <link>https://jepphu.github.io/2018/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/nsview%E7%9B%91%E5%90%AC%E9%BC%A0%E6%A0%87%E6%82%AC%E5%81%9C/</guid>
       <description>@interface HoverImageButton () @property (strong,nonatomic) NSTrackingArea *trackingArea; @property (strong,nonatomic) NSImage *tempImage; @property (strong,nonatomic) NSImage *alternateImage; @end  @implementation HoverImageButton - (instancetype)initWithCoder:(NSCoder *)coder { self = [super initWithCoder:coder]; if (self) { self.tempImage = self.image; } return self; } - (void)updateTrackingAreas { if (self.trackingArea) { [self removeTrackingArea:self.trackingArea]; } int opts = (NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited); self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds options:opts owner:self userInfo:nil]; [self addTrackingArea:self.trackingArea]; } - (void)mouseEntered:(NSEvent *)event { [super mouseEntered:event]; self.image = self.</description>
     </item>
     
     <item>
-      <title>NSWindow 常用属性</title>
-      <link>https://jepphu.github.io/2018/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</guid>
-      <description>隐藏标题栏
-[self setTitleVisibility:NSWindowTitleHidden];  window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景
-[self setTitlebarAppearsTransparent:YES];  通过拖动背景来移动整个 window
-[self setMovableByWindowBackground:YES];  完全透明的 window
-[self setBackgroundColor:[NSColor clearColor]]; [self setOpaque:NO];  </description>
-    </item>
-    
-    <item>
       <title>NSWindow 改变 WindowButton 位置</title>
       <link>https://jepphu.github.io/2018/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/</guid>
       <description>NSWindow 上的三个按钮
@@ -212,61 +274,9 @@ closeBtn.translatesAutoresizingMaskIntoConstraints = NO; miniaturizeBtn.translat
     </item>
     
     <item>
-      <title>RVM</title>
-      <link>https://jepphu.github.io/2018/rvm/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/rvm/</guid>
-      <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
-Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
-RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
-常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info  </description>
-    </item>
-    
-    <item>
-      <title>UIView 事件拦截</title>
-      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
-      <description>hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者
-subViews 的 touch 相关方法不会响应
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{ // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件 if (CGRectContainsPoint(self.bounds, point)) { return self; } return nil; }  允许部分 subViews 响应事件 重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者</description>
-    </item>
-    
-    <item>
-      <title>WKWebView 与 WebView 调试器</title>
-      <link>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
-      <description> WKWebView #ifdef DEBUG [self.webView.configuration.preferences setValue:@YES forKey:@&amp;quot;developerExtrasEnabled&amp;quot;]; #endif  WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE  </description>
-    </item>
-    
-    <item>
-      <title>WKWebView 清除 cookies</title>
-      <link>https://jepphu.github.io/2018/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/wkwebview%E6%B8%85%E9%99%A4cookies/</guid>
-      <description>NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];  </description>
-    </item>
-    
-    <item>
-      <title>WKWebView 页面显示不全</title>
-      <link>https://jepphu.github.io/2018/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</guid>
-      <description> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView  此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
-解决方法
-NSWindowStyleMask == NSWindowStyleMaskBorderless  </description>
-    </item>
-    
-    <item>
       <title>git 子模块</title>
       <link>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/git%E5%AD%90%E6%A8%A1%E5%9D%97/</guid>
       <description> 添加子模块 添加子模块，完成后会新增一个默认隐藏的配置文件 .gitmodules ，和一个外部项目的子目录 添加完成后需要将子模块切换到合适的分支
@@ -276,28 +286,9 @@ git rm --cached 子模块名称  </description>
     </item>
     
     <item>
-      <title>绘制 image</title>
-      <link>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</guid>
-      <description> 绘制空白的 image UIColor *color = [UIColor whiteColor]; CGRect rect = CGRectMake(0, 0, 200, 200); UIGraphicsBeginImageContext(rect.size); CGContextRef context = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(context, color.CGColor); CGContextFillRect(context, rect); UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext();  </description>
-    </item>
-    
-    <item>
-      <title>通过点击 Dock 图标重新显示窗口</title>
-      <link>https://jepphu.github.io/2018/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</guid>
-      <description>在 AppDelegate.m 文件中实现  中的方法：
-- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }  </description>
-    </item>
-    
-    <item>
       <title>重置 Dock 和 Launchpad</title>
       <link>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/%E9%87%8D%E7%BD%AEdock%E5%92%8Claunchpad/</guid>
       <description>用来解决 APP 图标异常的问题，APP 图标会恢复成默认排序
@@ -306,11 +297,21 @@ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock</descripti
     
     <item>
       <title>隐藏 Dock 应用图标和 Menu</title>
-      <link>https://jepphu.github.io/2018/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</link>
-      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://jepphu.github.io/2017/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</link>
+      <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</guid>
+      <guid>https://jepphu.github.io/2017/%E9%9A%90%E8%97%8Fdock%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%92%8Cmenu/</guid>
       <description>Info.plist 设置字段：Application is agent (UIElement) 为 YES</description>
+    </item>
+    
+    <item>
+      <title>通过点击 Dock 图标重新显示窗口</title>
+      <link>https://jepphu.github.io/2017/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</link>
+      <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/%E9%80%9A%E8%BF%87dock%E5%9B%BE%E6%A0%87%E9%87%8D%E6%96%B0%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3/</guid>
+      <description>在 AppDelegate.m 文件中实现  中的方法：
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag { if (!flag){ [NSApp activateIgnoringOtherApps:NO]; [self.window makeKeyAndOrderFront:self]; } return YES; }  </description>
     </item>
     
     <item>
@@ -324,9 +325,154 @@ brew install youtube-dl  常用命令 youtube-dl [OPTIONS] URL [URL...] （URL �
     </item>
     
     <item>
+      <title>归档存储对象</title>
+      <link>https://jepphu.github.io/2017/%E5%BD%92%E6%A1%A3%E5%AD%98%E5%82%A8%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/%E5%BD%92%E6%A1%A3%E5%AD%98%E5%82%A8%E5%AF%B9%E8%B1%A1/</guid>
+      <description>NSCoder 编码解码 让对象需要存储的类遵守  协议，然后在它的 .m 文件中实现协议方法，将属性编码解码  实现编码协议方法，将属性编码
+ 不是对象的属性通过 NSNumber 类转换为对象
+ 每一个对象分别提供一个唯一的字符串即键，一一进行编码
+  - (void)encodeWithCoder:(NSCoder *)aCoder { [aCoder encodeObject:self.subject forKey:KEY_SUBJECT]; [aCoder encodeObject:self.fro forKey:KEY_FROM]; [aCoder encodeObject:[NSNumber numberWithBool:self.isFavorite] forKey:KEY_FAVORITE]; }   实现解码协议方法，将属性解码
+ 根据自己添加的键返回对象
+ 把这些对象和提取出来的数据一一赋给对应的属性
+  - (instancetype)initWithCoder:(NSCoder *)aDecoder { self = [self init]; if (self) { self.subject = [aDecoder decodeObjectForKey:KEY_SUBJECT]; self.fro = [aDecoder decodeObjectForKey:KEY_FROM]; self.isFavorite = [[aDecoder decodeObjectForKey:KEY_FAVORITE] boolValue]; } return self; }  对象写入/读取 把对象写进指定的文件，写入成功则返回 YES，否则返回 NO</description>
+    </item>
+    
+    <item>
+      <title>NSBundle</title>
+      <link>https://jepphu.github.io/2017/nsbundle/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/nsbundle/</guid>
+      <description> 获取资源文件 NSString *bundlePath = [[NSBundle mainBundle] resourcePath]; NSString *imagePath = [[NSBundle mainBundle] pathForResource:@&amp;quot;imageName&amp;quot; ofType:@&amp;quot;png&amp;quot;];  从文件中读取数据 NSString *path = [[NSBundle mainBundle] pathForResource:@&amp;quot;MKStoreKitConfigs&amp;quot; ofType:@&amp;quot;plist&amp;quot;]; NSDictionary *dic = [[[NSDictionary alloc] initWithContentsOfFile:path]];  </description>
+    </item>
+    
+    <item>
+      <title>/usr/bin 和 /usr/local/bin</title>
+      <link>https://jepphu.github.io/2017/usrbin-%E5%92%8C-usrlocalbin/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/usrbin-%E5%92%8C-usrlocalbin/</guid>
+      <description>usr 指 Unix System Resource，而不是 User
+/usr/bin 下面的都是系统预装的可执行程序，会随着系统升级而改变
+/usr/local/bin 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件
+两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响</description>
+    </item>
+    
+    <item>
+      <title>Homebrew</title>
+      <link>https://jepphu.github.io/2017/homebrew/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/homebrew/</guid>
+      <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
+安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
+安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
+Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
+常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站</description>
+    </item>
+    
+    <item>
+      <title>RVM</title>
+      <link>https://jepphu.github.io/2017/rvm/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/rvm/</guid>
+      <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
+Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
+RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
+常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info  </description>
+    </item>
+    
+    <item>
+      <title>WKWebView 与 WebView 调试器</title>
+      <link>https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</guid>
+      <description> WKWebView #ifdef DEBUG [self.webView.configuration.preferences setValue:@YES forKey:@&amp;quot;developerExtrasEnabled&amp;quot;]; #endif  WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE  </description>
+    </item>
+    
+    <item>
+      <title>WKWebView 清除 cookies</title>
+      <link>https://jepphu.github.io/2017/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/wkwebview%E6%B8%85%E9%99%A4cookies/</guid>
+      <description>NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];  </description>
+    </item>
+    
+    <item>
+      <title>用浏览器打开超链接</title>
+      <link>https://jepphu.github.io/2017/%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E8%B6%85%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E8%B6%85%E9%93%BE%E6%8E%A5/</guid>
+      <description>&amp;lt;WKNavigationDelegate&amp;gt;  self.webView.navigationDelegate = self;  - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler { NSURL *url = navigationAction.request.URL; if (navigationAction.navigationType == WKNavigationTypeLinkActivated) { [[UIApplication sharedApplication] openURL:url]; // [[NSWorkspace sharedWorkspace] openURL:url]; decisionHandler(WKNavigationActionPolicyCancel); } else { decisionHandler(WKNavigationActionPolicyAllow); } }  </description>
+    </item>
+    
+    <item>
+      <title>NSWindow 常用属性</title>
+      <link>https://jepphu.github.io/2017/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/nswindow%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/</guid>
+      <description>隐藏标题栏
+[self setTitleVisibility:NSWindowTitleHidden];  window StyleMask 设置为 NSFullSizeContentViewWindowMask 时，标题栏不绘制背景
+[self setTitlebarAppearsTransparent:YES];  通过拖动背景来移动整个 window
+[self setMovableByWindowBackground:YES];  完全透明的 window
+[self setBackgroundColor:[NSColor clearColor]]; [self setOpaque:NO];  </description>
+    </item>
+    
+    <item>
+      <title>WKWebView 页面显示不全</title>
+      <link>https://jepphu.github.io/2017/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</link>
+      <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/wkwebview%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8/</guid>
+      <description> WKWebView 因为 NSWindow 属性造成的 bug NSWindowStyleMask == NSWindowStyleMaskFullSizeContentView  此时 WKWebView 如果不是充满整个 Window 加载的 HTML 会出现页面显示不全的情况
+解决方法
+NSWindowStyleMask == NSWindowStyleMaskBorderless  </description>
+    </item>
+    
+    <item>
+      <title>Finder 显示隐藏文件</title>
+      <link>https://jepphu.github.io/2017/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/finder%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</guid>
+      <description>显示: defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+隐藏: defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder</description>
+    </item>
+    
+    <item>
+      <title>命令行操作目录与文件</title>
+      <link>https://jepphu.github.io/2017/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 16 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/</guid>
+      <description>目录 创建目录 mkdir folderName
+进入目录 cd folderName
+返回上级目录 cd ..
+删除空目录 rmdir folderName
+强制删除目录及目录下的内容 rmdir -rf folderName
+打开成可视化的文件夹 open folderName
+打开当前目录 open .
+文件 查看当前目录下的非隐藏文件 ls
+查看当前目录下的所有文件 ls -a
+创建文件 touch fileName.txt
+删除文件 rm fileName.txt
+复制文件 cp fileName.txt newName.txt
+移动文件 mv fileName /zone/files/
+重命名文件 mv fileName1 fileName2
+查找当前目录下的所有 .txt 文件 find *.txt</description>
+    </item>
+    
+    <item>
       <title>git 基础</title>
       <link>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2017/git%E5%9F%BA%E7%A1%80/</guid>
       <description>Git 配置用户名和邮箱 配置全局用户名和邮箱，不适用多账户
@@ -347,6 +493,19 @@ git config --list  上传本地项目到远程仓库  建立一个远程仓库 :
  view 的创建
 - (void)loadView;
  view 是懒加载的 只有系统认为需要生成一个 view 的时候，才会调用这个方法来创建一个 view，这个时候通常是 presentViewController: 或 pushViewController: 的时候 当只有 viewController 的初始化的时候，不会创建一个 view， 也不会走 - (void)viewDidLoad 想要不 presentViewController: 或 pushViewController: 的情况下创建 view，访问一下 view 即可，[ViewController view] 一但重写了 loadView，需要自己创建 view，这个时候可以生成一个 UIImageView , WKWebView 等其它 view    - (void)loadView { UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@&amp;quot;Default&amp;quot;]]; imageView.frame = [UIScreen mainScreen].bounds; imageView.userInteractionEnabled = YES; self.</description>
+    </item>
+    
+    <item>
+      <title>Apache 服务启动和停止</title>
+      <link>https://jepphu.github.io/2016/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</link>
+      <pubDate>Tue, 28 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2016/apache%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2/</guid>
+      <description>启动：sudo apachectl start
+停止：sudo apachectl stop
+重启：sudo apachectl restart
+查看 Apache 版本 httpd -v
+打开 http://127.0.0.1 可以看到 It works! 的页面，启动成功</description>
     </item>
     
   </channel>
