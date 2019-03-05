@@ -17,10 +17,47 @@
       <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/gcd/</guid>
-      <description> GCD : Grand Central Dispatch  任务: block，确认执行什么任务
- 队列: queue，用来存放任务
-  基础使用：创建队列, 创建任务, 将任务添加到队列
-// 创建队列 (全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 创建任务 dispatch_block_t task = ^{ NSLog(@&amp;quot;%@&amp;quot;, [NSThread currentThread]); }; // 将任务添加到队列 // test 异步, 开启了新的线程 dispatch_async(queue, task); // test 同步, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  </description>
+      <description>GCD : Grand Central Dispatch  任务: block，确认执行什么任务
+ 队列: queue，用来存放任务，并行或串行
+ 执行方式：同步，不开线程；异步，开启线程
+   创建队列 创建任务 将任务添加到队列并执行  // 创建队列 (全局队列，实际上是获取到全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 创建任务 dispatch_block_t task = ^{ NSLog(@&amp;quot;%@&amp;quot;, [NSThread currentThread]); }; // 将任务添加到队列并执行 // 异步执行, 开启了新的线程 dispatch_async(queue, task); // 同步执行, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  队列  并行队列：只在异步执行有效，自动开启多个线程同时执行任务
+ 串行队列：让任务一个接一个的执行，只会在一个线程中执行完队列中的任务
+ 主队列：主线程中的队列
+ 全局队列：本质是并行队列，只是全局队列没有名称，没办法跟踪错误，并行队列则有名称；全局队列一直存在, 不用自己创建, 只需要获取;
+  dispatch_get_global_queue(&amp;lt;#long identifier#&amp;gt;, &amp;lt;#unsigned long flags#&amp;gt;) &amp;lt;#long identifier#&amp;gt; : 服务质量, 也就是并发优先级，0 &amp;lt;#unsigned long flags#&amp;gt; : 这个参数没有作用, 苹果留用, 固定为 0  多线程通常使用 全局队列</description>
+    </item>
+    
+    <item>
+      <title>GCD Time</title>
+      <link>https://jepphu.github.io/2018/gcd_time/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/gcd_time/</guid>
+      <description> 延迟执行 // 参数1: 延迟多少时间, 精度到 纳秒 // 参数2: 队列 // 参数3: 任务 double second = 3.0; dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(second * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ NSLog(@&amp;quot;延迟 %f&amp;quot;, second); });  定时器 dispatch_source </description>
+    </item>
+    
+    <item>
+      <title>GCD barrier 阻塞与调度组</title>
+      <link>https://jepphu.github.io/2018/gcd_barrier%E9%98%BB%E5%A1%9E/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/gcd_barrier%E9%98%BB%E5%A1%9E/</guid>
+      <description>需求：开启 N 个子线程执行任务，但是后面需要依赖 N 个子线程的任务结果才能继续操作
+可以使用 barrier 或 调度组
+barrier 主要用于在多个异步操作完成之后，统一对非线程安全的对象进行更新，适合于大规模的 I/O 操作
+当访问数据库或文件时，更新数据的时候不能和其他更新和读取的操作在同一时间执行
+@interface ViewController () { dispatch_queue_t _queue; } @property (strong, nonatomic) NSMutableArray *photoList; @end - (NSMutableArray *)photoList { if (!_photoList) { _photoList = [NSMutableArray array]; } return _photoList; } - (void)viewDidLoad { [super viewDidLoad]; // 创建并发队列，不能使用全局队列, 要用手动创建并发队列 _queue = dispatch_queue_create(&amp;quot;for barrier&amp;quot;, DISPATCH_QUEUE_CONCURRENT); for (int i = 0; i &amp;lt; 10; i ++) { [self getImage:i]; } } - (void)getImage:(int)index { // 异步执行并发队列，创建多个子线程执行任务 queue = dispatch_queue_create(&amp;quot;for barrier&amp;quot;, DISPATCH_QUEUE_CONCURRENT); dispatch_async(_queue, ^{ NSString *fileName = [NSString stringWithFormat:@&amp;quot;%02d&amp;quot;, index % 10]; NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@&amp;quot;png&amp;quot;]; UIImage *image = [UIImage imageWithContentsOfFile:path]; // 多线程，同一时刻向 photoList 添加元素，可能会造成丢失，崩溃，这个时候需要添加阻塞，且不能使用全局队列, 要用手动创建并发队列 // 阻塞所有的线程, 直到队列任务都完成后才执行这个段代码, 最后才来添加 dispatch_barrier_async(self-&amp;gt;_queue, ^{ [self.</description>
+    </item>
+    
+    <item>
+      <title>GCD 单例</title>
+      <link>https://jepphu.github.io/2018/gcd%E5%8D%95%E4%BE%8B/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/gcd%E5%8D%95%E4%BE%8B/</guid>
+      <description>dispach_once dispach_once 函数中的代码块只会被执行一次，而且还是线程安全的
+@interface Person : NSObject + (instancetype)sharePerson; @end  @implementation Person + (instancetype)allocWithZone:(struct _NSZone *)zone { static Person *instance = nil; // 一次性执行 static dispatch_once_t onceToken; dispatch_once(&amp;amp;onceToken, ^{ instance = [super allocWithZone:zone]; }); return instance; } + (instancetype)sharePerson { return [self new]; }  快速实现单例 封装到头文件
+// 创建单例, 禁用 alloc, new, copy, mutableCopy 方法 #define SINGLETON_DEF(_type_) + (_type_ *)sharedInstance;\ +(instancetype) alloc __attribute__((unavailable(&amp;quot;call sharedInstance instead&amp;quot;)));\ +(instancetype) new __attribute__((unavailable(&amp;quot;call sharedInstance instead&amp;quot;)));\ -(instancetype) copy __attribute__((unavailable(&amp;quot;call sharedInstance instead&amp;quot;)));\ -(instancetype) mutableCopy __attribute__((unavailable(&amp;quot;call sharedInstance instead&amp;quot;)));\ // 实现单例 #define SINGLETON_IMP(_type_) + (_type_ *)sharedInstance {\ static _type_ *sharedInstance = nil;\ static dispatch_once_t onceToken;\ dispatch_once(&amp;amp;onceToken, ^{\ sharedInstance = [[super alloc] init];\ });\ return sharedInstance;\ }  声明</description>
     </item>
     
     <item>

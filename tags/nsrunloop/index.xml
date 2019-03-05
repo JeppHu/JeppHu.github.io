@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSRunLoop on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/nsrunloop/</link>
+    <description>Recent content in NSRunLoop on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/nsrunloop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NSRunLoop</title>
+      <link>https://jepphu.github.io/2018/nsrunloop/</link>
+      <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/nsrunloop/</guid>
+      <description>NSRunLoop：消息循环机制 线程与 RunLoop 是一一对应的
+有线程，才能开启线程中对应 RunLoop
+主线程的 RunLoop 是默认开启的，而子线程中的 RunLoop 是默认关闭的
+开启了 RunLoop 的线程才不会在执行完队列任务被回收
+所以主线程可以一直运行而不会结束
+NSRunLoop 保证线程不会被退出，并且能在不处理消息的时候让线程休眠，节约资源，在接收到消息的时候唤醒线程做出对应处理并接收各种消息和处理各种事件
+获取 RunLoop 苹果不直接创建 RunLoop，只能获取
+RunLoop 是懒加载，在第一次获取时创建，在线程结束时销毁
+// 获取当前线程的RunLoop [NSRunLoop currentRunLoop]; [NSRunLoop mainRunLoop]; CFRunLoopGetMain(); CFRunLoopGetCurrent();  启动 RunLoop // 默认 NSDefaultRunLoopMode [[NSRunLoop currentRunLoop] run]; // 默认 NSDefaultRunLoopMode，消息循环一直运行, 2秒后结束 [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]]; // 指定运行模式，在时间到后或者触发了非 Timer 的事件后退出。 [[NSRunLoop currentRunLoop] runMode:NSRunLoopCommonModes beforeDate:[NSDate dateWithTimeIntervalSinceNow:2]];  启动 RunLoop 时必须指定一种 mode
+NSDefaultRunLoopMode // 默认模式, 可以处理输入源 UITrackingRunloopMode // 界面跟踪模式，用于 scrollView, textView 追踪触摸，界面滑动时不受其他 mode 影响 UIinitializationRunloopMode // 在 App 启动进入被主线程使用的第一个 mode，启动完成后就不再使用 GSEventRecieveRunloopMode // 苹果使用绘图相关 NSRunLoopCommonModes // 混合模式, 是一个集合, 包含了NSDefaultRunLoopMode, UITrackingRunLoopMode等  mode 有三个组成部分 Source（事件源），Timer（定时器）以及 Observor（观察者）</description>
+    </item>
+    
+  </channel>
+</rss>

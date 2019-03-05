@@ -9,8 +9,8 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2018/nsthread/" />
-  <link rel="next" href="https://jepphu.github.io/2018/nstableview/" />
+  <link rel="prev" href="https://jepphu.github.io/2018/gcd_time/" />
+  <link rel="next" href="https://jepphu.github.io/2018/nsrunloop/" />
   <link rel="canonical" href="https://jepphu.github.io/2018/gcd/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
@@ -46,10 +46,14 @@
     "articleSection" : "posts",
     "name" : "GCD",
     "headline" : "GCD",
-    "description" : " GCD : Grand Central Dispatch  任务: block，确认执行什么任务
- 队列: queue，用来存放任务
-  基础使用：创建队列, 创建任务, 将任务添加到队列
-// 创建队列 (全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 创建任务 dispatch_block_t task = ^{ NSLog(@&quot;%@&quot;, [NSThread currentThread]); }; // 将任务添加到队列 // test 异步, 开启了新的线程 dispatch_async(queue, task); // test 同步, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  ",
+    "description" : "GCD : Grand Central Dispatch  任务: block，确认执行什么任务
+ 队列: queue，用来存放任务，并行或串行
+ 执行方式：同步，不开线程；异步，开启线程
+   创建队列 创建任务 将任务添加到队列并执行  // 创建队列 (全局队列，实际上是获取到全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 创建任务 dispatch_block_t task = ^{ NSLog(@&quot;%@&quot;, [NSThread currentThread]); }; // 将任务添加到队列并执行 // 异步执行, 开启了新的线程 dispatch_async(queue, task); // 同步执行, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  队列  并行队列：只在异步执行有效，自动开启多个线程同时执行任务
+ 串行队列：让任务一个接一个的执行，只会在一个线程中执行完队列中的任务
+ 主队列：主线程中的队列
+ 全局队列：本质是并行队列，只是全局队列没有名称，没办法跟踪错误，并行队列则有名称；全局队列一直存在, 不用自己创建, 只需要获取;
+  dispatch_get_global_queue(&lt;#long identifier#&gt;, &lt;#unsigned long flags#&gt;) &lt;#long identifier#&gt; : 服务质量, 也就是并发优先级，0 &lt;#unsigned long flags#&gt; : 这个参数没有作用, 苹果留用, 固定为 0  多线程通常使用 全局队列",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -60,7 +64,7 @@
     "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
     "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
     "url" : "https://jepphu.github.io/2018/gcd/",
-    "wordCount" : "45",
+    "wordCount" : "280",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }
 </script>
@@ -156,12 +160,18 @@
 <ul>
 <li><p>任务: block，确认执行什么任务</p></li>
 
-<li><p>队列: queue，用来存放任务</p></li>
+<li><p>队列: queue，用来存放任务，并行或串行</p></li>
+
+<li><p>执行方式：同步，不开线程；异步，开启线程</p></li>
 </ul>
 
-<p>基础使用：创建队列, 创建任务, 将任务添加到队列</p>
+<ol>
+<li>创建队列</li>
+<li>创建任务</li>
+<li>将任务添加到队列并执行</li>
+</ol>
 
-<pre><code class="language-objc">// 创建队列 (全局队列)
+<pre><code class="language-objc">// 创建队列 (全局队列，实际上是获取到全局队列)
 dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
 
 // 创建任务
@@ -169,13 +179,101 @@ dispatch_block_t task = ^{
     NSLog(@&quot;%@&quot;, [NSThread currentThread]);
 };
 
-// 将任务添加到队列
-
-// test 异步, 开启了新的线程
+// 将任务添加到队列并执行
+// 异步执行, 开启了新的线程
 dispatch_async(queue, task);
 
-// test 同步, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程
+// 同步执行, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程
 dispatch_sync(queue, task);
+</code></pre>
+
+<h3 id="队列">队列</h3>
+
+<ul>
+<li><p>并行队列：只在异步执行有效，自动开启多个线程同时执行任务</p></li>
+
+<li><p>串行队列：让任务一个接一个的执行，只会在一个线程中执行完队列中的任务</p></li>
+
+<li><p>主队列：主线程中的队列</p></li>
+
+<li><p>全局队列：本质是并行队列，只是全局队列没有名称，没办法跟踪错误，并行队列则有名称；全局队列一直存在, 不用自己创建, 只需要获取;</p></li>
+</ul>
+
+<pre><code class="language-objc">dispatch_get_global_queue(&lt;#long identifier#&gt;, &lt;#unsigned long flags#&gt;)
+&lt;#long identifier#&gt; : 服务质量, 也就是并发优先级，0
+&lt;#unsigned long flags#&gt; : 这个参数没有作用, 苹果留用, 固定为 0
+</code></pre>
+
+<p>多线程通常使用 全局队列</p>
+
+<h3 id="同步-串行队列-不开新线程-在原线程上多任务按顺序执行">同步 + 串行队列：不开新线程，在原线程上多任务按顺序执行</h3>
+
+<pre><code class="language-objc">dispatch_queue_t queue = dispatch_queue_create(&quot;串行队列&quot;, DISPATCH_QUEUE_SERIAL);
+// 不开新线程, 多任务按顺序序执行
+for (int i = 0; i &lt; 10; i ++) {
+    dispatch_sync(queue, ^{
+        NSLog(@&quot;hello - %d %@&quot;, i, [NSThread currentThread]);
+    });
+}
+</code></pre>
+
+<h3 id="异步-串行队列-开启新线程-多任务按顺序执行-所以只会开一个线程">异步 + 串行队列：开启新线程，多任务按顺序执行，所以只会开一个线程</h3>
+
+<pre><code class="language-objc">dispatch_queue_t queue = dispatch_queue_create(&quot;串行队列&quot;, DISPATCH_QUEUE_SERIAL);
+// 开启新线程, 多任务按顺序执行, 所以只会开一个线程
+for (int i = 0; i &lt; 10; i ++) {
+    dispatch_async(queue, ^{
+        NSLog(@&quot;hello - %d %@&quot;, i, [NSThread currentThread]);
+    });
+}
+</code></pre>
+
+<h3 id="同步-并行队列-不开新线程-在原线程执行上多任务-只会按顺序执行-此时并行无意义">同步 + 并行队列：不开新线程，在原线程执行上多任务，只会按顺序执行（此时并行无意义）</h3>
+
+<p>== 同步 + 全局队列</p>
+
+<pre><code class="language-objc">dispatch_queue_t queue = dispatch_queue_create(&quot;并行队列&quot;, DISPATCH_QUEUE_CONCURRENT);
+// 不开新线程, 多任务按顺序执行
+for (int i = 0; i &lt; 10; i ++) {
+    dispatch_sync(queue, ^{
+        NSLog(@&quot;hello - %d %@&quot;, i, [NSThread currentThread]);
+    });
+}
+</code></pre>
+
+<h3 id="异步-并行队列-开启多个新线程-同时执行多任务-常用-开启无需追踪的子线程执行耗时操作">异步 + 并行队列：开启多个新线程，同时执行多任务 （常用，开启无需追踪的子线程执行耗时操作）</h3>
+
+<p>== 异步 + 全局队列</p>
+
+<pre><code class="language-objc">dispatch_queue_t queue = dispatch_queue_create(&quot;并行队列&quot;, DISPATCH_QUEUE_CONCURRENT);
+// 开启多个新线程, 同时执行多任务
+for (int i = 0; i &lt; 10; i ++) {
+    dispatch_async(queue, ^{
+        NSLog(@&quot;hello - %d %@&quot;, i, [NSThread currentThread]);
+    });
+}
+</code></pre>
+
+<h3 id="主队列-同步-无用">主队列 + 同步（无用）</h3>
+
+<pre><code class="language-objc">for (int i = 0; i &lt; 10; i ++) {
+    // 主队列特点: 先执行完主线程上的代码, 才会执行主队列中的任务, 此时主线程正等待同步执行的代码执行完
+    // 同步执行会等待第一个任务的执行完成, 才会继续, 然而任务在主线程上
+    // 造成了相互等待的结果, 叫做 死锁
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@&quot;hello - %d %@&quot;, i, [NSThread currentThread]);
+    });
+}
+</code></pre>
+
+<h3 id="主队列-异步-常用-回到主线程执行-ui-操作">主队列 + 异步（常用，回到主线程执行 UI 操作）</h3>
+
+<pre><code class="language-objc">for (int i = 0; i &lt; 10; i ++) {
+    // 异步执行有开启新线程的能力，但任务都是在主线程中执行的，不需要开线程
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@&quot;hello - %d %@&quot;, i, [NSThread currentThread]);
+    });
+}
 </code></pre>
 
     </div>
@@ -220,10 +318,10 @@ dispatch_sync(queue, task);
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2018/nsthread/" class="prev" rel="prev" title="NSThread"><i class="iconfont icon-left"></i>&nbsp;NSThread</a>
+        <a href="https://jepphu.github.io/2018/gcd_time/" class="prev" rel="prev" title="GCD Time"><i class="iconfont icon-left"></i>&nbsp;GCD Time</a>
          
         
-        <a href="https://jepphu.github.io/2018/nstableview/" class="next" rel="next" title="NSTableView">NSTableView&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://jepphu.github.io/2018/nsrunloop/" class="next" rel="next" title="NSRunLoop">NSRunLoop&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

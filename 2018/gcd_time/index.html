@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2018/nsrunloop/" />
-  <link rel="next" href="https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/" />
-  <link rel="canonical" href="https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/" />
+  <link rel="prev" href="https://jepphu.github.io/2018/gcd_barrier%E9%98%BB%E5%A1%9E/" />
+  <link rel="next" href="https://jepphu.github.io/2018/gcd/" />
+  <link rel="canonical" href="https://jepphu.github.io/2018/gcd_time/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           UITableViewCell 改变选时中颜色 | Jepp Hu
+           GCD Time | Jepp Hu
        
   </title>
-  <meta name="title" content="UITableViewCell 改变选时中颜色 | Jepp Hu">
+  <meta name="title" content="GCD Time | Jepp Hu">
     
   
   <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
@@ -44,11 +44,9 @@
          "@id": "https://jepphu.github.io/"
     },
     "articleSection" : "posts",
-    "name" : "UITableViewCell 改变选时中颜色",
-    "headline" : "UITableViewCell 改变选时中颜色",
-    "description" : "TableViewCell 有一个 selectedBackgroundView 属性
-创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell
-UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor = [UIColor whiteColor]; self.selectedBackgroundView = view;  ",
+    "name" : "GCD Time",
+    "headline" : "GCD Time",
+    "description" : " 延迟执行 // 参数1: 延迟多少时间, 精度到 纳秒 // 参数2: 队列 // 参数3: 任务 double second = 3.0; dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(second * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ NSLog(@&quot;延迟 %f&quot;, second); });  定时器 dispatch_source ",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -56,11 +54,11 @@ UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor 
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-05-10 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-05-10 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/",
-    "wordCount" : "22",
-    "keywords" : [ "UITableView", "Jepp Hu"]
+    "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
+    "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
+    "url" : "https://jepphu.github.io/2018/gcd_time/",
+    "wordCount" : "28",
+    "keywords" : [ "OC 多线程", "Jepp Hu"]
 }
 </script>
 
@@ -118,16 +116,16 @@ UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor 
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">UITableViewCell 改变选时中颜色</h1>
+        <h1 class="post-title" itemprop="name headline">GCD Time</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2018-05-10 itemprop="datePublished">May 10, 2018</time>
+                on <time datetime=2018-03-15 itemprop="datePublished">March 15, 2018</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://jepphu.github.io/categories/uikit/"> UIKit </a>
+                        <a href="https://jepphu.github.io/categories/foundation/"> Foundation </a>
                         
                 </span>
         </div>
@@ -148,14 +146,20 @@ UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor 
           
           
 
-          <p>TableViewCell 有一个 selectedBackgroundView 属性</p>
+          
 
-<p>创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell</p>
+<h3 id="延迟执行">延迟执行</h3>
 
-<pre><code class="language-objc">UIView *view = [[UIView alloc] initWithFrame:self.bounds];
-view.backgroundColor = [UIColor whiteColor];
-self.selectedBackgroundView = view;
+<pre><code class="language-objc">// 参数1: 延迟多少时间, 精度到 纳秒
+// 参数2: 队列
+// 参数3: 任务
+double second = 3.0;
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(second * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    NSLog(@&quot;延迟 %f&quot;, second);
+});
 </code></pre>
+
+<h3 id="定时器-dispatch-source">定时器 dispatch_source</h3>
 
     </div>
 
@@ -170,7 +174,7 @@ self.selectedBackgroundView = view;
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</span>
+                    <a href=https://jepphu.github.io/2018/gcd_time/>https://jepphu.github.io/2018/gcd_time/</span>
             </p>
             
              
@@ -186,8 +190,8 @@ self.selectedBackgroundView = view;
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://jepphu.github.io/tags/uitableview/">
-                    #UITableView</a></span>
+            <span class="tag"><a href="https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                    #OC 多线程</a></span>
             
             </section>
         
@@ -199,10 +203,10 @@ self.selectedBackgroundView = view;
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2018/nsrunloop/" class="prev" rel="prev" title="NSRunLoop"><i class="iconfont icon-left"></i>&nbsp;NSRunLoop</a>
+        <a href="https://jepphu.github.io/2018/gcd_barrier%E9%98%BB%E5%A1%9E/" class="prev" rel="prev" title="GCD barrier 阻塞与调度组"><i class="iconfont icon-left"></i>&nbsp;GCD barrier 阻塞与调度组</a>
          
         
-        <a href="https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/" class="next" rel="next" title="收回键盘">收回键盘&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://jepphu.github.io/2018/gcd/" class="next" rel="next" title="GCD">GCD&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

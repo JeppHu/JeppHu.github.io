@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2018/nsrunloop/" />
-  <link rel="next" href="https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/" />
-  <link rel="canonical" href="https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/" />
+  <link rel="prev" href="https://jepphu.github.io/2018/nsthread/" />
+  <link rel="next" href="https://jepphu.github.io/2018/gcd_barrier%E9%98%BB%E5%A1%9E/" />
+  <link rel="canonical" href="https://jepphu.github.io/2018/gcd%E5%8D%95%E4%BE%8B/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           UITableViewCell 改变选时中颜色 | Jepp Hu
+           GCD 单例 | Jepp Hu
        
   </title>
-  <meta name="title" content="UITableViewCell 改变选时中颜色 | Jepp Hu">
+  <meta name="title" content="GCD 单例 | Jepp Hu">
     
   
   <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
@@ -44,11 +44,11 @@
          "@id": "https://jepphu.github.io/"
     },
     "articleSection" : "posts",
-    "name" : "UITableViewCell 改变选时中颜色",
-    "headline" : "UITableViewCell 改变选时中颜色",
-    "description" : "TableViewCell 有一个 selectedBackgroundView 属性
-创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell
-UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor = [UIColor whiteColor]; self.selectedBackgroundView = view;  ",
+    "name" : "GCD 单例",
+    "headline" : "GCD 单例",
+    "description" : "dispach_once dispach_once 函数中的代码块只会被执行一次，而且还是线程安全的
+@interface Person : NSObject + (instancetype)sharePerson; @end  @implementation Person + (instancetype)allocWithZone:(struct _NSZone *)zone { static Person *instance = nil; // 一次性执行 static dispatch_once_t onceToken; dispatch_once(&amp;onceToken, ^{ instance = [super allocWithZone:zone]; }); return instance; } + (instancetype)sharePerson { return [self new]; }  快速实现单例 封装到头文件
+// 创建单例, 禁用 alloc, new, copy, mutableCopy 方法 #define SINGLETON_DEF(_type_) + (_type_ *)sharedInstance;\ +(instancetype) alloc __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ +(instancetype) new __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ -(instancetype) copy __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ -(instancetype) mutableCopy __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ // 实现单例 #define SINGLETON_IMP(_type_) + (_type_ *)sharedInstance {\ static _type_ *sharedInstance = nil;\ static dispatch_once_t onceToken;\ dispatch_once(&amp;onceToken, ^{\ sharedInstance = [[super alloc] init];\ });\ return sharedInstance;\ }  声明",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -56,11 +56,11 @@ UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor 
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-05-10 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-05-10 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/",
-    "wordCount" : "22",
-    "keywords" : [ "UITableView", "Jepp Hu"]
+    "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
+    "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
+    "url" : "https://jepphu.github.io/2018/gcd%E5%8D%95%E4%BE%8B/",
+    "wordCount" : "124",
+    "keywords" : [ "OC 多线程", "Jepp Hu"]
 }
 </script>
 
@@ -118,16 +118,16 @@ UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor 
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">UITableViewCell 改变选时中颜色</h1>
+        <h1 class="post-title" itemprop="name headline">GCD 单例</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2018-05-10 itemprop="datePublished">May 10, 2018</time>
+                on <time datetime=2018-03-15 itemprop="datePublished">March 15, 2018</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://jepphu.github.io/categories/uikit/"> UIKit </a>
+                        <a href="https://jepphu.github.io/categories/foundation/"> Foundation </a>
                         
                 </span>
         </div>
@@ -148,13 +148,80 @@ UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor 
           
           
 
-          <p>TableViewCell 有一个 selectedBackgroundView 属性</p>
+          
 
-<p>创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell</p>
+<h3 id="dispach-once">dispach_once</h3>
 
-<pre><code class="language-objc">UIView *view = [[UIView alloc] initWithFrame:self.bounds];
-view.backgroundColor = [UIColor whiteColor];
-self.selectedBackgroundView = view;
+<p>dispach_once 函数中的代码块只会被执行一次，而且还是线程安全的</p>
+
+<pre><code class="language-objc">@interface Person : NSObject
+
++ (instancetype)sharePerson;
+
+@end
+</code></pre>
+
+<pre><code class="language-objc">@implementation Person
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    static Person *instance = nil;
+    // 一次性执行
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        instance = [super allocWithZone:zone];
+    });
+    return instance;
+}
+
++ (instancetype)sharePerson {
+    return [self new];
+}
+
+</code></pre>
+
+<h3 id="快速实现单例">快速实现单例</h3>
+
+<p>封装到头文件</p>
+
+<pre><code class="language-objc">// 创建单例, 禁用 alloc, new, copy, mutableCopy 方法
+#define SINGLETON_DEF(_type_) + (_type_ *)sharedInstance;\
++(instancetype) alloc __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\
++(instancetype) new __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\
+-(instancetype) copy __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\
+-(instancetype) mutableCopy __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\
+
+// 实现单例
+#define SINGLETON_IMP(_type_) + (_type_ *)sharedInstance {\
+static _type_ *sharedInstance = nil;\
+static dispatch_once_t onceToken;\
+dispatch_once(&amp;onceToken, ^{\
+sharedInstance = [[super alloc] init];\
+});\
+return sharedInstance;\
+}
+</code></pre>
+
+<p>声明</p>
+
+<pre><code class="language-objc">@interface Person : NSObject
+
+SINGLETON_DEF(Person);
+
+@end
+</code></pre>
+
+<p>实现</p>
+
+<pre><code class="language-objc">@implementation Person
+
+SINGLETON_IMP(Person);
+
+@end
+</code></pre>
+
+<p>使用</p>
+
+<pre><code class="language-objc">Person *p1 = [Person sharedInstance];
 </code></pre>
 
     </div>
@@ -170,7 +237,7 @@ self.selectedBackgroundView = view;
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</span>
+                    <a href=https://jepphu.github.io/2018/gcd%E5%8D%95%E4%BE%8B/>https://jepphu.github.io/2018/gcd%E5%8D%95%E4%BE%8B/</span>
             </p>
             
              
@@ -186,8 +253,8 @@ self.selectedBackgroundView = view;
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://jepphu.github.io/tags/uitableview/">
-                    #UITableView</a></span>
+            <span class="tag"><a href="https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                    #OC 多线程</a></span>
             
             </section>
         
@@ -199,10 +266,10 @@ self.selectedBackgroundView = view;
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2018/nsrunloop/" class="prev" rel="prev" title="NSRunLoop"><i class="iconfont icon-left"></i>&nbsp;NSRunLoop</a>
+        <a href="https://jepphu.github.io/2018/nsthread/" class="prev" rel="prev" title="NSThread"><i class="iconfont icon-left"></i>&nbsp;NSThread</a>
          
         
-        <a href="https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/" class="next" rel="next" title="收回键盘">收回键盘&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://jepphu.github.io/2018/gcd_barrier%E9%98%BB%E5%A1%9E/" class="next" rel="next" title="GCD barrier 阻塞与调度组">GCD barrier 阻塞与调度组&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
