@@ -138,7 +138,7 @@ RSA key fingerprint is SHA256:...
 
 &lt;h3 id=&#34;baidupcs-go-https-github-com-gangzhuo-baidupcs&#34;&gt;&lt;a href=&#34;https://github.com/GangZhuo/BaiduPCS&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;BaiduPCS Go&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;用于从百度云盘下载文件，不会被限速&lt;/p&gt;
+&lt;p&gt;用于从百度云盘下载文件的工具&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#登录百度帐号
 BaiduPCS-Go login
