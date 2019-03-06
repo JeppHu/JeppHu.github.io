@@ -6,8 +6,37 @@
     <description>Recent content in Jepp Hu on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Mar 2019 20:11:26 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>UIImageView 的 contentMode 属性</title>
+      <link>https://jepphu.github.io/2019/uiimageview/</link>
+      <pubDate>Tue, 05 Mar 2019 20:11:26 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/uiimageview/</guid>
+      <description>
+
+&lt;h3 id=&#34;contentmode&#34;&gt;contentMode&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIViewContentModeScaleToFill,       // 默认，对图片进行拉伸处理，不按比例充满 bounds
+UIViewContentModeScaleAspectFit,    // 按原图比例进行拉伸，图片完全展示在 bounds 中，会留白，不会裁剪
+UIViewContentModeScaleAspectFill,   // 按原图比例填充，使图片展示在bouns中，可能会被裁剪
+
+UIViewContentModeRedraw,            // 原图重新绘制在 bounds 内，充满 (calls -setNeedsDisplay)
+UIViewContentModeCenter,            // 图片显示在 imageview 的正中间，原图大小，可能会被裁剪
+
+UIViewContentModeTop,               // 图片从 imageview 的上部开始显示，原图大小，可能会被裁剪
+UIViewContentModeBottom,            // 图片从 imageview 的下部开始显示，原图大小，可能会被裁剪
+UIViewContentModeLeft,              // 图片从 imageview 的左部开始显示，原图大小，可能会被裁剪
+UIViewContentModeRight,             // 图片从 imageview 的右部开始显示，原图大小，可能会被裁剪
+UIViewContentModeTopLeft,           // 图片从 imageview 的左上部开始显示，原图大小，可能会被裁剪
+UIViewContentModeTopRight,          // 图片从 imageview 的右上部开始显示，原图大小，可能会被裁剪
+UIViewContentModeBottomLeft,        // 图片从 imageview 的左下部开始显示，原图大小，可能会被裁剪
+UIViewContentModeBottomRight,       // 图片从 imageview 的右下部开始显示，原图大小，可能会被裁剪
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>iOS 原生分享</title>
@@ -594,23 +623,6 @@ CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];
 &lt;p&gt;// 弹出键盘&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self.textField becomeFirstResponder]
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UITableViewCell 改变选时中颜色</title>
-      <link>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uitableviewcell%E6%94%B9%E5%8F%98%E9%80%89%E6%97%B6%E4%B8%AD%E9%A2%9C%E8%89%B2/</guid>
-      <description>&lt;p&gt;TableViewCell 有一个 selectedBackgroundView 属性&lt;/p&gt;
-
-&lt;p&gt;创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIView *view = [[UIView alloc] initWithFrame:self.bounds];
-view.backgroundColor = [UIColor whiteColor];
-self.selectedBackgroundView = view;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

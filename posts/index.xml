@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Mar 2019 20:11:26 +0800</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UIImageView 的 contentMode 属性</title>
+      <link>https://jepphu.github.io/2019/uiimageview/</link>
+      <pubDate>Tue, 05 Mar 2019 20:11:26 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/uiimageview/</guid>
+      <description> contentMode UIViewContentModeScaleToFill, // 默认，对图片进行拉伸处理，不按比例充满 bounds UIViewContentModeScaleAspectFit, // 按原图比例进行拉伸，图片完全展示在 bounds 中，会留白，不会裁剪 UIViewContentModeScaleAspectFill, // 按原图比例填充，使图片展示在bouns中，可能会被裁剪 UIViewContentModeRedraw, // 原图重新绘制在 bounds 内，充满 (calls -setNeedsDisplay) UIViewContentModeCenter, // 图片显示在 imageview 的正中间，原图大小，可能会被裁剪 UIViewContentModeTop, // 图片从 imageview 的上部开始显示，原图大小，可能会被裁剪 UIViewContentModeBottom, // 图片从 imageview 的下部开始显示，原图大小，可能会被裁剪 UIViewContentModeLeft, // 图片从 imageview 的左部开始显示，原图大小，可能会被裁剪 UIViewContentModeRight, // 图片从 imageview 的右部开始显示，原图大小，可能会被裁剪 UIViewContentModeTopLeft, // 图片从 imageview 的左上部开始显示，原图大小，可能会被裁剪 UIViewContentModeTopRight, // 图片从 imageview 的右上部开始显示，原图大小，可能会被裁剪 UIViewContentModeBottomLeft, // 图片从 imageview 的左下部开始显示，原图大小，可能会被裁剪 UIViewContentModeBottomRight, // 图片从 imageview 的右下部开始显示，原图大小，可能会被裁剪  </description>
+    </item>
     
     <item>
       <title>iOS 原生分享</title>
@@ -179,6 +188,65 @@ ViewC 此时的 frame 是相对于 ViewB 的
       <description>TableViewCell 有一个 selectedBackgroundView 属性
 创建一个 View 设为 selectedBackgroundView，就可以改变选中状态下的 cell
 UIView *view = [[UIView alloc] initWithFrame:self.bounds]; view.backgroundColor = [UIColor whiteColor]; self.selectedBackgroundView = view;  </description>
+    </item>
+    
+    <item>
+      <title>Runtime</title>
+      <link>https://jepphu.github.io/2018/runtime/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/runtime/</guid>
+      <description>Runtime Objective-C 扩展了 C 语言，并加入了面向对象特性和 Smalltalk 式的消息传递机制，而这个扩展的核心是一个用 C 和 编译语言 写的 Runtime 库
+它是 OC 面向对象和动态机制的基石
+OC 将数据类型的确定由编译时推迟到了运行时
+OC 代码也会在运行时转化成 C 语言代码
+作用 例如，分类可以加属性，但是自己写 set/get，没法增加成员变量
+通过 Runtime
+ 可以在运行期间给某个分类增加属性、方法
+ 可以在运行期间获取某个对象的所有属性名称
+ 交换方法
+  引入头文件
+#import &amp;lt;objc/runtime.h&amp;gt;  为系统的 UIImageView，写一个分类，增加一个成员变量
+@interface UIImageView (MyView) @property (copy, nonatomic) NSString *urlString; @end  @implementation UIImageView (MyView) - (NSString *)urlString { return objc_getAssociatedObject(self, &amp;quot;str&amp;quot;); } - (void)setUrlString:(NSString *)urlString { //关联对象(给类增加属性) //参数1: 对象 //参数2: 属性的名称(C的字符串) //参数3: 属性的值 //参数3: 属性的修饰符 (copy, nonatomic) objc_setAssociatedObject(self, &amp;quot;str&amp;quot;, urlString, OBJC_ASSOCIATION_COPY_NONATOMIC); } @end  成功访问到这个属性</description>
+    </item>
+    
+    <item>
+      <title>NSOperation 与 GCD 优劣</title>
+      <link>https://jepphu.github.io/2018/nsoperation%E4%B8%8Egcd%E4%BC%98%E5%8A%A3/</link>
+      <pubDate>Mon, 16 Apr 2018 21:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/nsoperation%E4%B8%8Egcd%E4%BC%98%E5%8A%A3/</guid>
+      <description>NSOperation 特有的操作  NSOperationQueue 设置最大并发数 （同时执行的任务的个数）
+ 队列的暂停与继续，以及取消所有的操作
+ 指定操作之前的依赖关系（GCD可以用同步实现）
+  - (NSOperationQueue *)queue { if (!_queue) { _queue = [[NSOperationQueue alloc] init]; //最大并发数 [_queue setMaxConcurrentOperationCount:2]; } return _queue; }  // 这里不是线程越多越好, 应该设置最大并发数(不是多开启线程数) for (int i = 0; i &amp;lt; 10; i ++) { [self.queue addOperationWithBlock:^{ [NSThread sleepForTimeInterval:2]; NSLog(@&amp;quot;%d -- %@&amp;quot;, i, [NSThread currentThread]); }]; }  队列的取消/暂停/继续
+// 当前操作会继续执行, 后续操作才会取消, 会从队列中移除 [self.queue cancelAllOperations]; // 当前操作会继续执行, 后续操作才会暂停, self.</description>
+    </item>
+    
+    <item>
+      <title>自定义 NSOperation</title>
+      <link>https://jepphu.github.io/2018/%E8%87%AA%E5%AE%9A%E4%B9%89nsoperation/</link>
+      <pubDate>Mon, 16 Apr 2018 20:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E8%87%AA%E5%AE%9A%E4%B9%89nsoperation/</guid>
+      <description>自定义 NSOperation NSInvocationOperation : 指定一个方法
+NSBlockOperation : 指定一个block
+自定义 Operation : 封装一个操作（下载）， 将具体操作写在操作的 main 方法里面
+@interface MyDownloadOperation : NSOperation @property (copy, nonatomic) NSString *urlString; @property (copy, nonatomic) void (^finishedBlock)(UIImage *); + (instancetype)downloadOperationWithUrlString:(NSString *)urlString finishedBlock:(void(^)(UIImage *img))finishedBlock;  @implementation MyDownloadOperation + (instancetype)downloadOperationWithUrlString:(NSString *)urlString finishedBlock:(void (^)(UIImage *))finishedBlock { MyDownloadOperation *op = [[self alloc] init]; op.urlString = urlString; op.finishedBlock = finishedBlock; return op; } //直接将操作写在 main 方法里面 (), 等同于 NSInvocationOperation 指定了一个方法和 NSBlockOperation 指定一个 block 一样 - (void)main { @autoreleasepool {//子线程无法访问主线程的自动释放池, 所以让子线程拥有自己的自动释放池 //耗时操作 [NSThread sleepForTimeInterval:2]; //将下载的文件保存到沙盒中 //取消正在执行的操作 if (self.</description>
+    </item>
+    
+    <item>
+      <title>NSOperation</title>
+      <link>https://jepphu.github.io/2018/nsoperation/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/nsoperation/</guid>
+      <description>NSOperation: 任务（这里又叫操作） NSOperation 是一个抽象类、父类，用来约束子类
+子类：NSInvocationOperation，NSBlockOperation，还可以自定义子类
+NSOperationQueue：队列 @property (strong, nonatomic) NSOperationQueue *queue; - (NSOperationQueue *)queue { if (!_queue) { _queue = [[NSOperationQueue alloc] init]; } return _queue; }  当前队列中的操作数
+self.queue.operationCount  操作暂停：暂停不会立即暂停, 会先执行完当前的操作
+self.queue.suspended = YES;  结束暂停：不结束暂停状态是无法向队列添加操作的
+self.queue.suspended = NO;  NSInvocationOperation 指定一个方法 // 创建操作 NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task) object:nil]; // [op start]; //不会开启线程, 会执行内部的 main 方法, 并改变 op 的 finished 状态；详见自定义NSOperation // 创建新队列 NSOperationQueue *queue = [[NSOperationQueue alloc] init]; // 将操作添加到队列 (会开启新线程, 并执行方法) [queue addOperation:op];  NSBlockOperation 指定一个block 用法 1:</description>
     </item>
     
     <item>
