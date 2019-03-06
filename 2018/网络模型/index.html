@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/" />
-  <link rel="next" href="https://jepphu.github.io/2019/baidupcs-go/" />
-  <link rel="canonical" href="https://jepphu.github.io/2018/sfsafariviewcontroller/" />
+  <link rel="prev" href="https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" />
+  <link rel="next" href="https://jepphu.github.io/2018/sfsafariviewcontroller/" />
+  <link rel="canonical" href="https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           SFSafariViewController | Jepp Hu
+           网络模型 | Jepp Hu
        
   </title>
-  <meta name="title" content="SFSafariViewController | Jepp Hu">
+  <meta name="title" content="网络模型 | Jepp Hu">
     
   
   <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
@@ -44,10 +44,32 @@
          "@id": "https://jepphu.github.io/"
     },
     "articleSection" : "posts",
-    "name" : "SFSafariViewController",
-    "headline" : "SFSafariViewController",
-    "description" : "不用跳出 app，直接在 app 内打开隐私协议等网址
-#import &lt;SafariServices/SafariServices.h&gt;  &lt;SFSafariViewControllerDelegate&gt;  - (IBAction)action:(id)sender { NSURL *url = [NSURL URLWithString:@&quot;https://jepphu.github.io/&quot;]; SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url]; safariVC.delegate = self; // self.navigationController.navigationBarHidden = YES; // [self.navigationController pushViewController:safariVC animated:YES]; [self presentViewController:safariVC animated:YES completion:nil]; } // 加载完成 - (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully { } // 按钮 Done - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller { }  ",
+    "name" : "网络模型",
+    "headline" : "网络模型",
+    "description" : "OSI 七层网络模型  应用层
+ 表示层
+ 会话层
+ 传输层
+ 网络层
+ 数据链路层
+ 物理层
+  TCP/IP 网络模型  应用层
+对应 OSI 模型的前三层，为用户提供所需的各种服务，例如：FTP、telnet、DNS、SMTP、HTTP
+ 传输层
+提供了端口
+为应用层提供端到端的通信功能，保证了数据包的传输顺序及数据完整性。两个主要协议：TCP 和 UDP
+ 网络层
+提供了 IP
+解决主机到主机的通信问题。它所保护的协议设计数据包在整个网络上的逻辑传输。注重重新赋予主机一个 IP 地址来完成对主机的寻址，它还负责数据包在多种网络中的路由。该层有三个主要协议：网际协议（IP）互联网组管理协议（IGMP）和互联网控制报文协议（ICMP）
+ 网络接入层
+硬件：网卡等，对应数据链路层和物理层
+负责监视数据在主机和网络之间的交换
+  TCP（传输控制协议） TCP 协议提供的是一种可靠的、通过“三次握手”来创建一个连接，然后在进行数据传输服务
+保证数据的正确型，但没 UDP 协议快
+因为要先创建连接，所以是一对一的发送
+UDP（用户数据报协议） UDP 协议提供的则是不保证可靠性（不代表不可靠）、无连接的数据传输服务
+传输数据时不用创建连接，是直接发送的
+指定 ip 就可以发，通常广播软件使用 UDP 协议，一对多",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -55,11 +77,11 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-10-30 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-10-30 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/sfsafariviewcontroller/",
-    "wordCount" : "53",
-    "keywords" : [ "SafariServices", "Jepp Hu"]
+    "datePublished": "2018-09-25 18:00:00 &#43;0800 CST",
+    "dateModified" : "2018-09-25 18:00:00 &#43;0800 CST",
+    "url" : "https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/",
+    "wordCount" : "45",
+    "keywords" : [ "网络基础", "Jepp Hu"]
 }
 </script>
 
@@ -117,16 +139,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">SFSafariViewController</h1>
+        <h1 class="post-title" itemprop="name headline">网络模型</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2018-10-30 itemprop="datePublished">October 30, 2018</time>
+                on <time datetime=2018-09-25 itemprop="datePublished">September 25, 2018</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://jepphu.github.io/categories/uikit/"> UIKit </a>
+                        <a href="https://jepphu.github.io/categories/foundation/"> Foundation </a>
                         
                 </span>
         </div>
@@ -147,33 +169,67 @@
           
           
 
-          <p>不用跳出 app，直接在 app 内打开隐私协议等网址</p>
+          
 
-<pre><code class="language-objc">#import &lt;SafariServices/SafariServices.h&gt;
-</code></pre>
+<h3 id="osi-七层网络模型">OSI 七层网络模型</h3>
 
-<pre><code class="language-objc">&lt;SFSafariViewControllerDelegate&gt;
-</code></pre>
+<ul>
+<li><p>应用层</p></li>
 
-<pre><code class="language-objc">- (IBAction)action:(id)sender {
-    NSURL *url = [NSURL URLWithString:@&quot;https://jepphu.github.io/&quot;];
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-    safariVC.delegate = self;
-//    self.navigationController.navigationBarHidden = YES;
-//    [self.navigationController pushViewController:safariVC animated:YES];
-    [self presentViewController:safariVC animated:YES completion:nil];
-}
+<li><p>表示层</p></li>
 
-// 加载完成
-- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully {
+<li><p>会话层</p></li>
 
-}
+<li><p>传输层</p></li>
 
-// 按钮 Done
-- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+<li><p>网络层</p></li>
 
-}
-</code></pre>
+<li><p>数据链路层</p></li>
+
+<li><p>物理层</p></li>
+</ul>
+
+<h3 id="tcp-ip-网络模型">TCP/IP 网络模型</h3>
+
+<ul>
+<li><p>应用层</p>
+
+<p>对应 OSI 模型的前三层，为用户提供所需的各种服务，例如：FTP、telnet、DNS、SMTP、HTTP</p></li>
+
+<li><p>传输层</p>
+
+<p>提供了端口</p>
+
+<p>为应用层提供端到端的通信功能，保证了数据包的传输顺序及数据完整性。两个主要协议：TCP 和 UDP</p></li>
+
+<li><p>网络层</p>
+
+<p>提供了 IP</p>
+
+<p>解决主机到主机的通信问题。它所保护的协议设计数据包在整个网络上的逻辑传输。注重重新赋予主机一个 IP 地址来完成对主机的寻址，它还负责数据包在多种网络中的路由。该层有三个主要协议：网际协议（IP）互联网组管理协议（IGMP）和互联网控制报文协议（ICMP）</p></li>
+
+<li><p>网络接入层</p>
+
+<p>硬件：网卡等，对应数据链路层和物理层</p>
+
+<p>负责监视数据在主机和网络之间的交换</p></li>
+</ul>
+
+<h3 id="tcp-传输控制协议">TCP（传输控制协议）</h3>
+
+<p>TCP 协议提供的是一种可靠的、通过“三次握手”来创建一个连接，然后在进行数据传输服务</p>
+
+<p>保证数据的正确型，但没 UDP 协议快</p>
+
+<p>因为要先创建连接，所以是一对一的发送</p>
+
+<h3 id="udp-用户数据报协议">UDP（用户数据报协议）</h3>
+
+<p>UDP 协议提供的则是不保证可靠性（不代表不可靠）、无连接的数据传输服务</p>
+
+<p>传输数据时不用创建连接，是直接发送的</p>
+
+<p>指定 ip 就可以发，通常广播软件使用 UDP 协议，一对多</p>
 
     </div>
 
@@ -188,7 +244,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://jepphu.github.io/2018/sfsafariviewcontroller/>https://jepphu.github.io/2018/sfsafariviewcontroller/</span>
+                    <a href=https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</span>
             </p>
             
              
@@ -204,8 +260,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://jepphu.github.io/tags/safariservices/">
-                    #SafariServices</a></span>
+            <span class="tag"><a href="https://jepphu.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+                    #网络基础</a></span>
             
             </section>
         
@@ -217,10 +273,10 @@
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/" class="prev" rel="prev" title="网络模型"><i class="iconfont icon-left"></i>&nbsp;网络模型</a>
+        <a href="https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="prev" rel="prev" title="网络基础"><i class="iconfont icon-left"></i>&nbsp;网络基础</a>
          
         
-        <a href="https://jepphu.github.io/2019/baidupcs-go/" class="next" rel="next" title="BaiduPCS Go">BaiduPCS Go&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://jepphu.github.io/2018/sfsafariviewcontroller/" class="next" rel="next" title="SFSafariViewController">SFSafariViewController&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

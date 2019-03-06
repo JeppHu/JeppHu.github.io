@@ -56,11 +56,73 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
     <item>
       <title>SFSafariViewController</title>
       <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/sfsafariviewcontroller/</guid>
       <description>不用跳出 app，直接在 app 内打开隐私协议等网址
 #import &amp;lt;SafariServices/SafariServices.h&amp;gt;  &amp;lt;SFSafariViewControllerDelegate&amp;gt;  - (IBAction)action:(id)sender { NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;]; SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url]; safariVC.delegate = self; // self.navigationController.navigationBarHidden = YES; // [self.navigationController pushViewController:safariVC animated:YES]; [self presentViewController:safariVC animated:YES completion:nil]; } // 加载完成 - (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully { } // 按钮 Done - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller { }  </description>
+    </item>
+    
+    <item>
+      <title>网络模型</title>
+      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Tue, 25 Sep 2018 18:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
+      <description>OSI 七层网络模型  应用层
+ 表示层
+ 会话层
+ 传输层
+ 网络层
+ 数据链路层
+ 物理层
+  TCP/IP 网络模型  应用层
+对应 OSI 模型的前三层，为用户提供所需的各种服务，例如：FTP、telnet、DNS、SMTP、HTTP
+ 传输层
+提供了端口
+为应用层提供端到端的通信功能，保证了数据包的传输顺序及数据完整性。两个主要协议：TCP 和 UDP
+ 网络层
+提供了 IP
+解决主机到主机的通信问题。它所保护的协议设计数据包在整个网络上的逻辑传输。注重重新赋予主机一个 IP 地址来完成对主机的寻址，它还负责数据包在多种网络中的路由。该层有三个主要协议：网际协议（IP）互联网组管理协议（IGMP）和互联网控制报文协议（ICMP）
+ 网络接入层
+硬件：网卡等，对应数据链路层和物理层
+负责监视数据在主机和网络之间的交换
+  TCP（传输控制协议） TCP 协议提供的是一种可靠的、通过“三次握手”来创建一个连接，然后在进行数据传输服务
+保证数据的正确型，但没 UDP 协议快
+因为要先创建连接，所以是一对一的发送
+UDP（用户数据报协议） UDP 协议提供的则是不保证可靠性（不代表不可靠）、无连接的数据传输服务
+传输数据时不用创建连接，是直接发送的
+指定 ip 就可以发，通常广播软件使用 UDP 协议，一对多</description>
+    </item>
+    
+    <item>
+      <title>网络基础</title>
+      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Tue, 25 Sep 2018 17:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+      <description>网络基本概念  客户端（前端）：应用
+ 服务器（后端）：为客户端提供服务、数据和资源的机器
+ 请求：客户端向服务器索取数据
+ 响应：服务器对客户端的请求作出反应，一般是服务器从数据库获得数据，然后返回给客户端
+ C/S : Client/Server
+ B/S : Browser/Server
+  服务器  内网服务器：局域网内部的服务器
+ 外网服务器：所有用户通过互联网能访问到的服务器
+ 本地测试服务器：简化开发过程，在本地搭建一个服务器，用于测试
+  URL  URL : Uniform Resource Locatora，统一资源定位符
+网络中每一个资源都对应唯一的地址-URL
+ URL 的基本格式：协议://主机地址:端口号/路径
+ 协议：不同的协议代表不同的资源获取方式
+ 主机地址：主机的唯一标示（IP地址，域名）
+ 路径：资源在主机中的具体位置
+  URL 常见协议
+ http ：HyperText Transfer Protocol，超文本传输协议
+ ftp ：文件传输协议
+ mailto ：电子邮件协议
+ file ：本地文件传输协议
+ tel ：电话
+ sms ：短信</description>
     </item>
     
     <item>

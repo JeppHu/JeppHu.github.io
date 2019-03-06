@@ -197,7 +197,7 @@ BaiduPCS-Go logout
     <item>
       <title>SFSafariViewController</title>
       <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2018/sfsafariviewcontroller/</guid>
       <description>&lt;p&gt;不用跳出 app，直接在 app 内打开隐私协议等网址&lt;/p&gt;
@@ -227,6 +227,200 @@ BaiduPCS-Go logout
 
 }
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>网络模型</title>
+      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Tue, 25 Sep 2018 18:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
+      <description>
+
+&lt;h3 id=&#34;osi-七层网络模型&#34;&gt;OSI 七层网络模型&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;应用层&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;表示层&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;会话层&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;传输层&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网络层&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据链路层&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;物理层&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;tcp-ip-网络模型&#34;&gt;TCP/IP 网络模型&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;应用层&lt;/p&gt;
+
+&lt;p&gt;对应 OSI 模型的前三层，为用户提供所需的各种服务，例如：FTP、telnet、DNS、SMTP、HTTP&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;传输层&lt;/p&gt;
+
+&lt;p&gt;提供了端口&lt;/p&gt;
+
+&lt;p&gt;为应用层提供端到端的通信功能，保证了数据包的传输顺序及数据完整性。两个主要协议：TCP 和 UDP&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网络层&lt;/p&gt;
+
+&lt;p&gt;提供了 IP&lt;/p&gt;
+
+&lt;p&gt;解决主机到主机的通信问题。它所保护的协议设计数据包在整个网络上的逻辑传输。注重重新赋予主机一个 IP 地址来完成对主机的寻址，它还负责数据包在多种网络中的路由。该层有三个主要协议：网际协议（IP）互联网组管理协议（IGMP）和互联网控制报文协议（ICMP）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网络接入层&lt;/p&gt;
+
+&lt;p&gt;硬件：网卡等，对应数据链路层和物理层&lt;/p&gt;
+
+&lt;p&gt;负责监视数据在主机和网络之间的交换&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;tcp-传输控制协议&#34;&gt;TCP（传输控制协议）&lt;/h3&gt;
+
+&lt;p&gt;TCP 协议提供的是一种可靠的、通过“三次握手”来创建一个连接，然后在进行数据传输服务&lt;/p&gt;
+
+&lt;p&gt;保证数据的正确型，但没 UDP 协议快&lt;/p&gt;
+
+&lt;p&gt;因为要先创建连接，所以是一对一的发送&lt;/p&gt;
+
+&lt;h3 id=&#34;udp-用户数据报协议&#34;&gt;UDP（用户数据报协议）&lt;/h3&gt;
+
+&lt;p&gt;UDP 协议提供的则是不保证可靠性（不代表不可靠）、无连接的数据传输服务&lt;/p&gt;
+
+&lt;p&gt;传输数据时不用创建连接，是直接发送的&lt;/p&gt;
+
+&lt;p&gt;指定 ip 就可以发，通常广播软件使用 UDP 协议，一对多&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>网络基础</title>
+      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Tue, 25 Sep 2018 17:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+
+&lt;h3 id=&#34;网络基本概念&#34;&gt;网络基本概念&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;客户端（前端）：应用&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;服务器（后端）：为客户端提供服务、数据和资源的机器&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;请求：客户端向服务器索取数据&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;响应：服务器对客户端的请求作出反应，一般是服务器从数据库获得数据，然后返回给客户端&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;C/S : Client/Server&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;B/S : Browser/Server&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;服务器&#34;&gt;服务器&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;内网服务器：局域网内部的服务器&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;外网服务器：所有用户通过互联网能访问到的服务器&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;本地测试服务器：简化开发过程，在本地搭建一个服务器，用于测试&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;url&#34;&gt;URL&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;URL : Uniform Resource Locatora，统一资源定位符&lt;/p&gt;
+
+&lt;p&gt;网络中每一个资源都对应唯一的地址-URL&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;URL 的基本格式：协议://主机地址:端口号/路径&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;协议：不同的协议代表不同的资源获取方式&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;主机地址：主机的唯一标示（IP地址，域名）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;路径：资源在主机中的具体位置&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;URL 常见协议&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;http ：HyperText Transfer Protocol，超文本传输协议&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ftp ：文件传输协议&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mailto ：电子邮件协议&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;file ：本地文件传输协议&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;tel ：电话&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;sms ：短信&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一般输入网址不写协议、端口号、路径会默认 http 协议，80 端口，index.html 路径&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;http-协议简介&#34;&gt;http 协议简介&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;HyperText Transfer Protocol，超文本传输协议，提供超文本（文字，图片，声音，视频等）传输服务&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;客户端/浏览器和服务器通讯时候遵守的约定&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;互联网使用的最多的协议（使用简单，但并不算快）&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;dns-服务器&#34;&gt;DNS 服务器&lt;/h3&gt;
+
+&lt;p&gt;域名解析服务器：将域名转换为 IP 地址&lt;/p&gt;
+
+&lt;p&gt;DNS 服务器以类似字典的存储方式，将域名和 IP 对应存储，查找时从下级服务器开始往上级查询，最终查到 root 服务器，直到找到对应 IP 为止。解析一次以后，就会下级服务器被记录下来。&lt;/p&gt;
+
+&lt;h3 id=&#34;ip-简介&#34;&gt;IP 简介&lt;/h3&gt;
+
+&lt;p&gt;两个计算机要通讯，必须知道 IP 地址和端口号&lt;/p&gt;
+
+&lt;p&gt;IP 地址是一个 32 位的二进制数字，通常被分割为 8 位的二进制数，通常用点分 10 进制来表示&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;198.168.1.1 一般为路由器的地址&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;127.0.0.1 回环地址（本机地址）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;255.255.255.255 广播地址&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;端口号&#34;&gt;端口号&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;端口号用于标示进程的逻辑地址&lt;/p&gt;
+
+&lt;p&gt;一台服务器上可能运行多个软件，提供多个服务，为了让不同的客户端准确的请求到想要的服务，就让不同的服务有不同的端口号&lt;/p&gt;
+
+&lt;p&gt;IP 确定是哪个计算机，端口号则确定将数据传给哪个服务&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;端口号取值范围： 0 ～ 65535&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;端口的分类：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;公认端口 （Well Known Ports）：也称之为常用端口，从 0 到 1023，它们紧密绑定于一些特定的服务。通常这些端口的通信明确表明了某种服务的协议，这种端口是不可再重新定义它的作用对象。比如：http 默认 80，ftp 默认 21&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;注册端口 （Registered Ports）：端口号从 1024 到 49151，是操作系统分配给用户进程或应用程序。这些进程主要是用户选择安装的一些应用程序，而不是已经分配好了公认端口的常用程序&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;动态/私有端口 （Dynamic / Private Ports）：端口号从 49152 到 65535 。之所以成为动态端口，是因为它一般不固定分配某种服务，而是动态分配&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -561,68 +755,6 @@ btn.tintColor = [UIColor whiteColor];
     }
     return self.scrollView;
 }
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UIView 子视图坐标转换</title>
-      <link>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E5%AD%90%E8%A7%86%E5%9B%BE%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</guid>
-      <description>&lt;p&gt;ViewA, ViewB, ViewC&lt;/p&gt;
-
-&lt;p&gt;ViewA 是 ViewB 的父视图，ViewB 是 ViewC 的父视图&lt;/p&gt;
-
-&lt;p&gt;ViewC 此时的 frame 是相对于 ViewB 的&lt;/p&gt;
-
-&lt;p&gt;如果需求为获取 ViewC 此时相对于 ViewA 的 frame&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view;
-- (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view;
-
-CGRect frame = [ViewB convertRect:ViewC.frame toView:ViewA];
-//或
-CGRect frame = [ViewA convertRect:ViewC.frame fromView:ViewB];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>收回键盘</title>
-      <link>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</link>
-      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/%E6%94%B6%E5%9B%9E%E9%94%AE%E7%9B%98/</guid>
-      <description>&lt;p&gt;收回键盘主要调用方法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self.view endEditing:YES] 
-//或 
-[self.emailTextField resignFirstResponder]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ViewController :&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)touchesBegan:(NSSet&amp;lt;UITouch *&amp;gt; *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;TableViewController :&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.view endEditing:YES];
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;// 弹出键盘&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self.textField becomeFirstResponder]
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
