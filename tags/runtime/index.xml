@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Runtime on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/runtime/</link>
+    <description>Recent content in Runtime on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/runtime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Runtime</title>
+      <link>https://jepphu.github.io/2018/runtime/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2018/runtime/</guid>
+      <description>Runtime Objective-C 扩展了 C 语言，并加入了面向对象特性和 Smalltalk 式的消息传递机制，而这个扩展的核心是一个用 C 和 编译语言 写的 Runtime 库
+它是 OC 面向对象和动态机制的基石
+OC 将数据类型的确定由编译时推迟到了运行时
+OC 代码也会在运行时转化成 C 语言代码
+作用 例如，分类可以加属性，但是自己写 set/get，没法增加成员变量
+通过 Runtime
+ 可以在运行期间给某个分类增加属性、方法
+ 可以在运行期间获取某个对象的所有属性名称
+ 交换方法
+  引入头文件
+#import &amp;lt;objc/runtime.h&amp;gt;  为系统的 UIImageView，写一个分类，增加一个成员变量
+@interface UIImageView (MyView) @property (copy, nonatomic) NSString *urlString; @end  @implementation UIImageView (MyView) - (NSString *)urlString { return objc_getAssociatedObject(self, &amp;quot;str&amp;quot;); } - (void)setUrlString:(NSString *)urlString { //关联对象(给类增加属性) //参数1: 对象 //参数2: 属性的名称(C的字符串) //参数3: 属性的值 //参数3: 属性的修饰符 (copy, nonatomic) objc_setAssociatedObject(self, &amp;quot;str&amp;quot;, urlString, OBJC_ASSOCIATION_COPY_NONATOMIC); } @end  成功访问到这个属性</description>
+    </item>
+    
+  </channel>
+</rss>
