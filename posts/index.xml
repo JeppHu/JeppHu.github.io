@@ -6,10 +6,39 @@
     <description>Recent content in Posts on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Mar 2019 20:11:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2019 15:56:28 +0800</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>不使用 storyBoard</title>
+      <link>https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/</link>
+      <pubDate>Fri, 15 Mar 2019 15:56:28 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/</guid>
+      <description>纯代码的方式开始搭建界面 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]; UIViewController *redView = [[UIViewController alloc] init]; redView.view.backgroundColor = [UIColor redColor]; //1. 直接以 UIViewController 作为 window 的根控制器 // self.window.rootViewController = redView; // [self.window makeKeyAndVisible]; //2. 以 UINavigationController 作为 window 的根控制器(44px) // UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:redView]; // nav.view.backgroundColor = [UIColor grayColor]; // self.window.rootViewController = nav; // [self.window makeKeyAndVisible]; //3. 以 UITabBarController 作为 window 的根控制器 UITabBarController *tabBarController = [[UITabBarController alloc] init]; UIViewController *v1 = [[UIViewController alloc] init]; v1.</description>
+    </item>
+    
+    <item>
+      <title>UIGestureRecognizer</title>
+      <link>https://jepphu.github.io/2019/uigesturerecognizer/</link>
+      <pubDate>Fri, 15 Mar 2019 15:45:29 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/uigesturerecognizer/</guid>
+      <description>点击 // 创建点击手势对象 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)]; // 几个手指 tap.numberOfTouchesRequired = 2; // 点击几次 tap.numberOfTapsRequired = 2; // 给 View 添加一个手势 [self.imageView addGestureRecognizer:tap];  长按 UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]; // 长按时间 longPress.minimumPressDuration = 0.5; // 在长按时移动允许的误差范围, 超过范围 误差失效 longPress.allowableMovement = 50; [self.imageView addGestureRecognizer:longPress];  - (void)longPress:(UILongPressGestureRecognizer *)sender { // 默认长按移动时会一直执行, 放开时也会执行, 加个判断, 只执行一次 if (sender.state == UIGestureRecognizerStateBegan) { NSLog(@&amp;quot;%s&amp;quot;, __FUNCTION__); } }  清扫 UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)]; // 控制识别的手势方向, 默认识别从左往右, 此处改为从右往左 swipe.</description>
+    </item>
+    
+    <item>
+      <title>信号量实现 NSURLSession 的同步请求</title>
+      <link>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Thu, 07 Mar 2019 18:46:19 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</guid>
+      <description>NSURLSession 只有异步请求
+通过信号量来实现同步
+NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;]; NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url]; [request setHTTPMethod:@&amp;quot;GET&amp;quot;]; NSLog(@&amp;quot;1 -- %@&amp;quot;,[NSThread currentThread]); __block NSURLResponse *resultResponse; __block NSError *resultError; __block NSData *resultData; //创建信号量 dispatch_semaphore_t semaphore = dispatch_semaphore_create(0); NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) { resultResponse = response; resultError = error; resultData = data; NSLog(@&amp;quot;2 -- %@&amp;quot;,[NSThread currentThread]); //发送信号 dispatch_semaphore_signal(semaphore); }]; [task resume]; //等待 dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER); NSLog(@&amp;quot;3 -- %@&amp;quot;,[NSThread currentThread]);  </description>
+    </item>
     
     <item>
       <title>UIImageView 的 contentMode 属性</title>
@@ -61,38 +90,6 @@ config my_bitbucket_rsa my_github_rsa my_bitbucket_rsa.pub my_github_rsa.pub  2.
       <guid>https://jepphu.github.io/2018/sfsafariviewcontroller/</guid>
       <description>不用跳出 app，直接在 app 内打开隐私协议等网址
 #import &amp;lt;SafariServices/SafariServices.h&amp;gt;  &amp;lt;SFSafariViewControllerDelegate&amp;gt;  - (IBAction)action:(id)sender { NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;]; SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url]; safariVC.delegate = self; // self.navigationController.navigationBarHidden = YES; // [self.navigationController pushViewController:safariVC animated:YES]; [self presentViewController:safariVC animated:YES completion:nil]; } // 加载完成 - (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully { } // 按钮 Done - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller { }  </description>
-    </item>
-    
-    <item>
-      <title>网络模型</title>
-      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Tue, 25 Sep 2018 18:00:00 +0800</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
-      <description>OSI 七层网络模型  应用层
- 表示层
- 会话层
- 传输层
- 网络层
- 数据链路层
- 物理层
-  TCP/IP 网络模型  应用层
-对应 OSI 模型的前三层，为用户提供所需的各种服务，例如：FTP、telnet、DNS、SMTP、HTTP
- 传输层
-提供了端口
-为应用层提供端到端的通信功能，保证了数据包的传输顺序及数据完整性。两个主要协议：TCP 和 UDP
- 网络层
-提供了 IP
-解决主机到主机的通信问题。它所保护的协议设计数据包在整个网络上的逻辑传输。注重重新赋予主机一个 IP 地址来完成对主机的寻址，它还负责数据包在多种网络中的路由。该层有三个主要协议：网际协议（IP）互联网组管理协议（IGMP）和互联网控制报文协议（ICMP）
- 网络接入层
-硬件：网卡等，对应数据链路层和物理层
-负责监视数据在主机和网络之间的交换
-  TCP（传输控制协议） TCP 协议提供的是一种可靠的、通过“三次握手”来创建一个连接，然后在进行数据传输服务
-保证数据的正确型，但没 UDP 协议快
-因为要先创建连接，所以是一对一的发送
-UDP（用户数据报协议） UDP 协议提供的则是不保证可靠性（不代表不可靠）、无连接的数据传输服务
-传输数据时不用创建连接，是直接发送的
-指定 ip 就可以发，通常广播软件使用 UDP 协议，一对多</description>
     </item>
     
     <item>
@@ -153,12 +150,12 @@ if (self.navigationController.navigationItem.hidesBackButton) { self.navigationI
     </item>
     
     <item>
-      <title>绘制 image</title>
-      <link>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</link>
+      <title>image 绘制、裁剪、水印、保存</title>
+      <link>https://jepphu.github.io/2018/image%E7%BB%98%E5%88%B6%E8%A3%81%E5%89%AA%E6%B0%B4%E5%8D%B0%E4%BF%9D%E5%AD%98/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</guid>
-      <description> 绘制空白的 image UIColor *color = [UIColor whiteColor]; CGRect rect = CGRectMake(0, 0, 200, 200); UIGraphicsBeginImageContext(rect.size); CGContextRef context = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(context, color.CGColor); CGContextFillRect(context, rect); UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext();  </description>
+      <guid>https://jepphu.github.io/2018/image%E7%BB%98%E5%88%B6%E8%A3%81%E5%89%AA%E6%B0%B4%E5%8D%B0%E4%BF%9D%E5%AD%98/</guid>
+      <description>绘制空白的 image UIColor *color = [UIColor whiteColor]; CGSize size = CGSizeMake(300, 300); // 开启图片上下文 // UIGraphicsBeginImageContext(size); // 第三个参数 创建的图片根据屏幕的缩放比例来生成 两倍 或 三倍 像素大小 // 第三个参数 传 0 等同于 [UIScreen mainScreen].scale UIGraphicsBeginImageContextWithOptions(size, NO, 0); CGContextRef context = UIGraphicsGetCurrentContext(); CGContextSetFillColorWithColor(context, color.CGColor); CGContextFillRect(context, rect); UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); UIGraphicsEndImageContext();  裁剪图片 UIImage *image = [UIImage imageNamed:@&amp;quot;me&amp;quot;]; UIGraphicsBeginImageContextWithOptions(image.size, NO, 0); CGContextRef ctx = UIGraphicsGetCurrentContext(); CGContextAddArc(ctx, image.size.width * 0.5, image.size.height * 0.5, image.size.width * 0.</description>
     </item>
     
     <item>
@@ -580,21 +577,21 @@ RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切�
     </item>
     
     <item>
+      <title>WKWebView 注入js、处理超链接和文件选择</title>
+      <link>https://jepphu.github.io/2017/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/2017/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9/</guid>
+      <description>&amp;lt;WKNavigationDelegate, WKUIDelegate&amp;gt;  self.webView.navigationDelegate = self; self.webView.UIDelegate = self;  注入 JavaScript 代码 NSString *path = [[NSBundle mainBundle]pathForResource:@&amp;quot;untitled&amp;quot; ofType:@&amp;quot;js&amp;quot;]; NSString *js = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil]; [webView evaluateJavaScript:js completionHandler:nil];  处理超链接，用浏览器打开 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler { NSURL *url = navigationAction.request.URL; if (navigationAction.navigationType == WKNavigationTypeLinkActivated) { [[UIApplication sharedApplication] openURL:url]; // [[NSWorkspace sharedWorkspace] openURL:url]; decisionHandler(WKNavigationActionPolicyCancel); } else { decisionHandler(WKNavigationActionPolicyAllow); } }  处理网页中的文件选择 - (void)webView:(WKWebView *)webView runOpenPanelWithParameters:(WKOpenPanelParameters *)parameters initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSArray&amp;lt;NSURL *&amp;gt; * _Nullable))completionHandler { NSOpenPanel *panel = [NSOpenPanel openPanel]; [panel beginSheetModalForWindow:self.</description>
+    </item>
+    
+    <item>
       <title>WKWebView 清除 cookies</title>
       <link>https://jepphu.github.io/2017/wkwebview%E6%B8%85%E9%99%A4cookies/</link>
       <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/2017/wkwebview%E6%B8%85%E9%99%A4cookies/</guid>
       <description>NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes]; NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0]; [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{}];  </description>
-    </item>
-    
-    <item>
-      <title>用浏览器打开超链接</title>
-      <link>https://jepphu.github.io/2017/%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E8%B6%85%E9%93%BE%E6%8E%A5/</link>
-      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2017/%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E8%B6%85%E9%93%BE%E6%8E%A5/</guid>
-      <description>&amp;lt;WKNavigationDelegate&amp;gt;  self.webView.navigationDelegate = self;  - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler { NSURL *url = navigationAction.request.URL; if (navigationAction.navigationType == WKNavigationTypeLinkActivated) { [[UIApplication sharedApplication] openURL:url]; // [[NSWorkspace sharedWorkspace] openURL:url]; decisionHandler(WKNavigationActionPolicyCancel); } else { decisionHandler(WKNavigationActionPolicyAllow); } }  </description>
     </item>
     
     <item>
@@ -664,7 +661,7 @@ NSWindowStyleMask == NSWindowStyleMaskBorderless  </description>
 git config --global user.name &amp;quot;your name&amp;quot; git config --global user.email &amp;quot;your eamil@domain.com&amp;quot;  查看用户名和邮箱
 git config user.name git config user.email  解除全局用户名和邮箱
 git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
-git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
+git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master // 如果 push 被拒绝, 则需要先 pull, pull 如果反应 refusing to merge unrelated histories git pull origin master --allow-unrelated-histories  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
     </item>
     
     <item>

@@ -6,8 +6,194 @@
     <description>Recent content in Jepp Hu on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Mar 2019 20:11:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2019 15:56:28 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>不使用 storyBoard</title>
+      <link>https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/</link>
+      <pubDate>Fri, 15 Mar 2019 15:56:28 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/</guid>
+      <description>
+
+&lt;h3 id=&#34;纯代码的方式开始搭建界面&#34;&gt;纯代码的方式开始搭建界面&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIViewController *redView = [[UIViewController alloc] init];
+    redView.view.backgroundColor = [UIColor redColor];
+
+    //1. 直接以 UIViewController 作为 window 的根控制器
+//    self.window.rootViewController = redView;
+//    [self.window makeKeyAndVisible];
+
+    //2. 以 UINavigationController 作为 window 的根控制器(44px)
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:redView];
+//    nav.view.backgroundColor = [UIColor grayColor];
+//    self.window.rootViewController = nav;
+//    [self.window makeKeyAndVisible];
+
+    //3. 以 UITabBarController 作为 window 的根控制器
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    UIViewController *v1 = [[UIViewController alloc] init];
+    v1.view.backgroundColor = [UIColor redColor];
+    v1.tabBarItem.badgeValue = @&amp;quot;v1&amp;quot;;
+    UIViewController *v2 = [[UIViewController alloc] init];
+    v2.view.backgroundColor = [UIColor greenColor];
+    v2.tabBarItem.badgeValue = @&amp;quot;666&amp;quot;;
+    [tabBarController addChildViewController:v1];
+    [tabBarController addChildViewController:v2];
+
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UIGestureRecognizer</title>
+      <link>https://jepphu.github.io/2019/uigesturerecognizer/</link>
+      <pubDate>Fri, 15 Mar 2019 15:45:29 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/uigesturerecognizer/</guid>
+      <description>
+
+&lt;h3 id=&#34;点击&#34;&gt;点击&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// 创建点击手势对象
+UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+// 几个手指
+tap.numberOfTouchesRequired = 2;
+// 点击几次
+tap.numberOfTapsRequired = 2;
+// 给 View 添加一个手势
+[self.imageView addGestureRecognizer:tap];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;长按&#34;&gt;长按&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+// 长按时间
+longPress.minimumPressDuration = 0.5;
+// 在长按时移动允许的误差范围, 超过范围 误差失效
+longPress.allowableMovement = 50;
+[self.imageView addGestureRecognizer:longPress];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)longPress:(UILongPressGestureRecognizer *)sender {
+    // 默认长按移动时会一直执行, 放开时也会执行, 加个判断, 只执行一次
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        NSLog(@&amp;quot;%s&amp;quot;, __FUNCTION__);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;清扫&#34;&gt;清扫&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+// 控制识别的手势方向, 默认识别从左往右, 此处改为从右往左
+swipe.direction = UISwipeGestureRecognizerDirectionLeft;
+[self.imageView addGestureRecognizer:swipe];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;旋转&#34;&gt;旋转&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotation:)];
+[self.imageView addGestureRecognizer:rotation];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)rotation:(UIRotationGestureRecognizer *)sender {
+    NSLog(@&amp;quot;%s--%f&amp;quot;, __FUNCTION__, sender.rotation);
+    self.imageView.transform = CGAffineTransformRotate(self.imageView.transform, sender.rotation);
+    // 恢复到初始状态, 避免叠加旋转
+    sender.rotation = 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;捏合&#34;&gt;捏合&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
+[self.imageView addGestureRecognizer:pinch];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)pinch:(UIPinchGestureRecognizer *)sender {
+    NSLog(@&amp;quot;%s--%f&amp;quot;, __FUNCTION__, sender.scale);
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, sender.scale, sender.scale);
+    // 恢复到初始状态, 避免叠加
+    sender.scale = 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;拖拽&#34;&gt;拖拽&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+[self.imageView addGestureRecognizer:pan];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)pan:(UIPanGestureRecognizer *)sender {
+    CGPoint p = [sender translationInView:sender.view];
+    self.imageView.transform = CGAffineTransformTranslate(self.imageView.transform, p.x, p.y);
+    NSLog(@&amp;quot;%s--%@&amp;quot;, __FUNCTION__, NSStringFromCGPoint(p));
+    // 恢复到初始状态, 避免叠加
+    [sender setTranslation:CGPointZero inView:sender.view];
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;手势冲突&#34;&gt;手势冲突&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// &amp;lt;UIGestureRecognizerDelegate&amp;gt;
+// 旋转和拖放手势冲突, 通过代理解决, 可以同时使用
+rotation.delegate = self;
+pinch.delegate = self;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>信号量实现 NSURLSession 的同步请求</title>
+      <link>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Thu, 07 Mar 2019 18:46:19 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</guid>
+      <description>&lt;p&gt;NSURLSession 只有异步请求&lt;/p&gt;
+
+&lt;p&gt;通过信号量来实现同步&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;];
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+[request setHTTPMethod:@&amp;quot;GET&amp;quot;];
+
+NSLog(@&amp;quot;1 -- %@&amp;quot;,[NSThread currentThread]);
+__block NSURLResponse *resultResponse;
+__block NSError *resultError;
+__block NSData *resultData;
+
+//创建信号量
+dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    resultResponse = response;
+    resultError = error;
+    resultData = data;
+    NSLog(@&amp;quot;2 -- %@&amp;quot;,[NSThread currentThread]);
+    //发送信号
+    dispatch_semaphore_signal(semaphore);
+}];
+
+[task resume];
+//等待
+dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER);  
+NSLog(@&amp;quot;3 -- %@&amp;quot;,[NSThread currentThread]);
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>UIImageView 的 contentMode 属性</title>
@@ -227,76 +413,6 @@ BaiduPCS-Go logout
 
 }
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>网络模型</title>
-      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Tue, 25 Sep 2018 18:00:00 +0800</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
-      <description>
-
-&lt;h3 id=&#34;osi-七层网络模型&#34;&gt;OSI 七层网络模型&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;应用层&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;表示层&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;会话层&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;传输层&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;网络层&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;数据链路层&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;物理层&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;tcp-ip-网络模型&#34;&gt;TCP/IP 网络模型&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;应用层&lt;/p&gt;
-
-&lt;p&gt;对应 OSI 模型的前三层，为用户提供所需的各种服务，例如：FTP、telnet、DNS、SMTP、HTTP&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;传输层&lt;/p&gt;
-
-&lt;p&gt;提供了端口&lt;/p&gt;
-
-&lt;p&gt;为应用层提供端到端的通信功能，保证了数据包的传输顺序及数据完整性。两个主要协议：TCP 和 UDP&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;网络层&lt;/p&gt;
-
-&lt;p&gt;提供了 IP&lt;/p&gt;
-
-&lt;p&gt;解决主机到主机的通信问题。它所保护的协议设计数据包在整个网络上的逻辑传输。注重重新赋予主机一个 IP 地址来完成对主机的寻址，它还负责数据包在多种网络中的路由。该层有三个主要协议：网际协议（IP）互联网组管理协议（IGMP）和互联网控制报文协议（ICMP）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;网络接入层&lt;/p&gt;
-
-&lt;p&gt;硬件：网卡等，对应数据链路层和物理层&lt;/p&gt;
-
-&lt;p&gt;负责监视数据在主机和网络之间的交换&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;tcp-传输控制协议&#34;&gt;TCP（传输控制协议）&lt;/h3&gt;
-
-&lt;p&gt;TCP 协议提供的是一种可靠的、通过“三次握手”来创建一个连接，然后在进行数据传输服务&lt;/p&gt;
-
-&lt;p&gt;保证数据的正确型，但没 UDP 协议快&lt;/p&gt;
-
-&lt;p&gt;因为要先创建连接，所以是一对一的发送&lt;/p&gt;
-
-&lt;h3 id=&#34;udp-用户数据报协议&#34;&gt;UDP（用户数据报协议）&lt;/h3&gt;
-
-&lt;p&gt;UDP 协议提供的则是不保证可靠性（不代表不可靠）、无连接的数据传输服务&lt;/p&gt;
-
-&lt;p&gt;传输数据时不用创建连接，是直接发送的&lt;/p&gt;
-
-&lt;p&gt;指定 ip 就可以发，通常广播软件使用 UDP 协议，一对多&lt;/p&gt;
 </description>
     </item>
     
@@ -524,23 +640,105 @@ nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UICol
     </item>
     
     <item>
-      <title>绘制 image</title>
-      <link>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</link>
+      <title>image 绘制、裁剪、水印、保存</title>
+      <link>https://jepphu.github.io/2018/image%E7%BB%98%E5%88%B6%E8%A3%81%E5%89%AA%E6%B0%B4%E5%8D%B0%E4%BF%9D%E5%AD%98/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/2018/%E7%BB%98%E5%88%B6image/</guid>
+      <guid>https://jepphu.github.io/2018/image%E7%BB%98%E5%88%B6%E8%A3%81%E5%89%AA%E6%B0%B4%E5%8D%B0%E4%BF%9D%E5%AD%98/</guid>
       <description>
 
 &lt;h3 id=&#34;绘制空白的-image&#34;&gt;绘制空白的 image&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIColor *color = [UIColor whiteColor];
-CGRect rect = CGRectMake(0, 0, 200, 200);
-UIGraphicsBeginImageContext(rect.size);
+CGSize size = CGSizeMake(300, 300);
+
+// 开启图片上下文
+//  UIGraphicsBeginImageContext(size);
+// 第三个参数 创建的图片根据屏幕的缩放比例来生成 两倍 或 三倍 像素大小
+// 第三个参数 传 0 等同于 [UIScreen mainScreen].scale
+UIGraphicsBeginImageContextWithOptions(size, NO, 0);
 CGContextRef context = UIGraphicsGetCurrentContext();
 CGContextSetFillColorWithColor(context, color.CGColor);
 CGContextFillRect(context, rect);
 UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 UIGraphicsEndImageContext();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;裁剪图片&#34;&gt;裁剪图片&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *image = [UIImage imageNamed:@&amp;quot;me&amp;quot;];
+UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
+CGContextRef ctx = UIGraphicsGetCurrentContext();
+CGContextAddArc(ctx, image.size.width * 0.5, image.size.height * 0.5, image.size.width * 0.5, 0, M_PI * 2, 1);
+CGContextClip(ctx);
+[image drawAtPoint:CGPointZero];
+UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;加圆环的图片-加水印&#34;&gt;加圆环的图片 加水印&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *image = [UIImage imageNamed:@&amp;quot;me&amp;quot;];
+CGFloat margin = 20;
+CGSize ctxSize = CGSizeMake(image.size.width + margin * 2, image.size.height + margin * 2);
+UIGraphicsBeginImageContextWithOptions(ctxSize, NO, 0);
+CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+// 画圆环
+CGPoint arcCenter = CGPointMake(ctxSize.width * 0.5, ctxSize.height * 0.5);
+CGFloat radius = (image.size.width + margin) * 0.5;
+CGContextAddArc(ctx, arcCenter.x, arcCenter.y, radius, 0, 2*M_PI, 1);
+CGContextSetLineWidth(ctx, margin);
+// 渲染圆环
+CGContextDrawPath(ctx, kCGPathStroke);
+
+// 设置图片的显示区域
+CGContextAddArc(ctx, arcCenter.x, arcCenter.y, image.size.width * 0.5, 0, 2*M_PI, 1);
+CGContextClip(ctx);
+[image drawAtPoint:CGPointMake(margin, margin)];
+
+// 加水印
+NSString *str = @&amp;quot;watermark&amp;quot;;
+[str drawAtPoint:arcCenter withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}];
+UIImage *watermark = [UIImage imageNamed:@&amp;quot;watermark&amp;quot;];
+[watermark drawAtPoint:CGPointMake(ctxSize.width - watermark.size.width - 100, ctxSize.height - watermark.size.height - 100)];
+
+UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;屏幕截图-将某个-view-渲染成图片&#34;&gt;屏幕截图 (将某个 view 渲染成图片)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
+CGContextRef ctx = UIGraphicsGetCurrentContext();
+// 截取任何一个view 进行渲染
+[self.view.layer renderInContext:ctx];
+// 取图
+UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;将图片储存到沙盒中&#34;&gt;将图片储存到沙盒中&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// PNG 转 Data
+NSData *data = UIImagePNGRepresentation(image);
+NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+path = [path stringByAppendingPathComponent:@&amp;quot;founction1.png&amp;quot;];
+NSLog(@&amp;quot;%@&amp;quot;, path);
+[data writeToFile:path atomically:YES];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;保存到系统相册&#34;&gt;保存到系统相册&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// 参数(image, target, 保存完成的回调, contextInfo)
+// info.plist 中需要添加一条 key NSPhotoLibraryAddUsageDescription; value 为提示信息
+UIImageWriteToSavedPhotosAlbum(newImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// 回调
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    NSLog(@&amp;quot;%@&amp;quot;, error); 
+}
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -659,103 +857,6 @@ UIGraphicsEndImageContext();
 &lt;p&gt;关闭按钮点击时高亮的效果, 但是高亮的状态还在,只是效果没了&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;button.adjustsImageWhenDisabled = NO;&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UIImage 渲染</title>
-      <link>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</link>
-      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/</guid>
-      <description>
-
-&lt;p&gt;UIImage 有个 UIImageRenderingMode 属性，默认为 UIImageRenderingModeAutomatic&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode;
-
-typedef NS_ENUM(NSInteger, UIImageRenderingMode) {
-    UIImageRenderingModeAutomatic,          // 根据图片所处的绘图上下文自动调整渲染模式
-    UIImageRenderingModeAlwaysOriginal,     // 始终绘制图片原始状态，不使用 Tint Color 渲染
-    UIImageRenderingModeAlwaysTemplate,     // 始终根据环境的 Tint Color 渲染图片，忽略图片的本身的颜色信息
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;这个属性会导致一个常见的问题-uitabbaritem-上的-image-颜色与设置的原图不同&#34;&gt;这个属性会导致一个常见的问题：UITabBarItem 上的 image 颜色与设置的原图不同&lt;/h3&gt;
-
-&lt;p&gt;让 image 保持原图不被渲染有两种方法&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;代码设置，这个只是局部的修改&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *leftImage = [[UIImage imageNamed:@&amp;quot;icon_s&amp;quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-self.navigationItem.leftBarButtonItem.image = leftImage;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;进入 Assets.xcassets，找到图片资源，在属性栏中有 Render As 属性，选中 Original Image&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;在整个工程中，使用到这个 image 都不会被环境的 Tint Color 渲染&lt;/p&gt;
-
-&lt;h3 id=&#34;可以利用这个属性来将-image-渲染成想要的颜色&#34;&gt;可以利用这个属性来将 image 渲染成想要的颜色&lt;/h3&gt;
-
-&lt;p&gt;设置环境的 Tint Color，&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *img = [[UIImage imageNamed:@&amp;quot;icon_shut_down&amp;quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-btn.tintColor = [UIColor whiteColor];
-[btn setImage:img forState:UIControlStateNormal];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UIView 事件拦截</title>
-      <link>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</link>
-      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/</guid>
-      <description>
-
-&lt;h3 id=&#34;hittest-方法会递归来寻找第一响应者&#34;&gt;hitTest: 方法会递归来寻找第一响应者&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步&lt;/li&gt;
-&lt;li&gt;检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:）&lt;/li&gt;
-&lt;li&gt;如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;subviews-上的事件全部由父-view-来实现&#34;&gt;subViews 上的事件全部由父 View 来实现&lt;/h3&gt;
-
-&lt;p&gt;重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者&lt;/p&gt;
-
-&lt;p&gt;subViews 的 touch 相关方法不会响应&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件
-    if (CGRectContainsPoint(self.bounds, point)) {
-        return self;
-    }
-    return nil;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;允许部分-subviews-响应事件&#34;&gt;允许部分 subViews 响应事件&lt;/h3&gt;
-
-&lt;p&gt;重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者&lt;/p&gt;
-
-&lt;p&gt;其余未返回的子 View 的事件将被拦截&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    if (CGRectContainsPoint(self.slider.frame, point)) {
-        return self.slider;
-    } else if (CGRectContainsPoint(self.btn.frame, point)) {
-        return self.resetBtn;
-    }
-    return self.scrollView;
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OC 网络编程 on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/oc-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in OC 网络编程 on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Mar 2019 18:46:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/oc-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>信号量实现 NSURLSession 的同步请求</title>
+      <link>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Thu, 07 Mar 2019 18:46:19 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</guid>
+      <description>NSURLSession 只有异步请求
+通过信号量来实现同步
+NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;]; NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url]; [request setHTTPMethod:@&amp;quot;GET&amp;quot;]; NSLog(@&amp;quot;1 -- %@&amp;quot;,[NSThread currentThread]); __block NSURLResponse *resultResponse; __block NSError *resultError; __block NSData *resultData; //创建信号量 dispatch_semaphore_t semaphore = dispatch_semaphore_create(0); NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) { resultResponse = response; resultError = error; resultData = data; NSLog(@&amp;quot;2 -- %@&amp;quot;,[NSThread currentThread]); //发送信号 dispatch_semaphore_signal(semaphore); }]; [task resume]; //等待 dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER); NSLog(@&amp;quot;3 -- %@&amp;quot;,[NSThread currentThread]);  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,41 +6,20 @@
     <description>Recent content in Foundation on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Sep 2018 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Mar 2019 18:46:19 +0800</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/categories/foundation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>网络模型</title>
-      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Tue, 25 Sep 2018 18:00:00 +0800</pubDate>
+      <title>信号量实现 NSURLSession 的同步请求</title>
+      <link>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Thu, 07 Mar 2019 18:46:19 +0800</pubDate>
       
-      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid>
-      <description>OSI 七层网络模型  应用层
- 表示层
- 会话层
- 传输层
- 网络层
- 数据链路层
- 物理层
-  TCP/IP 网络模型  应用层
-对应 OSI 模型的前三层，为用户提供所需的各种服务，例如：FTP、telnet、DNS、SMTP、HTTP
- 传输层
-提供了端口
-为应用层提供端到端的通信功能，保证了数据包的传输顺序及数据完整性。两个主要协议：TCP 和 UDP
- 网络层
-提供了 IP
-解决主机到主机的通信问题。它所保护的协议设计数据包在整个网络上的逻辑传输。注重重新赋予主机一个 IP 地址来完成对主机的寻址，它还负责数据包在多种网络中的路由。该层有三个主要协议：网际协议（IP）互联网组管理协议（IGMP）和互联网控制报文协议（ICMP）
- 网络接入层
-硬件：网卡等，对应数据链路层和物理层
-负责监视数据在主机和网络之间的交换
-  TCP（传输控制协议） TCP 协议提供的是一种可靠的、通过“三次握手”来创建一个连接，然后在进行数据传输服务
-保证数据的正确型，但没 UDP 协议快
-因为要先创建连接，所以是一对一的发送
-UDP（用户数据报协议） UDP 协议提供的则是不保证可靠性（不代表不可靠）、无连接的数据传输服务
-传输数据时不用创建连接，是直接发送的
-指定 ip 就可以发，通常广播软件使用 UDP 协议，一对多</description>
+      <guid>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</guid>
+      <description>NSURLSession 只有异步请求
+通过信号量来实现同步
+NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;]; NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url]; [request setHTTPMethod:@&amp;quot;GET&amp;quot;]; NSLog(@&amp;quot;1 -- %@&amp;quot;,[NSThread currentThread]); __block NSURLResponse *resultResponse; __block NSError *resultError; __block NSData *resultData; //创建信号量 dispatch_semaphore_t semaphore = dispatch_semaphore_create(0); NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) { resultResponse = response; resultError = error; resultData = data; NSLog(@&amp;quot;2 -- %@&amp;quot;,[NSThread currentThread]); //发送信号 dispatch_semaphore_signal(semaphore); }]; [task resume]; //等待 dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER); NSLog(@&amp;quot;3 -- %@&amp;quot;,[NSThread currentThread]);  </description>
     </item>
     
     <item>

@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2017/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9/" />
-  <link rel="next" href="https://jepphu.github.io/2017/rvm/" />
-  <link rel="canonical" href="https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" />
+  <link rel="prev" href="https://jepphu.github.io/2019/uigesturerecognizer/" />
+  
+  <link rel="canonical" href="https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           WKWebView 与 WebView 调试器 | Jepp Hu
+           不使用 storyBoard | Jepp Hu
        
   </title>
-  <meta name="title" content="WKWebView 与 WebView 调试器 | Jepp Hu">
+  <meta name="title" content="不使用 storyBoard | Jepp Hu">
     
   
   <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https://jepphu.github.io/"
     },
     "articleSection" : "posts",
-    "name" : "WKWebView 与 WebView 调试器",
-    "headline" : "WKWebView 与 WebView 调试器",
-    "description" : " WKWebView #ifdef DEBUG [self.webView.configuration.preferences setValue:@YES forKey:@&quot;developerExtrasEnabled&quot;]; #endif  WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE  ",
+    "name" : "不使用 storyBoard",
+    "headline" : "不使用 storyBoard",
+    "description" : "纯代码的方式开始搭建界面 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]; UIViewController *redView = [[UIViewController alloc] init]; redView.view.backgroundColor = [UIColor redColor]; //1. 直接以 UIViewController 作为 window 的根控制器 // self.window.rootViewController = redView; // [self.window makeKeyAndVisible]; //2. 以 UINavigationController 作为 window 的根控制器(44px) // UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:redView]; // nav.view.backgroundColor = [UIColor grayColor]; // self.window.rootViewController = nav; // [self.window makeKeyAndVisible]; //3. 以 UITabBarController 作为 window 的根控制器 UITabBarController *tabBarController = [[UITabBarController alloc] init]; UIViewController *v1 = [[UIViewController alloc] init]; v1.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
     "publisher": "Jepp Hu",
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
-    "copyrightYear" : "2017",
-    "datePublished": "2017-04-02 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2017-04-02 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/",
-    "wordCount" : "14",
-    "keywords" : [ "WKWebView","WebView", "Jepp Hu"]
+    "copyrightYear" : "2019",
+    "datePublished": "2019-03-15 15:56:28 &#43;0800 CST",
+    "dateModified" : "2019-03-15 15:56:28 &#43;0800 CST",
+    "url" : "https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/",
+    "wordCount" : "111",
+    "keywords" : [  "Jepp Hu"]
 }
 </script>
 
@@ -116,16 +116,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">WKWebView 与 WebView 调试器</h1>
+        <h1 class="post-title" itemprop="name headline">不使用 storyBoard</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2017-04-02 itemprop="datePublished">April 2, 2017</time>
+                on <time datetime=2019-03-15 itemprop="datePublished">March 15, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://jepphu.github.io/categories/cocoa/"> Cocoa </a>
+                        <a href="https://jepphu.github.io/categories/uikit/"> UIKit </a>
                         
                 </span>
         </div>
@@ -148,17 +148,38 @@
 
           
 
-<h3 id="wkwebview">WKWebView</h3>
+<h3 id="纯代码的方式开始搭建界面">纯代码的方式开始搭建界面</h3>
 
-<pre><code class="language-objc">#ifdef DEBUG
-    [self.webView.configuration.preferences setValue:@YES forKey:@&quot;developerExtrasEnabled&quot;];
-#endif
-</code></pre>
+<pre><code class="language-objc">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIViewController *redView = [[UIViewController alloc] init];
+    redView.view.backgroundColor = [UIColor redColor];
 
-<h3 id="webview">WebView</h3>
+    //1. 直接以 UIViewController 作为 window 的根控制器
+//    self.window.rootViewController = redView;
+//    [self.window makeKeyAndVisible];
 
-<pre><code class="language-git">#terminal 
-defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
+    //2. 以 UINavigationController 作为 window 的根控制器(44px)
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:redView];
+//    nav.view.backgroundColor = [UIColor grayColor];
+//    self.window.rootViewController = nav;
+//    [self.window makeKeyAndVisible];
+
+    //3. 以 UITabBarController 作为 window 的根控制器
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    UIViewController *v1 = [[UIViewController alloc] init];
+    v1.view.backgroundColor = [UIColor redColor];
+    v1.tabBarItem.badgeValue = @&quot;v1&quot;;
+    UIViewController *v2 = [[UIViewController alloc] init];
+    v2.view.backgroundColor = [UIColor greenColor];
+    v2.tabBarItem.badgeValue = @&quot;666&quot;;
+    [tabBarController addChildViewController:v1];
+    [tabBarController addChildViewController:v2];
+
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];
+    return YES;
+}
 </code></pre>
 
     </div>
@@ -174,7 +195,7 @@ defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/>https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</span>
+                    <a href=https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/>https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/</span>
             </p>
             
              
@@ -187,17 +208,6 @@ defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
   
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
-            
-            <span class="tag"><a href="https://jepphu.github.io/tags/wkwebview/">
-                    #WKWebView</a></span>
-            
-            <span class="tag"><a href="https://jepphu.github.io/tags/webview/">
-                    #WebView</a></span>
-            
-            </section>
-        
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
                 <span><a href="https://jepphu.github.io/">home</a></span>
@@ -206,10 +216,8 @@ defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2017/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9/" class="prev" rel="prev" title="WKWebView 注入js、处理超链接和文件选择"><i class="iconfont icon-left"></i>&nbsp;WKWebView 注入js、处理超链接和文件选择</a>
+        <a href="https://jepphu.github.io/2019/uigesturerecognizer/" class="prev" rel="prev" title="UIGestureRecognizer"><i class="iconfont icon-left"></i>&nbsp;UIGestureRecognizer</a>
          
-        
-        <a href="https://jepphu.github.io/2017/rvm/" class="next" rel="next" title="RVM">RVM&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

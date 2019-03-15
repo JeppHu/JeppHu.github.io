@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://jepphu.github.io/2017/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9/" />
-  <link rel="next" href="https://jepphu.github.io/2017/rvm/" />
-  <link rel="canonical" href="https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/" />
+  <link rel="prev" href="https://jepphu.github.io/2019/uiimageview/" />
+  <link rel="next" href="https://jepphu.github.io/2019/uigesturerecognizer/" />
+  <link rel="canonical" href="https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://jepphu.github.io/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           WKWebView 与 WebView 调试器 | Jepp Hu
+           信号量实现 NSURLSession 的同步请求 | Jepp Hu
        
   </title>
-  <meta name="title" content="WKWebView 与 WebView 调试器 | Jepp Hu">
+  <meta name="title" content="信号量实现 NSURLSession 的同步请求 | Jepp Hu">
     
   
   <link rel="stylesheet" href="https://jepphu.github.io/font/iconfont.css">
@@ -44,21 +44,23 @@
          "@id": "https://jepphu.github.io/"
     },
     "articleSection" : "posts",
-    "name" : "WKWebView 与 WebView 调试器",
-    "headline" : "WKWebView 与 WebView 调试器",
-    "description" : " WKWebView #ifdef DEBUG [self.webView.configuration.preferences setValue:@YES forKey:@&quot;developerExtrasEnabled&quot;]; #endif  WebView #terminal defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE  ",
+    "name" : "信号量实现 NSURLSession 的同步请求",
+    "headline" : "信号量实现 NSURLSession 的同步请求",
+    "description" : "NSURLSession 只有异步请求
+通过信号量来实现同步
+NSURL *url = [NSURL URLWithString:@&quot;https://jepphu.github.io/&quot;]; NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url]; [request setHTTPMethod:@&quot;GET&quot;]; NSLog(@&quot;1 -- %@&quot;,[NSThread currentThread]); __block NSURLResponse *resultResponse; __block NSError *resultError; __block NSData *resultData; //创建信号量 dispatch_semaphore_t semaphore = dispatch_semaphore_create(0); NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) { resultResponse = response; resultError = error; resultData = data; NSLog(@&quot;2 -- %@&quot;,[NSThread currentThread]); //发送信号 dispatch_semaphore_signal(semaphore); }]; [task resume]; //等待 dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER); NSLog(@&quot;3 -- %@&quot;,[NSThread currentThread]);  ",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
     "publisher": "Jepp Hu",
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
-    "copyrightYear" : "2017",
-    "datePublished": "2017-04-02 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2017-04-02 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/",
-    "wordCount" : "14",
-    "keywords" : [ "WKWebView","WebView", "Jepp Hu"]
+    "copyrightYear" : "2019",
+    "datePublished": "2019-03-07 18:46:19 &#43;0800 CST",
+    "dateModified" : "2019-03-07 18:46:19 &#43;0800 CST",
+    "url" : "https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/",
+    "wordCount" : "76",
+    "keywords" : [ "OC 网络编程", "Jepp Hu"]
 }
 </script>
 
@@ -116,16 +118,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">WKWebView 与 WebView 调试器</h1>
+        <h1 class="post-title" itemprop="name headline">信号量实现 NSURLSession 的同步请求</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://jepphu.github.io/" rel="author">Jepp Hu</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2017-04-02 itemprop="datePublished">April 2, 2017</time>
+                on <time datetime=2019-03-07 itemprop="datePublished">March 7, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://jepphu.github.io/categories/cocoa/"> Cocoa </a>
+                        <a href="https://jepphu.github.io/categories/foundation/"> Foundation </a>
                         
                 </span>
         </div>
@@ -146,19 +148,34 @@
           
           
 
-          
+          <p>NSURLSession 只有异步请求</p>
 
-<h3 id="wkwebview">WKWebView</h3>
+<p>通过信号量来实现同步</p>
 
-<pre><code class="language-objc">#ifdef DEBUG
-    [self.webView.configuration.preferences setValue:@YES forKey:@&quot;developerExtrasEnabled&quot;];
-#endif
-</code></pre>
+<pre><code class="language-objc">NSURL *url = [NSURL URLWithString:@&quot;https://jepphu.github.io/&quot;];
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+[request setHTTPMethod:@&quot;GET&quot;];
 
-<h3 id="webview">WebView</h3>
+NSLog(@&quot;1 -- %@&quot;,[NSThread currentThread]);
+__block NSURLResponse *resultResponse;
+__block NSError *resultError;
+__block NSData *resultData;
 
-<pre><code class="language-git">#terminal 
-defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
+//创建信号量
+dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    resultResponse = response;
+    resultError = error;
+    resultData = data;
+    NSLog(@&quot;2 -- %@&quot;,[NSThread currentThread]);
+    //发送信号
+    dispatch_semaphore_signal(semaphore);
+}];
+
+[task resume];
+//等待
+dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER);  
+NSLog(@&quot;3 -- %@&quot;,[NSThread currentThread]);
 </code></pre>
 
     </div>
@@ -174,7 +191,7 @@ defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/>https://jepphu.github.io/2017/wkwebview%E4%B8%8Ewebview%E8%B0%83%E8%AF%95%E5%99%A8/</span>
+                    <a href=https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/>https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/</span>
             </p>
             
              
@@ -190,11 +207,8 @@ defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://jepphu.github.io/tags/wkwebview/">
-                    #WKWebView</a></span>
-            
-            <span class="tag"><a href="https://jepphu.github.io/tags/webview/">
-                    #WebView</a></span>
+            <span class="tag"><a href="https://jepphu.github.io/tags/oc-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                    #OC 网络编程</a></span>
             
             </section>
         
@@ -206,10 +220,10 @@ defaults write com.yourcompany.yourbundleid WebKitDeveloperExtras TRUE
 
     <div class="post-nav">
         
-        <a href="https://jepphu.github.io/2017/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9/" class="prev" rel="prev" title="WKWebView 注入js、处理超链接和文件选择"><i class="iconfont icon-left"></i>&nbsp;WKWebView 注入js、处理超链接和文件选择</a>
+        <a href="https://jepphu.github.io/2019/uiimageview/" class="prev" rel="prev" title="UIImageView 的 contentMode 属性"><i class="iconfont icon-left"></i>&nbsp;UIImageView 的 contentMode 属性</a>
          
         
-        <a href="https://jepphu.github.io/2017/rvm/" class="next" rel="next" title="RVM">RVM&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://jepphu.github.io/2019/uigesturerecognizer/" class="next" rel="next" title="UIGestureRecognizer">UIGestureRecognizer&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

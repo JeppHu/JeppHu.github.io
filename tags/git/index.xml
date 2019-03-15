@@ -45,7 +45,7 @@ git rm --cached 子模块名称  </description>
 git config --global user.name &amp;quot;your name&amp;quot; git config --global user.email &amp;quot;your eamil@domain.com&amp;quot;  查看用户名和邮箱
 git config user.name git config user.email  解除全局用户名和邮箱
 git config --global --unset user.name git config --global --unset user.email  查看 git 所有配置
-git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
+git config --list  上传本地项目到远程仓库  建立一个远程仓库 : git@github.com:xxx/xxx.git 进入项目根目录 初始化 git，并与远程仓库建立联系，将本地项目提交到远程仓库  git init git remote add origin git@github.com:xxx/xxx.git git add -A git commit -m &amp;quot;init&amp;quot; git push origin master // 如果 push 被拒绝, 则需要先 pull, pull 如果反应 refusing to merge unrelated histories git pull origin master --allow-unrelated-histories  克隆远程仓库的项目到本地  进入准备存放项目的根目录 将远程项目拉取到本地  git clone git@github.</description>
     </item>
     
   </channel>
