@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NSJSONSerialization on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/nsjsonserialization/</link>
+    <description>Recent content in NSJSONSerialization on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Mar 2019 17:19:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/nsjsonserialization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NSJSONSerialization</title>
+      <link>https://jepphu.github.io/2019/nsjsonserialization/</link>
+      <pubDate>Fri, 15 Mar 2019 17:19:34 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/nsjsonserialization/</guid>
+      <description> JSON 序列化 // 输出的 json 字符串就是一整行 NSJSONWritingSortedKeys // 是将生成的 json 数据格式化输出，这样可读性高，不设置则输出的 json 字符串就是一整行 NSJSONWritingPrettyPrinted  + (NSString *)jsonStringEncodedWithDic:(NSDictionary *)dic { if ([NSJSONSerialization isValidJSONObject:dic]) { NSError *error; NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&amp;amp;error]; NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; return json; } return nil; } + (NSString *)jsonPrettyStringEncodedWithDic:(NSDictionary *)dic { if ([NSJSONSerialization isValidJSONObject:dic]) { NSError *error; NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&amp;amp;error]; NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; return json; } return nil; }  JSON 反序列化 // 返回的对象是不可变的，NSDictionary 或 NSArray kNilOptions // 返回可变容器，NSMutableDictionary 或 NSMutableArray，返回的是数组字典嵌套的情况，每一层都是可变的 NSJSONReadingMutableContainers // 返回的 JSON 对象中字符串的值类型为 NSMutableString NSJSONReadingMutableLeaves // 允许JSON字符串最外层既不是 NSArray 也不是 NSDictionary，但必须是有效的JSON Fragment NSJSONReadingAllowFragments  + (id)jsonValueDecodedWithStr:(NSString *)str { NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding]; NSError *error; id value = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&amp;amp;error]; if (error) { NSLog(@&amp;quot;%s error:%@&amp;quot;, __func__, error); } return value; }  </description>
+    </item>
+    
+  </channel>
+</rss>

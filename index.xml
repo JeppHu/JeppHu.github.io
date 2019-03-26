@@ -6,8 +6,120 @@
     <description>Recent content in Jepp Hu on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Mar 2019 15:56:28 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2019 17:19:34 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>NSJSONSerialization</title>
+      <link>https://jepphu.github.io/2019/nsjsonserialization/</link>
+      <pubDate>Fri, 15 Mar 2019 17:19:34 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/nsjsonserialization/</guid>
+      <description>
+
+&lt;h3 id=&#34;json-序列化&#34;&gt;JSON 序列化&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// 输出的 json 字符串就是一整行
+NSJSONWritingSortedKeys
+// 是将生成的 json 数据格式化输出，这样可读性高，不设置则输出的 json 字符串就是一整行
+NSJSONWritingPrettyPrinted
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;+ (NSString *)jsonStringEncodedWithDic:(NSDictionary *)dic {
+    if ([NSJSONSerialization isValidJSONObject:dic]) {
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&amp;amp;error];
+        NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return json;
+    }
+    return nil;
+}
+
++ (NSString *)jsonPrettyStringEncodedWithDic:(NSDictionary *)dic {
+    if ([NSJSONSerialization isValidJSONObject:dic]) {
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&amp;amp;error];
+        NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return json;
+    }
+    return nil;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;json-反序列化&#34;&gt;JSON 反序列化&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// 返回的对象是不可变的，NSDictionary 或 NSArray
+kNilOptions
+// 返回可变容器，NSMutableDictionary 或 NSMutableArray，返回的是数组字典嵌套的情况，每一层都是可变的
+NSJSONReadingMutableContainers
+// 返回的 JSON 对象中字符串的值类型为 NSMutableString
+NSJSONReadingMutableLeaves
+// 允许JSON字符串最外层既不是 NSArray 也不是 NSDictionary，但必须是有效的JSON Fragment
+NSJSONReadingAllowFragments     
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;+ (id)jsonValueDecodedWithStr:(NSString *)str {
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    id value = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&amp;amp;error];
+    if (error) {
+        NSLog(@&amp;quot;%s error:%@&amp;quot;, __func__, error);
+    }
+    return value;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NSString 语音阅读</title>
+      <link>https://jepphu.github.io/2019/nsstring%E8%AF%AD%E9%9F%B3%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Fri, 15 Mar 2019 17:15:22 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/nsstring%E8%AF%AD%E9%9F%B3%E9%98%85%E8%AF%BB/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;#import &amp;lt;AVFoundation/AVFoundation.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;AVSpeechSynthesizer *synthesize = [[AVSpeechSynthesizer alloc]init];
+AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:self.textView.text];
+[synthesize speakUtterance:utterance];
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NSString 复制到剪切板</title>
+      <link>https://jepphu.github.io/2019/nsstring%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/</link>
+      <pubDate>Fri, 15 Mar 2019 17:11:42 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/nsstring%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+pasteboard.string = self.textView.text;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NSString 与 UTF-8</title>
+      <link>https://jepphu.github.io/2019/nsstring%E4%B8%8Eutf-8/</link>
+      <pubDate>Fri, 15 Mar 2019 17:02:35 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/nsstring%E4%B8%8Eutf-8/</guid>
+      <description>
+
+&lt;h3 id=&#34;nsstring-转-uft-8-编码&#34;&gt;NSString 转 UFT-8 编码&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSString *text = @&amp;quot;你好, 世界&amp;quot;;
+NSCharacterSet *charSet = [[NSCharacterSet characterSetWithCharactersInString:text] invertedSet];
+text = [text stringByAddingPercentEncodingWithAllowedCharacters:charSet];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;uft-8-转-nsstring-解码&#34;&gt;UFT-8 转 NSString 解码&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSString *text = [text stringByRemovingPercentEncoding];
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>不使用 storyBoard</title>
@@ -636,227 +748,6 @@ nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UICol
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>image 绘制、裁剪、水印、保存</title>
-      <link>https://jepphu.github.io/2018/image%E7%BB%98%E5%88%B6%E8%A3%81%E5%89%AA%E6%B0%B4%E5%8D%B0%E4%BF%9D%E5%AD%98/</link>
-      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/image%E7%BB%98%E5%88%B6%E8%A3%81%E5%89%AA%E6%B0%B4%E5%8D%B0%E4%BF%9D%E5%AD%98/</guid>
-      <description>
-
-&lt;h3 id=&#34;绘制空白的-image&#34;&gt;绘制空白的 image&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIColor *color = [UIColor whiteColor];
-CGSize size = CGSizeMake(300, 300);
-
-// 开启图片上下文
-//  UIGraphicsBeginImageContext(size);
-// 第三个参数 创建的图片根据屏幕的缩放比例来生成 两倍 或 三倍 像素大小
-// 第三个参数 传 0 等同于 [UIScreen mainScreen].scale
-UIGraphicsBeginImageContextWithOptions(size, NO, 0);
-CGContextRef context = UIGraphicsGetCurrentContext();
-CGContextSetFillColorWithColor(context, color.CGColor);
-CGContextFillRect(context, rect);
-UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-UIGraphicsEndImageContext();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;裁剪图片&#34;&gt;裁剪图片&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *image = [UIImage imageNamed:@&amp;quot;me&amp;quot;];
-UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
-CGContextRef ctx = UIGraphicsGetCurrentContext();
-CGContextAddArc(ctx, image.size.width * 0.5, image.size.height * 0.5, image.size.width * 0.5, 0, M_PI * 2, 1);
-CGContextClip(ctx);
-[image drawAtPoint:CGPointZero];
-UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-UIGraphicsEndImageContext();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;加圆环的图片-加水印&#34;&gt;加圆环的图片 加水印&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIImage *image = [UIImage imageNamed:@&amp;quot;me&amp;quot;];
-CGFloat margin = 20;
-CGSize ctxSize = CGSizeMake(image.size.width + margin * 2, image.size.height + margin * 2);
-UIGraphicsBeginImageContextWithOptions(ctxSize, NO, 0);
-CGContextRef ctx = UIGraphicsGetCurrentContext();
-
-// 画圆环
-CGPoint arcCenter = CGPointMake(ctxSize.width * 0.5, ctxSize.height * 0.5);
-CGFloat radius = (image.size.width + margin) * 0.5;
-CGContextAddArc(ctx, arcCenter.x, arcCenter.y, radius, 0, 2*M_PI, 1);
-CGContextSetLineWidth(ctx, margin);
-// 渲染圆环
-CGContextDrawPath(ctx, kCGPathStroke);
-
-// 设置图片的显示区域
-CGContextAddArc(ctx, arcCenter.x, arcCenter.y, image.size.width * 0.5, 0, 2*M_PI, 1);
-CGContextClip(ctx);
-[image drawAtPoint:CGPointMake(margin, margin)];
-
-// 加水印
-NSString *str = @&amp;quot;watermark&amp;quot;;
-[str drawAtPoint:arcCenter withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}];
-UIImage *watermark = [UIImage imageNamed:@&amp;quot;watermark&amp;quot;];
-[watermark drawAtPoint:CGPointMake(ctxSize.width - watermark.size.width - 100, ctxSize.height - watermark.size.height - 100)];
-
-UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-UIGraphicsEndImageContext();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;屏幕截图-将某个-view-渲染成图片&#34;&gt;屏幕截图 (将某个 view 渲染成图片)&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
-CGContextRef ctx = UIGraphicsGetCurrentContext();
-// 截取任何一个view 进行渲染
-[self.view.layer renderInContext:ctx];
-// 取图
-UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-UIGraphicsEndImageContext();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;将图片储存到沙盒中&#34;&gt;将图片储存到沙盒中&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// PNG 转 Data
-NSData *data = UIImagePNGRepresentation(image);
-NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-path = [path stringByAppendingPathComponent:@&amp;quot;founction1.png&amp;quot;];
-NSLog(@&amp;quot;%@&amp;quot;, path);
-[data writeToFile:path atomically:YES];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;保存到系统相册&#34;&gt;保存到系统相册&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// 参数(image, target, 保存完成的回调, contextInfo)
-// info.plist 中需要添加一条 key NSPhotoLibraryAddUsageDescription; value 为提示信息
-UIImageWriteToSavedPhotosAlbum(newImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// 回调
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    NSLog(@&amp;quot;%@&amp;quot;, error); 
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>App 发送邮件</title>
-      <link>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
-      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/app%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
-      <description>
-
-&lt;h3 id=&#34;ios-app-发送邮件&#34;&gt;iOS App 发送邮件&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;#import &amp;lt;MessageUI/MessageUI.h&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;&amp;lt;MFMailComposeViewControllerDelegate&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)sendEmail:(NSString *)email {
-    if ([MFMailComposeViewController canSendMail]) {
-//        [self.navigationController presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil];
-        [self presentViewController:[self configuredMailComposeViewControllerWithEmail:email] animated:YES completion:nil];
-    } else {
-        UIAlertController *sendMailErrorAlert = [UIAlertController alertControllerWithTitle:@&amp;quot;Can not send&amp;quot; message:@&amp;quot;Please set your email&amp;quot; preferredStyle:UIAlertControllerStyleAlert];
-        [sendMailErrorAlert addAction:[UIAlertAction actionWithTitle:@&amp;quot;OK&amp;quot; style:UIAlertActionStyleDefault handler:nil]];
-//        [self.navigationController presentViewController:sendMailErrorAlert animated:YES completion:nil];
-        [self presentViewController:sendMailErrorAlert animated:YES completion:nil];
-    }
-}
-
-- (MFMailComposeViewController *)configuredMailComposeViewControllerWithEmail:(NSString *)email {
-    MFMailComposeViewController *mfVC = [[MFMailComposeViewController alloc] init];
-    mfVC.mailComposeDelegate = self;
-    // 地址
-    [mfVC setToRecipients:@[email]];
-    // 主题
-    [mfVC setSubject:@&amp;quot;&amp;quot;];
-    // 内容
-    [mfVC setMessageBody:@&amp;quot;&amp;quot; isHTML:NO];
-    return mfVC;
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// MFMailComposeViewControllerDelegate
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    if (result == MFMailComposeResultFailed) {
-        
-    } else if (result == MFMailComposeResultSent) {
-        
-    }
-    
-    //关闭邮件发送窗口
-    [controller dismissViewControllerAnimated:YES completion:nil];
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;osx-app-发送邮件&#34;&gt;OSX App 发送邮件&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;[self sendEmail:@&amp;quot;jepp.hu@mail.com&amp;quot;];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (void)sendEmail:(NSString *)email {
-    NSString *recipients = [NSString stringWithFormat:@&amp;quot;mailto:%@?subject=%@&amp;quot;,eamil,@&amp;quot;subject&amp;quot;];
-    NSString *body = [NSString stringWithFormat:@&amp;quot;&amp;amp;body=%@ I have something to say about %@ %@:\n&amp;quot;, @&amp;quot;body&amp;quot;, @&amp;quot;appName&amp;quot;, @&amp;quot;version&amp;quot;];
-    NSString *email = [NSString stringWithFormat:@&amp;quot;%@%@&amp;quot;, recipients, body];
-    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:email]];
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>iOS 约束布局与动画</title>
-      <link>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</link>
-      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/ios%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8A%A8%E7%94%BB/</guid>
-      <description>&lt;p&gt;在控件被添加了约束的情况下，修改 frame 是无法实现的动画的&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;修改约束的值&lt;/li&gt;
-&lt;li&gt;调用 &lt;code&gt;layoutIfNeeded&lt;/code&gt;，要注意调用时机&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;self.viewHeight.constant = 0;
-
-[UIView animateWithDuration:0.25 animations:^{
-    [self.view layoutIfNeeded];
-}];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UIButton 设置背景图片</title>
-      <link>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</link>
-      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uibutton%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</guid>
-      <description>&lt;p&gt;背景图自适应尺寸拉伸&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[button setBackgroundImage:image forState:UIControlStateNormal];&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;背景图不拉伸&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[button setImage:image forState:UIControlStateNormal];&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;关闭按钮点击时高亮的效果, 但是高亮的状态还在,只是效果没了&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;button.adjustsImageWhenDisabled = NO;&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     

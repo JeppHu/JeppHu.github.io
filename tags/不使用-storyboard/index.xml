@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>不使用 storyBoard on Jepp Hu</title>
+    <link>https://jepphu.github.io/tags/%E4%B8%8D%E4%BD%BF%E7%94%A8-storyboard/</link>
+    <description>Recent content in 不使用 storyBoard on Jepp Hu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Mar 2019 15:56:28 +0800</lastBuildDate>
+    
+	<atom:link href="https://jepphu.github.io/tags/%E4%B8%8D%E4%BD%BF%E7%94%A8-storyboard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>不使用 storyBoard</title>
+      <link>https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/</link>
+      <pubDate>Fri, 15 Mar 2019 15:56:28 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/%E4%B8%8D%E4%BD%BF%E7%94%A8storyboard/</guid>
+      <description>纯代码的方式开始搭建界面 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]; UIViewController *redView = [[UIViewController alloc] init]; redView.view.backgroundColor = [UIColor redColor]; //1. 直接以 UIViewController 作为 window 的根控制器 // self.window.rootViewController = redView; // [self.window makeKeyAndVisible]; //2. 以 UINavigationController 作为 window 的根控制器(44px) // UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:redView]; // nav.view.backgroundColor = [UIColor grayColor]; // self.window.rootViewController = nav; // [self.window makeKeyAndVisible]; //3. 以 UITabBarController 作为 window 的根控制器 UITabBarController *tabBarController = [[UITabBarController alloc] init]; UIViewController *v1 = [[UIViewController alloc] init]; v1.</description>
+    </item>
+    
+  </channel>
+</rss>
