@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jepp Hu on Jepp Hu</title>
@@ -6,8 +5,185 @@
     <description>Recent content in Jepp Hu on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Mar 2019 17:19:34 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 10:42:33 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>1. 熟悉 Objective-C 的根源</title>
+      <link>https://jepphu.github.io/2019/1.-%E7%86%9F%E6%82%89-objective-c-%E7%9A%84%E6%A0%B9%E6%BA%90/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/1.-%E7%86%9F%E6%82%89-objective-c-%E7%9A%84%E6%A0%B9%E6%BA%90/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Objective-C 是 C 的超集，在 C 的基础上增加了面向对象的功能。
+相比使用结构体，在使用对象的时候产生的开销可能会影响性能，例如分配和释放堆内存。
+当不需要保存对象类型的时候，尽量使用诸如CGRect之类的结构体。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Objective-C 使用具有动态绑定的消息传递结构，而不是函数调用：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;// Messaging
+Object *obj = [Object new];
+[obj performWith:parameter1 and:parameter2];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;Object *obj = new Object;
+obj-&amp;gt;perform(parameter1, parameter2);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;关键的不同在于：消息传递结构中，由 Runtime 决定哪些代码被执行，编译器不关心接收消息的对象的类型，而是通过一个动态绑定的过程，在运行时去查找对象的类型。而函数调用中则由编译器来决定哪些代码被执行。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;理解 C 的核心概念将有助于您编写有效的 Objective-C。 特别是需要了解内存模型和指针。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2. 在头文件中尽可能少的引入其他头文件</title>
+      <link>https://jepphu.github.io/2019/2.-%E5%9C%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E5%B0%BD%E5%8F%AF%E8%83%BD%E5%B0%91%E7%9A%84%E5%BC%95%E5%85%A5%E5%85%B6%E4%BB%96%E5%A4%B4%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/2.-%E5%9C%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E5%B0%BD%E5%8F%AF%E8%83%BD%E5%B0%91%E7%9A%84%E5%BC%95%E5%85%A5%E5%85%B6%E4%BB%96%E5%A4%B4%E6%96%87%E4%BB%B6/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如非必要，不要头文件中引入头文件，而用 &lt;code&gt;@class Obj&lt;/code&gt; 来告诉编译器这个是一个类，在实现文件中再引入头文件。
+这样可以加快编译速度，降低类之间的耦合，并减少可能循环引用的问题。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有时候需要声明一个类遵循一项协议。这种情况下首先尽可能将“遵循协议”的代码写到类的扩展中去，从而避免在头文件中引用头文件，如果不行，那么将协议声明的代码单独放到一个头文件中，再去头文件中引用这个头文件，避免引入了其他类的声明。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>3. 多用字面语法，少用等价的其他语法</title>
+      <link>https://jepphu.github.io/2019/3.-%E5%A4%9A%E7%94%A8%E5%AD%97%E9%9D%A2%E8%AF%AD%E6%B3%95%E5%B0%91%E7%94%A8%E7%AD%89%E4%BB%B7%E7%9A%84%E5%85%B6%E4%BB%96%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/3.-%E5%A4%9A%E7%94%A8%E5%AD%97%E9%9D%A2%E8%AF%AD%E6%B3%95%E5%B0%91%E7%94%A8%E7%AD%89%E4%BB%B7%E7%9A%84%E5%85%B6%E4%BB%96%E8%AF%AD%E6%B3%95/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;使用字面语法去创建 string，numbers，arrays 和 dictionaries，比起使用常规的对象方法相比要更简明&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSString *someStr = @&amp;quot;Objective-C&amp;quot;;
+NSString *someStr = [NSString stringWithFormat:@&amp;quot;%@&amp;quot;,@&amp;quot;Objective-C&amp;quot;];
+
+NSNumber *someNum = @6;
+NSNumber *someNum = [NSNumber numberWithInt:6];
+
+NSArray *animals = @[@&amp;quot;cat&amp;quot;,@&amp;quot;dog&amp;quot;,@&amp;quot;mouse&amp;quot;];
+NSArray *animals = [NSArray arrayWithObjects:@&amp;quot;cat&amp;quot;,@&amp;quot;dog&amp;quot;,@&amp;quot;mouse&amp;quot;, nil];
+
+NSDictionary *personData =
+  @{@&amp;quot;firstName&amp;quot; : @&amp;quot;Matt&amp;quot;,
+    @&amp;quot;lastName&amp;quot; : @&amp;quot;Galloway&amp;quot;,
+    @&amp;quot;age&amp;quot; : [NSNumber numberWithInt:28]};
+NSDictionary *personData = [NSDictionary dictionaryWithObjectsAndKeys:@&amp;quot;Matt&amp;quot;, @&amp;quot;firstName&amp;quot;, @&amp;quot;Galloway&amp;quot;, @&amp;quot;lastName&amp;quot;, [NSNumber numberWithInt:28], @&amp;quot;age&amp;quot;, nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用取下标操作来访问/修改数组下标对应的元素或者字典中健所对应的值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;NSString *str = animals[1];
+NSString *str = [animals objectAtIndex:1];
+
+NSString *lastName = personData[@&amp;quot;personData&amp;quot;];
+NSString *lastName = [personData objectForKey:@&amp;quot;lastName&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一定要确保插入数组和字典中的对象没有 nil，否则会抛出异常&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>4. 多用类型常量，少用预处理指令 #define</title>
+      <link>https://jepphu.github.io/2019/4.-%E5%A4%9A%E7%94%A8%E7%B1%BB%E5%9E%8B%E5%B8%B8%E9%87%8F%E5%B0%91%E7%94%A8%E9%A2%84%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/4.-%E5%A4%9A%E7%94%A8%E7%B1%BB%E5%9E%8B%E5%B8%B8%E9%87%8F%E5%B0%91%E7%94%A8%E9%A2%84%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4/</guid>
+      <description>&lt;p&gt;宏定义常量属于预处理指令定义常量，会增加编译时间。对于常量的定义，使用类型常量定义，可减少编译时间，编译时类型报错也会提示，单独放在工程项目的某一个常量文件中更具可读性。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不要用预处理指令定义常量。这样定义出来的常量不含类型信息，编译器只会在编译前执行查找与替换操作。即使有人重新定义了常量值，编译器也不会产生警告信息，这将导致应用程序中的常量值不一致；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在实现文件中使用 &lt;code&gt;static const&lt;/code&gt; 来定义“只在编译单元内可见的常量”（translation-unit-specific constant）。一个 .m 文件就是一个编译单元。由于此常量不在全局符号表中，所以无需为其名称加前缀。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;//.m
+static const NSTiemInterval AnimationDuration = 0.3;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在头文件中使用 &lt;code&gt;extern&lt;/code&gt; 来声明全局常量，并在相关实现文件中定义其值。这种常量要出现在全局符号表中，所以其名称应加以区分，通常用与之相关的类名做前缀。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;//.h
+extern NSString *const SomeString;
+extern const NSTiemInterval AnimationDuration;
+
+//.m
+NSString *const SomeString = @&amp;quot;Debug&amp;quot;;
+const NSTiemInterval AnimationDuration = 0.3;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5. 用枚举表示状态、选项、状态码</title>
+      <link>https://jepphu.github.io/2019/5.-%E7%94%A8%E6%9E%9A%E4%B8%BE%E8%A1%A8%E7%A4%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9%E7%8A%B6%E6%80%81%E7%A0%81/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/5.-%E7%94%A8%E6%9E%9A%E4%B8%BE%E8%A1%A8%E7%A4%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9%E7%8A%B6%E6%80%81%E7%A0%81/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;用枚举来表示状态机的状态、传递给方法的选项以及错误状态码等值，给这些值起个易懂的名字&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;typedef NS_ENUM(NSUInteger, EOCConnectionState) {
+    EOCConnectionStateDisConnected = 1,
+    EOCConnectionStateConnecting,
+    EOCConnectionStateConnected,
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如果把传递给某个方法的选项表示为枚举类型，而多个选项又可同时使用，那么就将各选项定义为 2 的幂，以便通过按位或操作将其组合起来&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) {
+    UIViewAutoresizingNone                 = 0,
+    UIViewAutoresizingFlexibleLeftMargin   = 1 &amp;lt;&amp;lt; 0,
+    UIViewAutoresizingFlexibleWidth        = 1 &amp;lt;&amp;lt; 1,
+    UIViewAutoresizingFlexibleRightMargin  = 1 &amp;lt;&amp;lt; 2,
+    UIViewAutoresizingFlexibleTopMargin    = 1 &amp;lt;&amp;lt; 3,
+    UIViewAutoresizingFlexibleHeight       = 1 &amp;lt;&amp;lt; 4,
+    UIViewAutoresizingFlexibleBottomMargin = 1 &amp;lt;&amp;lt; 5
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;用 NS_ENUM 与 NS_OPTIONS 宏来定义枚举类型，并指明其底层数据类型。这样可以确保枚举是用开发者所选的底层数据类型实现出来的，而不会采用编译器所选的类型。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果需要以按位或操作来组合的枚举都应该使用 NS_OPTIONS 宏，若枚举不需要互相组合，可以使用NS_ENUM 来定义，NS_ENUM 和 NS_OPTIONS 本质是一样的，仅仅从字面上来区分其用途，采用不同的宏来从代码角度来区分，而 enum 是 C 语言的枚举，OC 也同样适用&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在处理枚举类型的switch语句中不要实现default分支。这样的话，加入新枚举之后，编译器就会提示开发者：switch语句并未处理所有枚举。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;switch (_currentState) {
+    case EOCConnectionStateDisConnected:
+        //
+        break;
+    case EOCConnectionStateConnecting:
+        //
+        break;
+    case EOCConnectionStateConnected:
+        //
+        break;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>NSJSONSerialization</title>
@@ -451,302 +627,6 @@ RSA key fingerprint is SHA256:...
 &lt;p&gt;如果 Host 字段任意取名为 YourHost，测试&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-git&#34;&gt;ssh -T git@YourHost 
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>BaiduPCS Go</title>
-      <link>https://jepphu.github.io/2019/baidupcs-go/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2019/baidupcs-go/</guid>
-      <description>
-
-&lt;h3 id=&#34;baidupcs-go-https-github-com-gangzhuo-baidupcs&#34;&gt;&lt;a href=&#34;https://github.com/GangZhuo/BaiduPCS&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;BaiduPCS Go&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;用于从百度云盘下载文件的工具&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#登录百度帐号
-BaiduPCS-Go login
-
-#列出&amp;lt;文件或目录&amp;gt;
-BaiduPCS-Go ls
-
-#下载文件/目录
-BaiduPCS-Go download &amp;lt;文件或目录&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#列出所有已登录的百度帐号
-BaiduPCS-Go loglist
-
-#获取当前帐号
-BaiduPCS-Go who
-
-#切换已登录的百度帐号
-BaiduPCS-Go su &amp;lt;uid&amp;gt;
-
-#退出当前登录的百度帐号
-BaiduPCS-Go logout
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>SFSafariViewController</title>
-      <link>https://jepphu.github.io/2018/sfsafariviewcontroller/</link>
-      <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/sfsafariviewcontroller/</guid>
-      <description>&lt;p&gt;不用跳出 app，直接在 app 内打开隐私协议等网址&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;#import &amp;lt;SafariServices/SafariServices.h&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;&amp;lt;SFSafariViewControllerDelegate&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (IBAction)action:(id)sender {
-    NSURL *url = [NSURL URLWithString:@&amp;quot;https://jepphu.github.io/&amp;quot;];
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-    safariVC.delegate = self;
-//    self.navigationController.navigationBarHidden = YES;
-//    [self.navigationController pushViewController:safariVC animated:YES];
-    [self presentViewController:safariVC animated:YES completion:nil];
-}
-
-// 加载完成
-- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully {
-
-}
-
-// 按钮 Done
-- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>网络基础</title>
-      <link>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Tue, 25 Sep 2018 17:00:00 +0800</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
-      <description>
-
-&lt;h3 id=&#34;网络基本概念&#34;&gt;网络基本概念&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;客户端（前端）：应用&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;服务器（后端）：为客户端提供服务、数据和资源的机器&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;请求：客户端向服务器索取数据&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;响应：服务器对客户端的请求作出反应，一般是服务器从数据库获得数据，然后返回给客户端&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;C/S : Client/Server&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;B/S : Browser/Server&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;服务器&#34;&gt;服务器&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;内网服务器：局域网内部的服务器&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;外网服务器：所有用户通过互联网能访问到的服务器&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;本地测试服务器：简化开发过程，在本地搭建一个服务器，用于测试&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;url&#34;&gt;URL&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;URL : Uniform Resource Locatora，统一资源定位符&lt;/p&gt;
-
-&lt;p&gt;网络中每一个资源都对应唯一的地址-URL&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;URL 的基本格式：协议://主机地址:端口号/路径&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;协议：不同的协议代表不同的资源获取方式&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;主机地址：主机的唯一标示（IP地址，域名）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;路径：资源在主机中的具体位置&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;URL 常见协议&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;http ：HyperText Transfer Protocol，超文本传输协议&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ftp ：文件传输协议&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;mailto ：电子邮件协议&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;file ：本地文件传输协议&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;tel ：电话&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;sms ：短信&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;一般输入网址不写协议、端口号、路径会默认 http 协议，80 端口，index.html 路径&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;http-协议简介&#34;&gt;http 协议简介&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;HyperText Transfer Protocol，超文本传输协议，提供超文本（文字，图片，声音，视频等）传输服务&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;客户端/浏览器和服务器通讯时候遵守的约定&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;互联网使用的最多的协议（使用简单，但并不算快）&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;dns-服务器&#34;&gt;DNS 服务器&lt;/h3&gt;
-
-&lt;p&gt;域名解析服务器：将域名转换为 IP 地址&lt;/p&gt;
-
-&lt;p&gt;DNS 服务器以类似字典的存储方式，将域名和 IP 对应存储，查找时从下级服务器开始往上级查询，最终查到 root 服务器，直到找到对应 IP 为止。解析一次以后，就会下级服务器被记录下来。&lt;/p&gt;
-
-&lt;h3 id=&#34;ip-简介&#34;&gt;IP 简介&lt;/h3&gt;
-
-&lt;p&gt;两个计算机要通讯，必须知道 IP 地址和端口号&lt;/p&gt;
-
-&lt;p&gt;IP 地址是一个 32 位的二进制数字，通常被分割为 8 位的二进制数，通常用点分 10 进制来表示&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;198.168.1.1 一般为路由器的地址&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;127.0.0.1 回环地址（本机地址）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;255.255.255.255 广播地址&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;端口号&#34;&gt;端口号&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;端口号用于标示进程的逻辑地址&lt;/p&gt;
-
-&lt;p&gt;一台服务器上可能运行多个软件，提供多个服务，为了让不同的客户端准确的请求到想要的服务，就让不同的服务有不同的端口号&lt;/p&gt;
-
-&lt;p&gt;IP 确定是哪个计算机，端口号则确定将数据传给哪个服务&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;端口号取值范围： 0 ～ 65535&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;端口的分类：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;公认端口 （Well Known Ports）：也称之为常用端口，从 0 到 1023，它们紧密绑定于一些特定的服务。通常这些端口的通信明确表明了某种服务的协议，这种端口是不可再重新定义它的作用对象。比如：http 默认 80，ftp 默认 21&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;注册端口 （Registered Ports）：端口号从 1024 到 49151，是操作系统分配给用户进程或应用程序。这些进程主要是用户选择安装的一些应用程序，而不是已经分配好了公认端口的常用程序&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;动态/私有端口 （Dynamic / Private Ports）：端口号从 49152 到 65535 。之所以成为动态端口，是因为它一般不固定分配某种服务，而是动态分配&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UINavigationBar</title>
-      <link>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</link>
-      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/uinavgationbar%E5%BA%95%E9%83%A8%E7%9A%84%E7%BA%BF/</guid>
-      <description>
-
-&lt;h3 id=&#34;uinavgationbar-设置颜色&#34;&gt;UINavgationBar 设置颜色&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UINavigationController *nav = self.navigationController;
-nav.navigationBar.tintColor = [UIColor whiteColor];
-nav.navigationBar.barTintColor = [UIColor colorWithRed:28/255.0 green:152/255.0 blue:225/255.0 alpha:1.0];
-nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor]};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时会觉得 navigationbar 颜色很浅，因为这是半透明状态&lt;/p&gt;
-
-&lt;p&gt;默认 &lt;code&gt;navigationbar.translucent = YES&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;改为 &lt;code&gt;navigationbar.translucent = NO&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;颜色问题解决，但是子控制器视图整体下移，加上下面这句&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;self.extendedLayoutIncludesOpaqueBars = YES;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;或者在 storyboard 中 viewController 属性勾选 Under Opaque Bars&lt;/p&gt;
-
-&lt;p&gt;如果有特殊需求，尝试使用下面的方法&lt;/p&gt;
-
-&lt;h3 id=&#34;透明化和显示-uinavigationbar-以及-uinavigationbar-底部的线&#34;&gt;透明化和显示 UINavigationBar 以及 UINavigationBar 底部的线&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;方法1：&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;- (UIImageView *)navigationBarLineUnder:(UIView *)navigationBar {
-    if ([navigationBar isKindOfClass:[UIImageView class]] &amp;amp;&amp;amp; navigationBar.bounds.size.height &amp;lt;= 1.0) {
-        return (UIImageView *)navigationBar;
-    }
-    for (UIView *subview in navigationBar.subviews) {
-        UIImageView *imageView= [self navigationBarLineUnder:subview];
-        if (imageView) {
-            return imageView;
-            }
-    }
-    return nil;
-}
-
-//隐藏
-[self navigationBarLineUnder:self.navigationController.navigationBar].hidden = YES;
-
-//显示
-[self navigationBarLineUnder:self.navigationController.navigationBar].hidden = NO;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;方法2：&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;//隐藏
-[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-[self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-
-//显示
-[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-[self.navigationController.navigationBar setShadowImage:nil];
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>present 一个 navigation</title>
-      <link>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</link>
-      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2018/present%E4%B8%80%E4%B8%AAnavigation/</guid>
-      <description>&lt;p&gt;在 present 页面之后的页面需要使用 navigation&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:logInVC];
-nav.navigationBar.tintColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
-nav.navigationBar.barTintColor = [UIColor whiteColor];
-nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]};
-[self presentViewController:nav animated:NO completion:nil];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;为 present 出来的 navigation 添加返回按钮&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-objc&#34;&gt;if (self.navigationController.navigationItem.hidesBackButton) {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@&amp;quot;Back&amp;quot; style:UIBarButtonItemStylePlain target:self action:@selector(dismissVC)];
-}
-
-- (void)dismissVC {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

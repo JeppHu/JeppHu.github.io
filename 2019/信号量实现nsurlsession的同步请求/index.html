@@ -41,14 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "信号量实现 NSURLSession 的同步请求",
     "headline" : "信号量实现 NSURLSession 的同步请求",
-    "description" : "NSURLSession 只有异步请求
-通过信号量来实现同步
-NSURL *url = [NSURL URLWithString:@&quot;https://jepphu.github.io/&quot;]; NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url]; [request setHTTPMethod:@&quot;GET&quot;]; NSLog(@&quot;1 -- %@&quot;,[NSThread currentThread]); __block NSURLResponse *resultResponse; __block NSError *resultError; __block NSData *resultData; //创建信号量 dispatch_semaphore_t semaphore = dispatch_semaphore_create(0); NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) { resultResponse = response; resultError = error; resultData = data; NSLog(@&quot;2 -- %@&quot;,[NSThread currentThread]); //发送信号 dispatch_semaphore_signal(semaphore); }]; [task resume]; //等待 dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER); NSLog(@&quot;3 -- %@&quot;,[NSThread currentThread]);  ",
+    "description" : "NSURLSession 只有异步请求\n通过信号量来实现同步\nNSURL *url = [NSURL URLWithString:@\x26quot;https:\/\/jepphu.github.io\/\x26quot;]; NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url]; [request setHTTPMethod:@\x26quot;GET\x26quot;]; NSLog(@\x26quot;1 -- %@\x26quot;,[NSThread currentThread]); __block NSURLResponse *resultResponse; __block NSError *resultError; __block NSData *resultData; \/\/创建信号量 dispatch_semaphore_t semaphore = dispatch_semaphore_create(0); NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) { resultResponse = response; resultError = error; resultData = data; NSLog(@\x26quot;2 -- %@\x26quot;,[NSThread currentThread]); \/\/发送信号 dispatch_semaphore_signal(semaphore); }]; [task resume]; \/\/等待 dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER); NSLog(@\x26quot;3 -- %@\x26quot;,[NSThread currentThread]);  ",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -56,9 +54,9 @@ NSURL *url = [NSURL URLWithString:@&quot;https://jepphu.github.io/&quot;]; NSMut
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-07 18:46:19 &#43;0800 CST",
-    "dateModified" : "2019-03-07 18:46:19 &#43;0800 CST",
-    "url" : "https://jepphu.github.io/2019/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82/",
+    "datePublished": "2019-03-07 18:46:19 \x2b0800 CST",
+    "dateModified" : "2019-03-07 18:46:19 \x2b0800 CST",
+    "url" : "https:\/\/jepphu.github.io\/2019\/%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0nsurlsession%E7%9A%84%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82\/",
     "wordCount" : "76",
     "keywords" : [ "OC 网络编程", "Jepp Hu"]
 }

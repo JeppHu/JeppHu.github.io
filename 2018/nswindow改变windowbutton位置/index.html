@@ -41,16 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "NSWindow 改变 WindowButton 位置",
     "headline" : "NSWindow 改变 WindowButton 位置",
-    "description" : "NSWindow 上的三个按钮
-NSButton *closeBtn = [self standardWindowButton:NSWindowCloseButton]; NSButton *miniaturizeBtn = [self standardWindowButton:NSWindowMiniaturizeButton]; NSButton *zoomBtn = [self standardWindowButton:NSWindowZoomButton];  系统创建的默认 frame 分别为
-(7.000000,3.000000),(14.000000,16.000000) (27.000000,3.000000),(14.000000,16.000000) (47.000000,3.000000),(14.000000,16.000000)  button 创建时是自动布局，直接修改 frame 无效
-关闭自动布局，添加约束布局就能修改 window button 的位置
-closeBtn.translatesAutoresizingMaskIntoConstraints = NO; miniaturizeBtn.translatesAutoresizingMaskIntoConstraints = NO; zoomBtn.translatesAutoresizingMaskIntoConstraints = NO; NSLayoutConstraint *leftContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:4.0]; NSLayoutConstraint *topContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:3.0]; leftContraint1.active = YES; topContraint1.active = YES; NSLayoutConstraint *leftContraint2 = [NSLayoutConstraint constraintWithItem:miniaturizeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:miniaturizeBtn.",
+    "description" : "NSWindow 上的三个按钮\nNSButton *closeBtn = [self standardWindowButton:NSWindowCloseButton]; NSButton *miniaturizeBtn = [self standardWindowButton:NSWindowMiniaturizeButton]; NSButton *zoomBtn = [self standardWindowButton:NSWindowZoomButton];  系统创建的默认 frame 分别为\n(7.000000,3.000000),(14.000000,16.000000) (27.000000,3.000000),(14.000000,16.000000) (47.000000,3.000000),(14.000000,16.000000)  button 创建时是自动布局，直接修改 frame 无效\n关闭自动布局，添加约束布局就能修改 window button 的位置\ncloseBtn.translatesAutoresizingMaskIntoConstraints = NO; miniaturizeBtn.translatesAutoresizingMaskIntoConstraints = NO; zoomBtn.translatesAutoresizingMaskIntoConstraints = NO; NSLayoutConstraint *leftContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:4.0]; NSLayoutConstraint *topContraint1 = [NSLayoutConstraint constraintWithItem:closeBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:closeBtn.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:3.0]; leftContraint1.active = YES; topContraint1.active = YES; NSLayoutConstraint *leftContraint2 = [NSLayoutConstraint constraintWithItem:miniaturizeBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:miniaturizeBtn.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -58,9 +54,9 @@ closeBtn.translatesAutoresizingMaskIntoConstraints = NO; miniaturizeBtn.translat
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-02-16 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-02-16 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE/",
+    "datePublished": "2018-02-16 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-02-16 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/nswindow%E6%94%B9%E5%8F%98windowbutton%E4%BD%8D%E7%BD%AE\/",
     "wordCount" : "124",
     "keywords" : [ "NSWindow", "Jepp Hu"]
 }

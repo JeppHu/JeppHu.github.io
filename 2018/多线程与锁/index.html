@@ -41,21 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "多线程与锁",
     "headline" : "多线程与锁",
-    "description" : "atomic 原子属性 多个线程同时读写这个属性时, 上了一把自旋锁,
- 自旋锁: 单写多读, 单个线程写入, 但是允许多个线程读取
-所以这样多线程读仍然会导致数据错误
-如果线程正在锁定代码, 其他线程的写入操作会用死循环的方式一直等待锁定的代码执行完毕, 自旋锁更适合执行不耗时的代码
- 互斥锁
-想读写完全绑定, 只能用互斥锁
-如果线程正在锁定代码, 其他线程的会进入就绪状态(休眠,等待执行), 等到锁打开后, 线程被唤醒
-  nonatomic 非原子属性 没有锁, 但是性能高
-@property (assign, nonatomic) int ticketsCount;  上互斥锁
-// 模拟多窗口卖票的操作 self.ticketsCount = 10; //多线程执行卖票操作, 这样会造成数据错误, 需要将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性), [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil]; [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil];  - (void)sellTickets { while (YES) { // 模拟耗时操作 [NSThread sleepForTimeInterval:1.0]; //上互斥锁, 将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性) //实现线程同步, 让线程在这里按顺序执行(会影响程序性能) //锁是 NSObject 的一个对象, 默认打开, 进入代码块将上锁 @synchronized(self) { if (self.",
+    "description" : "atomic 原子属性 多个线程同时读写这个属性时, 上了一把自旋锁,\n 自旋锁: 单写多读, 单个线程写入, 但是允许多个线程读取\n所以这样多线程读仍然会导致数据错误\n如果线程正在锁定代码, 其他线程的写入操作会用死循环的方式一直等待锁定的代码执行完毕, 自旋锁更适合执行不耗时的代码\n 互斥锁\n想读写完全绑定, 只能用互斥锁\n如果线程正在锁定代码, 其他线程的会进入就绪状态(休眠,等待执行), 等到锁打开后, 线程被唤醒\n  nonatomic 非原子属性 没有锁, 但是性能高\n@property (assign, nonatomic) int ticketsCount;  上互斥锁\n\/\/ 模拟多窗口卖票的操作 self.ticketsCount = 10; \/\/多线程执行卖票操作, 这样会造成数据错误, 需要将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性), [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil]; [NSThread detachNewThreadSelector:@selector(sellTickets) toTarget:self withObject:nil];  - (void)sellTickets { while (YES) { \/\/ 模拟耗时操作 [NSThread sleepForTimeInterval:1.0]; \/\/上互斥锁, 将单个线程读写操作绑定在一起, 使两者不能不可分割(原子性) \/\/实现线程同步, 让线程在这里按顺序执行(会影响程序性能) \/\/锁是 NSObject 的一个对象, 默认打开, 进入代码块将上锁 @synchronized(self) { if (self.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -63,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81/",
+    "datePublished": "2018-03-15 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-03-15 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%94%81\/",
     "wordCount" : "90",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }

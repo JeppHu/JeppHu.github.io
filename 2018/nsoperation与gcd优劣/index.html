@@ -41,16 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "NSOperation 与 GCD 优劣",
     "headline" : "NSOperation 与 GCD 优劣",
-    "description" : "NSOperation 特有的操作  NSOperationQueue 设置最大并发数 （同时执行的任务的个数）
- 队列的暂停与继续，以及取消所有的操作
- 指定操作之前的依赖关系（GCD可以用同步实现）
-  - (NSOperationQueue *)queue { if (!_queue) { _queue = [[NSOperationQueue alloc] init]; //最大并发数 [_queue setMaxConcurrentOperationCount:2]; } return _queue; }  // 这里不是线程越多越好, 应该设置最大并发数(不是多开启线程数) for (int i = 0; i &lt; 10; i ++) { [self.queue addOperationWithBlock:^{ [NSThread sleepForTimeInterval:2]; NSLog(@&quot;%d -- %@&quot;, i, [NSThread currentThread]); }]; }  队列的取消/暂停/继续
-// 当前操作会继续执行, 后续操作才会取消, 会从队列中移除 [self.queue cancelAllOperations]; // 当前操作会继续执行, 后续操作才会暂停, self.",
+    "description" : "NSOperation 特有的操作  NSOperationQueue 设置最大并发数 （同时执行的任务的个数）\n 队列的暂停与继续，以及取消所有的操作\n 指定操作之前的依赖关系（GCD可以用同步实现）\n  - (NSOperationQueue *)queue { if (!_queue) { _queue = [[NSOperationQueue alloc] init]; \/\/最大并发数 [_queue setMaxConcurrentOperationCount:2]; } return _queue; }  \/\/ 这里不是线程越多越好, 应该设置最大并发数(不是多开启线程数) for (int i = 0; i \x26lt; 10; i \x2b\x2b) { [self.queue addOperationWithBlock:^{ [NSThread sleepForTimeInterval:2]; NSLog(@\x26quot;%d -- %@\x26quot;, i, [NSThread currentThread]); }]; }  队列的取消\/暂停\/继续\n\/\/ 当前操作会继续执行, 后续操作才会取消, 会从队列中移除 [self.queue cancelAllOperations]; \/\/ 当前操作会继续执行, 后续操作才会暂停, self.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -58,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-04-16 21:00:00 &#43;0800 CST",
-    "dateModified" : "2018-04-16 21:00:00 &#43;0800 CST",
-    "url" : "https://jepphu.github.io/2018/nsoperation%E4%B8%8Egcd%E4%BC%98%E5%8A%A3/",
+    "datePublished": "2018-04-16 21:00:00 \x2b0800 CST",
+    "dateModified" : "2018-04-16 21:00:00 \x2b0800 CST",
+    "url" : "https:\/\/jepphu.github.io\/2018\/nsoperation%E4%B8%8Egcd%E4%BC%98%E5%8A%A3\/",
     "wordCount" : "77",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }

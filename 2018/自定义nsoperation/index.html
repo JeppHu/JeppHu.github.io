@@ -41,15 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "自定义 NSOperation",
     "headline" : "自定义 NSOperation",
-    "description" : "自定义 NSOperation NSInvocationOperation : 指定一个方法
-NSBlockOperation : 指定一个block
-自定义 Operation : 封装一个操作（下载）， 将具体操作写在操作的 main 方法里面
-@interface MyDownloadOperation : NSOperation @property (copy, nonatomic) NSString *urlString; @property (copy, nonatomic) void (^finishedBlock)(UIImage *); + (instancetype)downloadOperationWithUrlString:(NSString *)urlString finishedBlock:(void(^)(UIImage *img))finishedBlock;  @implementation MyDownloadOperation + (instancetype)downloadOperationWithUrlString:(NSString *)urlString finishedBlock:(void (^)(UIImage *))finishedBlock { MyDownloadOperation *op = [[self alloc] init]; op.urlString = urlString; op.finishedBlock = finishedBlock; return op; } //直接将操作写在 main 方法里面 (), 等同于 NSInvocationOperation 指定了一个方法和 NSBlockOperation 指定一个 block 一样 - (void)main { @autoreleasepool {//子线程无法访问主线程的自动释放池, 所以让子线程拥有自己的自动释放池 //耗时操作 [NSThread sleepForTimeInterval:2]; //将下载的文件保存到沙盒中 //取消正在执行的操作 if (self.",
+    "description" : "自定义 NSOperation NSInvocationOperation : 指定一个方法\nNSBlockOperation : 指定一个block\n自定义 Operation : 封装一个操作（下载）， 将具体操作写在操作的 main 方法里面\n@interface MyDownloadOperation : NSOperation @property (copy, nonatomic) NSString *urlString; @property (copy, nonatomic) void (^finishedBlock)(UIImage *); \x2b (instancetype)downloadOperationWithUrlString:(NSString *)urlString finishedBlock:(void(^)(UIImage *img))finishedBlock;  @implementation MyDownloadOperation \x2b (instancetype)downloadOperationWithUrlString:(NSString *)urlString finishedBlock:(void (^)(UIImage *))finishedBlock { MyDownloadOperation *op = [[self alloc] init]; op.urlString = urlString; op.finishedBlock = finishedBlock; return op; } \/\/直接将操作写在 main 方法里面 (), 等同于 NSInvocationOperation 指定了一个方法和 NSBlockOperation 指定一个 block 一样 - (void)main { @autoreleasepool {\/\/子线程无法访问主线程的自动释放池, 所以让子线程拥有自己的自动释放池 \/\/耗时操作 [NSThread sleepForTimeInterval:2]; \/\/将下载的文件保存到沙盒中 \/\/取消正在执行的操作 if (self.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -57,9 +54,9 @@ NSBlockOperation : 指定一个block
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-04-16 20:00:00 &#43;0800 CST",
-    "dateModified" : "2018-04-16 20:00:00 &#43;0800 CST",
-    "url" : "https://jepphu.github.io/2018/%E8%87%AA%E5%AE%9A%E4%B9%89nsoperation/",
+    "datePublished": "2018-04-16 20:00:00 \x2b0800 CST",
+    "dateModified" : "2018-04-16 20:00:00 \x2b0800 CST",
+    "url" : "https:\/\/jepphu.github.io\/2018\/%E8%87%AA%E5%AE%9A%E4%B9%89nsoperation\/",
     "wordCount" : "331",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }

@@ -41,16 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "viewController 生命周期",
     "headline" : "viewController 生命周期",
-    "description" : "viewController 生命周期  viewController 的创建 （xib，storyBoard）
-- (instancetype)initWithCoder:(NSCoder *)aDecoder;
- view 的创建
-- (void)loadView;
- view 是懒加载的 只有系统认为需要生成一个 view 的时候，才会调用这个方法来创建一个 view，这个时候通常是 presentViewController: 或 pushViewController: 的时候 当只有 viewController 的初始化的时候，不会创建一个 view， 也不会走 - (void)viewDidLoad 想要不 presentViewController: 或 pushViewController: 的情况下创建 view，访问一下 view 即可，[ViewController view] 一但重写了 loadView，需要自己创建 view，这个时候可以生成一个 UIImageView , WKWebView 等其它 view    - (void)loadView { UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@&quot;Default&quot;]]; imageView.frame = [UIScreen mainScreen].bounds; imageView.userInteractionEnabled = YES; self.",
+    "description" : "viewController 生命周期  viewController 的创建 （xib，storyBoard）\n- (instancetype)initWithCoder:(NSCoder *)aDecoder;\n view 的创建\n- (void)loadView;\n view 是懒加载的 只有系统认为需要生成一个 view 的时候，才会调用这个方法来创建一个 view，这个时候通常是 presentViewController: 或 pushViewController: 的时候 当只有 viewController 的初始化的时候，不会创建一个 view， 也不会走 - (void)viewDidLoad 想要不 presentViewController: 或 pushViewController: 的情况下创建 view，访问一下 view 即可，[ViewController view] 一但重写了 loadView，需要自己创建 view，这个时候可以生成一个 UIImageView , WKWebView 等其它 view    - (void)loadView { UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@\x26quot;Default\x26quot;]]; imageView.frame = [UIScreen mainScreen].bounds; imageView.userInteractionEnabled = YES; self.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -58,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2016",
-    "datePublished": "2016-09-28 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2016-09-28 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2016/viewcontroller%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/",
+    "datePublished": "2016-09-28 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2016-09-28 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2016\/viewcontroller%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F\/",
     "wordCount" : "154",
     "keywords" : [ "UIViewController", "Jepp Hu"]
 }

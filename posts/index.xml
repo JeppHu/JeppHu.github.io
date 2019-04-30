@@ -6,10 +6,64 @@
     <description>Recent content in Posts on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Mar 2019 17:19:34 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 10:42:33 +0800</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1. 熟悉 Objective-C 的根源</title>
+      <link>https://jepphu.github.io/2019/1.-%E7%86%9F%E6%82%89-objective-c-%E7%9A%84%E6%A0%B9%E6%BA%90/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/1.-%E7%86%9F%E6%82%89-objective-c-%E7%9A%84%E6%A0%B9%E6%BA%90/</guid>
+      <description> Objective-C 是 C 的超集，在 C 的基础上增加了面向对象的功能。 相比使用结构体，在使用对象的时候产生的开销可能会影响性能，例如分配和释放堆内存。 当不需要保存对象类型的时候，尽量使用诸如CGRect之类的结构体。
+ Objective-C 使用具有动态绑定的消息传递结构，而不是函数调用：
+  // Messaging Object *obj = [Object new]; [obj performWith:parameter1 and:parameter2];  Object *obj = new Object; obj-&amp;gt;perform(parameter1, parameter2);  关键的不同在于：消息传递结构中，由 Runtime 决定哪些代码被执行，编译器不关心接收消息的对象的类型，而是通过一个动态绑定的过程，在运行时去查找对象的类型。而函数调用中则由编译器来决定哪些代码被执行。
+ 理解 C 的核心概念将有助于您编写有效的 Objective-C。 特别是需要了解内存模型和指针。  </description>
+    </item>
+    
+    <item>
+      <title>2. 在头文件中尽可能少的引入其他头文件</title>
+      <link>https://jepphu.github.io/2019/2.-%E5%9C%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E5%B0%BD%E5%8F%AF%E8%83%BD%E5%B0%91%E7%9A%84%E5%BC%95%E5%85%A5%E5%85%B6%E4%BB%96%E5%A4%B4%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/2.-%E5%9C%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E5%B0%BD%E5%8F%AF%E8%83%BD%E5%B0%91%E7%9A%84%E5%BC%95%E5%85%A5%E5%85%B6%E4%BB%96%E5%A4%B4%E6%96%87%E4%BB%B6/</guid>
+      <description> 如非必要，不要头文件中引入头文件，而用 @class Obj 来告诉编译器这个是一个类，在实现文件中再引入头文件。 这样可以加快编译速度，降低类之间的耦合，并减少可能循环引用的问题。
+ 有时候需要声明一个类遵循一项协议。这种情况下首先尽可能将“遵循协议”的代码写到类的扩展中去，从而避免在头文件中引用头文件，如果不行，那么将协议声明的代码单独放到一个头文件中，再去头文件中引用这个头文件，避免引入了其他类的声明。
+  </description>
+    </item>
+    
+    <item>
+      <title>3. 多用字面语法，少用等价的其他语法</title>
+      <link>https://jepphu.github.io/2019/3.-%E5%A4%9A%E7%94%A8%E5%AD%97%E9%9D%A2%E8%AF%AD%E6%B3%95%E5%B0%91%E7%94%A8%E7%AD%89%E4%BB%B7%E7%9A%84%E5%85%B6%E4%BB%96%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/3.-%E5%A4%9A%E7%94%A8%E5%AD%97%E9%9D%A2%E8%AF%AD%E6%B3%95%E5%B0%91%E7%94%A8%E7%AD%89%E4%BB%B7%E7%9A%84%E5%85%B6%E4%BB%96%E8%AF%AD%E6%B3%95/</guid>
+      <description> 使用字面语法去创建 string，numbers，arrays 和 dictionaries，比起使用常规的对象方法相比要更简明  NSString *someStr = @&amp;quot;Objective-C&amp;quot;; NSString *someStr = [NSString stringWithFormat:@&amp;quot;%@&amp;quot;,@&amp;quot;Objective-C&amp;quot;]; NSNumber *someNum = @6; NSNumber *someNum = [NSNumber numberWithInt:6]; NSArray *animals = @[@&amp;quot;cat&amp;quot;,@&amp;quot;dog&amp;quot;,@&amp;quot;mouse&amp;quot;]; NSArray *animals = [NSArray arrayWithObjects:@&amp;quot;cat&amp;quot;,@&amp;quot;dog&amp;quot;,@&amp;quot;mouse&amp;quot;, nil]; NSDictionary *personData = @{@&amp;quot;firstName&amp;quot; : @&amp;quot;Matt&amp;quot;, @&amp;quot;lastName&amp;quot; : @&amp;quot;Galloway&amp;quot;, @&amp;quot;age&amp;quot; : [NSNumber numberWithInt:28]}; NSDictionary *personData = [NSDictionary dictionaryWithObjectsAndKeys:@&amp;quot;Matt&amp;quot;, @&amp;quot;firstName&amp;quot;, @&amp;quot;Galloway&amp;quot;, @&amp;quot;lastName&amp;quot;, [NSNumber numberWithInt:28], @&amp;quot;age&amp;quot;, nil];   使用取下标操作来访问/修改数组下标对应的元素或者字典中健所对应的值  NSString *str = animals[1]; NSString *str = [animals objectAtIndex:1]; NSString *lastName = personData[@&amp;quot;personData&amp;quot;]; NSString *lastName = [personData objectForKey:@&amp;quot;lastName&amp;quot;];   一定要确保插入数组和字典中的对象没有 nil，否则会抛出异常  </description>
+    </item>
+    
+    <item>
+      <title>4. 多用类型常量，少用预处理指令 #define</title>
+      <link>https://jepphu.github.io/2019/4.-%E5%A4%9A%E7%94%A8%E7%B1%BB%E5%9E%8B%E5%B8%B8%E9%87%8F%E5%B0%91%E7%94%A8%E9%A2%84%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/4.-%E5%A4%9A%E7%94%A8%E7%B1%BB%E5%9E%8B%E5%B8%B8%E9%87%8F%E5%B0%91%E7%94%A8%E9%A2%84%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4/</guid>
+      <description>宏定义常量属于预处理指令定义常量，会增加编译时间。对于常量的定义，使用类型常量定义，可减少编译时间，编译时类型报错也会提示，单独放在工程项目的某一个常量文件中更具可读性。
+ 不要用预处理指令定义常量。这样定义出来的常量不含类型信息，编译器只会在编译前执行查找与替换操作。即使有人重新定义了常量值，编译器也不会产生警告信息，这将导致应用程序中的常量值不一致；
+ 在实现文件中使用 static const 来定义“只在编译单元内可见的常量”（translation-unit-specific constant）。一个 .m 文件就是一个编译单元。由于此常量不在全局符号表中，所以无需为其名称加前缀。
+  //.m static const NSTiemInterval AnimationDuration = 0.3;   在头文件中使用 extern 来声明全局常量，并在相关实现文件中定义其值。这种常量要出现在全局符号表中，所以其名称应加以区分，通常用与之相关的类名做前缀。  //.h extern NSString *const SomeString; extern const NSTiemInterval AnimationDuration; //.m NSString *const SomeString = @&amp;quot;Debug&amp;quot;; const NSTiemInterval AnimationDuration = 0.3;  </description>
+    </item>
+    
+    <item>
+      <title>5. 用枚举表示状态、选项、状态码</title>
+      <link>https://jepphu.github.io/2019/5.-%E7%94%A8%E6%9E%9A%E4%B8%BE%E8%A1%A8%E7%A4%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9%E7%8A%B6%E6%80%81%E7%A0%81/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/2019/5.-%E7%94%A8%E6%9E%9A%E4%B8%BE%E8%A1%A8%E7%A4%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9%E7%8A%B6%E6%80%81%E7%A0%81/</guid>
+      <description>用枚举来表示状态机的状态、传递给方法的选项以及错误状态码等值，给这些值起个易懂的名字  typedef NS_ENUM(NSUInteger, EOCConnectionState) { EOCConnectionStateDisConnected = 1, EOCConnectionStateConnecting, EOCConnectionStateConnected, };   如果把传递给某个方法的选项表示为枚举类型，而多个选项又可同时使用，那么就将各选项定义为 2 的幂，以便通过按位或操作将其组合起来  typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) { UIViewAutoresizingNone = 0, UIViewAutoresizingFlexibleLeftMargin = 1 &amp;lt;&amp;lt; 0, UIViewAutoresizingFlexibleWidth = 1 &amp;lt;&amp;lt; 1, UIViewAutoresizingFlexibleRightMargin = 1 &amp;lt;&amp;lt; 2, UIViewAutoresizingFlexibleTopMargin = 1 &amp;lt;&amp;lt; 3, UIViewAutoresizingFlexibleHeight = 1 &amp;lt;&amp;lt; 4, UIViewAutoresizingFlexibleBottomMargin = 1 &amp;lt;&amp;lt; 5 };   用 NS_ENUM 与 NS_OPTIONS 宏来定义枚举类型，并指明其底层数据类型。这样可以确保枚举是用开发者所选的底层数据类型实现出来的，而不会采用编译器所选的类型。
+ 如果需要以按位或操作来组合的枚举都应该使用 NS_OPTIONS 宏，若枚举不需要互相组合，可以使用NS_ENUM 来定义，NS_ENUM 和 NS_OPTIONS 本质是一样的，仅仅从字面上来区分其用途，采用不同的宏来从代码角度来区分，而 enum 是 C 语言的枚举，OC 也同样适用</description>
+    </item>
     
     <item>
       <title>NSJSONSerialization</title>
@@ -564,43 +618,6 @@ brew install youtube-dl  常用命令 youtube-dl [OPTIONS] URL [URL...] （URL �
       
       <guid>https://jepphu.github.io/2017/nsbundle/</guid>
       <description> 获取资源文件 NSString *bundlePath = [[NSBundle mainBundle] resourcePath]; NSString *imagePath = [[NSBundle mainBundle] pathForResource:@&amp;quot;imageName&amp;quot; ofType:@&amp;quot;png&amp;quot;];  从文件中读取数据 NSString *path = [[NSBundle mainBundle] pathForResource:@&amp;quot;MKStoreKitConfigs&amp;quot; ofType:@&amp;quot;plist&amp;quot;]; NSDictionary *dic = [[[NSDictionary alloc] initWithContentsOfFile:path]];  </description>
-    </item>
-    
-    <item>
-      <title>/usr/bin 和 /usr/local/bin</title>
-      <link>https://jepphu.github.io/2017/usrbin-%E5%92%8C-usrlocalbin/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2017/usrbin-%E5%92%8C-usrlocalbin/</guid>
-      <description>usr 指 Unix System Resource，而不是 User
-/usr/bin 下面的都是系统预装的可执行程序，会随着系统升级而改变
-/usr/local/bin 目录是给用户放置自己的可执行程序的地方，不会被系统升级而覆盖同名文件
-两个目录下有相同的可执行程序，谁优先执行受到 PATH 环境变量的影响</description>
-    </item>
-    
-    <item>
-      <title>Homebrew</title>
-      <link>https://jepphu.github.io/2017/homebrew/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2017/homebrew/</guid>
-      <description>Homebrew Homebrew 基于 Ruby 的，用官方给出的指令安装
-安装过程中需要用到苹果的 Xcode 中的编译器，需要安装 Xcode （ Perference&amp;ndash;Downloads&amp;ndash;Components&amp;ndash;Command Line Tools）
-安装完成后，可以用 brew doctor 命令检测下是否有什么冲突的地方
-Homebrew 会将下载的工具安装到 /usr/local/Cellar 目录中，并在 /usr/local/bin 中创建链接
-常用命令 查询版本号 brew --version 更新 brew update 显示已经安装软件列表 brew list 搜索软件 brew search git 安装软件 brew install git 卸载软件 brew uninstall git  查看哪些已安装的程序需要更新 brew outdated 更新某个具体软件 brew upgrade git 更新全部软件，会标明已经安装并有更新版本的软件 brew upgrade 查看软件信息 brew info git 删除单个软件的旧版本 brew cleanup git 删除所有软件的旧版本 brew cleanup 清理和删除无效 Link brew prune  用浏览器打开 brew 的官方网站</description>
-    </item>
-    
-    <item>
-      <title>RVM</title>
-      <link>https://jepphu.github.io/2017/rvm/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/2017/rvm/</guid>
-      <description> RVM : Ruby Version Manager Ruby 是一种开源的面向对象程序设计的服务器端脚本语言
-Mac OS X 是默认安装了 Ruby ，但版本唯一且较低，并不能满足一般的开发需求
-RVM 是一个终端工具，提供便捷的多版本 Ruby 环境的管理和切换功能
-常用命令 版本查询 rvm --version RVM 更新 rvm get stable 显示已安装的 Ruby 版本 rvm list 列出可获得的 Ruby 版本 rvm list known 选择安装一个 Ruby 版本 rvm install 2.2.0 切换一个 Ruby 版本 rvm use 2.2.0 卸载一个已安装版本 rvm remove 1.8.7 设置一个 Ruby 版本为默认版本 rvm use 2.2.0 --default 查询详细信息 rvm info  </description>
     </item>
     
     <item>

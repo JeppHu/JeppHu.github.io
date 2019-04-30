@@ -41,14 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "GCD 单例",
     "headline" : "GCD 单例",
-    "description" : "dispach_once dispach_once 函数中的代码块只会被执行一次，而且还是线程安全的
-@interface Person : NSObject + (instancetype)sharePerson; @end  @implementation Person + (instancetype)allocWithZone:(struct _NSZone *)zone { static Person *instance = nil; // 一次性执行 static dispatch_once_t onceToken; dispatch_once(&amp;onceToken, ^{ instance = [super allocWithZone:zone]; }); return instance; } + (instancetype)sharePerson { return [self new]; }  快速实现单例 封装到头文件
-// 创建单例, 禁用 alloc, new, copy, mutableCopy 方法 #define SINGLETON_DEF(_type_) + (_type_ *)sharedInstance;\ +(instancetype) alloc __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ +(instancetype) new __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ -(instancetype) copy __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ -(instancetype) mutableCopy __attribute__((unavailable(&quot;call sharedInstance instead&quot;)));\ // 实现单例 #define SINGLETON_IMP(_type_) + (_type_ *)sharedInstance {\ static _type_ *sharedInstance = nil;\ static dispatch_once_t onceToken;\ dispatch_once(&amp;onceToken, ^{\ sharedInstance = [[super alloc] init];\ });\ return sharedInstance;\ }  声明",
+    "description" : "dispach_once dispach_once 函数中的代码块只会被执行一次，而且还是线程安全的\n@interface Person : NSObject \x2b (instancetype)sharePerson; @end  @implementation Person \x2b (instancetype)allocWithZone:(struct _NSZone *)zone { static Person *instance = nil; \/\/ 一次性执行 static dispatch_once_t onceToken; dispatch_once(\x26amp;onceToken, ^{ instance = [super allocWithZone:zone]; }); return instance; } \x2b (instancetype)sharePerson { return [self new]; }  快速实现单例 封装到头文件\n\/\/ 创建单例, 禁用 alloc, new, copy, mutableCopy 方法 #define SINGLETON_DEF(_type_) \x2b (_type_ *)sharedInstance;\\ \x2b(instancetype) alloc __attribute__((unavailable(\x26quot;call sharedInstance instead\x26quot;)));\\ \x2b(instancetype) new __attribute__((unavailable(\x26quot;call sharedInstance instead\x26quot;)));\\ -(instancetype) copy __attribute__((unavailable(\x26quot;call sharedInstance instead\x26quot;)));\\ -(instancetype) mutableCopy __attribute__((unavailable(\x26quot;call sharedInstance instead\x26quot;)));\\ \/\/ 实现单例 #define SINGLETON_IMP(_type_) \x2b (_type_ *)sharedInstance {\\ static _type_ *sharedInstance = nil;\\ static dispatch_once_t onceToken;\\ dispatch_once(\x26amp;onceToken, ^{\\ sharedInstance = [[super alloc] init];\\ });\\ return sharedInstance;\\ }  声明",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -56,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/gcd%E5%8D%95%E4%BE%8B/",
+    "datePublished": "2018-03-15 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-03-15 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/gcd%E5%8D%95%E4%BE%8B\/",
     "wordCount" : "124",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }

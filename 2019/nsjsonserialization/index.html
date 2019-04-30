@@ -10,7 +10,7 @@
   
   
   <link rel="prev" href="https://jepphu.github.io/2019/nsstring%E8%AF%AD%E9%9F%B3%E9%98%85%E8%AF%BB/" />
-  
+  <link rel="next" href="https://jepphu.github.io/2019/5.-%E7%94%A8%E6%9E%9A%E4%B8%BE%E8%A1%A8%E7%A4%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9%E7%8A%B6%E6%80%81%E7%A0%81/" />
   <link rel="canonical" href="https://jepphu.github.io/2019/nsjsonserialization/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://jepphu.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://jepphu.github.io/favicon-32x32.png">
@@ -41,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "NSJSONSerialization",
     "headline" : "NSJSONSerialization",
-    "description" : " JSON 序列化 // 输出的 json 字符串就是一整行 NSJSONWritingSortedKeys // 是将生成的 json 数据格式化输出，这样可读性高，不设置则输出的 json 字符串就是一整行 NSJSONWritingPrettyPrinted  + (NSString *)jsonStringEncodedWithDic:(NSDictionary *)dic { if ([NSJSONSerialization isValidJSONObject:dic]) { NSError *error; NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&amp;error]; NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; return json; } return nil; } + (NSString *)jsonPrettyStringEncodedWithDic:(NSDictionary *)dic { if ([NSJSONSerialization isValidJSONObject:dic]) { NSError *error; NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&amp;error]; NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; return json; } return nil; }  JSON 反序列化 // 返回的对象是不可变的，NSDictionary 或 NSArray kNilOptions // 返回可变容器，NSMutableDictionary 或 NSMutableArray，返回的是数组字典嵌套的情况，每一层都是可变的 NSJSONReadingMutableContainers // 返回的 JSON 对象中字符串的值类型为 NSMutableString NSJSONReadingMutableLeaves // 允许JSON字符串最外层既不是 NSArray 也不是 NSDictionary，但必须是有效的JSON Fragment NSJSONReadingAllowFragments  + (id)jsonValueDecodedWithStr:(NSString *)str { NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding]; NSError *error; id value = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&amp;error]; if (error) { NSLog(@&quot;%s error:%@&quot;, __func__, error); } return value; }  ",
+    "description" : " JSON 序列化 \/\/ 输出的 json 字符串就是一整行 NSJSONWritingSortedKeys \/\/ 是将生成的 json 数据格式化输出，这样可读性高，不设置则输出的 json 字符串就是一整行 NSJSONWritingPrettyPrinted  \x2b (NSString *)jsonStringEncodedWithDic:(NSDictionary *)dic { if ([NSJSONSerialization isValidJSONObject:dic]) { NSError *error; NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:\x26amp;error]; NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; return json; } return nil; } \x2b (NSString *)jsonPrettyStringEncodedWithDic:(NSDictionary *)dic { if ([NSJSONSerialization isValidJSONObject:dic]) { NSError *error; NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:\x26amp;error]; NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; return json; } return nil; }  JSON 反序列化 \/\/ 返回的对象是不可变的，NSDictionary 或 NSArray kNilOptions \/\/ 返回可变容器，NSMutableDictionary 或 NSMutableArray，返回的是数组字典嵌套的情况，每一层都是可变的 NSJSONReadingMutableContainers \/\/ 返回的 JSON 对象中字符串的值类型为 NSMutableString NSJSONReadingMutableLeaves \/\/ 允许JSON字符串最外层既不是 NSArray 也不是 NSDictionary，但必须是有效的JSON Fragment NSJSONReadingAllowFragments  \x2b (id)jsonValueDecodedWithStr:(NSString *)str { NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding]; NSError *error; id value = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:\x26amp;error]; if (error) { NSLog(@\x26quot;%s error:%@\x26quot;, __func__, error); } return value; }  ",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -54,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-15 17:19:34 &#43;0800 CST",
-    "dateModified" : "2019-03-15 17:19:34 &#43;0800 CST",
-    "url" : "https://jepphu.github.io/2019/nsjsonserialization/",
+    "datePublished": "2019-03-15 17:19:34 \x2b0800 CST",
+    "dateModified" : "2019-03-15 17:19:34 \x2b0800 CST",
+    "url" : "https:\/\/jepphu.github.io\/2019\/nsjsonserialization\/",
     "wordCount" : "130",
     "keywords" : [ "NSJSONSerialization", "Jepp Hu"]
 }
@@ -244,6 +244,8 @@ NSJSONReadingAllowFragments
         
         <a href="https://jepphu.github.io/2019/nsstring%E8%AF%AD%E9%9F%B3%E9%98%85%E8%AF%BB/" class="prev" rel="prev" title="NSString 语音阅读"><i class="iconfont icon-left"></i>&nbsp;NSString 语音阅读</a>
          
+        
+        <a href="https://jepphu.github.io/2019/5.-%E7%94%A8%E6%9E%9A%E4%B8%BE%E8%A1%A8%E7%A4%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9%E7%8A%B6%E6%80%81%E7%A0%81/" class="next" rel="next" title="5. 用枚举表示状态、选项、状态码">5. 用枚举表示状态、选项、状态码&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

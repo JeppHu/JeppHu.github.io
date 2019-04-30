@@ -41,23 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "Runtime",
     "headline" : "Runtime",
-    "description" : "Runtime Objective-C 扩展了 C 语言，并加入了面向对象特性和 Smalltalk 式的消息传递机制，而这个扩展的核心是一个用 C 和 编译语言 写的 Runtime 库
-它是 OC 面向对象和动态机制的基石
-OC 将数据类型的确定由编译时推迟到了运行时
-OC 代码也会在运行时转化成 C 语言代码
-作用 例如，分类可以加属性，但是自己写 set/get，没法增加成员变量
-通过 Runtime
- 可以在运行期间给某个分类增加属性、方法
- 可以在运行期间获取某个对象的所有属性名称
- 交换方法
-  引入头文件
-#import &lt;objc/runtime.h&gt;  为系统的 UIImageView，写一个分类，增加一个成员变量
-@interface UIImageView (MyView) @property (copy, nonatomic) NSString *urlString; @end  @implementation UIImageView (MyView) - (NSString *)urlString { return objc_getAssociatedObject(self, &quot;str&quot;); } - (void)setUrlString:(NSString *)urlString { //关联对象(给类增加属性) //参数1: 对象 //参数2: 属性的名称(C的字符串) //参数3: 属性的值 //参数3: 属性的修饰符 (copy, nonatomic) objc_setAssociatedObject(self, &quot;str&quot;, urlString, OBJC_ASSOCIATION_COPY_NONATOMIC); } @end  成功访问到这个属性",
+    "description" : "Runtime Objective-C 扩展了 C 语言，并加入了面向对象特性和 Smalltalk 式的消息传递机制，而这个扩展的核心是一个用 C 和 编译语言 写的 Runtime 库\n它是 OC 面向对象和动态机制的基石\nOC 将数据类型的确定由编译时推迟到了运行时\nOC 代码也会在运行时转化成 C 语言代码\n作用 例如，分类可以加属性，但是自己写 set\/get，没法增加成员变量\n通过 Runtime\n 可以在运行期间给某个分类增加属性、方法\n 可以在运行期间获取某个对象的所有属性名称\n 交换方法\n  引入头文件\n#import \x26lt;objc\/runtime.h\x26gt;  为系统的 UIImageView，写一个分类，增加一个成员变量\n@interface UIImageView (MyView) @property (copy, nonatomic) NSString *urlString; @end  @implementation UIImageView (MyView) - (NSString *)urlString { return objc_getAssociatedObject(self, \x26quot;str\x26quot;); } - (void)setUrlString:(NSString *)urlString { \/\/关联对象(给类增加属性) \/\/参数1: 对象 \/\/参数2: 属性的名称(C的字符串) \/\/参数3: 属性的值 \/\/参数3: 属性的修饰符 (copy, nonatomic) objc_setAssociatedObject(self, \x26quot;str\x26quot;, urlString, OBJC_ASSOCIATION_COPY_NONATOMIC); } @end  成功访问到这个属性",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -65,9 +54,9 @@ OC 代码也会在运行时转化成 C 语言代码
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-04-28 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-04-28 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/runtime/",
+    "datePublished": "2018-04-28 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-04-28 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/runtime\/",
     "wordCount" : "88",
     "keywords" : [ "Runtime", "Jepp Hu"]
 }

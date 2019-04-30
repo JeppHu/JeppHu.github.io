@@ -6,16 +6,17 @@
     <description>Recent content in Categories on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 30 Apr 2019 10:42:33 +0800</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Cocoa</title>
-      <link>https://jepphu.github.io/categories/cocoa/</link>
-      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      <title>编写高质量iOS与OSX代码的52个有效方法</title>
+      <link>https://jepphu.github.io/categories/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8Fios%E4%B8%8Eosx%E4%BB%A3%E7%A0%81%E7%9A%8452%E4%B8%AA%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 30 Apr 2019 10:42:33 +0800</pubDate>
       
-      <guid>https://jepphu.github.io/categories/cocoa/</guid>
+      <guid>https://jepphu.github.io/categories/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8Fios%E4%B8%8Eosx%E4%BB%A3%E7%A0%81%E7%9A%8452%E4%B8%AA%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95/</guid>
       <description></description>
     </item>
     
@@ -29,11 +30,11 @@
     </item>
     
     <item>
-      <title>Mac</title>
-      <link>https://jepphu.github.io/categories/mac/</link>
-      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      <title>UIKit</title>
+      <link>https://jepphu.github.io/categories/uikit/</link>
+      <pubDate>Fri, 15 Mar 2019 15:56:28 +0800</pubDate>
       
-      <guid>https://jepphu.github.io/categories/mac/</guid>
+      <guid>https://jepphu.github.io/categories/uikit/</guid>
       <description></description>
     </item>
     
@@ -47,11 +48,20 @@
     </item>
     
     <item>
-      <title>UIKit</title>
-      <link>https://jepphu.github.io/categories/uikit/</link>
-      <pubDate>Fri, 15 Mar 2019 15:56:28 +0800</pubDate>
+      <title>Cocoa</title>
+      <link>https://jepphu.github.io/categories/cocoa/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/categories/uikit/</guid>
+      <guid>https://jepphu.github.io/categories/cocoa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://jepphu.github.io/categories/mac/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/categories/mac/</guid>
       <description></description>
     </item>
     

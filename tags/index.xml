@@ -6,82 +6,10 @@
     <description>Recent content in Tags on Jepp Hu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2019 17:19:34 +0800</lastBuildDate>
     
 	<atom:link href="https://jepphu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>BaiduPCS Go</title>
-      <link>https://jepphu.github.io/tags/baidupcs-go/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/baidupcs-go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://jepphu.github.io/tags/git/</link>
-      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>https://jepphu.github.io/tags/mac/</link>
-      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MessageUI</title>
-      <link>https://jepphu.github.io/tags/messageui/</link>
-      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/messageui/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NSApplication</title>
-      <link>https://jepphu.github.io/tags/nsapplication/</link>
-      <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/nsapplication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NSBundle</title>
-      <link>https://jepphu.github.io/tags/nsbundle/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/nsbundle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NSCoding</title>
-      <link>https://jepphu.github.io/tags/nscoding/</link>
-      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/nscoding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NSColorPanel</title>
-      <link>https://jepphu.github.io/tags/nscolorpanel/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/nscolorpanel/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>NSJSONSerialization</title>
@@ -89,24 +17,6 @@
       <pubDate>Fri, 15 Mar 2019 17:19:34 +0800</pubDate>
       
       <guid>https://jepphu.github.io/tags/nsjsonserialization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NSLayoutConstraint</title>
-      <link>https://jepphu.github.io/tags/nslayoutconstraint/</link>
-      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/nslayoutconstraint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NSRunLoop</title>
-      <link>https://jepphu.github.io/tags/nsrunloop/</link>
-      <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/nsrunloop/</guid>
       <description></description>
     </item>
     
@@ -120,11 +30,191 @@
     </item>
     
     <item>
+      <title>不使用 storyBoard</title>
+      <link>https://jepphu.github.io/tags/%E4%B8%8D%E4%BD%BF%E7%94%A8-storyboard/</link>
+      <pubDate>Fri, 15 Mar 2019 15:56:28 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/%E4%B8%8D%E4%BD%BF%E7%94%A8-storyboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UIGestureRecognizer</title>
+      <link>https://jepphu.github.io/tags/uigesturerecognizer/</link>
+      <pubDate>Fri, 15 Mar 2019 15:45:29 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uigesturerecognizer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OC 网络编程</title>
+      <link>https://jepphu.github.io/tags/oc-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Thu, 07 Mar 2019 18:46:19 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/oc-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UIImageView</title>
+      <link>https://jepphu.github.io/tags/uiimageview/</link>
+      <pubDate>Tue, 05 Mar 2019 20:11:26 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uiimageview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UIActivityViewController</title>
+      <link>https://jepphu.github.io/tags/uiactivityviewcontroller/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uiactivityviewcontroller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://jepphu.github.io/tags/git/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BaiduPCS Go</title>
+      <link>https://jepphu.github.io/tags/baidupcs-go/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/baidupcs-go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SafariServices</title>
+      <link>https://jepphu.github.io/tags/safariservices/</link>
+      <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/safariservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网络基础</title>
+      <link>https://jepphu.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Tue, 25 Sep 2018 17:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UINavigation</title>
+      <link>https://jepphu.github.io/tags/uinavigation/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uinavigation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UIImage</title>
+      <link>https://jepphu.github.io/tags/uiimage/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uiimage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MessageUI</title>
+      <link>https://jepphu.github.io/tags/messageui/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/messageui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NSLayoutConstraint</title>
+      <link>https://jepphu.github.io/tags/nslayoutconstraint/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/nslayoutconstraint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UIButton</title>
+      <link>https://jepphu.github.io/tags/uibutton/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uibutton/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UIView</title>
+      <link>https://jepphu.github.io/tags/uiview/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uiview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UITableView</title>
+      <link>https://jepphu.github.io/tags/uitableview/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/uitableview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Runtime</title>
+      <link>https://jepphu.github.io/tags/runtime/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/runtime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OC 多线程</title>
+      <link>https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Mon, 16 Apr 2018 21:00:00 +0800</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NSRunLoop</title>
+      <link>https://jepphu.github.io/tags/nsrunloop/</link>
+      <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/nsrunloop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>NSTableView</title>
       <link>https://jepphu.github.io/tags/nstableview/</link>
       <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://jepphu.github.io/tags/nstableview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NSColorPanel</title>
+      <link>https://jepphu.github.io/tags/nscolorpanel/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jepphu.github.io/tags/nscolorpanel/</guid>
       <description></description>
     </item>
     
@@ -147,119 +237,56 @@
     </item>
     
     <item>
-      <title>OC 多线程</title>
-      <link>https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
-      <pubDate>Mon, 16 Apr 2018 21:00:00 +0800</pubDate>
+      <title>Mac</title>
+      <link>https://jepphu.github.io/tags/mac/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/oc-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <guid>https://jepphu.github.io/tags/mac/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>OC 网络编程</title>
-      <link>https://jepphu.github.io/tags/oc-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
-      <pubDate>Thu, 07 Mar 2019 18:46:19 +0800</pubDate>
+      <title>NSApplication</title>
+      <link>https://jepphu.github.io/tags/nsapplication/</link>
+      <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/oc-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://jepphu.github.io/tags/nsapplication/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Runtime</title>
-      <link>https://jepphu.github.io/tags/runtime/</link>
-      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      <title>info.plist</title>
+      <link>https://jepphu.github.io/tags/info.plist/</link>
+      <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/runtime/</guid>
+      <guid>https://jepphu.github.io/tags/info.plist/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>SafariServices</title>
-      <link>https://jepphu.github.io/tags/safariservices/</link>
-      <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
+      <title>youtube-dl</title>
+      <link>https://jepphu.github.io/tags/youtube-dl/</link>
+      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/safariservices/</guid>
+      <guid>https://jepphu.github.io/tags/youtube-dl/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>UIActivityViewController</title>
-      <link>https://jepphu.github.io/tags/uiactivityviewcontroller/</link>
-      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <title>NSCoding</title>
+      <link>https://jepphu.github.io/tags/nscoding/</link>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/uiactivityviewcontroller/</guid>
+      <guid>https://jepphu.github.io/tags/nscoding/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>UIButton</title>
-      <link>https://jepphu.github.io/tags/uibutton/</link>
-      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      <title>NSBundle</title>
+      <link>https://jepphu.github.io/tags/nsbundle/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/uibutton/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UIGestureRecognizer</title>
-      <link>https://jepphu.github.io/tags/uigesturerecognizer/</link>
-      <pubDate>Fri, 15 Mar 2019 15:45:29 +0800</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/uigesturerecognizer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UIImage</title>
-      <link>https://jepphu.github.io/tags/uiimage/</link>
-      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/uiimage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UIImageView</title>
-      <link>https://jepphu.github.io/tags/uiimageview/</link>
-      <pubDate>Tue, 05 Mar 2019 20:11:26 +0800</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/uiimageview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UINavigation</title>
-      <link>https://jepphu.github.io/tags/uinavigation/</link>
-      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/uinavigation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UITableView</title>
-      <link>https://jepphu.github.io/tags/uitableview/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/uitableview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UIView</title>
-      <link>https://jepphu.github.io/tags/uiview/</link>
-      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/uiview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UIViewController</title>
-      <link>https://jepphu.github.io/tags/uiviewcontroller/</link>
-      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/uiviewcontroller/</guid>
+      <guid>https://jepphu.github.io/tags/nsbundle/</guid>
       <description></description>
     </item>
     
@@ -282,56 +309,11 @@
     </item>
     
     <item>
-      <title>brew</title>
-      <link>https://jepphu.github.io/tags/brew/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      <title>UIViewController</title>
+      <link>https://jepphu.github.io/tags/uiviewcontroller/</link>
+      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://jepphu.github.io/tags/brew/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>info.plist</title>
-      <link>https://jepphu.github.io/tags/info.plist/</link>
-      <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/info.plist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rvm</title>
-      <link>https://jepphu.github.io/tags/rvm/</link>
-      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/rvm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>youtube-dl</title>
-      <link>https://jepphu.github.io/tags/youtube-dl/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/youtube-dl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>不使用 storyBoard</title>
-      <link>https://jepphu.github.io/tags/%E4%B8%8D%E4%BD%BF%E7%94%A8-storyboard/</link>
-      <pubDate>Fri, 15 Mar 2019 15:56:28 +0800</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/%E4%B8%8D%E4%BD%BF%E7%94%A8-storyboard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>网络基础</title>
-      <link>https://jepphu.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Tue, 25 Sep 2018 17:00:00 +0800</pubDate>
-      
-      <guid>https://jepphu.github.io/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://jepphu.github.io/tags/uiviewcontroller/</guid>
       <description></description>
     </item>
     

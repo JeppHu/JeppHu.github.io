@@ -41,15 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "UIImage 渲染",
     "headline" : "UIImage 渲染",
-    "description" : "UIImage 有个 UIImageRenderingMode 属性，默认为 UIImageRenderingModeAutomatic
-- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode; typedef NS_ENUM(NSInteger, UIImageRenderingMode) { UIImageRenderingModeAutomatic, // 根据图片所处的绘图上下文自动调整渲染模式 UIImageRenderingModeAlwaysOriginal, // 始终绘制图片原始状态，不使用 Tint Color 渲染 UIImageRenderingModeAlwaysTemplate, // 始终根据环境的 Tint Color 渲染图片，忽略图片的本身的颜色信息 }  这个属性会导致一个常见的问题：UITabBarItem 上的 image 颜色与设置的原图不同 让 image 保持原图不被渲染有两种方法
- 代码设置，这个只是局部的修改  UIImage *leftImage = [[UIImage imageNamed:@&quot;icon_s&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; self.navigationItem.leftBarButtonItem.image = leftImage;   进入 Assets.xcassets，找到图片资源，在属性栏中有 Render As 属性，选中 Original Image  在整个工程中，使用到这个 image 都不会被环境的 Tint Color 渲染
-可以利用这个属性来将 image 渲染成想要的颜色 设置环境的 Tint Color，",
+    "description" : "UIImage 有个 UIImageRenderingMode 属性，默认为 UIImageRenderingModeAutomatic\n- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode; typedef NS_ENUM(NSInteger, UIImageRenderingMode) { UIImageRenderingModeAutomatic, \/\/ 根据图片所处的绘图上下文自动调整渲染模式 UIImageRenderingModeAlwaysOriginal, \/\/ 始终绘制图片原始状态，不使用 Tint Color 渲染 UIImageRenderingModeAlwaysTemplate, \/\/ 始终根据环境的 Tint Color 渲染图片，忽略图片的本身的颜色信息 }  这个属性会导致一个常见的问题：UITabBarItem 上的 image 颜色与设置的原图不同 让 image 保持原图不被渲染有两种方法\n 代码设置，这个只是局部的修改  UIImage *leftImage = [[UIImage imageNamed:@\x26quot;icon_s\x26quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; self.navigationItem.leftBarButtonItem.image = leftImage;   进入 Assets.xcassets，找到图片资源，在属性栏中有 Render As 属性，选中 Original Image  在整个工程中，使用到这个 image 都不会被环境的 Tint Color 渲染\n可以利用这个属性来将 image 渲染成想要的颜色 设置环境的 Tint Color，",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -57,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-05-12 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-05-12 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/uiimage%E6%B8%B2%E6%9F%93/",
+    "datePublished": "2018-05-12 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-05-12 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/uiimage%E6%B8%B2%E6%9F%93\/",
     "wordCount" : "77",
     "keywords" : [ "UIImage", "Jepp Hu"]
 }

@@ -41,19 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "NSThread",
     "headline" : "NSThread",
-    "description" : " 多线程 多线程是切换执行的, 切换的速度非常快, 接近于 &ldquo;同时&rdquo; 执行, 实际上每个线程执行一段时间片就切换
-程序执行过程中系统会生成一些辅助线程, 且会自动销毁
-NSThread 生命周期需要程序员管理
-NSThread 的使用方式 方式 1
-// NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(demo:) object:@&quot;obj&quot;]; // 线程名字 thread1.name = @&quot;t1&quot;; // 线程的优先级,默认 0.5, 取值范围 (0 ~ 1), 可以使被分配时间片的几率更大, 但是不能保证一定先执行完 thread1.threadPriority = 1; // 线程进入可执行状态, 等待被调度, 执行 [thread1 start];  方式 2
-[NSThread detachNewThreadSelector:@selector(demo) toTarget:self withObject:nil];  方式 3
-[self performSelectorInBackground:@selector(demo) withObject:nil];  调用方法
-- (void)demo:(NSString *)sender { NSLog(@&quot;name : %@&quot;, name); for (int i = 0; i &lt; 20; i ++) { NSLog(@&quot;%@&quot;, [NSThread currentThread]); // 阻塞线程 [NSThread sleepForTimeInterval:1]; } [NSThread exit]; }  ",
+    "description" : " 多线程 多线程是切换执行的, 切换的速度非常快, 接近于 \x26ldquo;同时\x26rdquo; 执行, 实际上每个线程执行一段时间片就切换\n程序执行过程中系统会生成一些辅助线程, 且会自动销毁\nNSThread 生命周期需要程序员管理\nNSThread 的使用方式 方式 1\n\/\/ NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(demo:) object:@\x26quot;obj\x26quot;]; \/\/ 线程名字 thread1.name = @\x26quot;t1\x26quot;; \/\/ 线程的优先级,默认 0.5, 取值范围 (0 ~ 1), 可以使被分配时间片的几率更大, 但是不能保证一定先执行完 thread1.threadPriority = 1; \/\/ 线程进入可执行状态, 等待被调度, 执行 [thread1 start];  方式 2\n[NSThread detachNewThreadSelector:@selector(demo) toTarget:self withObject:nil];  方式 3\n[self performSelectorInBackground:@selector(demo) withObject:nil];  调用方法\n- (void)demo:(NSString *)sender { NSLog(@\x26quot;name : %@\x26quot;, name); for (int i = 0; i \x26lt; 20; i \x2b\x2b) { NSLog(@\x26quot;%@\x26quot;, [NSThread currentThread]); \/\/ 阻塞线程 [NSThread sleepForTimeInterval:1]; } [NSThread exit]; }  ",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -61,9 +54,9 @@ NSThread 的使用方式 方式 1
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/nsthread/",
+    "datePublished": "2018-03-15 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-03-15 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/nsthread\/",
     "wordCount" : "89",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }

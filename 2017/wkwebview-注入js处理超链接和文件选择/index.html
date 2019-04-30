@@ -41,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "WKWebView 注入js、处理超链接和文件选择",
     "headline" : "WKWebView 注入js、处理超链接和文件选择",
-    "description" : "&lt;WKNavigationDelegate, WKUIDelegate&gt;  self.webView.navigationDelegate = self; self.webView.UIDelegate = self;  注入 JavaScript 代码 NSString *path = [[NSBundle mainBundle]pathForResource:@&quot;untitled&quot; ofType:@&quot;js&quot;]; NSString *js = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil]; [webView evaluateJavaScript:js completionHandler:nil];  处理超链接，用浏览器打开 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler { NSURL *url = navigationAction.request.URL; if (navigationAction.navigationType == WKNavigationTypeLinkActivated) { [[UIApplication sharedApplication] openURL:url]; // [[NSWorkspace sharedWorkspace] openURL:url]; decisionHandler(WKNavigationActionPolicyCancel); } else { decisionHandler(WKNavigationActionPolicyAllow); } }  处理网页中的文件选择 - (void)webView:(WKWebView *)webView runOpenPanelWithParameters:(WKOpenPanelParameters *)parameters initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSArray&lt;NSURL *&gt; * _Nullable))completionHandler { NSOpenPanel *panel = [NSOpenPanel openPanel]; [panel beginSheetModalForWindow:self.",
+    "description" : "\x26lt;WKNavigationDelegate, WKUIDelegate\x26gt;  self.webView.navigationDelegate = self; self.webView.UIDelegate = self;  注入 JavaScript 代码 NSString *path = [[NSBundle mainBundle]pathForResource:@\x26quot;untitled\x26quot; ofType:@\x26quot;js\x26quot;]; NSString *js = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil]; [webView evaluateJavaScript:js completionHandler:nil];  处理超链接，用浏览器打开 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler { NSURL *url = navigationAction.request.URL; if (navigationAction.navigationType == WKNavigationTypeLinkActivated) { [[UIApplication sharedApplication] openURL:url]; \/\/ [[NSWorkspace sharedWorkspace] openURL:url]; decisionHandler(WKNavigationActionPolicyCancel); } else { decisionHandler(WKNavigationActionPolicyAllow); } }  处理网页中的文件选择 - (void)webView:(WKWebView *)webView runOpenPanelWithParameters:(WKOpenPanelParameters *)parameters initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSArray\x26lt;NSURL *\x26gt; * _Nullable))completionHandler { NSOpenPanel *panel = [NSOpenPanel openPanel]; [panel beginSheetModalForWindow:self.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -54,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2017",
-    "datePublished": "2017-04-02 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2017-04-02 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2017/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9/",
+    "datePublished": "2017-04-02 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2017-04-02 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2017\/wkwebview-%E6%B3%A8%E5%85%A5js%E5%A4%84%E7%90%86%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9\/",
     "wordCount" : "94",
     "keywords" : [ "WKWebView", "Jepp Hu"]
 }

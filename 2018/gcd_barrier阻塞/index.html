@@ -41,16 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "GCD barrier 阻塞与调度组",
     "headline" : "GCD barrier 阻塞与调度组",
-    "description" : "需求：开启 N 个子线程执行任务，但是后面需要依赖 N 个子线程的任务结果才能继续操作
-可以使用 barrier 或 调度组
-barrier 主要用于在多个异步操作完成之后，统一对非线程安全的对象进行更新，适合于大规模的 I/O 操作
-当访问数据库或文件时，更新数据的时候不能和其他更新和读取的操作在同一时间执行
-@interface ViewController () { dispatch_queue_t _queue; } @property (strong, nonatomic) NSMutableArray *photoList; @end - (NSMutableArray *)photoList { if (!_photoList) { _photoList = [NSMutableArray array]; } return _photoList; } - (void)viewDidLoad { [super viewDidLoad]; // 创建并发队列，不能使用全局队列, 要用手动创建并发队列 _queue = dispatch_queue_create(&quot;for barrier&quot;, DISPATCH_QUEUE_CONCURRENT); for (int i = 0; i &lt; 10; i ++) { [self getImage:i]; } } - (void)getImage:(int)index { // 异步执行并发队列，创建多个子线程执行任务 queue = dispatch_queue_create(&quot;for barrier&quot;, DISPATCH_QUEUE_CONCURRENT); dispatch_async(_queue, ^{ NSString *fileName = [NSString stringWithFormat:@&quot;%02d&quot;, index % 10]; NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@&quot;png&quot;]; UIImage *image = [UIImage imageWithContentsOfFile:path]; // 多线程，同一时刻向 photoList 添加元素，可能会造成丢失，崩溃，这个时候需要添加阻塞，且不能使用全局队列, 要用手动创建并发队列 // 阻塞所有的线程, 直到队列任务都完成后才执行这个段代码, 最后才来添加 dispatch_barrier_async(self-&gt;_queue, ^{ [self.",
+    "description" : "需求：开启 N 个子线程执行任务，但是后面需要依赖 N 个子线程的任务结果才能继续操作\n可以使用 barrier 或 调度组\nbarrier 主要用于在多个异步操作完成之后，统一对非线程安全的对象进行更新，适合于大规模的 I\/O 操作\n当访问数据库或文件时，更新数据的时候不能和其他更新和读取的操作在同一时间执行\n@interface ViewController () { dispatch_queue_t _queue; } @property (strong, nonatomic) NSMutableArray *photoList; @end - (NSMutableArray *)photoList { if (!_photoList) { _photoList = [NSMutableArray array]; } return _photoList; } - (void)viewDidLoad { [super viewDidLoad]; \/\/ 创建并发队列，不能使用全局队列, 要用手动创建并发队列 _queue = dispatch_queue_create(\x26quot;for barrier\x26quot;, DISPATCH_QUEUE_CONCURRENT); for (int i = 0; i \x26lt; 10; i \x2b\x2b) { [self getImage:i]; } } - (void)getImage:(int)index { \/\/ 异步执行并发队列，创建多个子线程执行任务 queue = dispatch_queue_create(\x26quot;for barrier\x26quot;, DISPATCH_QUEUE_CONCURRENT); dispatch_async(_queue, ^{ NSString *fileName = [NSString stringWithFormat:@\x26quot;%02d\x26quot;, index % 10]; NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@\x26quot;png\x26quot;]; UIImage *image = [UIImage imageWithContentsOfFile:path]; \/\/ 多线程，同一时刻向 photoList 添加元素，可能会造成丢失，崩溃，这个时候需要添加阻塞，且不能使用全局队列, 要用手动创建并发队列 \/\/ 阻塞所有的线程, 直到队列任务都完成后才执行这个段代码, 最后才来添加 dispatch_barrier_async(self-\x26gt;_queue, ^{ [self.",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -58,9 +54,9 @@ barrier 主要用于在多个异步操作完成之后，统一对非线程安全
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/gcd_barrier%E9%98%BB%E5%A1%9E/",
+    "datePublished": "2018-03-15 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-03-15 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/gcd_barrier%E9%98%BB%E5%A1%9E\/",
     "wordCount" : "256",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }

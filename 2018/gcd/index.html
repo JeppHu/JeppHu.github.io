@@ -41,19 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "GCD",
     "headline" : "GCD",
-    "description" : "GCD : Grand Central Dispatch  任务: block，确认执行什么任务
- 队列: queue，用来存放任务，并行或串行
- 执行方式：同步，不开线程；异步，开启线程
-   创建队列 创建任务 将任务添加到队列并执行  // 创建队列 (全局队列，实际上是获取到全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 创建任务 dispatch_block_t task = ^{ NSLog(@&quot;%@&quot;, [NSThread currentThread]); }; // 将任务添加到队列并执行 // 异步执行, 开启了新的线程 dispatch_async(queue, task); // 同步执行, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  队列  并行队列：只在异步执行有效，自动开启多个线程同时执行任务
- 串行队列：让任务一个接一个的执行，只会在一个线程中执行完队列中的任务
- 主队列：主线程中的队列
- 全局队列：本质是并行队列，只是全局队列没有名称，没办法跟踪错误，并行队列则有名称；全局队列一直存在, 不用自己创建, 只需要获取;
-  dispatch_get_global_queue(&lt;#long identifier#&gt;, &lt;#unsigned long flags#&gt;) &lt;#long identifier#&gt; : 服务质量, 也就是并发优先级，0 &lt;#unsigned long flags#&gt; : 这个参数没有作用, 苹果留用, 固定为 0  多线程通常使用 全局队列",
+    "description" : "GCD : Grand Central Dispatch  任务: block，确认执行什么任务\n 队列: queue，用来存放任务，并行或串行\n 执行方式：同步，不开线程；异步，开启线程\n   创建队列 创建任务 将任务添加到队列并执行  \/\/ 创建队列 (全局队列，实际上是获取到全局队列) dispatch_queue_t queue = dispatch_get_global_queue(0, 0); \/\/ 创建任务 dispatch_block_t task = ^{ NSLog(@\x26quot;%@\x26quot;, [NSThread currentThread]); }; \/\/ 将任务添加到队列并执行 \/\/ 异步执行, 开启了新的线程 dispatch_async(queue, task); \/\/ 同步执行, 仍然在当前线程上(不一定是主线程)执行任务, 不会开新的线程 dispatch_sync(queue, task);  队列  并行队列：只在异步执行有效，自动开启多个线程同时执行任务\n 串行队列：让任务一个接一个的执行，只会在一个线程中执行完队列中的任务\n 主队列：主线程中的队列\n 全局队列：本质是并行队列，只是全局队列没有名称，没办法跟踪错误，并行队列则有名称；全局队列一直存在, 不用自己创建, 只需要获取;\n  dispatch_get_global_queue(\x26lt;#long identifier#\x26gt;, \x26lt;#unsigned long flags#\x26gt;) \x26lt;#long identifier#\x26gt; : 服务质量, 也就是并发优先级，0 \x26lt;#unsigned long flags#\x26gt; : 这个参数没有作用, 苹果留用, 固定为 0  多线程通常使用 全局队列",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -61,9 +54,9 @@
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-03-15 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-03-15 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/gcd/",
+    "datePublished": "2018-03-15 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-03-15 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/gcd\/",
     "wordCount" : "280",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }

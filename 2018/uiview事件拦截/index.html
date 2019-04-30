@@ -41,14 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "UIView 事件拦截",
     "headline" : "UIView 事件拦截",
-    "description" : "hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者
-subViews 的 touch 相关方法不会响应
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{ // 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件 if (CGRectContainsPoint(self.bounds, point)) { return self; } return nil; }  允许部分 subViews 响应事件 重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者",
+    "description" : "hitTest: 方法会递归来寻找第一响应者  判断 point 是否在自身范围内，不在则返回 nil，在则执行第 2 步 检查 subViews，判断 point 是否在 subView 范围内，在则返回 subView（此时 subView 成为第一响应者，subView会执行 hitTest:） 如果所有 subViews 都不包含 point，只有自身包含（第1步）那就返回 self（自身成为第一响应者）  subViews 上的事件全部由父 View 来实现 重写父级 View 的 hitTest 方法，返回 self，自身成为第一响应者\nsubViews 的 touch 相关方法不会响应\n- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{ \/\/ 直接返回 self 这样自身就成为了第一响应者 subViews 不能够接受到响应事件 if (CGRectContainsPoint(self.bounds, point)) { return self; } return nil; }  允许部分 subViews 响应事件 重写父级 View 的 hitTest 方法，返回某个 subView，subView 成为第一响应者",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -56,9 +54,9 @@ subViews 的 touch 相关方法不会响应
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-05-12 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-05-12 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA/",
+    "datePublished": "2018-05-12 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-05-12 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/uiview%E4%BA%8B%E4%BB%B6%E6%8B%A6%E6%88%AA\/",
     "wordCount" : "95",
     "keywords" : [ "UIView", "Jepp Hu"]
 }

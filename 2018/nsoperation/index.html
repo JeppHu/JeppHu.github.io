@@ -41,17 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://jepphu.github.io/"
+         "@id": "https:\/\/jepphu.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "NSOperation",
     "headline" : "NSOperation",
-    "description" : "NSOperation: 任务（这里又叫操作） NSOperation 是一个抽象类、父类，用来约束子类
-子类：NSInvocationOperation，NSBlockOperation，还可以自定义子类
-NSOperationQueue：队列 @property (strong, nonatomic) NSOperationQueue *queue; - (NSOperationQueue *)queue { if (!_queue) { _queue = [[NSOperationQueue alloc] init]; } return _queue; }  当前队列中的操作数
-self.queue.operationCount  操作暂停：暂停不会立即暂停, 会先执行完当前的操作
-self.queue.suspended = YES;  结束暂停：不结束暂停状态是无法向队列添加操作的
-self.queue.suspended = NO;  NSInvocationOperation 指定一个方法 // 创建操作 NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task) object:nil]; // [op start]; //不会开启线程, 会执行内部的 main 方法, 并改变 op 的 finished 状态；详见自定义NSOperation // 创建新队列 NSOperationQueue *queue = [[NSOperationQueue alloc] init]; // 将操作添加到队列 (会开启新线程, 并执行方法) [queue addOperation:op];  NSBlockOperation 指定一个block 用法 1:",
+    "description" : "NSOperation: 任务（这里又叫操作） NSOperation 是一个抽象类、父类，用来约束子类\n子类：NSInvocationOperation，NSBlockOperation，还可以自定义子类\nNSOperationQueue：队列 @property (strong, nonatomic) NSOperationQueue *queue; - (NSOperationQueue *)queue { if (!_queue) { _queue = [[NSOperationQueue alloc] init]; } return _queue; }  当前队列中的操作数\nself.queue.operationCount  操作暂停：暂停不会立即暂停, 会先执行完当前的操作\nself.queue.suspended = YES;  结束暂停：不结束暂停状态是无法向队列添加操作的\nself.queue.suspended = NO;  NSInvocationOperation 指定一个方法 \/\/ 创建操作 NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task) object:nil]; \/\/ [op start]; \/\/不会开启线程, 会执行内部的 main 方法, 并改变 op 的 finished 状态；详见自定义NSOperation \/\/ 创建新队列 NSOperationQueue *queue = [[NSOperationQueue alloc] init]; \/\/ 将操作添加到队列 (会开启新线程, 并执行方法) [queue addOperation:op];  NSBlockOperation 指定一个block 用法 1:",
     "inLanguage" : "en-us",
     "author" : "Jepp Hu",
     "creator" : "Jepp Hu",
@@ -59,9 +54,9 @@ self.queue.suspended = NO;  NSInvocationOperation 指定一个方法 // 创建�
     "accountablePerson" : "Jepp Hu",
     "copyrightHolder" : "Jepp Hu",
     "copyrightYear" : "2018",
-    "datePublished": "2018-04-16 00:00:00 &#43;0000 UTC",
-    "dateModified" : "2018-04-16 00:00:00 &#43;0000 UTC",
-    "url" : "https://jepphu.github.io/2018/nsoperation/",
+    "datePublished": "2018-04-16 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2018-04-16 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/jepphu.github.io\/2018\/nsoperation\/",
     "wordCount" : "264",
     "keywords" : [ "OC 多线程", "Jepp Hu"]
 }
